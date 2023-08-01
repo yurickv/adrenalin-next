@@ -1,7 +1,7 @@
 export const NavLinks = [
     // { href: "/", key: "Main", text: "Головна" },
-    { href: "/blog", key: "Blog", text: "Блог" },
-    { href: "/calcs", key: "Calculators", text: "Калькулятори" },
-    { href: "/services", key: "Services", text: "Послуги" },
-    { href: "/contacts", key: "Contacts", text: "Контакти" },
+    { href: "/blog", key: "blog", text: "Блог" },
+    { href: "/calcs", key: "calcs", text: "Калькулятори" },
+    { href: "/services", key: "services", text: "Послуги" },
+    { href: "/contacts", key: "contacts", text: "Контакти" },
 ];

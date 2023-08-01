@@ -11,11 +11,12 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
+  children, params
 }: {
   children: React.ReactNode
-}) {
+}) { console.log(params)
   return (
+
     <html lang="en">
       <body className={inter.className}>
         <Header />
