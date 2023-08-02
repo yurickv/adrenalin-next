@@ -26,7 +26,8 @@ module.exports = {
         xl: "1440px",
       },
       backgroundImage: {
-        "hero-bg": "url('/public/bg-hero.jpg')",
+        "hero-bg":
+          "linear-gradient(to right, rgba(46, 47, 66, 0.5), rgba(46, 47, 66, 0.5)), url('/bg-hero.jpg')",
         // 'footer-texture': "url('/img/footer-texture.png')",
       },
     },
