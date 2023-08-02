@@ -19,6 +19,16 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
+      screens: {
+        sm: "480px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1440px",
+      },
+      backgroundImage: {
+        "hero-bg": "url('/public/bg-hero.jpg')",
+        // 'footer-texture': "url('/img/footer-texture.png')",
+      },
     },
   },
   plugins: [],

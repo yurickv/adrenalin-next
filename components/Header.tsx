@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { NavLinks } from "@/const";
 import { Barbell } from "./icons/Barbell";
@@ -10,7 +10,6 @@ import { Insta } from "./icons/Instagram";
 
 export const Header = () => {
   const params = usePathname();
-  console.log(params);
 
   return (
     <header className="flex justify-around py-5 px-8 border-b  gap-4">
@@ -22,11 +21,11 @@ export const Header = () => {
           <span>Adrenalin gym </span>
           {params === "/" && <Barbell />}
         </Link>
-        <ul className="xl:flex hidden text-small gap-7 text-[#85777B] text-base">
+        <ul className="flex  text-small gap-7 text-base">
           {NavLinks.map((link) => (
             <li
               key={link.key}
-              className={`flex items-center gap-2  hover:text-hover font-poppins ${
+              className={`flex items-center gap-2  hover:text-hover font-poppins rounded-lg px-3 py-2 hover:bg-orange-100 ${
                 params === link.href ? "text-main" : ""
               }`}
             >
@@ -40,10 +39,17 @@ export const Header = () => {
         <a
           href="https://www.instagram.com/gym.adrenalin/?hl=uk"
           className=" hover:text-hover"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <Insta />
         </a>
-        <a href="tel:+38(097)8836689" className=" hover:text-hover">
+        <a
+          href="tel:+38(097)8836689"
+          className=" hover:text-hover"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Phone />
         </a>
       </div>

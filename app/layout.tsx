@@ -1,30 +1,26 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import { Header } from "@/components/Header";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Adrenalin Gym',
-  description: 'Work hard or go home',
-}
+  title: "Adrenalin Gym",
+  description: "Work hard or go home",
+};
 
 export default function RootLayout({
-  children, params
+  children,
 }: {
-  children: React.ReactNode
-}) { console.log(params)
+  children: React.ReactNode;
+}) {
   return (
-
     <html lang="en">
       <body className={inter.className}>
         <Header />
         {children}
-        
-        </body>
+      </body>
     </html>
-  )
+  );
 }
-
-
