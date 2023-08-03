@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         main: "#F67831",
         hover: "#EB3C5A",
+        mainText: "#85777B",
         gradient:
           "linear-gradient(to right, rgb(246, 120, 49), rgb(235, 60, 90))",
       },
@@ -25,7 +26,8 @@ module.exports = {
       backgroundImage: {
         "hero-bg":
           "linear-gradient(to right, rgba(46, 47, 66, 0.5), rgba(46, 47, 66, 0.5)), url('/bg-hero.jpg')",
-        // 'footer-texture': "url('/img/footer-texture.png')",
+        "calc-bg":
+          "url('/woman.webp'), linear-gradient(to right, rgba(219, 219, 219, 0.5), rgba(219, 219, 219, 0.5)) ",
       },
     },
   },

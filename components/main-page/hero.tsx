@@ -17,7 +17,7 @@ export const Hero = () => {
           калькулятора! Наші послуги допоможуть вам досягти мети та підтримувати
           здоровий спосіб життя.
         </p>
-        <Button type="button" text="Дізнатися більше" width="w-[302px]" />
+        <Button route="/calcs" text="Дізнатися більше" width="w-[302px]" />
       </div>
     </section>
   );
