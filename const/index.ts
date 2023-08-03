@@ -8,21 +8,15 @@ export const NavLinks = [
 
 export const cardInfo = [
   {
-    src: "/food.webp",
-    alt: "Food",
     title: "Збалансоване харчування та здорова їжа",
-    text: "Nam augue est, blandit at sapien vel, hendrerit convallis nisi. Nam vitae tellus posuere, fermentum dolor et, congue libero. Nullam et ante a massa volutpat aliquam quis at augue. Quisque eleifend augue odio, a gravida odio efficitur a. Sed posuere nisl lectus, a scelerisque odio sagittis nec. Aliquam erat volutpat. Duis feugiat auctor ante, nec tempor tellus. Praesent varius quam nec fringilla pharetra.",
+    text: "Ми розуміємо, що правильне харчування - ключ до успіху. Наші тренери допоможуть скласти індивідуальну дієту, що підкреслить ваші досягнення та покращить самопочуття.",
   },
   {
-    src: "/gym.webp",
-    alt: "Gym",
     title: "Фізичні навантаження та догляд за тілом",
-    text: "Nam augue est, blandit at sapien vel, hendrerit convallis nisi. Nam vitae tellus posuere, fermentum dolor et, congue libero. Nullam et ante a massa volutpat aliquam quis at augue. Quisque eleifend augue odio, a gravida odio efficitur a. Sed posuere nisl lectus, a scelerisque odio sagittis nec. Aliquam erat volutpat. Duis feugiat auctor ante, nec tempor tellus. Praesent varius quam nec fringilla pharetra.",
+    text: "Ми прагнемо, щоб кожне тренування в Адреналіні було неповторним досвідом. Наші професійні тренери не просто супроводжують вас під час занять, вони допомагають досягти найкращих результатів та дбають про ваше тіло.",
   },
   {
-    src: "/peace.webp",
-    alt: "Garmony",
     title: "Жити в гармонії з собою, ділитися насолодою з іншими",
-    text: "Nam augue est, blandit at sapien vel, hendrerit convallis nisi. Nam vitae tellus posuere, fermentum dolor et, congue libero. Nullam et ante a massa volutpat aliquam quis at augue. Quisque eleifend augue odio, a gravida odio efficitur a. Sed posuere nisl lectus, a scelerisque odio sagittis nec. Aliquam erat volutpat. Duis feugiat auctor ante, nec tempor tellus. Praesent varius quam nec fringilla pharetra.",
+    text: "У нас ви не просто займаєтесь фізичною формою, ви стаєте частиною нашої спільноти, де вас чекає підтримка від однодумців. Діліться своїми досягненнями та радощами з іншими, і ми разом з вами переживемо кожну перемогу.",
   },
 ];
