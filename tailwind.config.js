@@ -18,9 +18,9 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
       },
       screens: {
-        sm: "480px",
+        sm: "320px",
         md: "768px",
-        lg: "1024px",
+        lg: "1280px",
         xl: "1440px",
       },
       backgroundImage: {

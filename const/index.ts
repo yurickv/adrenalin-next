@@ -37,7 +37,28 @@ export const serviceCardInfo = [
   {
     src: "/bodybuilder.jpg",
     alt: "Man with dumbells",
-    title: "Харчування від тренера",
+    title: "План харчування",
     text: "Індивідуальний тижневий план харчування, розроблений спеціально для Вас із врахуванням віку, ваги, Вашої мети",
+  },
+];
+
+export const blogCardInfo = [
+  {
+    src: "/man-with-barbell.jpg",
+    alt: "Man with dumbells",
+    teg: "#Training",
+    title: "Як накачати біцепс?",
+  },
+  {
+    src: "/food.jpg",
+    alt: "Sandviches",
+    teg: "#Food",
+    title: "Здорове харчування - це просто!",
+  },
+  {
+    src: "/fit-blond.jpg",
+    alt: "fit-blond-woman",
+    teg: "#Motivation",
+    title: "Де взяти сили для тренувань?",
   },
 ];

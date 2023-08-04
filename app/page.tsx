@@ -1,7 +1,8 @@
 import { AboutCalc } from "@/components/main-page/AboutCalc";
-import { Hero } from "@/components/main-page/hero";
-import { Motivation } from "@/components/main-page/motivation";
-import { ServicesSection } from "@/components/main-page/Services";
+import { BlogSection } from "@/components/main-page/BlogSection";
+import { Hero } from "@/components/main-page/Hero";
+import { Motivation } from "@/components/main-page/Motivation";
+import { ServicesSection } from "@/components/main-page/ServicesSection";
 // import Image from "next/image";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <Motivation />
       <AboutCalc />
       <ServicesSection />
+      <BlogSection />
     </main>
   );
 }
