@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "../Button";
 
-export const Hero = () => {
+export const HeroSection = () => {
   return (
     <section className=" bg-hero-bg bg-center bg-cover ">
       <div className="container  flex flex-col gap-11 px-[136px] py-[200px] mx-auto ">
