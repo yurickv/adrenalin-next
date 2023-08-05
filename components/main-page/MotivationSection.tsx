@@ -1,4 +1,4 @@
-import { MotivationCard } from "./MotivationCard";
+import { MotivationCard } from "./MotivationSectionCard";
 import Image from "next/image";
 
 export const Motivation = () => {
