@@ -7,6 +7,7 @@ import { NavLinks } from "@/const";
 import { Barbell } from "./icons/Barbell";
 import { Phone } from "./icons/Phone";
 import { Insta } from "./icons/Instagram";
+import Image from "next/image";
 
 export const Header = () => {
   const params = usePathname();
@@ -18,7 +19,12 @@ export const Header = () => {
           className="flex items-center gap-2 text-main hover:text-hover transition-colors duration-300"
           href="/"
         >
-          <span>Adrenalin gym </span>
+          <Image
+            src="/ADRENALIN_GYM.png"
+            alt="Adrenalin Gym"
+            width={217}
+            height={22}
+          />
           {params === "/" && <Barbell />}
         </Link>
         <ul className="flex  text-small gap-7 text-base">
