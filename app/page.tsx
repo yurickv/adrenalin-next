@@ -1,5 +1,6 @@
 import { AboutCalc } from "@/components/main-page/AboutCalc";
 import { BlogSection } from "@/components/main-page/BlogSection";
+import { GalerySection } from "@/components/main-page/GalerySection";
 import { HeroSection } from "@/components/main-page/HeroSection";
 import { Motivation } from "@/components/main-page/MotivationSection";
 import { ServicesSection } from "@/components/main-page/ServicesSection";
@@ -13,6 +14,7 @@ export default function Home() {
       <AboutCalc />
       <ServicesSection />
       <BlogSection />
+      <GalerySection />
     </main>
   );
 }
