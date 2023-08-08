@@ -72,3 +72,14 @@ export const galeryCardInfo = [
   { imageUrl: "/fotoZal/foto_zal_5.jpg", alt: "foto_zal", data: "5" },
   { imageUrl: "/fotoZal/foto_zal_6.jpg", alt: "foto_zal", data: "6" },
 ];
+
+export const CalcLinks = [
+  // { href: "/", key: "Main", text: "Головна" },
+  { href: "/calcs/imtCalc", key: "blog", text: "Індекс маси тіла" },
+  {
+    href: "/calcs/fatCalc",
+    key: "services",
+    text: "Відсоток жиру в організмі",
+  },
+  { href: "/calcs/caloriesCalc", key: "calcs", text: "Потреба калорій" },
+];
