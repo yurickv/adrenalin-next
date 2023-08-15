@@ -16,7 +16,7 @@ export const CalcTitle = ({ page }: titleProps) => {
             className={`p-4 text-lg font-medium font-poppins group
              transition-colors duration-300 w-[373px]  border-main text-mainText
               hover:text-hover  hover:bg-orange-100  ${
-                i === page ? ' text-bolt border-2' : ' border-b-2'
+                i === page ? ' text-bolt border-2 bg-orange-100' : ' border-b-2'
               }`}
           >
             <Link href={link.href} className="flex justify-between">

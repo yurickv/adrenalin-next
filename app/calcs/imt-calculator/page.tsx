@@ -1,6 +1,6 @@
 import { ButtonGroup } from '@/components/calcs-page/ButttonGroup';
 import { CalcTitle } from '@/components/calcs-page/CalcsTitle';
-import { DescriptionIMT } from '@/components/calcs-page/DescriptionIMT';
+import { DescriptionIMT } from '@/components/calcs-page/IMTDescription';
 import { ImtCalcList } from '@/components/calcs-page/ImtCalcList';
 
 const ImtCalc = () => {

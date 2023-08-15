@@ -22,6 +22,7 @@ const schema = yup.object().shape({
 export const ImtCalcList = () => {
   const [weight, setWeight] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
+
   const [errors, setErrors] = useState<{ height?: string; weight?: string }>(
     {}
   );
@@ -33,9 +34,12 @@ export const ImtCalcList = () => {
     setHeight(Number(e.target.value));
   };
 
-  const validate = async () => {
+  const validate = async (e: React.ChangeEvent<HTMLInputElement>) => {
     try {
-      await schema.validate({ height, weight }, { abortEarly: false });
+      await schema.validate(
+        { [e.target.name]: e.target.value },
+        { abortEarly: false }
+      );
       setErrors({});
     } catch (err) {
       const validationErrors: Record<string, string> = {};
@@ -52,6 +56,7 @@ export const ImtCalcList = () => {
     <form className="flex flex-col gap-7">
       <InputSkeleton
         text={'Зріст (см):'}
+        name="height"
         max={220}
         min={100}
         value={height}
@@ -61,6 +66,7 @@ export const ImtCalcList = () => {
       />
       <InputSkeleton
         text={'Вага (кг):'}
+        name="weight"
         max={130}
         min={40}
         value={weight}
