@@ -9,16 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google-cloud/storage": "^7.0.1",
     "@types/node": "20.4.5",
     "@types/react": "18.2.17",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
+    "mongoose": "^7.4.2",
+    "nanoid": "^4.0.2",
     "next": "^13.4.12",
     "postcss": "8.4.27",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6",
-    "yet-another-react-lightbox": "^3.12.0"
+    "yet-another-react-lightbox": "^3.12.0",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/multer": "^1.4.7"
   }
 }

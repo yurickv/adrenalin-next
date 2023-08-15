@@ -1,0 +1,35 @@
+export class BadRequest extends Error {
+  private status;
+  constructor(message: string) {
+    super(message);
+    this.status = 400;
+    this.message = message;
+  }
+}
+
+export class NotFound extends Error {
+  private status;
+  constructor(message: string) {
+    super(message);
+    this.status = 404;
+    this.message = message;
+  }
+}
+
+export class Conflict extends Error {
+  private status;
+  constructor(message: string) {
+    super(message);
+    this.status = 409;
+    this.message = message;
+  }
+}
+
+export class InternalError extends Error {
+  private status;
+  constructor(message: string) {
+    super(message);
+    this.status = 500;
+    this.message = message;
+  }
+}
