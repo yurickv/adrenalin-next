@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectToDB } from '@/app/api/_utils/database';
 import Post from '@/app/api/_schemas/post.schema';
-import { uploadImage } from '@/app/api/_helpers/uploadImage';
 
 import { createPostSchema } from '@/app/api/_schemas/post.yup.schema';
 import { transformImage } from '@/app/api/_helpers/transformImage';
+import { uploadImage } from '@/app/api/_helpers/uploadImage';
 
 export const POST = async (req: NextRequest) => {
   try {
@@ -22,7 +22,7 @@ export const POST = async (req: NextRequest) => {
     const newPost = new Post({ ...transformedData, image: uploadedImage });
     await newPost.save();
 
-    return NextResponse.json({ post: newPost }, { status: 201 });
+    return NextResponse.json({ post: 'newPost' }, { status: 201 });
   } catch (e: any) {
     return NextResponse.json(
       { message: e.message || 'Failed to create a new post' },

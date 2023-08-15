@@ -1,11 +1,11 @@
 import { nanoid } from 'nanoid';
 import util from 'util';
-import { storage as gc } from '@/app/api/_utils/config';
+import { storage } from '@/app/api/_utils/config';
 import { Image } from '@/app/api/_types';
 
 export const uploadImage = async (file: Image) =>
   new Promise((resolve, reject) => {
-    const bucket = gc.bucket('post-photos');
+    const bucket = storage.bucket('post-photos');
     const { originalname, buffer } = file;
     const { format } = util;
 

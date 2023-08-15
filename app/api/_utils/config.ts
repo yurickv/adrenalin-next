@@ -1,4 +1,4 @@
-import * as Cloud from '@google-cloud/storage';
+import { Storage } from '@google-cloud/storage';
 
 const {
   GOOGLE_CLOUD_PROJECT_ID,
@@ -6,7 +6,6 @@ const {
   GOOGLE_CLOUD_PRIVATE_KEY,
 } = process.env;
 
-const { Storage } = Cloud;
 export const storage = new Storage({
   projectId: GOOGLE_CLOUD_PROJECT_ID,
   credentials: {
