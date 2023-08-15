@@ -79,7 +79,7 @@ export const CalcLinks = [
   {
     href: '/calcs/fat-calculator',
     key: 'fat-calc',
-    text: 'Відсоток жиру в організмі',
+    text: 'Відсоток жиру в тілі',
   },
   {
     href: '/calcs/calories-calculator',

@@ -1,15 +1,17 @@
 interface Props {
   text: string;
+  name: string;
   max: number;
   min: number;
   value: number;
   setAny: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur: () => void;
+  onBlur: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string | null;
 }
 
 export const InputSkeleton = ({
   text,
+  name,
   max,
   min,
   value,
@@ -28,11 +30,11 @@ export const InputSkeleton = ({
             max={max}
             min={min}
             value={value}
-            name={text}
+            name={name}
             onChange={setAny}
             type="number"
             onBlur={onBlur}
-            className="font-bold rounded-lg border-mainText border-2 p-2 text-center w-[120px] hover:border-main focus:border-main outline-none"
+            className="font-bold rounded-lg border-mainText border-2 p-2 text-center w-[120px] hover:border-main focus:ring-2 focus:ring-main outline-none"
           />
           {error && (
             <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-lg w-[100px]">
@@ -45,7 +47,7 @@ export const InputSkeleton = ({
       <input
         max={max}
         min={min}
-        name={text}
+        name={name}
         value={value}
         onChange={setAny}
         type="range"
