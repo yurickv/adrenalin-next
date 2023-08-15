@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -28,4 +28,17 @@ body {
 }
 .title {
   @apply text-5xl font-bold text-center;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type='range']::-webkit-slider-thumb {
+    width: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    cursor: ew-resize;
+    background: #f67831;
+    box-shadow: -405px 0 0 400px #85777b;
+    border-radius: 50%;
+  }
 }
