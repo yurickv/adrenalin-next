@@ -30,6 +30,10 @@ body {
   @apply text-5xl font-bold text-center;
 }
 
+.description {
+  @apply font-poppins font-normal text-sm leading-normal text-mainText
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   input[type='range']::-webkit-slider-thumb {
     width: 15px;
