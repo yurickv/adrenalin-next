@@ -41,7 +41,7 @@ body {
   @apply font-poppins text-[32px] font-semibold text-mainText;
 }
 .description {
-  @apply font-poppins font-normal text-lg leading-normal text-mainText line-clamp-3 text-justify indent-5;
+  @apply font-poppins font-normal text-lg leading-normal text-mainText text-justify indent-5;
 }
 .div-for-img {
   @apply w-full h-96 bg-[#D9D9D9] mb-12 overflow-hidden;
