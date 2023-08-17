@@ -28,6 +28,9 @@ module.exports = {
         'calc-bg':
           "url('/woman.webp'), linear-gradient(to right, rgba(219, 219, 219, 0.5), rgba(219, 219, 219, 0.5)) ",
       },
+      listStyleImage: {
+        checkmark: 'url("/chack.png")',
+      },
     },
   },
   plugins: [],
