@@ -5,6 +5,7 @@ import { BadRequest, NotFound } from '@/app/api/_helpers/errors';
 import { updatePostSchema } from '@/app/api/_schemas/post.yup.schema';
 import { uploadImage } from '@/app/api/_helpers/uploadImage';
 import { transformImage } from '@/app/api/_helpers/transformImage';
+import { addImageSrcToMarkup } from '@/app/api/_helpers/addImageSrcToMarkup';
 
 type Params = {
   id?: string;
@@ -75,11 +76,20 @@ export const PATCH = async (
     await updatePostSchema.validate(transformedData);
 
     const file: File | null = data.get('image') as unknown as File;
+    const markup = data.get('markup') as string;
     if (file) {
       const transformedImage = await transformImage(file);
 
       const uploadedImage = await uploadImage(transformedImage);
       transformedData.image = uploadedImage as string;
+    }
+
+    if (markup) {
+      const newMarkup = addImageSrcToMarkup(
+        markup,
+        transformedData.image as string
+      );
+      transformedData.markup = newMarkup;
     }
 
     const post = await Post.findByIdAndUpdate(params.id, transformedData, {
