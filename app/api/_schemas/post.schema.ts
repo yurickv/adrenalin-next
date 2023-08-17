@@ -1,4 +1,4 @@
-import { Schema, model, models } from 'mongoose';
+import { model, models, Schema } from 'mongoose';
 
 const PostSchema = new Schema(
   {
@@ -18,6 +18,9 @@ const PostSchema = new Schema(
     image: {
       type: String,
       required: [true, 'Image is required'],
+    },
+    markup: {
+      type: String,
     },
   },
   {
