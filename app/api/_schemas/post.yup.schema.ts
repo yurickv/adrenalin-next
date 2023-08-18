@@ -31,12 +31,13 @@ export const updatePostSchema = Yup.object().shape({
     'atLeastOneField',
     'At least one field is required',
     (value, context) => {
-      const { title, description, topic, image } = context.parent;
+      const { title, description, topic, image, markup } = context.parent;
       return (
         title !== undefined ||
         description !== undefined ||
         topic !== undefined ||
-        image !== undefined
+        image !== undefined ||
+        markup !== undefined
       );
     }
   ),
