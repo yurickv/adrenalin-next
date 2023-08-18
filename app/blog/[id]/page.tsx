@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import parse from 'html-react-parser';
+import Image from 'next/image';
 
 async function BlogPage({ params }: { params: { id: string } }) {
   const post = await getPost(params.id);
@@ -22,6 +23,13 @@ async function BlogPage({ params }: { params: { id: string } }) {
           {post.title}
         </h1>
         <p className="description">{post.description}</p>
+        <Image
+          src={post.image}
+          alt={post.topic}
+          width={800}
+          height={600}
+          className="!w-full align-middle"
+        />
         {parse(post.markup)}
       </div>
     </section>

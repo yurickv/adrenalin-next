@@ -34,9 +34,9 @@ body {
 .section-blog-item {
   @apply pt-[46px] pb-[90px] flex flex-col items-center;
 }
-.div-conteiter-blog {
+/* .div-conteiter-blog {
   @apply container md:px-10 lg:px-[100px] xl:px-[136px] text-center flex flex-col gap-6;
-}
+} */
 .h1-title-blog {
   @apply font-poppins text-[32px] font-semibold text-mainText;
 }
