@@ -5,7 +5,6 @@ import { BadRequest, NotFound } from '@/app/api/_helpers/errors';
 import { updatePostSchema } from '@/app/api/_schemas/post.yup.schema';
 import { uploadImage } from '@/app/api/_helpers/uploadImage';
 import { transformImage } from '@/app/api/_helpers/transformImage';
-import { addImageSrcToMarkup } from '@/app/api/_helpers/addImageSrcToMarkup';
 
 type Params = {
   id?: string;
@@ -70,6 +69,11 @@ export const PATCH = async (
         'At least one field is required! (title, description, topic, image)'
       );
     }
+    const post = await Post.findById(params.id);
+
+    if (!post) {
+      throw new NotFound(`Contact with id:'${params.id}' not found`);
+    }
 
     const data = await req.formData();
     const transformedData = Object.fromEntries(data.entries());
@@ -77,6 +81,7 @@ export const PATCH = async (
 
     const file: File | null = data.get('image') as unknown as File;
     const markup = data.get('markup') as string;
+
     if (file) {
       const transformedImage = await transformImage(file);
 
@@ -85,21 +90,10 @@ export const PATCH = async (
     }
 
     if (markup) {
-      const newMarkup = addImageSrcToMarkup(
-        markup,
-        transformedData.image as string
-      );
-      transformedData.markup = newMarkup;
+      transformedData.markup = markup;
     }
 
-    const post = await Post.findByIdAndUpdate(params.id, transformedData, {
-      new: true,
-    });
-
-    if (!post) {
-      throw new NotFound(`Contact with id:'${params.id}' not found`);
-    }
-
+    post.save();
     return NextResponse.json({ post }, { status: 200 });
   } catch (e: any) {
     return NextResponse.json(
