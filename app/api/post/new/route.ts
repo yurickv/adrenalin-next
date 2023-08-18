@@ -5,7 +5,6 @@ import Post from '@/app/api/_schemas/post.schema';
 import { createPostSchema } from '@/app/api/_schemas/post.yup.schema';
 import { transformImage } from '@/app/api/_helpers/transformImage';
 import { uploadImage } from '@/app/api/_helpers/uploadImage';
-import { addImageSrcToMarkup } from '@/app/api/_helpers/addImageSrcToMarkup';
 
 export const POST = async (req: NextRequest) => {
   try {
@@ -14,18 +13,15 @@ export const POST = async (req: NextRequest) => {
     await createPostSchema.validate(transformedData);
 
     const file: File | null = data.get('image') as unknown as File;
-    const markup = data.get('markup') as string;
     const transformedImage = await transformImage(file);
 
     const uploadedImage = await uploadImage(transformedImage);
-    const newMarkup = addImageSrcToMarkup(markup, uploadedImage as string);
 
     await connectToDB();
 
     const newPost = new Post({
       ...transformedData,
       image: uploadedImage,
-      markup: newMarkup,
     });
     await newPost.save();
 
