@@ -1,5 +1,4 @@
-import { blogCardInfo } from '@/const';
-import { getPostForMain } from '@/const/function';
+import { getPosts } from '@/const/function';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,12 +10,12 @@ type BlogProps = {
   image: string;
 };
 
-export const BlogSectionCard = async () => {
-  const { posts } = await getPostForMain();
+export const BlogCard = async () => {
+  const { posts } = await getPosts(1);
 
   return (
     <>
-      {posts.map(({ id, topic, title, image }: BlogProps) => (
+      {posts.map(({ id, topic, title, description, image }: BlogProps) => (
         <div
           className="relative rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
          dark:bg-neutral-700 w-[373px] text-center"
@@ -39,9 +38,10 @@ export const BlogSectionCard = async () => {
 
           <div className="p-3">
             <p className="text-main text-right">#{topic}</p>
-            <h5 className="text-2xl font-semibold leading-tight text-neutral-800 dark:text-neutral-50">
+            <h5 className="text-2xl font-semibold leading-tight text-neutral-800 dark:text-neutral-50 h-16">
               {title}
             </h5>
+            <p className="mt-6 line-clamp-3">{description}</p>
           </div>
         </div>
       ))}
