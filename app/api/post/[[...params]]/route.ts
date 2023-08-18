@@ -38,9 +38,12 @@ export const GET = async (req: NextRequest) => {
       .limit(limit as number)
       .sort({ createdAt: -1 });
 
-    const pages = await Post.countDocuments(query);
+    const countAllDocuments = await Post.countDocuments(query);
 
-    return NextResponse.json({ posts, pages }, { status: 200 });
+    return NextResponse.json(
+      { posts, pages: Math.ceil(countAllDocuments / Number(limit)) },
+      { status: 200 }
+    );
   } catch (e) {
     return NextResponse.json(
       { message: 'Unable to get posts' },
