@@ -72,13 +72,17 @@ export const PATCH = async (
     const data = await req.formData();
     const transformedData = Object.fromEntries(data.entries());
 
+    await connectToDB();
     const post = await Post.findById(params.id);
     if (!post) {
       throw new NotFound(`Contact with id:'${params.id}' not found`);
     }
 
     const file: File | null = data.get('image') as unknown as File;
-    const markup = data.get('markup') as string;
+
+    Object.keys(transformedData).forEach(
+      key => (post[key] = transformedData[key])
+    );
 
     if (file) {
       const transformedImage = await transformImage(file);
@@ -87,10 +91,6 @@ export const PATCH = async (
       post.image = uploadedImage as string;
     }
 
-    if (markup) {
-      const newMarkup = addImageSrcToMarkup(markup, post.image as string);
-      post.markup = newMarkup;
-    }
     post.save();
 
     return NextResponse.json({ post }, { status: 200 });
