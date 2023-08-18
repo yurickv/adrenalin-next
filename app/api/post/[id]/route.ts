@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { connectToDB } from '@/app/api/_utils/database';
 import Post from '@/app/api/_schemas/post.schema';
 import { BadRequest, NotFound } from '@/app/api/_helpers/errors';
-import { updatePostSchema } from '@/app/api/_schemas/post.yup.schema';
 import { uploadImage } from '@/app/api/_helpers/uploadImage';
 import { transformImage } from '@/app/api/_helpers/transformImage';
 
@@ -69,31 +68,31 @@ export const PATCH = async (
         'At least one field is required! (title, description, topic, image)'
       );
     }
-    const post = await Post.findById(params.id);
 
+    const data = await req.formData();
+    const transformedData = Object.fromEntries(data.entries());
+
+    await connectToDB();
+    const post = await Post.findById(params.id);
     if (!post) {
       throw new NotFound(`Contact with id:'${params.id}' not found`);
     }
 
-    const data = await req.formData();
-    const transformedData = Object.fromEntries(data.entries());
-    await updatePostSchema.validate(transformedData);
-
     const file: File | null = data.get('image') as unknown as File;
-    const markup = data.get('markup') as string;
+
+    Object.keys(transformedData).forEach(
+      key => (post[key] = transformedData[key])
+    );
 
     if (file) {
       const transformedImage = await transformImage(file);
 
       const uploadedImage = await uploadImage(transformedImage);
-      transformedData.image = uploadedImage as string;
-    }
-
-    if (markup) {
-      transformedData.markup = markup;
+      post.image = uploadedImage as string;
     }
 
     post.save();
+
     return NextResponse.json({ post }, { status: 200 });
   } catch (e: any) {
     return NextResponse.json(
