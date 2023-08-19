@@ -18,18 +18,21 @@ export const BlogCard = async () => {
       {posts.map(({ id, topic, title, description, image }: BlogProps) => (
         <div
           className="relative rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
-         dark:bg-neutral-700 w-[373px] text-center"
+         dark:bg-neutral-700 w-[calc((100%-48px)/3)] text-center"
         >
-          <div className="relative -mt-4 !mr-4 !ml-4 overflow-hidden rounded-lg !shadow-[0_2px_15px_-3px_#00000029,0_10px_20px_-2px_#0000001a] w-[341px] h-[250px]">
+          <div className="relative -mt-4 !mr-4 !ml-4 overflow-hidden rounded-lg !shadow-[0_2px_15px_-3px_#00000029,0_10px_20px_-2px_#0000001a] w-[calc((100%-32px))] h-[270px] align-middle object-cover">
             <Image
               src={image}
               alt={topic}
-              fill
-              sizes="(min-width: 808px) 50vw, 100vw"
+              sizes="100vw"
               style={{
-                objectFit: 'cover', // cover, contain, none
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
               }}
-              className="!w-full align-middle"
+              width={500}
+              height={350}
+              className="block "
             />
             <Link href={`/blog/${id}`}>
               <div className="absolute top-0 bottom-0 right-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
