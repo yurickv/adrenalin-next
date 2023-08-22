@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { authMiddleware } from '@/app/api/_middlewares/auth.middleware';
 import { connectToDB } from '@/app/api/_utils/database';
 import Post from '@/app/api/_schemas/post.schema';
 import { BadRequest, NotFound } from '@/app/api/_helpers/errors';
@@ -36,6 +37,8 @@ export const DELETE = async (
   { params }: { params: Params }
 ) => {
   try {
+    await authMiddleware();
+
     if (!params.id) {
       throw new BadRequest('You must add id in your query params!');
     }
@@ -62,7 +65,10 @@ export const PATCH = async (
   { params }: { params: Params }
 ) => {
   try {
+    await authMiddleware();
+
     const contentLength = req.headers.get('content-length');
+
     if (!Number(contentLength)) {
       throw new BadRequest(
         'At least one field is required! (title, description, topic, image)'
