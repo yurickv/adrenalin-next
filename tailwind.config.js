@@ -20,13 +20,15 @@ module.exports = {
         sm: '320px',
         md: '768px',
         lg: '1280px',
-        xl: '1440px',
+        xl: '1920px',
       },
       backgroundImage: {
         'hero-bg':
           "linear-gradient(to right, rgba(46, 47, 66, 0.5), rgba(46, 47, 66, 0.5)), url('/bg-hero.jpg')",
         'calc-bg':
-          "url('/woman.webp'), linear-gradient(to right, rgba(219, 219, 219, 0.5), rgba(219, 219, 219, 0.5)) ",
+          'linear-gradient(to right, rgba(219, 219, 219, 0.5), rgba(219, 219, 219, 0.5)) ',
+        'calc-bg-woman': "url('/woman.webp')",
+        // ", linear-gradient(to right, rgba(219, 219, 219, 0.5), rgba(219, 219, 219, 0.5)) ",
       },
       listStyleImage: {
         checkmark: 'url("/chack.png")',
@@ -35,3 +37,4 @@ module.exports = {
   },
   plugins: [],
 };
+// last:md:block even:sm:hidden even:lg:block
