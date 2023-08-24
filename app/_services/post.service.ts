@@ -3,7 +3,7 @@ class PostService {
 
   async getPosts(
     page: string | number | undefined = 1,
-    limit: string | number | undefined = 20
+    limit: string | number | undefined = 12
   ) {
     try {
       const posts = await fetch(
