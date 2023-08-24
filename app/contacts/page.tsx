@@ -7,7 +7,7 @@ const Contacts = () => {
   return (
     <main>
       <section className="bg-hero-bg bg-center bg-cover ">
-        <div className="container xl:px-[132px] lg:px-[66px] py-[100px] mx-auto text-center ">
+        <div className="sm:px-4 md:px-[42px] xl:px-[132px] lg:px-[66px] sm:py-[80px] md:py-[100px] xl:  lg:py-[100px] marker:mx-auto text-center ">
           <h3 className="my-11 text-left text-white">
             Головна сторінка <Link href="/">Adrenalin_gym</Link>
             <span className="font-semibold"> &gt; Контакти</span>

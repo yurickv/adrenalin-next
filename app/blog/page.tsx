@@ -1,5 +1,5 @@
 import { BlogCard } from '@/components/blog-page/BlogCard';
-import Image from 'next/image';
+import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Link from 'next/link';
 
 function Blog() {
@@ -7,8 +7,9 @@ function Blog() {
     <main>
       <section className="bg-hero-bg bg-center bg-cover ">
         <div className="container xl:px-[132px] lg:px-[66px] py-[45px] mx-auto text-center ">
-          <h3 className="my-11 text-left text-white">
-            Головна сторінка <Link href="/">Adrenalin_gym</Link>
+          <h3 className="my-11 text-left text-white flex gap-2 ">
+            <HomeIcon />
+            <Link href="/">Adrenalin_gym</Link>
             <span className="font-semibold"> &gt; Блог</span>
           </h3>
           <h1 className="title mb-14 text-white">Блог</h1>

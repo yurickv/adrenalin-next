@@ -9,7 +9,7 @@ const ImtCalc = () => {
       <section className="mb-20">
         <div className="container xl:px-[132px] lg:px-[66px]  mx-auto text-center">
           <h1 className="sr-only">
-            Калькулятор для визначеення індексу маси тіла
+            Калькулятор для визначення індексу маси тіла
           </h1>
           <h3 className="my-11 text-left">
             Головна сторінка Adrenalin_gym{' '}
