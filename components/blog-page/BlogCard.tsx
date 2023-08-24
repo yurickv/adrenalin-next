@@ -24,7 +24,7 @@ export const BlogCard = async () => {
             <Image
               src={image}
               alt={topic}
-              sizes="100vw"
+              sizes="(max-width: 320px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw"
               style={{
                 width: '100%',
                 height: '100%',
