@@ -1,6 +1,5 @@
 'use client';
 import { NavLinks } from '@/const';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Insta } from './icons/Instagram';
 import { Phone } from './icons/Phone';

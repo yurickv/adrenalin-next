@@ -1,11 +1,12 @@
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
+import {redirect} from 'next/navigation';
 import parse from 'html-react-parser';
 import Image from 'next/image';
-import { getPost } from '@/const/function';
+import {getPost} from '@/const/function';
 
-import { GoBackBtn } from '@/components/blog-page/GoBackBtn';
-import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
+import {GoBackBtn} from '@/components/blog-page/GoBackBtn';
+import {HomeIcon} from '@/components/icons/forPopMenu/HomeIcon';
+
 // import { useRouter } from 'next/router';
 
 async function BlogPage({ params }: { params: { id: string } }) {
