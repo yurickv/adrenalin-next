@@ -48,7 +48,7 @@ export const Header = () => {
     <header
       className="sm:max-w-[640px] md:max-w-[1279px] lg:max-w-[1439px] xl:max-w-[1919px] 
     sm:px-4 md:px-[40px] lg:px-[66px] xl:px-[132px]
-    flex justify-between py-5 border-b  gap-4 mr-auto ml-auto "
+    flex justify-between items-center py-5 border-b  gap-4 mr-auto ml-auto "
     >
       <nav className="flex gap-10">
         <Link
@@ -68,11 +68,11 @@ export const Header = () => {
         <Popover.Group className="hidden md:flex md:gap-x-7">
           <Popover className="relative">
             <Popover.Button
-              className=" group flex items-center gap-x-1 font-poppins hover:text-hover hover:bg-orange-100
+              className=" group flex items-center gap-x-1 font-poppins hover:text-main hover:bg-orange-100
              text-mainText rounded-lg px-3 py-2 outline-none"
             >
               Калькулятори
-              <div className="h-5 w-5 flex-none text-gray-400 group-hover:text-hover">
+              <div className="h-5 w-5 flex-none text-gray-400 group-hover:text-main">
                 <ShevronDown aria-hidden="true" />
               </div>
             </Popover.Button>
@@ -104,7 +104,7 @@ export const Header = () => {
                       <div className="flex-auto">
                         <a
                           href={item.href}
-                          className="block font-semibold text-mainText"
+                          className="block font-semibold text-mainText hover:text-main"
                         >
                           {item.name}
                           <span className="absolute inset-0" />
@@ -122,7 +122,7 @@ export const Header = () => {
             {NavLinks.map(link => (
               <li
                 key={link.key}
-                className={`flex items-center gap-2  hover:text-hover font-poppins rounded-lg px-3 py-2 hover:bg-orange-100 ${
+                className={`flex items-center gap-2  hover:text-main font-poppins rounded-lg px-3 py-2 hover:bg-orange-100 ${
                   params === link.href ? 'text-main' : ''
                 } transition-colors duration-300 cursor-pointer`}
               >
@@ -203,7 +203,7 @@ export const Header = () => {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-hover">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main">
                         Калькулятори
                         <div
                           className={` ${open ? 'rotate-180' : ''}
@@ -218,7 +218,7 @@ export const Header = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-hover"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -229,19 +229,19 @@ export const Header = () => {
                 </Disclosure>
                 <Link
                   href="/blog"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-hover"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
                 >
                   Блог
                 </Link>
                 <Link
                   href="/services"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-hover"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
                 >
                   Послуги
                 </Link>
                 <Link
                   href="/contacts"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-hover"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
                 >
                   Контакти
                 </Link>

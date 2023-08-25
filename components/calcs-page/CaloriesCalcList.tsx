@@ -63,9 +63,9 @@ export const CaloriesCalcList = () => {
   };
 
   return (
-    <form className="flex flex-col gap-7">
+    <form className="flex flex-col gap-7 ">
       <label htmlFor="sex" className="font-bold flex items-center gap-3">
-        Стать: &nbsp; &nbsp;
+        <span className="p-2 text-lg">Стать: </span>
         <label
           htmlFor="woman"
           className={`cursor-pointer flex items-center justify-center 
@@ -139,25 +139,30 @@ export const CaloriesCalcList = () => {
       </label>
       <select
         name="activity"
-        className="w-[370px] font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main"
+        className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
+        font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main"
         value={activity}
         onChange={e => setActivity(Number(e.target.value))}
       >
         <option value="1.2" className="flex flex-col">
-          Сидячий спосіб життя (мало або зовсім без фізичних вправ)
+          Сидячий спосіб життя <br />
+          (мало або зовсім без фізичних вправ)
         </option>
         <option value="1.375">
-          Легка активність (1-3 дні тренувань на тиждень)
+          Легка активність <br />
+          (1-3 дні тренувань на тиждень)
         </option>
         <option value="1.55">
-          Помірно активний (3-5 днів тренувань на тиждень)
+          Помірно активний <br />
+          (3-5 днів тренувань на тиждень)
         </option>
         <option value="1.725">
-          Дуже активний (6-7 днів тренувань на тиждень)
+          Дуже активний <br />
+          (6-7 днів тренувань на тиждень)
         </option>
         <option value="1.9">
-          Надзвичайно активний (дуже інтенсивні фізичні вправи або фізична
-          робота)
+          Надзвичайно активний <br />
+          (дуже інтенсивні фізичні вправи або фізична робота)
         </option>
       </select>
 

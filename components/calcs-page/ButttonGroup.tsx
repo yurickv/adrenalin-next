@@ -7,7 +7,7 @@ export const ButtonGroup = () => {
       <Button
         route="/blog"
         text="Все про харчування"
-        width="mx-auto mt-4 w-[302px] !bg-none 
+        width="mx-auto mt-4 w-[240px] md:w-[284px] !bg-none 
         !border-main border-2 border-solid !text-mainText !shadow-none"
       />
       <p className="font-bold mt-12">
@@ -16,7 +16,7 @@ export const ButtonGroup = () => {
       <Button
         route="/services"
         text="Придбати програму"
-        width="mx-auto mt-4 w-[302px]"
+        width="mx-auto mt-4 w-[240px] md:w-[284px]"
       />
     </>
   );
