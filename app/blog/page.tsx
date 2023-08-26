@@ -1,6 +1,5 @@
 import { BlogCard } from '@/components/blog-page/BlogCard';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
-import Image from 'next/image';
 import Link from 'next/link';
 
 function Blog() {
