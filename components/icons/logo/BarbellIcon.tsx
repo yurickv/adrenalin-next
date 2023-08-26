@@ -20,8 +20,8 @@ export const BarbellIcon = () => {
           y2="12.9096"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
       </defs>
     </svg>

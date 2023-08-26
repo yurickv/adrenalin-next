@@ -22,8 +22,9 @@ export const CalcTitle = ({ page }: titleProps) => {
             <Link href={link.href} className="flex justify-between">
               {link.text}
               <div
-                className="rotate-45 text-main  group-hover:rotate-0
-              transition-all duration-300"
+                className={` text-main  group-hover:rotate-0
+              transition-all duration-300
+              ${i === page ? ' -rotate-45' : 'rotate-45'}`}
               >
                 <Arrow />
               </div>
