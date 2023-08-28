@@ -14,7 +14,7 @@ export const TrenerCard: React.FC<TrenerCardProps> = ({
   onClickMore,
   isOpen,
 }) => {
-  const [quantity, setQuantity] = useState<number>(12);
+  const [quantity, setQuantity] = useState<number>(8);
   return (
     <div
       className="px-4 py-12 md:py-4 lg:py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
@@ -40,9 +40,7 @@ export const TrenerCard: React.FC<TrenerCardProps> = ({
           </option>
           <option value="4">4 тренування</option>
           <option value="8">8 тренувань</option>
-          <option value="12" selected>
-            12 тренувань
-          </option>
+          <option value="12">12 тренувань</option>
         </select>
       </div>
       <ul className="ul-list !indent-0 mt-3 md:mt-5 ">

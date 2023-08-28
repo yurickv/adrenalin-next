@@ -51,9 +51,7 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
               1 тренування
             </option>
             <option value="8">8 тренувань</option>
-            <option value="12" selected>
-              12 тренувань
-            </option>
+            <option value="12">12 тренувань</option>
             <option value="20">Безліміт</option>
           </select>
         </div>
@@ -70,7 +68,7 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
             value={duration}
             onChange={e => setDuration(Number(e.target.value))}
           >
-            <option value="1" className="" selected>
+            <option value="1" className="">
               1 місяць
             </option>
             <option value="3">3 місяці</option>

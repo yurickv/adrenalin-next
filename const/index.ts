@@ -20,27 +20,6 @@ export const cardInfo = [
   },
 ];
 
-export const serviceCardInfo = [
-  {
-    src: '/bodybuilder.jpg',
-    alt: 'Man with dumbells',
-    title: 'Тренування',
-    text: 'Тренування на професійному обладнанні в чистому, просторому приміщенні тренажерного залу Адреналін',
-  },
-  {
-    src: '/bodybuilder.jpg',
-    alt: 'Man with dumbells',
-    title: 'Тренування з тренером',
-    text: 'Передаємо Вам кращий досвід і практикидля досягнення максимально швидкого результату',
-  },
-  {
-    src: '/bodybuilder.jpg',
-    alt: 'Man with dumbells',
-    title: 'План харчування',
-    text: 'Індивідуальний тижневий план харчування, розроблений спеціально для Вас із врахуванням віку, ваги, Вашої мети',
-  },
-];
-
 export const galeryCardInfo = [
   { imageUrl: '/fotoZal/foto_zal_7.jpg', alt: 'foto_zal', data: '0' },
   // { imageUrl: "/fotoZal/foto_zal_1.jpg", alt: "foto_zal", data: "1" },

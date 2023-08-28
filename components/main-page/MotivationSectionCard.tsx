@@ -17,17 +17,17 @@ export const MotivationCard = () => {
           <li>
             <details className="p-4 lg:p-5  ">
               <summary
-                className="flex gap-4 items-end justify-between 
+                className="group flex gap-4 items-end justify-between 
                text-lg lg:text-2xl leading-normal font-medium 
                border-b-2 border-main px-3 py-2 hover:bg-orange-100 
                transition-all duration-300 outline-0"
               >
                 <p>{title}</p>
-                <div className="  text-main rotate-45 transition-all duration-300">
+                <div className="  text-main rotate-45 group-hover:rotate-0 transition-all duration-300">
                   <Arrow />
                 </div>
               </summary>
-              <p className=" bg-white z-10 font-medium text-lg lg:text-xl lg:leading-8 ">
+              <p className=" bg-white z-10 font-medium text-lg lg:text-xl lg:leading-8 indent-4">
                 {text}
               </p>
             </details>

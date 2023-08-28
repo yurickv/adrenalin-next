@@ -15,7 +15,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
   onClickMore,
   isOpen,
 }) => {
-  const [quantity, setQuantity] = useState<number>(12);
+  const [quantity, setQuantity] = useState<number>(2);
   const [duration, setDuration] = useState<number>(1);
 
   function handleChange(number: number) {
@@ -48,9 +48,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
             onChange={e => handleChange(Number(e.target.value))}
           >
             <option value="1">План тренування</option>
-            <option value="2" selected>
-              План харчування
-            </option>
+            <option value="2">План харчування</option>
           </select>
         </div>
 
@@ -66,7 +64,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
             value={duration}
             onChange={e => setDuration(Number(e.target.value))}
           >
-            <option value="1" className="" selected>
+            <option value="1" className="">
               1 тиждень
             </option>
             <option value="4">1 місяць</option>
