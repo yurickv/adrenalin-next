@@ -31,6 +31,18 @@ class PostService {
       console.log(e);
     }
   }
+
+  // export async function getPost(id: string) {
+  //   try {
+  //     const res = await fetch(`http://${process.env.HOST}/api/post/${id}`);
+  //     if (!res.ok) return undefined;
+  //     const { post } = await res.json();
+  //     return post;
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
+
   async createPost(post: FormData) {
     try {
       const res = await fetch(
