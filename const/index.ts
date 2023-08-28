@@ -41,27 +41,6 @@ export const serviceCardInfo = [
   },
 ];
 
-export const blogCardInfo = [
-  {
-    src: '/man-with-barbell.jpg',
-    alt: 'Man with dumbells',
-    teg: '#Training',
-    title: 'Як накачати біцепс?',
-  },
-  {
-    src: '/food.jpg',
-    alt: 'Sandviches',
-    teg: '#Food',
-    title: 'Здорове харчування - це просто!',
-  },
-  {
-    src: '/fit-blond.jpg',
-    alt: 'fit-blond-woman',
-    teg: '#Motivation',
-    title: 'Де взяти сили для тренувань?',
-  },
-];
-
 export const galeryCardInfo = [
   { imageUrl: '/fotoZal/foto_zal_7.jpg', alt: 'foto_zal', data: '0' },
   // { imageUrl: "/fotoZal/foto_zal_1.jpg", alt: "foto_zal", data: "1" },

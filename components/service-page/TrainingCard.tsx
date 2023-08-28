@@ -3,14 +3,18 @@
 import React, { useState } from 'react';
 
 import { DescriptionText } from './DescriptionText';
-import { Price } from './Price';
+import { Price } from './PriceTraining';
 import { ButtonForPrice } from './ButtonForPrice';
 
 type TrainingCardProps = {
   onClickMore: (button: 'standart' | 'personal' | 'planTrain') => void;
+  isOpen: boolean;
 };
 
-export const TrainingCard: React.FC<TrainingCardProps> = ({ onClickMore }) => {
+export const TrainingCard: React.FC<TrainingCardProps> = ({
+  onClickMore,
+  isOpen,
+}) => {
   const [quantity, setQuantity] = useState<number>(12);
   const [duration, setDuration] = useState<number>(1);
 
@@ -76,7 +80,11 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({ onClickMore }) => {
         </div>
       </div>
       <Price duration={duration} quantity={quantity} />
-      <ButtonForPrice onClickMore={onClickMore} name="standart" />
+      <ButtonForPrice
+        onClickMore={onClickMore}
+        name="standart"
+        isOpen={isOpen}
+      />
     </div>
   );
 };

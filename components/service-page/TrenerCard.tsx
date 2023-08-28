@@ -7,9 +7,13 @@ import { ButtonForPrice } from './ButtonForPrice';
 
 type TrenerCardProps = {
   onClickMore: (button: 'standart' | 'personal' | 'planTrain') => void;
+  isOpen: boolean;
 };
 
-export const TrenerCard: React.FC<TrenerCardProps> = ({ onClickMore }) => {
+export const TrenerCard: React.FC<TrenerCardProps> = ({
+  onClickMore,
+  isOpen,
+}) => {
   const [quantity, setQuantity] = useState<number>(12);
   return (
     <div
@@ -52,7 +56,11 @@ export const TrenerCard: React.FC<TrenerCardProps> = ({ onClickMore }) => {
         </li>
       </ul>
       <PriceTrener quantity={quantity} />
-      <ButtonForPrice onClickMore={onClickMore} name="personal" />
+      <ButtonForPrice
+        onClickMore={onClickMore}
+        name="personal"
+        isOpen={isOpen}
+      />
     </div>
   );
 };

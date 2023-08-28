@@ -7,6 +7,9 @@ import { TrainingCard } from '@/components/service-page/TrainingCard';
 import { TrenerCard } from '@/components/service-page/TrenerCard';
 import Link from 'next/link';
 import { TrainingInfo } from '@/components/service-page/TrainingInfo';
+import { TrenerInfo } from '@/components/service-page/TrenerInfo';
+import { ProgramInfo } from '@/components/service-page/ProgramInfo';
+import { type } from 'os';
 
 type OnClickMoreFunction = (
   button: 'standart' | 'personal' | 'planTrain'
@@ -48,15 +51,18 @@ const Services = () => {
         </div>
       </section>
       <section className="py-[40px] md:py-[44px] lg:py-[88px]">
-        <div className="div-container flex flex-col md:flex-row gap-6 md:gap-4 lg:gap-6">
-          <TrainingCard onClickMore={onClickMore} />
-          <TrenerCard onClickMore={onClickMore} />
-          <ProgramCard onClickMore={onClickMore} />
+        <div
+          className="div-container flex flex-col md:grid  md:grid-cols-3 
+          gap-6 md:gap-x-4 lg:gap-x-6 md:gap-y-8 lg:gap-y-11"
+        >
+          <TrainingCard onClickMore={onClickMore} isOpen={standart} />
+          {standart ? <TrainingInfo /> : ''}
+          <TrenerCard onClickMore={onClickMore} isOpen={personal} />
+          {personal ? <TrenerInfo /> : ''}
+          <ProgramCard onClickMore={onClickMore} isOpen={planTrain} />
+          {planTrain ? <ProgramInfo /> : ''}
         </div>
       </section>
-      <section className="">{standart ? <TrainingInfo /> : ''}</section>
-      <section className="">{personal ? <TrainingInfo /> : ''}</section>
-      <section className="">{planTrain ? <TrainingInfo /> : ''}</section>
     </main>
   );
 };

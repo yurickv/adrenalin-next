@@ -4,13 +4,17 @@ import React, { useState } from 'react';
 
 import { DescriptionText } from './DescriptionText';
 import { ButtonForPrice } from './ButtonForPrice';
-import { PriceTrainingPlan } from './PriceTrainingPlan';
+import { PriceTrainingPlan } from './PriceProgram';
 
 type ProgramCardProps = {
   onClickMore: (button: 'standart' | 'personal' | 'planTrain') => void;
+  isOpen: boolean;
 };
 
-export const ProgramCard: React.FC<ProgramCardProps> = ({ onClickMore }) => {
+export const ProgramCard: React.FC<ProgramCardProps> = ({
+  onClickMore,
+  isOpen,
+}) => {
   const [quantity, setQuantity] = useState<number>(12);
   const [duration, setDuration] = useState<number>(1);
 
@@ -70,7 +74,11 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({ onClickMore }) => {
         </div>
       </div>
       <PriceTrainingPlan duration={duration} quantity={quantity} />
-      <ButtonForPrice onClickMore={onClickMore} name="planTrain" />
+      <ButtonForPrice
+        onClickMore={onClickMore}
+        name="planTrain"
+        isOpen={isOpen}
+      />
     </div>
   );
 };
