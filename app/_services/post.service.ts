@@ -31,6 +31,7 @@ class PostService {
       console.log(e);
     }
   }
+
   async createPost(post: FormData) {
     try {
       const res = await fetch(

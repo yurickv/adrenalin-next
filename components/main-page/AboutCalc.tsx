@@ -36,4 +36,3 @@ export const AboutCalc = () => {
     </section>
   );
 };
-// md:w-6/12 md:text-left

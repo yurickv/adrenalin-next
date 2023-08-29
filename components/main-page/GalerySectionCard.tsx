@@ -62,8 +62,3 @@ const GalerySectionCard = () => {
 };
 
 export default GalerySectionCard;
-
-// md:h-[50vw] h-screen
-
-// md:w-[calc((100%-114px)/2)]
-// sm:[&:nth-child(n+1)]:sr-only md:[&:nth-child(n+2)]:sr-only

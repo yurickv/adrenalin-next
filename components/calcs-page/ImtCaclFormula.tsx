@@ -29,7 +29,7 @@ export const ImtCalcFormula = ({ weight, height }: FormulaProps) => {
           {resultImt}
         </p>
       </div>
-      <div className="h-14 text-xl font-medium">{message}</div>
+      <div className="h-14 text-lg lg:text-xl font-medium">{message}</div>
     </>
   );
 };

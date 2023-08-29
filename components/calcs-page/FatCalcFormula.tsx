@@ -1,5 +1,4 @@
 interface FormulaProps {
-  //   weight: number;
   age: number;
   sex: boolean;
   sum: number;

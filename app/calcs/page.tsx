@@ -7,12 +7,14 @@ const Calc = () => {
   return (
     <main>
       <section className="bg-hero-bg bg-center bg-cover ">
-        <div className="container xl:px-[132px] lg:px-[66px]  py-[100px] mx-auto text-center">
-          <h3 className="my-11 text-left text-white flex gap-2">
+        <div
+          className="div-container  
+        py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5"
+        >
+          <h3 className=" text-left text-white flex gap-2">
             <Link href="/" className="flex gap-2 items-center">
-              {' '}
               <HomeIcon />
-              Adrenalin_gym
+              <span className="sr-only md:not-sr-only">Adrenalin_gym</span>
             </Link>
             <span className="font-semibold"> &gt; Калькулятори</span>
           </h3>
@@ -20,7 +22,7 @@ const Calc = () => {
         </div>
       </section>
       <section>
-        <div className="container xl:px-[132px] lg:px-[66px]  mx-auto text-center mt-6">
+        <div className="div-container">
           <CalcTitle />
           <Image
             src="/fit-blond.jpg"

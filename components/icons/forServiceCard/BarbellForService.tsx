@@ -1,9 +1,8 @@
-export const Barbell = () => {
+export const BarbellForService = () => {
   return (
     <svg
-      className="inline-block"
       xmlns="http://www.w3.org/2000/svg"
-      height="1em"
+      height="2.5em"
       fill="currentColor"
       viewBox="0 0 640 512"
     >
