@@ -27,7 +27,7 @@ function Blog({
       <section className="py-[40px] md:py-[44px] lg:py-[88px]">
         <div className="div-container flex md:flex-wrap gap-x-6 gap-y-10">
           <div
-            className="flex flex-col md:grid-cols-2  md:grid lg:grid-cols-3
+            className="flex flex-col md:grid md:grid-cols-2  lg:grid-cols-3
           justify-items-center gap-10 md:gap-x-6 md:gap-y-12 mt-10 md:mt-10
           lg:mt-14 items-center  justify-center"
           >

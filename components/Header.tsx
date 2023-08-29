@@ -18,13 +18,15 @@ import { CaloriesCalcIcon } from './icons/forPopMenu/CaloriesCalcIcon';
 import { XMarkIcon } from './icons/XMarkIcon';
 import { HomeIcon } from './icons/forPopMenu/HomeIcon';
 import { Search } from '@/components/Search';
+import { AdrenalinIcon } from './icons/logo/AdrenalinIcon';
+import { GymIcon } from './icons/logo/GymIcon';
 
 export const Header = () => {
   const params = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchText, setSearchText] = useState<string>('');
 
-  const products = [
+  const calcHeader = [
     {
       name: 'Індекс маси тіла',
       description: 'Калькулятор для визначення індексу маси тіла',
@@ -51,22 +53,20 @@ export const Header = () => {
     sm:px-4 md:px-[40px] lg:px-[66px] xl:px-[132px]
     flex justify-between items-center py-5 border-b  gap-4 mr-auto ml-auto "
     >
-      <nav className="flex gap-10">
+      <nav className="flex  md:gap-5 lg:gap-10">
         <Link
           className="flex items-center gap-2 text-main hover:text-hover transition-colors duration-300"
           href="/"
         >
           <span className="sr-only">Adrenalin gym</span>
-          <Image
-            src="/ADRENALIN_GYM.png"
-            alt="Adrenalin Gym"
-            width={217}
-            height={22}
-          />
+          <div className="flex flex-col items-center">
+            <AdrenalinIcon />
+            <GymIcon />
+          </div>
           {params === '/' && <Barbell />}
         </Link>
 
-        <Popover.Group className="hidden md:flex md:gap-x-7">
+        <Popover.Group className="hidden md:flex md:gap-x-2 lg:gap-x-7">
           <Popover className="relative">
             <Popover.Button
               className=" group flex items-center gap-x-1 font-poppins hover:text-main hover:bg-orange-100
@@ -89,7 +89,7 @@ export const Header = () => {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300">
                 <div className="p-4">
-                  {products.map(item => (
+                  {calcHeader.map(item => (
                     <div
                       key={item.name}
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-orange-100"
@@ -119,7 +119,7 @@ export const Header = () => {
             </Transition>
           </Popover>
 
-          <ul className="flex  text-small gap-7 text-base">
+          <ul className="flex  text-small md:gap-2 lg:gap-7 text-base">
             {NavLinks.map(link => (
               <li
                 key={link.key}
@@ -216,7 +216,7 @@ export const Header = () => {
                         </div>
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...products].map(item => (
+                        {[...calcHeader].map(item => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"
@@ -249,7 +249,7 @@ export const Header = () => {
                   Контакти
                 </Link>
               </div>
-              <div className="py-6 flex gap-4 text-main justify-center">
+              <div className="py-10 flex gap-4 text-main items-center justify-center">
                 <a
                   href="https://www.instagram.com/gym.adrenalin/?hl=uk"
                   className=" hover:text-hover transition-colors duration-300 cursor-pointer"
@@ -266,6 +266,7 @@ export const Header = () => {
                 >
                   <Phone />
                 </a>
+                <Search />
               </div>
             </div>
           </div>

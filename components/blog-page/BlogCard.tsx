@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import postHttpService from '@/app/_services/post.service';
+import { Arrow } from '../icons/Arrow-down';
 
 type BlogProps = {
   id: string;
@@ -57,29 +58,43 @@ export const BlogCard = async ({
           </div>
         </div>
       ))}
-      <div className="flex justify-between">
+      <div
+        className="flex flex-col md:grid md:col-span-2 lg:col-span-3 
+       items-center justify-items-center "
+      >
         <div>
           <p className="text-sm text-gray-700 flex gap-1 font-medium">
             <span className="">Cторінка {searchParams?.page || 1} з </span>
             <span className="">{pages}</span> сторінок
           </p>
         </div>
-        <div>
+        <div className="flex gap-4">
           <Link
             href={`/blog/page=${Number(searchParams.page) - 1}/${
               searchParams?.search || ''
             } `}
-            className="p-2"
+            aria-disabled={Number(searchParams.page) <= 2 ? false : true}
+            className="flex gap-2 text-main text-center rounded-full p-4 hover:text-hover
+            hover:bg-orange-100 transition-all duration-300 cursor-pointer"
           >
+            <div className="rotate-180   ">
+              <Arrow />
+            </div>
             Попередня
           </Link>
           <Link
             href={`/blog/page=${(Number(searchParams.page) || 1) + 1}/${
               searchParams?.search || ''
             } `}
-            className="p-2 "
+            aria-disabled={searchParams.page === pages ? true : false}
+            className="flex gap-2 text-main text-center rounded-full p-4 hover:text-hover
+            hover:bg-orange-100 transition-all duration-300 cursor-pointer"
           >
+            {' '}
             Наступна
+            <div className=" ">
+              <Arrow />
+            </div>
           </Link>
         </div>
       </div>
