@@ -2,7 +2,11 @@ import { BlogCard } from '@/components/blog-page/BlogCard';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Link from 'next/link';
 
-function Blog() {
+function Blog({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) {
   return (
     <main>
       <section className="bg-hero-bg bg-center bg-cover ">
@@ -17,7 +21,7 @@ function Blog() {
       </section>
       <section>
         <div className="container xl:px-[132px] lg:px-[66px]  mx-auto text-center m-11 flex flex-wrap gap-x-6 gap-y-10">
-          <BlogCard />
+          <BlogCard searchParams={searchParams} />
         </div>
       </section>
     </main>

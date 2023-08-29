@@ -1,6 +1,6 @@
-import { getPosts } from '@/const/function';
 import Image from 'next/image';
 import Link from 'next/link';
+import postHttpService from '@/app/_services/post.service';
 
 type BlogProps = {
   id: string;
@@ -10,9 +10,16 @@ type BlogProps = {
   image: string;
 };
 
-export const BlogCard = async () => {
-  const { posts } = await getPosts(1);
-
+export const BlogCard = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) => {
+  const { posts } = await postHttpService.getPosts({
+    page: 1,
+    search: searchParams?.search,
+    topic: searchParams?.topic,
+  });
   return (
     <>
       {posts.map(({ id, topic, title, description, image }: BlogProps) => (

@@ -1,15 +1,20 @@
+type getPostsProps = {
+  page?: string | number;
+  limit?: string | number;
+  search?: string;
+  topic?: string;
+};
+
 class PostService {
   constructor() {}
 
-  async getPosts(
-    page: string | number | undefined = 1,
-    limit: string | number | undefined = 12
-  ) {
+  async getPosts(post: getPostsProps) {
+    const { page = 1, limit = 12, search = '', topic = '' } = post;
     try {
       const posts = await fetch(
         `http://${
           process.env.HOST || process.env.NEXT_PUBLIC_HOST
-        }/api/post?page=${page}&limit=${limit}`
+        }/api/post?page=${page}&limit=${limit}&search=${search}&topic=${topic}`
       );
       return posts.json();
     } catch (e) {
