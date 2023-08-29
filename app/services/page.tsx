@@ -9,7 +9,6 @@ import Link from 'next/link';
 import { TrainingInfo } from '@/components/service-page/TrainingInfo';
 import { TrenerInfo } from '@/components/service-page/TrenerInfo';
 import { ProgramInfo } from '@/components/service-page/ProgramInfo';
-import { type } from 'os';
 
 type OnClickMoreFunction = (
   button: 'standart' | 'personal' | 'planTrain'

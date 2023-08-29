@@ -1,4 +1,3 @@
-import { Button } from '../Button';
 type ButtonForPriceProps = {
   onClickMore: (name: 'standart' | 'personal' | 'planTrain') => void;
   name: 'standart' | 'personal' | 'planTrain';
