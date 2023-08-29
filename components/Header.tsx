@@ -17,10 +17,12 @@ import { FatCalcIcon } from './icons/forPopMenu/FatCalcIcon';
 import { CaloriesCalcIcon } from './icons/forPopMenu/CaloriesCalcIcon';
 import { XMarkIcon } from './icons/XMarkIcon';
 import { HomeIcon } from './icons/forPopMenu/HomeIcon';
+import { MyDisclosure } from '@/components/Disclousure';
 
 export const Header = () => {
   const params = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchText, setSearchText] = useState<string>('');
 
   const products = [
     {
@@ -142,10 +144,26 @@ export const Header = () => {
           <BurgerMenu aria-hidden="true" />
         </button>
       </div>
-      <div className=" hidden md:flex md:gap-4 text-main">
+
+      <div className=" hidden md:flex md:gap-4 text-main relative">
+        <div className="w-40 focus:w-auto group peer flex-grow">
+          <MyDisclosure />
+          {/*<input*/}
+          {/*  placeholder="Знайти пост"*/}
+          {/*  className="py-2 pl-10 pr-2 w-full group-focus:flex-grow"*/}
+          {/*  value={searchText}*/}
+          {/*  onChange={e => setSearchText(e.target.value)}*/}
+          {/*/>*/}
+          {/*<Link*/}
+          {/*  href={`/blog?search=${searchText}`}*/}
+          {/*  className="absolute top-1/2 -translate-y-1/2 left-2 color-[#5F5C5D]"*/}
+          {/*>*/}
+          {/*  <Search />*/}
+          {/*</Link>*/}
+        </div>
         <a
           href="https://www.instagram.com/gym.adrenalin/?hl=uk"
-          className=" hover:text-hover transition-colors duration-300 cursor-pointer"
+          className=" hover:text-hover transition-colors duration-300 cursor-pointer peer-focus:hidden"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -153,7 +171,7 @@ export const Header = () => {
         </a>
         <a
           href="tel:+38(097)8836689"
-          className=" hover:text-hover transition-colors duration-300 cursor-pointer"
+          className=" hover:text-hover transition-colors duration-300 cursor-pointer peer-focus:hidden"
           target="_blank"
           rel="noopener noreferrer"
         >
