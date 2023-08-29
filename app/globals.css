@@ -80,24 +80,10 @@ details[open] summary div {
   @apply font-poppins font-normal text-lg text-mainText leading-normal mt-2 text-justify indent-5;
 }
 
-
 .form-input {
-  @apply w-full p-3 border-gray-500 rounded-lg border-2
+  @apply w-full p-3 border-gray-500 rounded-lg border-2;
 }
-/* _______________________Galery section____________________________ */
-.galery::nth-child(n + 2) {
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-  }
-}
+
 /* __________________input range________________ */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   input[type='range']::-webkit-slider-thumb {
