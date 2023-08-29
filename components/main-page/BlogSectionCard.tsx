@@ -1,5 +1,4 @@
 import postHttpService from '@/app/_services/post.service';
-import { getPostForMain } from '@/const/function';
 import Image from 'next/image';
 import Link from 'next/link';
 

@@ -27,12 +27,3 @@ export const ButtonForPrice: React.FC<ButtonForPriceProps> = ({
     </>
   );
 };
-
-{
-  /* 
-      <Button
-        route="/services"
-        text="Придбати програму"
-        width="mx-auto mt-4 w-[240px] md:w-[284px]"
-      /> */
-}

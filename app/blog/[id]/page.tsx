@@ -7,19 +7,11 @@ import { GoBackBtn } from '@/components/blog-page/GoBackBtn';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import postHttpService from '@/app/_services/post.service';
 
-// import { useRouter } from 'next/router';
-
 async function BlogPage({ params }: { params: { id: string } }) {
   const post = await postHttpService.getPostById(params.id);
   if (!post) {
     redirect('/');
   }
-
-  // const router = useRouter();
-
-  // const handleGoBack = () => {
-  //   router.back();
-  // };
 
   return (
     <main>
@@ -69,16 +61,3 @@ async function BlogPage({ params }: { params: { id: string } }) {
 }
 
 export default BlogPage;
-{
-  /* <div className="flex justify-between items-center ">
-  <h3 className="my-11 text-left text-mainText flex gap-2 ">
-    <Link href="/" className="flex gap-2 items-center">
-      {' '}
-      <HomeIcon />
-      Adrenalin_gym
-    </Link>
-    <Link href="/blog">&gt; Блог</Link>
-    <span className="font-semibold"> &gt; {post.title}</span>
-  </h3>
-</div>; */
-}

@@ -37,12 +37,3 @@ export const MotivationCard = () => {
     </div>
   );
 };
-
-// group overflow-hidden
-//           transition-all duration-300 hover:first:h-[130px] hover:h-[160px]
-//           hover:last:h-[160px]          md:hover:first:max-h-[440px] md:hover:max-h-[480px] md:hover:last:max-h-[465px]
-//           lg:hover:first:h-[140px] lg:hover:h-[170px] lg:hover:last:h-[210px]
-
-// transition-all
-//               duration-300 opacity-0 group-hover:translate-y-0 group-hover:opacity-100
-//               -translate-y-1/4
