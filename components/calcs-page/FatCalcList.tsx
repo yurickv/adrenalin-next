@@ -81,7 +81,7 @@ export const FatCalcList = () => {
   return (
     <form className="flex flex-col gap-7">
       <label htmlFor="sex" className="font-bold flex items-center gap-3">
-        Стать: &nbsp; &nbsp;
+        <span className="p-2 text-lg">Стать: </span>
         <label
           htmlFor="woman"
           className={`cursor-pointer flex items-center justify-center 
@@ -129,12 +129,11 @@ export const FatCalcList = () => {
         onBlur={validate}
         error={errors.age}
       />
+      <p className="font-bold md:text-lg">
+        Виміряйте шкірні складки на таких частинах тіла:
+      </p>
       <InputSkeleton
-        text={
-          sex
-            ? 'Шкірна складка на грудях (мм):'
-            : 'Шкірна складка трицепса (мм):'
-        }
+        text={sex ? 'На грудях (мм):' : 'На трицепсі (мм):'}
         name="skinFold"
         max={100}
         min={1}
@@ -143,10 +142,9 @@ export const FatCalcList = () => {
         onBlur={validate}
         error={errors.skinFold}
       />
+
       <InputSkeleton
-        text={
-          sex ? 'Шкірна складка на животі (мм):' : 'Бокова шкірна складка (мм):'
-        }
+        text={sex ? 'На животі (мм):' : 'Бокова шкірна складка (мм):'}
         name="skinFoldW"
         max={100}
         min={1}
@@ -156,9 +154,7 @@ export const FatCalcList = () => {
         error={errors.skinFoldW}
       />
       <InputSkeleton
-        text={
-          sex ? 'Шкірна складка стегна (мм):' : 'Шкірна складка стегна (мм):'
-        }
+        text={sex ? 'На стегні (мм):' : 'На стегні (мм):'}
         name="skinFoldL"
         max={100}
         min={1}

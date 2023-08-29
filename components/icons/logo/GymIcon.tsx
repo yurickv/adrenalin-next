@@ -28,8 +28,8 @@ export const GymIcon = () => {
           y2="-3.91033"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_269_1143"
@@ -39,8 +39,8 @@ export const GymIcon = () => {
           y2="-3.91033"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_269_1143"
@@ -50,8 +50,8 @@ export const GymIcon = () => {
           y2="-3.91033"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
       </defs>
     </svg>

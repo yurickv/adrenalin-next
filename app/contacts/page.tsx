@@ -1,23 +1,33 @@
 import { Insta } from '@/components/icons/Instagram';
 import { Location } from '@/components/icons/Location';
 import { Phone } from '@/components/icons/Phone';
+import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Link from 'next/link';
 
 const Contacts = () => {
   return (
     <main>
       <section className="bg-hero-bg bg-center bg-cover ">
-        <div className="sm:px-4 md:px-[42px] xl:px-[132px] lg:px-[66px] sm:py-[80px] md:py-[100px] xl:  lg:py-[100px] marker:mx-auto text-center ">
-          <h3 className="my-11 text-left text-white">
-            Головна сторінка <Link href="/">Adrenalin_gym</Link>
+        <div className="div-container py-[20px] md:py-[44px] mx-auto text-center flex flex-col gap-5">
+          <h3 className="text-left text-white flex gap-2">
+            <Link href="/" className="flex gap-2 items-center">
+              <HomeIcon />
+              <span className="sr-only md:not-sr-only">Adrenalin_gym</span>
+            </Link>
             <span className="font-semibold"> &gt; Контакти</span>
           </h3>
           <h1 className="title mb-14 text-white">Контакти</h1>
         </div>
       </section>
-      <section className=" ">
-        <div className="container xl:px-[132px] lg:px-[66px] py-[100px] mx-auto flex justify-between gap-6">
+      <section className="py-[40px] md:py-[44px] lg:py-[88px]">
+        <div
+          className="div-container flex flex-col 
+        md:flex-row justify-between gap-6"
+        >
           <div className="flex flex-col gap-5">
+            <p className="text-xl md:text-2xl font-semibold mb-4">
+              Де нас знайти?
+            </p>
             <Link
               href="https://goo.gl/maps/LJuXJQ9Kkhcb7FVT7"
               target="_blank"
@@ -30,7 +40,7 @@ const Contacts = () => {
               </span>
             </Link>
 
-            <a
+            <Link
               href="tel:+380978836689"
               target="_blank"
               rel="noopener noreferrer"
@@ -40,7 +50,7 @@ const Contacts = () => {
               <span className="text-mainText text-lg font-bold group-hover:text-hover transition-colors duration-300">
                 +38 097 960 1371 <br /> +38 097 883 6689
               </span>
-            </a>
+            </Link>
 
             <Link
               href="https://www.instagram.com/gym.adrenalin/?hl=uk"
@@ -54,14 +64,16 @@ const Contacts = () => {
               </span>
             </Link>
           </div>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4352.582420173576!2d25.640675527511817!3d49.55410347310727!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473033e3dcc7a371%3A0x8253e4a830a8921d!2z0KLRgNC10L3QsNC20LXRgNC90LjQuSDQt9Cw0Lsg0JDQtNGA0LXQvdCw0LvRltC9!5e0!3m2!1suk!2sua!4v1692117465058!5m2!1suk!2sua"
-            width="800"
-            height="600"
-            // allowfullscreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <div className="h-[300px] md:h-[450px] lg:h-[600px] w-full">
+            <iframe
+              className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4352.582420173576!2d25.640675527511817!3d49.55410347310727!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473033e3dcc7a371%3A0x8253e4a830a8921d!2z0KLRgNC10L3QsNC20LXRgNC90LjQuSDQt9Cw0Lsg0JDQtNGA0LXQvdCw0LvRltC9!5e0!3m2!1suk!2sua!4v1692117465058!5m2!1suk!2sua"
+              width="800"
+              height="600"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </section>
     </main>

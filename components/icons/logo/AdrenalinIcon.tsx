@@ -52,8 +52,8 @@ export const AdrenalinIcon = () => {
           y2="-29.6752"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_269_1142"
@@ -63,8 +63,8 @@ export const AdrenalinIcon = () => {
           y2="-29.6752"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_269_1142"
@@ -74,8 +74,8 @@ export const AdrenalinIcon = () => {
           y2="-29.6752"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_269_1142"
@@ -85,8 +85,8 @@ export const AdrenalinIcon = () => {
           y2="-29.6752"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_269_1142"
@@ -96,8 +96,8 @@ export const AdrenalinIcon = () => {
           y2="-29.6752"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_269_1142"
@@ -107,8 +107,8 @@ export const AdrenalinIcon = () => {
           y2="-29.6752"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_269_1142"
@@ -118,8 +118,8 @@ export const AdrenalinIcon = () => {
           y2="-29.6752"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_269_1142"
@@ -129,8 +129,8 @@ export const AdrenalinIcon = () => {
           y2="-29.6752"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_269_1142"
@@ -140,8 +140,8 @@ export const AdrenalinIcon = () => {
           y2="-29.6752"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F67831" />
-          <stop offset="1" stop-color="#EB3C5A" />
+          <stop stopColor="#F67831" />
+          <stop offset="1" stopColor="#EB3C5A" />
         </linearGradient>
       </defs>
     </svg>

@@ -8,20 +8,24 @@ type titleProps = {
 
 export const CalcTitle = ({ page }: titleProps) => {
   return (
-    <div className="flex justify-around gap-4">
-      <ul className="flex   gap-7 mb-12">
+    <div className="md:mt-8">
+      <ul className="flex  flex-col md:flex-row md:gap-6 mb-12">
         {CalcLinks.map((link, i) => (
           <li
             key={link.key}
-            className={`p-4 text-lg font-medium font-poppins group
-             transition-colors duration-300 w-[373px]  border-main text-mainText
-              hover:text-hover  hover:bg-orange-100  ${
+            className={`p-4 text-base md:text-lg font-medium  lg:font-semibold font-poppins group
+             transition-all duration-300 md:w-[373px]  border-main text-mainText
+              hover:text-main  hover:bg-orange-100  ${
                 i === page ? ' text-bolt border-2 bg-orange-100' : ' border-b-2'
               }`}
           >
             <Link href={link.href} className="flex justify-between">
               {link.text}
-              <div className="rotate-45 text-main group-hover:text-hover ">
+              <div
+                className={` text-main  group-hover:rotate-0
+              transition-all duration-300
+              ${i === page ? ' -rotate-45' : 'rotate-45'}`}
+              >
                 <Arrow />
               </div>
             </Link>
