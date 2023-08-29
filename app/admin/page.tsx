@@ -41,7 +41,7 @@ const Admin = () => {
     };
 
     const fetchPosts = async () => {
-      const res = await postHttpService.getPosts();
+      const res = await postHttpService.getPosts({});
       setPosts(res.posts);
     };
     isLoggedCheck();
