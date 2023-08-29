@@ -15,11 +15,12 @@ export const BlogCard = async ({
 }: {
   searchParams: { [key: string]: string | undefined };
 }) => {
-  const { posts } = await postHttpService.getPosts({
-    page: 1,
+  const { posts, pages } = await postHttpService.getPosts({
+    page: searchParams?.page || 1,
     search: searchParams?.search,
     topic: searchParams?.topic,
   });
+
   return (
     <>
       {posts.map(({ id, topic, title, description, image }: BlogProps) => (
@@ -55,6 +56,32 @@ export const BlogCard = async ({
           </div>
         </div>
       ))}
+      <div className="flex justify-between">
+        <div>
+          <p className="text-sm text-gray-700 flex gap-1 font-medium">
+            <span className="">Cторінка {searchParams?.page || 1} з </span>
+            <span className="">{pages}</span> сторінок
+          </p>
+        </div>
+        <div>
+          <Link
+            href={`/blog/page=${Number(searchParams.page) - 1}/${
+              searchParams?.search || ''
+            } `}
+            className="p-2"
+          >
+            Попередня
+          </Link>
+          <Link
+            href={`/blog/page=${(Number(searchParams.page) || 1) + 1}/${
+              searchParams?.search || ''
+            } `}
+            className="p-2 "
+          >
+            Наступна
+          </Link>
+        </div>
+      </div>
     </>
   );
 };
