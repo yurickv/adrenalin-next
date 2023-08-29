@@ -17,10 +17,12 @@ import { FatCalcIcon } from './icons/forPopMenu/FatCalcIcon';
 import { CaloriesCalcIcon } from './icons/forPopMenu/CaloriesCalcIcon';
 import { XMarkIcon } from './icons/XMarkIcon';
 import { HomeIcon } from './icons/forPopMenu/HomeIcon';
+import { Search } from '@/components/Search';
 
 export const Header = () => {
   const params = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchText, setSearchText] = useState<string>('');
 
   const products = [
     {
@@ -142,10 +144,12 @@ export const Header = () => {
           <BurgerMenu aria-hidden="true" />
         </button>
       </div>
-      <div className=" hidden md:flex md:gap-4 text-main">
+
+      <div className=" hidden md:flex md:gap-4 text-main relative">
+        <Search />
         <a
           href="https://www.instagram.com/gym.adrenalin/?hl=uk"
-          className=" hover:text-hover transition-colors duration-300 cursor-pointer"
+          className=" hover:text-hover transition-colors duration-300 cursor-pointer peer-focus:hidden"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -153,7 +157,7 @@ export const Header = () => {
         </a>
         <a
           href="tel:+38(097)8836689"
-          className=" hover:text-hover transition-colors duration-300 cursor-pointer"
+          className=" hover:text-hover transition-colors duration-300 cursor-pointer peer-focus:hidden"
           target="_blank"
           rel="noopener noreferrer"
         >
