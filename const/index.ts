@@ -31,7 +31,6 @@ export const galeryCardInfo = [
 ];
 
 export const CalcLinks = [
-  // { href: "/", key: "Main", text: "Головна" },
   { href: '/calcs/imt-calculator', key: 'imt-calc', text: 'Індекс маси тіла' },
   {
     href: '/calcs/fat-calculator',

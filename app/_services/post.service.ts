@@ -16,6 +16,7 @@ class PostService {
           process.env.HOST || process.env.NEXT_PUBLIC_HOST
         }/api/post?page=${page}&limit=${limit}&search=${search}&topic=${topic}`
       );
+
       return posts.json();
     } catch (e) {
       console.log(e);

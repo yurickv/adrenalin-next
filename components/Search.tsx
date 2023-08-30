@@ -6,14 +6,14 @@ import Link from 'next/link';
 export function Search() {
   const [searchText, setSearchText] = useState<string>('');
   return (
-    <div className="w-full">
+    <div className="">
       <Popover className="relative">
         {({ open }) => (
           <>
             <Popover.Button
               className={`
-                ${open ? '' : 'text-opacity-90'}
-                group inline-flex items-center rounded-md bg-orange-700 px-3 py-2 text-base font-medium text-white hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                ${open ? 'bg-orange-100 !text-main' : 'text-opacity-90'}
+                group inline-flex items-center rounded-md hover:bg-orange-100 text-mainText p-2 text-base font-medium hover:text-main hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
               <span>
                 <SearchIcon />
@@ -28,34 +28,34 @@ export function Search() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute -left-1/2 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
-                <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                  <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
-                    <div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50">
-                      <div className="flex items-center justify-center text-white "></div>
-                      <div className="flex flex-col ml-4 items-center justify-center">
-                        <input
-                          placeholder="Введіть слово для пошуку"
-                          className="py-2 pl-10 pr-2 w-full border border-main "
-                          value={searchText}
-                          onChange={e => setSearchText(e.target.value)}
-                        />
-                        <Link
-                          href={`/blog?search=${searchText}`}
-                          onClick={e => {
-                            if (!searchText.trim()) {
-                              e.preventDefault();
-                            }
-                          }}
-                          className={` self-end ${
-                            searchText.trim()
-                              ? 'text-main'
-                              : 'text-gray-200 cursor-not-allowed'
-                          }`}
-                        >
-                          Знайти
-                        </Link>
-                      </div>
+              <Popover.Panel className="absolute -left-1/2 md:-left-[500%] z-10 mt-3 w-screen max-w-[290px] md:max-w-[380px] lg:-max-w-[440px] -translate-x-1/2 transform px-0 md:px-4 ">
+                <div
+                  className="overflow-hidden rounded-lg md:rounded-bl-lg md:rounded-br-lg md:rounded-tl-lg md:rounded-tr-none
+                shadow-lg ring-1 ring-black ring-opacity-5"
+                >
+                  <div className="relative grid gap-8 bg-white p-4 ">
+                    <div className="flex flex-col items-center justify-center">
+                      <input
+                        placeholder="Пошук постів"
+                        className="p-2 border border-main md:w-[316px]"
+                        value={searchText}
+                        onChange={e => setSearchText(e.target.value)}
+                      />
+                      <Link
+                        href={`/blog?search=${searchText}`}
+                        onClick={e => {
+                          if (!searchText.trim()) {
+                            e.preventDefault();
+                          }
+                        }}
+                        className={` self-end ${
+                          searchText.trim()
+                            ? 'text-main'
+                            : 'text-gray-200 cursor-not-allowed'
+                        }`}
+                      >
+                        Знайти
+                      </Link>
                     </div>
                   </div>
                 </div>

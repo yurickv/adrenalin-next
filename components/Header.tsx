@@ -18,13 +18,15 @@ import { CaloriesCalcIcon } from './icons/forPopMenu/CaloriesCalcIcon';
 import { XMarkIcon } from './icons/XMarkIcon';
 import { HomeIcon } from './icons/forPopMenu/HomeIcon';
 import { Search } from '@/components/Search';
+import { AdrenalinIcon } from './icons/logo/AdrenalinIcon';
+import { GymIcon } from './icons/logo/GymIcon';
 
 export const Header = () => {
   const params = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchText, setSearchText] = useState<string>('');
 
-  const products = [
+  const calcHeader = [
     {
       name: 'Індекс маси тіла',
       description: 'Калькулятор для визначення індексу маси тіла',
@@ -51,75 +53,86 @@ export const Header = () => {
     sm:px-4 md:px-[40px] lg:px-[66px] xl:px-[132px]
     flex justify-between items-center py-5 border-b  gap-4 mr-auto ml-auto "
     >
-      <nav className="flex gap-10">
+      <nav className="flex  md:gap-5 lg:gap-10">
         <Link
           className="flex items-center gap-2 text-main hover:text-hover transition-colors duration-300"
           href="/"
         >
           <span className="sr-only">Adrenalin gym</span>
-          <Image
-            src="/ADRENALIN_GYM.png"
-            alt="Adrenalin Gym"
-            width={217}
-            height={22}
-          />
+          <div className="flex flex-col items-center">
+            <AdrenalinIcon />
+            <GymIcon />
+          </div>
           {params === '/' && <Barbell />}
         </Link>
 
-        <Popover.Group className="hidden md:flex md:gap-x-7">
+        <Popover.Group className="hidden md:flex md:gap-x-2 lg:gap-x-7">
           <Popover className="relative">
-            <Popover.Button
-              className=" group flex items-center gap-x-1 font-poppins hover:text-main hover:bg-orange-100
-             text-mainText rounded-lg px-3 py-2 outline-none"
-            >
-              Калькулятори
-              <div className="h-5 w-5 flex-none text-gray-400 group-hover:text-main">
-                <ShevronDown aria-hidden="true" />
-              </div>
-            </Popover.Button>
+            {({ open }) => (
+              <>
+                <Popover.Button
+                  className={`
+                ${open ? 'bg-orange-100 !text-main' : ''}
+                  group flex items-center gap-1 font-poppins hover:text-main hover:bg-orange-100
+             text-mainText rounded-lg px-3 py-2 outline-none`}
+                >
+                  Калькулятори
+                  <div
+                    className={`
+                ${
+                  open ? 'bg-orange-100 !text-main rotate-180' : ''
+                } h-5 w-5 flex-none text-mainText group-hover:text-main`}
+                  >
+                    <ShevronDown aria-hidden="true" />
+                  </div>
+                </Popover.Button>
 
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
-            >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300">
-                <div className="p-4">
-                  {products.map(item => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-orange-100"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-orange-100 group-hover:bg-white">
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-200"
+                  enterFrom="opacity-0 translate-y-1"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition ease-in duration-150"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 translate-y-1"
+                >
+                  <Popover.Panel className="absolute -left-1/2 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300">
+                    <div className="p-4">
+                      {calcHeader.map(item => (
                         <div
-                          className="h-6 w-6 text-gray-600 group-hover:text-main"
-                          aria-hidden="true"
+                          key={item.name}
+                          className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-orange-100"
                         >
-                          {item.icon}
+                          <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-orange-100 group-hover:bg-white">
+                            <div
+                              className="h-6 w-6 text-gray-600 group-hover:text-main"
+                              aria-hidden="true"
+                            >
+                              {item.icon}
+                            </div>
+                          </div>
+                          <div className="flex-auto">
+                            <a
+                              href={item.href}
+                              className="block font-semibold text-mainText hover:text-main"
+                            >
+                              {item.name}
+                              <span className="absolute inset-0" />
+                            </a>
+                            <p className="mt-1 text-gray-600">
+                              {item.description}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="flex-auto">
-                        <a
-                          href={item.href}
-                          className="block font-semibold text-mainText hover:text-main"
-                        >
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
-                      </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </Popover.Panel>
-            </Transition>
+                  </Popover.Panel>
+                </Transition>
+              </>
+            )}
           </Popover>
 
-          <ul className="flex  text-small gap-7 text-base">
+          <ul className="flex  text-small md:gap-2 lg:gap-7 text-base">
             {NavLinks.map(link => (
               <li
                 key={link.key}
@@ -206,7 +219,12 @@ export const Header = () => {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main">
+                      <Disclosure.Button
+                        className={` ${
+                          open ? 'bg-orange-100 !text-main' : ''
+                        } flex w-full items-center justify-between rounded-lg py-2 
+                      pl-3 pr-3.5 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main`}
+                      >
                         Калькулятори
                         <div
                           className={` ${open ? 'rotate-180' : ''}
@@ -216,12 +234,13 @@ export const Header = () => {
                         </div>
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...products].map(item => (
+                        {[...calcHeader].map(item => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7
+                             text-mainText hover:bg-orange-100 hover:text-main"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -249,7 +268,7 @@ export const Header = () => {
                   Контакти
                 </Link>
               </div>
-              <div className="py-6 flex gap-4 text-main justify-center">
+              <div className="py-10 flex gap-8 text-main items-center justify-center">
                 <a
                   href="https://www.instagram.com/gym.adrenalin/?hl=uk"
                   className=" hover:text-hover transition-colors duration-300 cursor-pointer"
@@ -266,6 +285,7 @@ export const Header = () => {
                 >
                   <Phone />
                 </a>
+                <Search />
               </div>
             </div>
           </div>
