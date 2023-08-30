@@ -76,7 +76,7 @@ export const BlogCard = async ({
         <div>
           <p className="text-sm text-gray-700 flex gap-1 font-medium">
             <span className="">Cторінка {searchParams?.page || 1} з </span>
-            <span className="">{pages}</span> сторінок
+            <span className="">{pages}</span>
           </p>
         </div>
         <div className="flex gap-4">

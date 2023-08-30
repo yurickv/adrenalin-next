@@ -1,4 +1,4 @@
-import { Button } from '../Button';
+import { ButtonSecond } from '../ButtonSecond';
 import { BlogSectionCard } from './BlogSectionCard';
 
 export const BlogSection = () => {
@@ -9,11 +9,10 @@ export const BlogSection = () => {
         <div className="flex flex-col md:grid-cols-2  md:grid lg:grid-cols-3 justify-items-center gap-10 md:gap-x-6 md:gap-y-12 mt-10 md:mt-10 lg:mt-14 items-center  justify-center">
           <BlogSectionCard />
         </div>
-        <Button
+        <ButtonSecond
           route="/blog"
           text="Більше статтей..."
-          width="inline-block mx-auto mt-6 md:mt-8 lg:mt-11 w-[302px] !bg-none 
-        !border-main border-2 border-solid !text-mainText !shadow-none"
+          width="inline-block mx-auto mt-6 md:mt-8 lg:mt-11 w-[302px]"
         />
       </div>
     </section>

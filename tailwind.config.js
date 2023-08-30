@@ -28,7 +28,6 @@ module.exports = {
         'calc-bg':
           'linear-gradient(to right, rgba(219, 219, 219, 0.5), rgba(219, 219, 219, 0.5)) ',
         'calc-bg-woman': "url('/woman.webp')",
-        // ", linear-gradient(to right, rgba(219, 219, 219, 0.5), rgba(219, 219, 219, 0.5)) ",
       },
       listStyleImage: {
         checkmark: 'url("/chack.png")',
@@ -37,4 +36,3 @@ module.exports = {
   },
   plugins: [],
 };
-// last:md:block even:sm:hidden even:lg:block
