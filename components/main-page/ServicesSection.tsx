@@ -12,9 +12,8 @@ export const ServicesSection = () => {
         <Button
           route="/services"
           text="Детальніше..."
-          width="inline-block mx-auto mt-4 w-[302px] !bg-none 
-        !border-main border-2 border-solid !text-mainText 
-        !hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px]"
+          width="inline-block mx-auto mt-6 md:mt-8 lg:mt-11 w-[302px] !bg-none 
+        !border-main border-2 border-solid !text-mainText !shadow-none"
         />
       </div>
     </section>

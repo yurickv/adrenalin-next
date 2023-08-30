@@ -43,46 +43,59 @@ export const Footer = () => {
           <h3 className="ml-2 font-bold">Клієнтам</h3>
           <ul className="md:flex md:flex-wrap md:justify-between gap-4 text-small  text-base ">
             <Popover className="relative">
-              <Popover.Button
-                className=" group flex items-center gap-x-1 font-poppins hover:text-main hover:bg-orange-100
-             text-mainText rounded-lg p-2 outline-none"
-              >
-                Калькулятори
-                <div className="h-5 w-5 flex-none text-gray-400 group-hover:text-main">
-                  <ShevronDown aria-hidden="true" />
-                </div>
-              </Popover.Button>
+              {({ open }) => (
+                <>
+                  <Popover.Button
+                    className={`
+                ${
+                  open ? 'bg-orange-100 !text-main' : ''
+                } group flex items-center gap-x-1 
+                font-poppins hover:text-main hover:bg-orange-100
+                    text-mainText rounded-lg p-2 outline-none`}
+                  >
+                    Калькулятори
+                    <div
+                      className={`${
+                        open ? 'bg-orange-100 !text-main rotate-180' : ''
+                      } 
+                    h-5 w-5 flex-none text-gray-400 group-hover:text-main`}
+                    >
+                      <ShevronDown aria-hidden="true" />
+                    </div>
+                  </Popover.Button>
 
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-200"
-                enterFrom="opacity-0 translate-y-1"
-                enterTo="opacity-100 translate-y-0"
-                leave="transition ease-in duration-150"
-                leaveFrom="opacity-100 translate-y-0"
-                leaveTo="opacity-0 translate-y-1"
-              >
-                <Popover.Panel className="absolute  top-full z-10 mt-2 w-screen max-w-sm overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300">
-                  <div className=" p-2">
-                    {products.map(item => (
-                      <div
-                        key={item.name}
-                        className="group relative flex items-center gap-x-4 rounded-lg p-2 text-sm leading-6 hover:bg-orange-100"
-                      >
-                        <div className="flex-auto">
-                          <a
-                            href={item.href}
-                            className="block font-semibold text-mainText"
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="opacity-0 translate-y-1"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transition ease-in duration-150"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 translate-y-1"
+                  >
+                    <Popover.Panel className="absolute -left-1/2 top-full z-10 mt-2 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300">
+                      <div className=" p-2">
+                        {products.map(item => (
+                          <div
+                            key={item.name}
+                            className="group relative flex items-center gap-x-4 rounded-lg p-2 text-sm leading-6 hover:bg-orange-100"
                           >
-                            {item.name}
-                            <span className="absolute inset-0" />
-                          </a>
-                        </div>
+                            <div className="flex-auto">
+                              <a
+                                href={item.href}
+                                className="block font-semibold text-mainText"
+                              >
+                                {item.name}
+                                <span className="absolute inset-0" />
+                              </a>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </Popover.Panel>
-              </Transition>
+                    </Popover.Panel>
+                  </Transition>
+                </>
+              )}
             </Popover>
             {NavLinks.map(link => (
               <li
