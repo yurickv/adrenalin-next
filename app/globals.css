@@ -97,3 +97,7 @@ details[open] summary div {
     border-radius: 50%;
   }
 }
+
+.disabled{
+  @apply pointer-events-none opacity-30
+}

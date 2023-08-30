@@ -22,6 +22,17 @@ export const BlogCard = async ({
     topic: searchParams?.topic,
   });
 
+  const isFirstPage =
+    !Number(searchParams.page) || Number(searchParams.page) === 1;
+
+  const isLastPage = searchParams?.page
+    ? Number(searchParams.page) === pages
+    : pages === 1;
+
+  if (Number(searchParams.page) > pages || Number(searchParams.page) < 1) {
+    return <b>Not found</b>;
+  }
+
   return (
     <>
       {posts.map(({ id, topic, title, description, image }: BlogProps) => (
@@ -70,27 +81,26 @@ export const BlogCard = async ({
         </div>
         <div className="flex gap-4">
           <Link
-            href={`/blog/page=${Number(searchParams.page) - 1}/${
-              searchParams?.search || ''
-            } `}
-            aria-disabled={Number(searchParams.page) <= 2 ? false : true}
-            className="flex gap-2 text-main text-center rounded-full p-4 hover:text-hover
-            hover:bg-orange-100 transition-all duration-300 cursor-pointer"
+            href={`/blog?page=${Number(searchParams.page) - 1}${
+              searchParams?.search ? '&' + searchParams.search : ''
+            }`}
+            className={`flex gap-2 text-main text-center rounded-full p-4 hover:text-hover hover:bg-orange-100 transition-all duration-300 cursor-pointer ${
+              isFirstPage ? 'disabled' : ''
+            }`}
           >
-            <div className="rotate-180   ">
+            <div className="rotate-180">
               <Arrow />
             </div>
             Попередня
           </Link>
           <Link
-            href={`/blog/page=${(Number(searchParams.page) || 1) + 1}/${
-              searchParams?.search || ''
-            } `}
-            aria-disabled={searchParams.page === pages ? true : false}
-            className="flex gap-2 text-main text-center rounded-full p-4 hover:text-hover
-            hover:bg-orange-100 transition-all duration-300 cursor-pointer"
+            href={`/blog?page=${(Number(searchParams.page) || 1) + 1}${
+              searchParams?.search ? '&' + searchParams.search : ''
+            }`}
+            className={`flex gap-2 text-main text-center rounded-full p-4 hover:text-hover hover:bg-orange-100 transition-all duration-300 cursor-pointer ${
+              isLastPage ? 'disabled' : ''
+            }`}
           >
-            {' '}
             Наступна
             <div className=" ">
               <Arrow />
