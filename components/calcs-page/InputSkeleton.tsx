@@ -21,8 +21,8 @@ export const InputSkeleton = ({
 }: Props) => {
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex gap-7 items-center">
-        <label htmlFor={text} className="font-bold">
+      <div className="flex gap-7 items-center justify-between">
+        <label htmlFor={text} className="font-bold md:text-lg">
           {text}
         </label>
         <div className="relative flex pb-1">
@@ -34,10 +34,11 @@ export const InputSkeleton = ({
             onChange={setAny}
             type="number"
             onBlur={onBlur}
-            className="font-bold rounded-lg border-mainText border-2 p-2 text-center w-[120px] hover:border-main focus:ring-2 focus:ring-main outline-none"
+            className="font-bold md:text-lg rounded-lg border-mainText border-2 p-2 text-center max-w-[120px]
+             hover:border-main focus:ring-2 focus:ring-main outline-none"
           />
           {error && (
-            <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-lg w-[100px]">
+            <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-lg max-w-[100px]">
               {error}
             </p>
           )}

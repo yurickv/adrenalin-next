@@ -63,9 +63,9 @@ export const CaloriesCalcList = () => {
   };
 
   return (
-    <form className="flex flex-col gap-7">
+    <form className="flex flex-col gap-7 ">
       <label htmlFor="sex" className="font-bold flex items-center gap-3">
-        Стать: &nbsp; &nbsp;
+        <span className="p-2 text-lg">Стать: </span>
         <label
           htmlFor="woman"
           className={`cursor-pointer flex items-center justify-center 
@@ -139,7 +139,8 @@ export const CaloriesCalcList = () => {
       </label>
       <select
         name="activity"
-        className="w-[370px] font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main"
+        className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
+        font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main"
         value={activity}
         onChange={e => setActivity(Number(e.target.value))}
       >

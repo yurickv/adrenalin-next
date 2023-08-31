@@ -1,18 +1,23 @@
-import { MotivationCard } from "./MotivationSectionCard";
-import Image from "next/image";
+import { MotivationCard } from './MotivationSectionCard';
+import Image from 'next/image';
 
 export const Motivation = () => {
   return (
-    <section className="py-[88px]">
-      <div className="container xl:px-[132px] lg:px-[66px] text-center mx-auto">
+    <section className="py-[40px] md:py-[44px] lg:py-[88px]">
+      <div className="div-container">
         <h2 className="title">Про нас</h2>
-        <div className="flex gap-2 mt-14">
-          <Image
-            src="/bodybuilder.jpg"
-            alt="Man with dumbells"
-            width={473}
-            height={616}
-          />
+        <div className="mx-auto">
+          <div className="float-left relative hidden md:block h-[490px] w-[320px] lg:w-[470px] lg:h-[720px]">
+            <Image
+              src="/bodybuilder.jpg"
+              alt="Man with dumbells"
+              fill
+              style={{
+                objectFit: 'cover',
+              }}
+            />
+          </div>
+
           <MotivationCard />
         </div>
       </div>

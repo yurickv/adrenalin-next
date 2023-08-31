@@ -1,13 +1,20 @@
-import { ServiceCardMain } from "./ServicesSectionCard";
+import { Button } from '../Button';
+import { ButtonSecond } from '../ButtonSecond';
+import { ServiceCardMain } from './ServicesSectionCard';
 
 export const ServicesSection = () => {
   return (
-    <section className="py-[88px] ">
-      <div className="container xl:px-[132px] lg:px-[66px]  mx-auto">
+    <section className="py-[40px] md:py-[44px] lg:py-[88px]">
+      <div className="div-container text-center">
         <h3 className="title">Що ми пропонуємо?</h3>
-        <div className="flex gap-6 mt-14">
+        <div className=" md:flex md:flex-row md:gap-6 mt-6 md:mt-10 lg:mt-14 items-center">
           <ServiceCardMain />
         </div>
+        <ButtonSecond
+          route="/services"
+          text="Детальніше..."
+          width="inline-block mx-auto mt-6 md:mt-8 lg:mt-11 w-[302px]"
+        />
       </div>
     </section>
   );

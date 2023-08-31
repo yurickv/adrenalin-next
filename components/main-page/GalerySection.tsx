@@ -1,9 +1,9 @@
-import GalerySectionCard from "./GalerySectionCard";
+import GalerySectionCard from './GalerySectionCard';
 
 export const GalerySection = () => {
   return (
-    <section className="py-[88px] ">
-      <div className="container xl:px-[132px] lg:px-[66px]  mx-auto text-center">
+    <section className="py-[40px] md:py-[44px] lg:py-[88px]">
+      <div className="div-container text-center">
         <h3 className="title">Галерея</h3>
 
         <GalerySectionCard />

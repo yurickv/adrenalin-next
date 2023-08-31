@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { authMiddleware } from '@/app/api/_middlewares/auth.middleware';
 import { connectToDB } from '@/app/api/_utils/database';
 import Post from '@/app/api/_schemas/post.schema';
 import { BadRequest, NotFound } from '@/app/api/_helpers/errors';
 import { uploadImage } from '@/app/api/_helpers/uploadImage';
 import { transformImage } from '@/app/api/_helpers/transformImage';
-import { addImageSrcToMarkup } from '@/app/api/_helpers/addImageSrcToMarkup';
 
 type Params = {
   id?: string;
@@ -37,6 +37,8 @@ export const DELETE = async (
   { params }: { params: Params }
 ) => {
   try {
+    await authMiddleware();
+
     if (!params.id) {
       throw new BadRequest('You must add id in your query params!');
     }
@@ -63,7 +65,10 @@ export const PATCH = async (
   { params }: { params: Params }
 ) => {
   try {
+    await authMiddleware();
+
     const contentLength = req.headers.get('content-length');
+
     if (!Number(contentLength)) {
       throw new BadRequest(
         'At least one field is required! (title, description, topic, image)'
@@ -73,13 +78,17 @@ export const PATCH = async (
     const data = await req.formData();
     const transformedData = Object.fromEntries(data.entries());
 
+    await connectToDB();
     const post = await Post.findById(params.id);
     if (!post) {
       throw new NotFound(`Contact with id:'${params.id}' not found`);
     }
 
     const file: File | null = data.get('image') as unknown as File;
-    const markup = data.get('markup') as string;
+
+    Object.keys(transformedData).forEach(
+      key => (post[key] = transformedData[key])
+    );
 
     if (file) {
       const transformedImage = await transformImage(file);
@@ -88,10 +97,6 @@ export const PATCH = async (
       post.image = uploadedImage as string;
     }
 
-    if (markup) {
-      const newMarkup = addImageSrcToMarkup(markup, post.image as string);
-      post.markup = newMarkup;
-    }
     post.save();
 
     return NextResponse.json({ post }, { status: 200 });

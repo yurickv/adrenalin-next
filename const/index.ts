@@ -1,8 +1,7 @@
 export const NavLinks = [
-  // { href: "/", key: "Main", text: "Головна" },
+  // { href: '/', key: 'Main', text: 'Головна' },
   { href: '/blog', key: 'blog', text: 'Блог' },
   { href: '/services', key: 'services', text: 'Послуги' },
-  { href: '/calcs', key: 'calcs', text: 'Калькулятори' },
   { href: '/contacts', key: 'contacts', text: 'Контакти' },
 ];
 
@@ -21,48 +20,6 @@ export const cardInfo = [
   },
 ];
 
-export const serviceCardInfo = [
-  {
-    src: '/bodybuilder.jpg',
-    alt: 'Man with dumbells',
-    title: 'Тренування',
-    text: 'Тренування на професійному обладнанні в чистому, просторому приміщенні тренажерного залу Адреналін',
-  },
-  {
-    src: '/bodybuilder.jpg',
-    alt: 'Man with dumbells',
-    title: 'Тренування з тренером',
-    text: 'Передаємо Вам кращий досвід і практикидля досягнення максимально швидкого результату',
-  },
-  {
-    src: '/bodybuilder.jpg',
-    alt: 'Man with dumbells',
-    title: 'План харчування',
-    text: 'Індивідуальний тижневий план харчування, розроблений спеціально для Вас із врахуванням віку, ваги, Вашої мети',
-  },
-];
-
-export const blogCardInfo = [
-  {
-    src: '/man-with-barbell.jpg',
-    alt: 'Man with dumbells',
-    teg: '#Training',
-    title: 'Як накачати біцепс?',
-  },
-  {
-    src: '/food.jpg',
-    alt: 'Sandviches',
-    teg: '#Food',
-    title: 'Здорове харчування - це просто!',
-  },
-  {
-    src: '/fit-blond.jpg',
-    alt: 'fit-blond-woman',
-    teg: '#Motivation',
-    title: 'Де взяти сили для тренувань?',
-  },
-];
-
 export const galeryCardInfo = [
   { imageUrl: '/fotoZal/foto_zal_7.jpg', alt: 'foto_zal', data: '0' },
   // { imageUrl: "/fotoZal/foto_zal_1.jpg", alt: "foto_zal", data: "1" },
@@ -74,7 +31,6 @@ export const galeryCardInfo = [
 ];
 
 export const CalcLinks = [
-  // { href: "/", key: "Main", text: "Головна" },
   { href: '/calcs/imt-calculator', key: 'imt-calc', text: 'Індекс маси тіла' },
   {
     href: '/calcs/fat-calculator',
@@ -87,3 +43,10 @@ export const CalcLinks = [
     text: 'Потреба калорій',
   },
 ];
+
+export const SCREEN_WIDTHS = {
+  mobile: 320,
+  tablet: 768,
+  desktop: 1280,
+  xlDesktop: 1440,
+};

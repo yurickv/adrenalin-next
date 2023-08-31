@@ -20,22 +20,28 @@
 body {
   color: #85777b;
   font-family: 'Poppins';
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
 }
 .title {
-  @apply text-5xl font-bold text-center;
+  @apply mb-5 md:mb-8 lg:mb-16 text-4xl md:text-5xl font-bold text-center;
 }
+.div-container-hero {
+  @apply flex flex-col gap-11 mx-auto max-w-[640px] md:max-w-[768px] lg:max-w-[845px] px-4 md:px-[40px] lg:px-[66px] xl:px-[132px]  py-[80px] md:py-[100px] xl:py-[200px]  lg:py-[200px];
+}
+
+.div-container {
+  @apply mx-auto px-4 md:px-[40px] lg:px-[66px] xl:px-[132px] xl:max-w-[1919px];
+}
+/* ____________________Section Motivation_____________________ */
+details[open] summary {
+  @apply bg-orange-100 border-2 transition-all duration-300;
+}
+details[open] summary div {
+  @apply -rotate-45 transition-all duration-300;
+}
+
 /* __________________Blog card styles __________________________*/
 .section-blog-item {
   @apply pt-[46px] pb-[90px] flex flex-col items-center;
-}
-.div-conteiter-blog {
-  @apply container md:px-10 lg:px-[100px] xl:px-[136px] text-center flex flex-col gap-6;
 }
 .h1-title-blog {
   @apply font-poppins text-[32px] font-semibold text-mainText;
@@ -65,6 +71,11 @@ body {
   @apply font-poppins font-normal text-lg text-mainText leading-normal mt-2 text-justify indent-5;
 }
 
+.form-input {
+  @apply w-full p-3 border-gray-500 rounded-lg border-2;
+}
+
+/* __________________input range________________ */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   input[type='range']::-webkit-slider-thumb {
     width: 15px;
@@ -76,4 +87,24 @@ body {
     box-shadow: -405px 0 0 400px #85777b;
     border-radius: 50%;
   }
+}
+
+.disabled {
+  @apply pointer-events-none opacity-30;
+}
+
+.background {
+  @apply from-red-500 to-orange-500;
+}
+.background-hover {
+  @apply from-red-700 to-orange-700;
+}
+
+.pagination-button {
+  @apply py-4 px-6 font-poppins text-[16px] leading-normal border border-main rounded-[10px] cursor-pointer
+}
+.isActive {
+  @apply text-white bg-gradient-to-r from-red-500 to-orange-500  hover:from-red-600
+  hover:to-orange-600 focus:from-red-600 focus:to-orange-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
+  shadow-[0_4px_9px_-4px_#3b71ca]
 }

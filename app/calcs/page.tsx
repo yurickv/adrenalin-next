@@ -1,20 +1,34 @@
+import type { Metadata } from 'next';
 import { CalcTitle } from '@/components/calcs-page/CalcsTitle';
+import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
+import Link from 'next/link';
 
+export const metadata: Metadata = {
+  title: 'Калькулятори',
+  description:
+    'Обери калькулятор для себе. Обраховуй свій ІМТ, рахуй необхідні калорії та процент жиру у своєму організмі!',
+};
 const Calc = () => {
   return (
     <main>
       <section className="bg-hero-bg bg-center bg-cover ">
-        <div className="container xl:px-[132px] lg:px-[66px]  py-[100px] mx-auto text-center">
-          <h3 className="my-11 text-left text-white">
-            Головна сторінка Adrenalin_gym
+        <div
+          className="div-container  
+        py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5"
+        >
+          <h3 className=" text-left text-white flex gap-2">
+            <Link href="/" className="flex gap-2 items-center">
+              <HomeIcon />
+              <span className="sr-only md:not-sr-only">Adrenalin_gym</span>
+            </Link>
             <span className="font-semibold"> &gt; Калькулятори</span>
           </h3>
           <h1 className="title mb-14 text-white">Калькулятори</h1>
         </div>
       </section>
       <section>
-        <div className="container xl:px-[132px] lg:px-[66px]  mx-auto text-center mt-6">
+        <div className="div-container">
           <CalcTitle />
           <Image
             src="/fit-blond.jpg"

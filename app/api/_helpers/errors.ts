@@ -16,6 +16,15 @@ export class NotFound extends Error {
   }
 }
 
+export class Unauthorized extends Error {
+  private status;
+  constructor(message: string) {
+    super(message);
+    this.status = 401;
+    this.message = message;
+  }
+}
+
 export class Conflict extends Error {
   private status;
   constructor(message: string) {
