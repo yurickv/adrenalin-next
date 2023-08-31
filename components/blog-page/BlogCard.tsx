@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import postHttpService from '@/app/_services/post.service';
-import { Arrow } from '../icons/Arrow-down';
+import { Pagination } from '@/components/blog-page/Pagination';
 
 type BlogProps = {
   id: string;
@@ -21,13 +21,6 @@ export const BlogCard = async ({
     search: searchParams?.search,
     topic: searchParams?.topic,
   });
-
-  const isFirstPage =
-    !Number(searchParams.page) || Number(searchParams.page) === 1;
-
-  const isLastPage = searchParams?.page
-    ? Number(searchParams.page) === pages
-    : pages === 1;
 
   if (Number(searchParams.page) > pages || Number(searchParams.page) < 1) {
     return <b>Not found</b>;
@@ -84,34 +77,7 @@ export const BlogCard = async ({
             <span className="">{pages}</span>
           </p>
         </div>
-        <div className="flex gap-4">
-          <Link
-            href={`/blog?page=${Number(searchParams.page) - 1}${
-              searchParams?.search ? '&' + searchParams.search : ''
-            }`}
-            className={`flex gap-2 text-main text-center rounded-full p-4 hover:text-hover hover:bg-orange-100 transition-all duration-300 cursor-pointer ${
-              isFirstPage ? 'disabled' : ''
-            }`}
-          >
-            <div className="rotate-180">
-              <Arrow />
-            </div>
-            Попередня
-          </Link>
-          <Link
-            href={`/blog?page=${(Number(searchParams.page) || 1) + 1}${
-              searchParams?.search ? '&' + searchParams.search : ''
-            }`}
-            className={`flex gap-2 text-main text-center rounded-full p-4 hover:text-hover hover:bg-orange-100 transition-all duration-300 cursor-pointer ${
-              isLastPage ? 'disabled' : ''
-            }`}
-          >
-            Наступна
-            <div className=" ">
-              <Arrow />
-            </div>
-          </Link>
-        </div>
+        <Pagination searchParams={searchParams} pages={pages} />
       </div>
     </>
   );
