@@ -25,6 +25,27 @@ export const BlogCard = async ({
   if (Number(searchParams.page) > pages || Number(searchParams.page) < 1) {
     return <b>Not found</b>;
   }
+  if (!pages) {
+    return (
+      <div className="relative mx-auto md:col-span-2 lg:col-span-3">
+        <div className="relative h-[400px]  w-[340px] md:h-[490px] md:w-[720px] lg:w-[1070px] lg:h-[720px] ">
+          <Image
+            src="/man-fitness-404.jpg"
+            alt="Man with dumbells"
+            fill
+            style={{
+              objectFit: 'cover',
+            }}
+          />
+        </div>
+        <p className="absolute left-5 top-5 md:top-1/3 text-white md:text-xl lg:text-2xl font-bold">
+          Упс.
+          <br className="md:hidden" /> По Вашому запиту <br /> нічого не
+          знайдено!
+        </p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -60,7 +81,7 @@ export const BlogCard = async ({
             >
               #{topic}
             </Link>
-            <h5 className="text-2xl font-semibold leading-tight text-neutral-800 dark:text-neutral-50 h-16">
+            <h5 className="text-lg md:text-2xl font-semibold leading-tight text-neutral-800 dark:text-neutral-50 h-16 line-clamp-3">
               {title}
             </h5>
             <p className="mt-6 line-clamp-3">{description}</p>
