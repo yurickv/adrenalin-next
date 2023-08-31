@@ -41,7 +41,7 @@ async function BlogPage({ params }: { params: { id: string } }) {
           >
             #{post.topic}
           </Link>
-          <h1 className="font-poppins text-[32px] font-semibold text-mainText pr-28">
+          <h1 className="font-poppins text-[32px] font-semibold text-mainText pr-28 line-clamp-3">
             {post.title}
           </h1>
           <p className="description">{post.description}</p>

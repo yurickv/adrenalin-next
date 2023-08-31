@@ -1,14 +1,14 @@
 import { Button } from '../Button';
+import { ButtonSecond } from '../ButtonSecond';
 
 export const ButtonGroup = () => {
   return (
     <>
       <p className="font-bold mt-12">Дізнайся більше про здорове харчування</p>
-      <Button
+      <ButtonSecond
         route="/blog"
         text="Все про харчування"
-        width="mx-auto mt-4 w-[240px] md:w-[284px] !bg-none 
-        !border-main border-2 border-solid !text-mainText !shadow-none"
+        width="mx-auto mt-4 w-[240px] md:w-[284px]"
       />
       <p className="font-bold mt-12">
         Пройди нашу програму харчування з тренером

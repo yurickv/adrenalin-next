@@ -15,11 +15,12 @@ export const ButtonForPrice: React.FC<ButtonForPriceProps> = ({
         onClick={() => onClickMore(name)}
         className={`mx-auto mt-4  ${
           isOpen
-            ? 'bg-gradient-to-l from-main to-hover text-white'
+            ? ' from-red-500 to-orange-500 text-white'
             : 'bg-none text-mainText'
-        }
-        !border-main border-2 border-solid  opacity-90 rounded-full hover:opacity-100 p-4 text-center 
-        block active:bg-primary-700 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]`}
+        } bg-gradient-to-r hover:from-red-500 hover:to-orange-500 focus:from-red-500 focus:to-orange-500 
+        hover:text-white focus:text-white
+        !border-main border-2 border-solid  rounded-full p-4 text-center transition-all duration-200
+        block  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]`}
       >
         {isOpen ? 'Менше' : 'Детальніше'}
       </button>

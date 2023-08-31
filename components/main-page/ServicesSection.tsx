@@ -1,4 +1,5 @@
 import { Button } from '../Button';
+import { ButtonSecond } from '../ButtonSecond';
 import { ServiceCardMain } from './ServicesSectionCard';
 
 export const ServicesSection = () => {
@@ -9,11 +10,10 @@ export const ServicesSection = () => {
         <div className=" md:flex md:flex-row md:gap-6 mt-6 md:mt-10 lg:mt-14 items-center">
           <ServiceCardMain />
         </div>
-        <Button
+        <ButtonSecond
           route="/services"
           text="Детальніше..."
-          width="inline-block mx-auto mt-6 md:mt-8 lg:mt-11 w-[302px] !bg-none 
-        !border-main border-2 border-solid !text-mainText !shadow-none"
+          width="inline-block mx-auto mt-6 md:mt-8 lg:mt-11 w-[302px]"
         />
       </div>
     </section>

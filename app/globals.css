@@ -20,12 +20,6 @@
 body {
   color: #85777b;
   font-family: 'Poppins';
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
 }
 .title {
   @apply mb-5 md:mb-8 lg:mb-16 text-4xl md:text-5xl font-bold text-center;
@@ -49,9 +43,6 @@ details[open] summary div {
 .section-blog-item {
   @apply pt-[46px] pb-[90px] flex flex-col items-center;
 }
-/* .div-conteiter-blog {
-  @apply container md:px-10 lg:px-[100px] xl:px-[136px] text-center flex flex-col gap-6;
-} */
 .h1-title-blog {
   @apply font-poppins text-[32px] font-semibold text-mainText;
 }
@@ -98,6 +89,13 @@ details[open] summary div {
   }
 }
 
-.disabled{
-  @apply pointer-events-none opacity-30
+.disabled {
+  @apply pointer-events-none opacity-30;
+}
+
+.background {
+  @apply from-red-500 to-orange-500;
+}
+.background-hover {
+  @apply from-red-700 to-orange-700;
 }

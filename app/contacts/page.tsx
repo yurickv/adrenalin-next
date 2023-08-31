@@ -24,46 +24,73 @@ const Contacts = () => {
           className="div-container flex flex-col 
         md:flex-row justify-between gap-6"
         >
-          <div className="flex flex-col gap-5">
-            <p className="text-xl md:text-2xl font-semibold mb-4">
-              Де нас знайти?
-            </p>
-            <Link
-              href="https://goo.gl/maps/LJuXJQ9Kkhcb7FVT7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group  hover:text-hover transition-colors duration-300 text-main flex gap-4 items-center"
-            >
-              <Location />
-              <span className="text-mainText  text-lg font-bold group-hover:text-hover transition-colors duration-300">
-                м.Тернопіль, вул.Сахарова 10
-              </span>
-            </Link>
+          <div className="max-[449px]:text-center min-[450px]:flex gap-4 justify-between md:block">
+            <div className="flex flex-col gap-5  max-[449px]:mx-auto max-w-[205px] md:max-w-full">
+              <p className="text-xl md:text-2xl font-semibold mb-4">
+                Де нас знайти?
+              </p>
+              <Link
+                href="https://goo.gl/maps/LJuXJQ9Kkhcb7FVT7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group   transition-colors duration-300 text-main flex gap-4 items-center"
+              >
+                <Location />
+                <span className="text-mainText  text-lg  group-hover:text-main transition-colors duration-300">
+                  м.Тернопіль, вул.Сахарова 10
+                </span>
+              </Link>
 
-            <Link
-              href="tel:+380978836689"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group  hover:text-hover transition-colors duration-300 text-main flex gap-4 items-center"
-            >
-              <Phone />
-              <span className="text-mainText text-lg font-bold group-hover:text-hover transition-colors duration-300">
-                +38 097 960 1371 <br /> +38 097 883 6689
-              </span>
-            </Link>
+              <Link
+                href="tel:+380978836689"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group   transition-colors duration-300 text-main flex gap-4 items-center"
+              >
+                <Phone />
+                <span className="text-mainText text-lg  group-hover:text-main transition-colors duration-300 ">
+                  +38 097 960 1371 <br /> +38 097 883 6689
+                </span>
+              </Link>
 
-            <Link
-              href="https://www.instagram.com/gym.adrenalin/?hl=uk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group  hover:text-hover transition-colors duration-300 text-main flex gap-4 items-center"
-            >
-              <Insta />
-              <span className="text-mainText text-lg font-bold group-hover:text-hover transition-colors duration-300">
-                Gym.adrenalin
-              </span>
-            </Link>
+              <Link
+                href="https://www.instagram.com/gym.adrenalin/?hl=uk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group   transition-all duration-200  flex gap-4 items-center"
+              >
+                {' '}
+                <div className=" text-main">
+                  <Insta />
+                </div>
+                <span
+                  className=" text-lg  text-mainText 
+                 transition-all duration-200 group-hover:text-main"
+                >
+                  Gym.adrenalin
+                </span>
+              </Link>
+            </div>
+            <div className="max-[449px]:mt-5 md:">
+              <p className="font-semibold">Графік роботи:</p>
+              <ul className="mt-4">
+                <li>
+                  <span className="font-semibold">пн, ср, пт</span> —
+                  11:00-20:00
+                </li>
+                <li>
+                  <span className="font-semibold">вт, чт </span> — 11:00-21:00
+                </li>
+                <li>
+                  <span className="font-semibold">сб</span> — 12:00-19:00
+                </li>
+                <li>
+                  <span className="font-semibold">нд</span> — вихідний
+                </li>
+              </ul>
+            </div>
           </div>
+
           <div className="h-[300px] md:h-[450px] lg:h-[600px] w-full">
             <iframe
               className="w-full h-full object-center object-cover lg:w-full lg:h-full"

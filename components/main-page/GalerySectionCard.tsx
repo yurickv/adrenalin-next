@@ -32,7 +32,7 @@ const GalerySectionCard = () => {
           return (
             <div
               key={index}
-              className="group w-full h-[287px] relative rounded-lg overflow-hidden bg-white shadow-md hover:shadow-lg "
+              className="group w-full h-[287px] relative rounded-lg overflow-hidden bg-white shadow-md hover:shadow-lg cursor-zoom-in"
             >
               <div
                 className="bg-cover bg-center h-full w-full bg-no-repeat "
