@@ -1,9 +1,14 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Insta } from '@/components/icons/Instagram';
 import { Location } from '@/components/icons/Location';
 import { Phone } from '@/components/icons/Phone';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
-import Link from 'next/link';
 
+export const metadata: Metadata = {
+  title: 'Контакти',
+  description: 'Контакти тренажерного залу Adrenalin',
+};
 const Contacts = () => {
   return (
     <main>
