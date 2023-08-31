@@ -35,7 +35,7 @@ async function BlogPage({ params }: { params: { id: string } }) {
       <section className="py-[40px] md:py-[44px] lg:py-[88px] flex flex-col items-center">
         <div className="div-container text-center flex flex-col gap-6 relative">
           <Link
-            href="#"
+            href={`/blog?topic=${post.topic}`}
             className="absolute top-0 right-5 text-right font-poppins text-sm font-semibold text-main hover:text-hover
              focus:text-hover rounded-full p-4  hover:bg-orange-100 focus:bg-orange-100 cursor-pointer"
           >

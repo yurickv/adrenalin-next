@@ -27,7 +27,7 @@ export const setQueryForMongoose = (keys: string[], filters: Filter) => {
         { markup: { $regex: filters.search } },
       ],
     };
-  } else if (keys.includes('search')) {
+  } else if (keys.includes('topic')) {
     query = {
       $and: [
         {

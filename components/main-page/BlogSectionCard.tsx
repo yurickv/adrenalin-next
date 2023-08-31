@@ -29,8 +29,6 @@ export const BlogSectionCard = async () => {
               style={{
                 objectFit: 'cover',
               }}
-              // width={500}
-              // height={300}
             />
             <Link href={`/blog/${id}`}>
               <div className="absolute top-0 bottom-0 right-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
@@ -38,7 +36,12 @@ export const BlogSectionCard = async () => {
           </div>
 
           <div className=" h-28 mt-6">
-            <p className="text-main text-right mb-6">#{topic}</p>
+            <Link
+              href={`/blog?topic=${topic}`}
+              className="block text-main text-right mb-6"
+            >
+              #{topic}
+            </Link>
             <h5 className="text-2xl font-semibold leading-tight text-neutral-800 dark:text-neutral-50">
               {title}
             </h5>
