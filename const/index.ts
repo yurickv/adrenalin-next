@@ -43,3 +43,10 @@ export const CalcLinks = [
     text: 'Потреба калорій',
   },
 ];
+
+export const SCREEN_WIDTHS = {
+  mobile: 320,
+  tablet: 768,
+  desktop: 1280,
+  xlDesktop: 1440,
+};
