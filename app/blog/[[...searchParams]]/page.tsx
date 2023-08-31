@@ -1,9 +1,14 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlogCard } from '@/components/blog-page/BlogCard';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
-import Link from 'next/link';
 import { Filter } from '@/components/Filter';
 import { Arrow } from '@/components/icons/Arrow-down';
 
+export const metadata: Metadata = {
+  title: 'Блог',
+  description: 'Блог тренажерного залу Adrenalin',
+};
 function Blog({
   searchParams,
 }: {

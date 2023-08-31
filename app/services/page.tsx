@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import { ProgramCard } from '@/components/service-page/ProgramCard';
 import { TrainingCard } from '@/components/service-page/TrainingCard';
 import { TrenerCard } from '@/components/service-page/TrenerCard';
-import Link from 'next/link';
 import { TrainingInfo } from '@/components/service-page/TrainingInfo';
 import { TrenerInfo } from '@/components/service-page/TrenerInfo';
 import { ProgramInfo } from '@/components/service-page/ProgramInfo';
