@@ -92,12 +92,6 @@ export const BlogCard = async ({
         className="flex flex-col md:grid md:col-span-2 lg:col-span-3 
        items-center justify-items-center "
       >
-        <div>
-          <p className="text-sm text-gray-700 flex gap-1 font-medium">
-            <span className="">Cторінка {searchParams?.page || 1} з </span>
-            <span className="">{pages}</span>
-          </p>
-        </div>
         <Pagination searchParams={searchParams} pages={pages} />
       </div>
     </>
