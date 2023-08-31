@@ -61,7 +61,12 @@ export const BlogCard = async ({
           </div>
 
           <div className="p-3">
-            <p className="text-main text-right">#{topic}</p>
+            <Link
+              href={`/blog?topic=${topic}`}
+              className="block text-main text-right"
+            >
+              #{topic}
+            </Link>
             <h5 className="text-2xl font-semibold leading-tight text-neutral-800 dark:text-neutral-50 h-16">
               {title}
             </h5>

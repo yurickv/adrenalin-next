@@ -1,6 +1,7 @@
 import { BlogCard } from '@/components/blog-page/BlogCard';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Link from 'next/link';
+import { Filter } from '@/components/Filter';
 
 function Blog({
   searchParams,
@@ -25,6 +26,12 @@ function Blog({
         </div>
       </section>
       <section className="py-[40px] md:py-[44px] lg:py-[88px]">
+        <div className="flex justify-between items-center">
+          {(searchParams?.topic || searchParams?.search) && (
+            <Link href="/blog">До всіх постів</Link>
+          )}
+          <Filter params={searchParams?.topic} />
+        </div>
         <div className="div-container flex md:flex-wrap gap-x-6 gap-y-10">
           <div
             className="flex flex-col md:grid md:grid-cols-2  lg:grid-cols-3
