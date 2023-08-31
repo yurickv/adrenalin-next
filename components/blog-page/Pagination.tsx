@@ -1,11 +1,11 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Arrow } from '@/components/icons/Arrow-down';
 import ReactPaginate from 'react-paginate';
-import { PrevNextButton } from '@/components/blog-page/PrevNextButton';
-import { useScreenWidth } from '@/app/_hooks/useScreenWidth';
+import { Arrow } from '@/components/icons/Arrow-down';
 import { SCREEN_WIDTHS } from '@/const';
+import { PrevNextButton } from '@/components/blog-page/PrevNextButton';
 
 export const Pagination = ({
   searchParams,
@@ -14,9 +14,19 @@ export const Pagination = ({
   searchParams: { [key: string]: string | undefined };
   pages: number;
 }) => {
+  const [screenWidth, setScreenWidth] = useState(0);
   const router = useRouter();
-  const screenWidth = useScreenWidth();
-  const pageRangeDisplayed = screenWidth <= SCREEN_WIDTHS.mobile ? 2 : 5;
+
+  useEffect(() => {
+    setScreenWidth(window.innerWidth);
+  }, []);
+
+  const pageRangeDisplayed =
+    screenWidth >= SCREEN_WIDTHS.tablet
+      ? screenWidth >= SCREEN_WIDTHS.desktop
+        ? 5
+        : 2
+      : 1;
 
   return (
     <ReactPaginate

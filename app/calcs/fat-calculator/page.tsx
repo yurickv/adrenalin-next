@@ -1,10 +1,16 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+
 import { ButtonGroup } from '@/components/calcs-page/ButttonGroup';
 import { CalcTitle } from '@/components/calcs-page/CalcsTitle';
 import { FatCalcList } from '@/components/calcs-page/FatCalcList';
 import { DescriptionFat } from '@/components/calcs-page/FatDescription';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
-import Link from 'next/link';
 
+export const metadata: Metadata = {
+  title: 'Калькулятор жиру',
+  description: 'Обрахуй скільки жиру у твоєму організмі!',
+};
 const FatCalc = () => {
   return (
     <main>

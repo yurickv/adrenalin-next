@@ -1,3 +1,4 @@
+import type { Metadata, ResolvingMetadata } from 'next';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import parse from 'html-react-parser';
@@ -7,7 +8,25 @@ import { GoBackBtn } from '@/components/blog-page/GoBackBtn';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import postHttpService from '@/app/_services/post.service';
 
-async function BlogPage({ params }: { params: { id: string } }) {
+type Props = {
+  params: { id: string };
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const id = params.id;
+
+  const post = await postHttpService.getPostById(id);
+
+  return {
+    title: post.title,
+    description: post.description,
+  };
+}
+
+async function BlogPage({ params }: Props) {
   const post = await postHttpService.getPostById(params.id);
   if (!post) {
     redirect('/');

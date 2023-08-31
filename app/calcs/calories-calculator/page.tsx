@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { ButtonGroup } from '@/components/calcs-page/ButttonGroup';
 import { CalcTitle } from '@/components/calcs-page/CalcsTitle';
 import { CaloriesCalcList } from '@/components/calcs-page/CaloriesCalcList';
@@ -5,6 +6,10 @@ import { CaloriesDescription } from '@/components/calcs-page/CaloriesDescription
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Link from 'next/link';
 
+export const metadata: Metadata = {
+  title: 'Калькулятор калорій',
+  description: 'Обрахуй необхідну для себе кількість калорій',
+};
 const CaloriesCalc = () => {
   return (
     <main>
