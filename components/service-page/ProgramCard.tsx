@@ -26,6 +26,8 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
     }
     setQuantity(number);
   }
+  const sum = duration * quantity;
+
   return (
     <div
       className={` ${
@@ -73,8 +75,9 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
           </select>
         </div>
       </div>
-      <PriceTrainingPlan duration={duration} quantity={quantity} />
+      <PriceTrainingPlan value={sum} />
       <ButtonForPrice
+        value={sum}
         onClickMore={onClickMore}
         name="planTrain"
         isOpen={isOpen}
