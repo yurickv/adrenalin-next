@@ -1,13 +1,6 @@
-export const PriceTrainingPlan = ({
-  duration,
-  quantity,
-}: {
-  duration: number;
-  quantity: number;
-}) => {
+export const PriceTrainingPlan = ({ value }: { value: number }) => {
   let message = '';
   let mounth = '';
-  const value = duration * quantity;
 
   if (value === 2) {
     message = '150';

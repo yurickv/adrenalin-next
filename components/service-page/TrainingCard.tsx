@@ -26,6 +26,7 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
     }
     setQuantity(number);
   }
+
   return (
     <div
       className={` ${
