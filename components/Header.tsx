@@ -252,18 +252,21 @@ export const Header = () => {
                 </Disclosure>
                 <Link
                   href="/blog"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
                 >
                   Блог
                 </Link>
                 <Link
                   href="/services"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
                 >
                   Послуги
                 </Link>
                 <Link
                   href="/contacts"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
                 >
                   Контакти
