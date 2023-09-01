@@ -4,7 +4,7 @@ type ButtonForPriceProps = {
   onClickMore: (name: 'standart' | 'personal' | 'planTrain') => void;
   name: 'standart' | 'personal' | 'planTrain';
   isOpen: boolean;
-  value: number;
+  value?: number;
 };
 
 export const ButtonForPrice: React.FC<ButtonForPriceProps> = ({
