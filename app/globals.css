@@ -52,14 +52,11 @@ details[open] summary div {
 .div-for-img {
   @apply w-full h-96 bg-[#D9D9D9] mb-12 overflow-hidden;
 }
-.ol-list {
-  @apply list-decimal flex flex-col gap-3 text-left;
-}
 .ul-list {
-  @apply flex flex-col gap-1 text-left list-inside  list-image-checkmark indent-10;
+  @apply flex flex-col gap-2 text-left list-inside  list-image-checkmark indent-10;
 }
 .ul-list-none {
-  @apply flex flex-col gap-1 text-left list-inside list-none;
+  @apply flex flex-col gap-2 text-left list-inside list-none;
 }
 .h2-list-title {
   @apply font-poppins font-semibold text-mainText text-lg leading-normal indent-5;
@@ -93,18 +90,11 @@ details[open] summary div {
   @apply pointer-events-none opacity-30;
 }
 
-.background {
-  @apply from-red-500 to-orange-500;
-}
-.background-hover {
-  @apply from-red-700 to-orange-700;
-}
-
 .pagination-button {
-  @apply py-4 px-6 font-poppins text-[16px] leading-normal border border-main rounded-[10px] cursor-pointer
+  @apply py-4 px-6 font-poppins text-[16px] leading-normal border border-main rounded-[10px] cursor-pointer;
 }
 .isActive {
   @apply text-white bg-gradient-to-r from-red-500 to-orange-500  hover:from-red-600
   hover:to-orange-600 focus:from-red-600 focus:to-orange-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
-  shadow-[0_4px_9px_-4px_#3b71ca]
+  shadow-[0_4px_9px_-4px_#3b71ca];
 }

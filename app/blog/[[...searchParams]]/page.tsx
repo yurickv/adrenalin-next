@@ -51,7 +51,7 @@ function Blog({
             </div>
             <div className="flex gap-2 ">
               <p className="p-2">Вибрати тему:</p>
-              <Filter params={searchParams?.topic} />
+              <Filter searchParams={searchParams} />
             </div>
           </div>
           <div

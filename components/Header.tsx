@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { Fragment, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 
@@ -24,7 +24,8 @@ import { GymIcon } from './icons/logo/GymIcon';
 export const Header = () => {
   const params = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchText, setSearchText] = useState<string>('');
+  const searchParams = useSearchParams();
+  const search = searchParams.get('search');
 
   const calcHeader = [
     {
@@ -49,7 +50,7 @@ export const Header = () => {
 
   return (
     <header
-      className="sm:max-w-[640px] md:max-w-[1279px] lg:max-w-[1439px] xl:max-w-[1919px] 
+      className="sm:max-w-[640px] md:max-w-[1279px] lg:max-w-[1439px] xl:max-w-[1919px]
     sm:px-4 md:px-[40px] lg:px-[66px] xl:px-[132px]
     flex justify-between items-center py-5 border-b  gap-4 mr-auto ml-auto "
     >
@@ -147,7 +148,7 @@ export const Header = () => {
           </ul>
         </Popover.Group>
       </nav>
-      <div className="flex md:hidden hover:text-main">
+      <div className="flex  md:hidden hover:text-main">
         <button
           type="button"
           className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -159,7 +160,7 @@ export const Header = () => {
       </div>
 
       <div className=" hidden md:flex md:gap-4 text-main relative">
-        <Search />
+        <Search search={search} />
         <a
           href="https://www.instagram.com/gym.adrenalin/?hl=uk"
           className=" hover:text-hover transition-colors duration-300 cursor-pointer peer-focus:hidden"
@@ -179,12 +180,12 @@ export const Header = () => {
       </div>
       <Dialog
         as="div"
-        className="md:hidden"
+        className="z-50 md:hidden"
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="fixed inset-0 z-50" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a
               href="/"
@@ -251,18 +252,21 @@ export const Header = () => {
                 </Disclosure>
                 <Link
                   href="/blog"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
                 >
                   Блог
                 </Link>
                 <Link
                   href="/services"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
                 >
                   Послуги
                 </Link>
                 <Link
                   href="/contacts"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
                 >
                   Контакти
@@ -285,7 +289,10 @@ export const Header = () => {
                 >
                   <Phone />
                 </a>
-                <Search />
+                <Search
+                  search={search}
+                  handleCloseMobileMenu={setMobileMenuOpen}
+                />
               </div>
             </div>
           </div>

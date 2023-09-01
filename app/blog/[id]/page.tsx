@@ -55,12 +55,12 @@ async function BlogPage({ params }: Props) {
         <div className="div-container text-center flex flex-col gap-6 relative">
           <Link
             href={`/blog?topic=${post.topic}`}
-            className="absolute top-0 right-5 text-right font-poppins text-sm font-semibold text-main hover:text-hover
-             focus:text-hover rounded-full p-4  hover:bg-orange-100 focus:bg-orange-100 cursor-pointer"
+            className="absolute top-0 right-5 text-right font-poppins text-sm font-semibold text-main 
+              rounded-full p-4  hover:bg-orange-100 focus:bg-orange-100 cursor-pointer"
           >
             #{post.topic}
           </Link>
-          <h1 className="font-poppins text-[32px] font-semibold text-mainText pr-28 line-clamp-3">
+          <h1 className="font-poppins mt-[52px] md:mt-0 text-xl md:text-[32px] font-semibold text-mainText md:pr-28 line-clamp-4">
             {post.title}
           </h1>
           <p className="description">{post.description}</p>

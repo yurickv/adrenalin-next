@@ -1,8 +1,7 @@
 'use client';
 
 import { getSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
-import { NavLinks } from '@/const';
+import { notFound } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { CreatedPost, Post } from '@/app/_types/post.types';
 import Form from '@/components/Form';
@@ -12,6 +11,9 @@ import {
   editPostFormData,
 } from '@/app/_helpers/createFormDataForPost';
 import { Loader } from '@/components/Loader';
+import { PrevNextButton } from '@/components/blog-page/PrevNextButton';
+import { Arrow } from '@/components/icons/Arrow-down';
+import ReactPaginate from 'react-paginate';
 
 const post = {
   id: '',
@@ -24,29 +26,31 @@ const post = {
 const Admin = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [posts, setPosts] = useState<Post[] | []>([]);
+  const [page, setPage] = useState(1);
+  const [pages, setPages] = useState(0);
   const [editedPost, setEditedPost] = useState<Post>(post);
   const [showModal, setShowModal] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
   const [isPostSubmitted, setIsPostSubmitted] = useState<boolean>(false);
 
-  const router = useRouter();
   useEffect(() => {
     const isLoggedCheck = async () => {
       const session = await getSession();
 
       if (!session?.user) {
-        router.push(NavLinks[0].href);
+        notFound();
       }
       setIsLoading(false);
     };
 
     const fetchPosts = async () => {
-      const res = await postHttpService.getPosts({});
-      setPosts(res.posts);
+      const { posts, pages } = await postHttpService.getPosts({ page });
+      setPages(pages);
+      setPosts(posts);
     };
     isLoggedCheck();
     fetchPosts();
-  }, []);
+  }, [page]);
 
   const cutStringTo30Symbols = (string: string) => {
     if (string.length > 30) {
@@ -168,7 +172,7 @@ const Admin = () => {
                           Edit
                         </button>
                         <button
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="font-medium text-red-600 dark:text-blue-500 hover:underline"
                           onClick={() => deletePostOnSubmit(post.id)}
                         >
                           Delete
@@ -182,7 +186,32 @@ const Admin = () => {
           </table>
         </div>
       )}
-
+      <ReactPaginate
+        pageCount={pages}
+        previousLabel={
+          <PrevNextButton
+            title="Попередня"
+            icon={
+              <div className="rotate-180">
+                <Arrow />
+              </div>
+            }
+          />
+        }
+        forcePage={page - 1}
+        pageRangeDisplayed={3}
+        marginPagesDisplayed={1}
+        nextLabel={<PrevNextButton title="Наступна" icon={<Arrow />} />}
+        onPageChange={({ selected }) => {
+          console.log(selected);
+          setPage(selected + 1);
+        }}
+        breakLabel="..."
+        containerClassName="flex gap-4 justify-center items-center"
+        pageLinkClassName="pagination-button"
+        activeLinkClassName="isActive"
+        renderOnZeroPageCount={null}
+      />
       {showModal && (
         <Form
           title="Edit"

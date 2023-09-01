@@ -76,7 +76,7 @@ const Contacts = () => {
                 </span>
               </Link>
             </div>
-            <div className="max-[449px]:mt-5 ">
+            <div className="max-[449px]:mt-6 md:mt-6">
               <p className="font-semibold">Графік роботи:</p>
               <ul className="mt-4">
                 <li>
