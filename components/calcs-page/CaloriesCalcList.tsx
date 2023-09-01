@@ -23,9 +23,9 @@ const schema = yup.object().shape({
 
 export const CaloriesCalcList = () => {
   const [sex, setSex] = useState<boolean>(true);
-  const [age, setAge] = useState<number>(0);
-  const [weight, setWeight] = useState<number>(0);
-  const [height, setHeight] = useState<number>(0);
+  const [age, setAge] = useState<string>('');
+  const [weight, setWeight] = useState<string>('');
+  const [height, setHeight] = useState<string>('');
   const [activity, setActivity] = useState<number>(1.2);
 
   const [errors, setErrors] = useState<{
@@ -35,13 +35,13 @@ export const CaloriesCalcList = () => {
   }>({});
 
   const changeAge = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAge(Number(e.target.value));
+    setAge(e.target.value);
   };
   const changeWeight = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setWeight(Number(e.target.value));
+    setWeight(e.target.value);
   };
   const changeHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setHeight(Number(e.target.value));
+    setHeight(e.target.value);
   };
 
   const validate = async (e: React.ChangeEvent<HTMLInputElement>) => {

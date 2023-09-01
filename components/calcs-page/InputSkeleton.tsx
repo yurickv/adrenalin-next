@@ -3,7 +3,7 @@ interface Props {
   name: string;
   max: number;
   min: number;
-  value: number;
+  value: string | number;
   setAny: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string | null;

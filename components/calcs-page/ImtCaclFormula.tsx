@@ -1,6 +1,6 @@
 interface FormulaProps {
-  weight: number;
-  height: number;
+  weight: string;
+  height: string;
 }
 
 export const ImtCalcFormula = ({ weight, height }: FormulaProps) => {
@@ -8,7 +8,8 @@ export const ImtCalcFormula = ({ weight, height }: FormulaProps) => {
   let resultImt = 0;
 
   if (weight && height) {
-    resultImt = Math.round((weight / (height / 100) ** 2) * 10) / 10;
+    resultImt =
+      Math.round((Number(weight) / (Number(height) / 100) ** 2) * 10) / 10;
 
     if (resultImt < 18.5 && resultImt >= 0.5)
       message = 'Вам слід набрати вагу! Вага недостатня, щоб бути здоровим!';

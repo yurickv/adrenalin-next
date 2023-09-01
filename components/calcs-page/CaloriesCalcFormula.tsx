@@ -1,7 +1,7 @@
 interface CaloriesProps {
-  weight: number;
-  height: number;
-  age: number;
+  weight: string;
+  height: string;
+  age: string;
   sex: boolean;
   activity: number;
 }
@@ -19,11 +19,13 @@ export const CaloriesCalcFormula = ({
   if (param && age) {
     if (sex) {
       basis = Math.round(
-        (10 * weight + 6.25 * height - 5 * age + 5) * activity
+        (10 * Number(weight) + 6.25 * Number(height) - 5 * Number(age) + 5) *
+          activity
       );
     } else {
       basis = Math.round(
-        (10 * weight + 6.25 * height - 5 * age - 161) * activity
+        (10 * Number(weight) + 6.25 * Number(height) - 5 * Number(age) - 161) *
+          activity
       );
     }
   }

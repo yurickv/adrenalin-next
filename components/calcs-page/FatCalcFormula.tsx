@@ -1,5 +1,5 @@
 interface FormulaProps {
-  age: number;
+  age: string;
   sex: boolean;
   sum: number;
 }
@@ -10,12 +10,18 @@ export const FatCalcFormula = ({ age, sex, sum }: FormulaProps) => {
   if (age && sum) {
     if (sex) {
       const BodyDensity =
-        1.10938 - 0.0008267 * sum + 0.0000016 * sum ** 2 - 0.0002574 * age;
+        1.10938 -
+        0.0008267 * sum +
+        0.0000016 * sum ** 2 -
+        0.0002574 * Number(age);
       BodyFatPercentage = Math.round((495 / BodyDensity - 450) * 10) / 10;
       message = messageCalcMan(BodyFatPercentage);
     } else {
       const BodyDensity =
-        1.0994921 - 0.0009929 * sum + 0.0000023 * sum ** 2 - 0.0001392 * age;
+        1.0994921 -
+        0.0009929 * sum +
+        0.0000023 * sum ** 2 -
+        0.0001392 * Number(age);
       BodyFatPercentage = Math.round((495 / BodyDensity - 450) * 10) / 10;
       message = messageCalcWoman(BodyFatPercentage);
     }
