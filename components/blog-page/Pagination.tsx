@@ -50,8 +50,8 @@ export const Pagination = ({
       }}
       breakLabel="..."
       containerClassName="flex gap-4 justify-center items-center"
-      pageClassName="pagination-button"
-      activeClassName="isActive"
+      pageLinkClassName="pagination-button"
+      activeLinkClassName="isActive"
       renderOnZeroPageCount={null}
     />
   );
