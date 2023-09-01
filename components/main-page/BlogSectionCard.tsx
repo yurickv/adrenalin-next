@@ -18,6 +18,7 @@ export const BlogSectionCard = async () => {
         <div
           id={id}
           className="relative rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
+          hover:!shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px]
          dark:bg-neutral-700  w-full  h-[350px] md:h-[450px]  lg:h-[500px] text-center last:md:block even:sm:hidden even:lg:block p-4"
         >
           <div className="relative -mt-8  overflow-hidden rounded-lg !shadow-[0_2px_15px_-3px_#00000029,0_10px_20px_-2px_#0000001a] align-top w-full h-3/4">

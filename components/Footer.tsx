@@ -73,7 +73,7 @@ export const Footer = () => {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute -left-1/2 top-full z-10 mt-2 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300">
+                    <Popover.Panel className="absolute left-1/4 top-full z-10 mt-2 w-screen max-w-[250px] overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-300">
                       <div className=" p-2">
                         {products.map(item => (
                           <div
