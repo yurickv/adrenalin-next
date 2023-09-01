@@ -20,18 +20,18 @@ const schema = yup.object().shape({
 });
 
 export const ImtCalcList = () => {
-  const [weight, setWeight] = useState<number>(0);
-  const [height, setHeight] = useState<number>(0);
+  const [weight, setWeight] = useState<string>('');
+  const [height, setHeight] = useState<string>('');
 
   const [errors, setErrors] = useState<{ height?: string; weight?: string }>(
     {}
   );
 
   const changeWeight = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setWeight(Number(e.target.value));
+    setWeight(e.target.value);
   };
   const changeHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setHeight(Number(e.target.value));
+    setHeight(e.target.value);
   };
 
   const validate = async (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -53,7 +53,7 @@ export const BlogCard = async ({
         <div
           id={id}
           className=" rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
-         dark:bg-neutral-700 text-center hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px]"
+         text-center hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px]"
         >
           <div className="relative -mt-4 !mr-4 !ml-4 overflow-hidden rounded-lg !shadow-[0_2px_15px_-3px_#00000029,0_10px_20px_-2px_#0000001a] w-[calc((100%-32px))] h-[270px] align-middle object-cover">
             <Image
@@ -81,7 +81,7 @@ export const BlogCard = async ({
             >
               #{topic}
             </Link>
-            <h5 className="text-lg md:text-2xl font-semibold leading-tight text-neutral-800 dark:text-neutral-50 h-[67px] line-clamp-3">
+            <h5 className="text-lg md:text-2xl font-semibold leading-tight text-mainText h-[67px] line-clamp-3">
               {title}
             </h5>
             <p className="mt-6 line-clamp-3">{description}</p>

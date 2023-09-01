@@ -27,10 +27,10 @@ const schema = yup.object().shape({
 
 export const FatCalcList = () => {
   const [sex, setSex] = useState<boolean>(true);
-  const [age, setAge] = useState<number>(0);
-  const [skinFold, setSkinFold] = useState<number>(0);
-  const [skinFoldW, setSkinFoldW] = useState<number>(0);
-  const [skinFoldL, setSkinFoldL] = useState<number>(0);
+  const [age, setAge] = useState<string>('');
+  const [skinFold, setSkinFold] = useState<string>('');
+  const [skinFoldW, setSkinFoldW] = useState<string>('');
+  const [skinFoldL, setSkinFoldL] = useState<string>('');
 
   const [errors, setErrors] = useState<{
     age?: string;
@@ -40,17 +40,17 @@ export const FatCalcList = () => {
   }>({});
 
   const changeAge = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAge(Number(e.target.value));
+    setAge(e.target.value);
   };
 
   const changeSF = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSkinFold(Number(e.target.value));
+    setSkinFold(e.target.value);
   };
   const changeSFW = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSkinFoldW(Number(e.target.value));
+    setSkinFoldW(e.target.value);
   };
   const changeSFL = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSkinFoldL(Number(e.target.value));
+    setSkinFoldL(e.target.value);
   };
 
   const validate = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -73,9 +73,9 @@ export const FatCalcList = () => {
 
   let sum = 0;
   if (skinFold && skinFoldW) {
-    let sumFold = skinFold + skinFoldW;
+    let sumFold = Number(skinFold) + Number(skinFoldW);
     if (skinFoldL) {
-      sum = sumFold + skinFoldL;
+      sum = sumFold + Number(skinFoldL);
     }
   }
   return (

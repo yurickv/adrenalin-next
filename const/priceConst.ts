@@ -5,7 +5,7 @@ export const mounth = [
   { descript: '8 тренувань', price: '500' },
 ];
 export const unlimit = [
-  { descript: 'Необмежена кількість / місяць', price: '550' },
+  { descript: 'Необмежена кількість / місяць', price: '540' },
 ];
 export const year = [
   { descript: '3 місяці', price: '1500 [500/міс]' },
