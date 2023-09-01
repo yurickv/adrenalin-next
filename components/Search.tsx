@@ -3,12 +3,18 @@ import { Fragment, useState } from 'react';
 import { SearchIcon } from '@/components/icons/SearchIcon';
 import Link from 'next/link';
 
-export function Search() {
-  const [searchText, setSearchText] = useState<string>('');
+type Props = {
+  search: string | null;
+  handleCloseMobileMenu?: (value: boolean) => void;
+};
+
+export function Search({ search, handleCloseMobileMenu }: Props) {
+  const [searchText, setSearchText] = useState<string>(search || '');
+
   return (
-    <div className="">
+    <div>
       <Popover className="relative">
-        {({ open }) => (
+        {({ open, close }) => (
           <>
             <Popover.Button
               className={`
@@ -36,8 +42,8 @@ export function Search() {
                   <div className="relative grid gap-8 bg-white p-4 ">
                     <div className="flex flex-col items-center justify-center">
                       <input
-                        placeholder="Пошук постів"
-                        className="p-2 border border-main md:w-[316px] resize-x outline-none"
+                        placeholder="Знайти пост"
+                        className="p-2 border rounded border-main md:w-[316px] resize-x outline-none"
                         value={searchText}
                         onChange={e => setSearchText(e.target.value)}
                       />
@@ -45,8 +51,10 @@ export function Search() {
                         href={`/blog?search=${searchText}`}
                         onClick={e => {
                           if (!searchText.trim()) {
-                            e.preventDefault();
+                            return e.preventDefault();
                           }
+                          handleCloseMobileMenu && handleCloseMobileMenu(false);
+                          close();
                         }}
                         className={` self-end ${
                           searchText.trim()
