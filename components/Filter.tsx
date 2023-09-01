@@ -5,9 +5,15 @@ import { useRouter } from 'next/navigation';
 import { capitalizeFirstLetter } from '@/app/_helpers/capitalizeFirstLetter';
 
 const filters = ['All', 'Motivation', 'Nutrition', 'Training'];
-export const Filter = ({ params }: { params: string | undefined }) => {
+export const Filter = ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) => {
   const router = useRouter();
-  const selected = (params && capitalizeFirstLetter(params)) || filters[0];
+  const selected =
+    (searchParams?.topic && capitalizeFirstLetter(searchParams.topic)) ||
+    filters[0];
   return (
     <div className="w-[160px]">
       <Listbox
@@ -17,7 +23,11 @@ export const Filter = ({ params }: { params: string | undefined }) => {
             return router.push('/blog');
           }
 
-          router.push(`/blog?topic=${value}`);
+          router.push(
+            `/blog?${
+              searchParams?.search ? `search=${searchParams.search}&` : ''
+            }topic=${value}`
+          );
         }}
       >
         <div className="relative z-30">
