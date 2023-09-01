@@ -81,7 +81,7 @@ export const BlogCard = async ({
             >
               #{topic}
             </Link>
-            <h5 className="text-lg md:text-2xl font-semibold leading-tight text-neutral-800 dark:text-neutral-50 h-16 line-clamp-3">
+            <h5 className="text-lg md:text-2xl font-semibold leading-tight text-neutral-800 dark:text-neutral-50 h-[67px] line-clamp-3">
               {title}
             </h5>
             <p className="mt-6 line-clamp-3">{description}</p>
