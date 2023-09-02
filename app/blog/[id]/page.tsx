@@ -65,6 +65,7 @@ async function BlogPage({ params }: Props) {
           </h1>
           <p className="description">{post.description}</p>
           <Image
+            placeholder="blur"
             src={post.image}
             alt={post.topic}
             width={800}
