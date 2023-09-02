@@ -33,12 +33,10 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
       className={` ${
         isOpen ? '!shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px]' : ''
       } px-4 py-12 md:py-4 lg:py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
-     hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] rounded-lg flex flex-col gap-6 basis-1/3`}
+     hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] rounded-lg flex flex-col gap-6 basis-1/3 overflow-hidden`}
     >
-      <DescriptionText
-        title="План харчування/тренування"
-        descr="План харчування та/або тренування, із врахуванням Вашого віку, ваги і мети занять"
-      />
+      <DescriptionText title="План харчування/ тренування" />
+      <PriceTrainingPlan value={sum} />
       <div className="flex flex-col gap-6">
         <div className="flex flex-col">
           <label htmlFor="quantity" className="">
@@ -75,7 +73,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
           </select>
         </div>
       </div>
-      <PriceTrainingPlan value={sum} />
+
       <ButtonForPrice
         value={sum}
         onClickMore={onClickMore}

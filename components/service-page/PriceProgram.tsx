@@ -14,11 +14,12 @@ export const PriceTrainingPlan = ({ value }: { value: number }) => {
   }
 
   return (
-    <div className="text-left ">
-      <p className="text-2xl font-semibold">
+    <div className="text-center ">
+      <p className="text-2xl font-bold text-main">
         {' '}
-        &#8372; {message} <span className="text-2xl ont-semibold">/</span>{' '}
-        <span className=" text-base font-semibold">{mounth}</span>
+        &#8372; {message}{' '}
+        <span className="text-2xl font-semibold text-mainText">/</span>{' '}
+        <span className=" text-base font-semibold text-mainText">{mounth}</span>
       </p>
       <p className="text-base">{}</p>
     </div>
