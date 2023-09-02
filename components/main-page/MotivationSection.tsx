@@ -9,6 +9,7 @@ export const Motivation = () => {
         <div className="mx-auto">
           <div className="float-left relative hidden md:block h-[490px] w-[320px] lg:w-[470px] lg:h-[720px]">
             <Image
+              placeholder="blur"
               src="/bodybuilder.jpg"
               alt="Man with dumbells"
               fill

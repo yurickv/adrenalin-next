@@ -15,6 +15,7 @@ export const AboutCalc = () => {
         </h3>
 
         <Image
+          placeholder="blur"
           src={me}
           alt="pretty woman"
           sizes="100vw"
