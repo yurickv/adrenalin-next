@@ -23,7 +23,7 @@ export const MotivationCard = () => {
                transition-all duration-300 outline-0"
               >
                 <p>{title}</p>
-                <div className="  text-main rotate-45 group-hover:rotate-0 transition-all duration-300">
+                <div className="  text-main rotate-45 group-hover:rotate-0 transition-all duration-300 ">
                   <Arrow />
                 </div>
               </summary>
