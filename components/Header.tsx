@@ -52,7 +52,7 @@ export const Header = () => {
     <header
       className="sm:max-w-[640px] md:max-w-[1279px] lg:max-w-[1439px] xl:max-w-[1919px]
     sm:px-4 md:px-[40px] lg:px-[66px] xl:px-[132px]
-    flex justify-between items-center py-5 border-b  gap-4 mr-auto ml-auto "
+    flex justify-between items-center py-5 border-b  gap-4 mr-auto ml-auto bg-white dark:bg-backgroundBlack"
     >
       <nav className="flex  md:gap-5 lg:gap-10">
         <Link
@@ -73,16 +73,18 @@ export const Header = () => {
               <>
                 <Popover.Button
                   className={`
-                ${open ? 'bg-orange-100 !text-main' : ''}
-                  group flex items-center gap-1 font-poppins hover:text-main hover:bg-orange-100
-             text-mainText rounded-lg px-3 py-2 outline-none`}
+                ${open ? 'bg-orange-100 !text-main dark:bg-hoverBlack' : ''}
+                  group flex items-center gap-1 font-poppins hover:text-main dark:bg-hoverBlack hover:bg-orange-100
+             text-mainTitle dark:text-white rounded-lg px-3 py-2 outline-none`}
                 >
                   Калькулятори
                   <div
                     className={`
                 ${
-                  open ? 'bg-orange-100 !text-main rotate-180' : ''
-                } h-5 w-5 flex-none text-mainText group-hover:text-main`}
+                  open
+                    ? 'bg-orange-100 !text-main rotate-180 dark:bg-hoverBlack'
+                    : ''
+                } h-5 w-5 flex-none text-mainTitle dark:text-white group-hover:text-main`}
                   >
                     <ShevronDown aria-hidden="true" />
                   </div>
@@ -102,11 +104,11 @@ export const Header = () => {
                       {calcHeader.map(item => (
                         <div
                           key={item.name}
-                          className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-orange-100"
+                          className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-orange-100 dark:bg-hoverBlack"
                         >
-                          <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-orange-100 group-hover:bg-white">
+                          <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-orange-100 dark:bg-hoverBlack group-hover:bg-white">
                             <div
-                              className="h-6 w-6 text-gray-600 group-hover:text-main"
+                              className="h-6 w-6 text-mainTitle dark:text-white group-hover:text-main"
                               aria-hidden="true"
                             >
                               {item.icon}
@@ -115,12 +117,12 @@ export const Header = () => {
                           <div className="flex-auto">
                             <a
                               href={item.href}
-                              className="block font-semibold text-mainText hover:text-main"
+                              className="block font-semibold text-mainTitle dark:text-white hover:text-main"
                             >
                               {item.name}
                               <span className="absolute inset-0" />
                             </a>
-                            <p className="mt-1 text-gray-600">
+                            <p className="mt-1 text-mainText dark:text-mainTextBlack">
                               {item.description}
                             </p>
                           </div>
@@ -137,8 +139,11 @@ export const Header = () => {
             {NavLinks.map(link => (
               <li
                 key={link.key}
-                className={`flex items-center gap-2  hover:text-main font-poppins rounded-lg px-3 py-2 hover:bg-orange-100 ${
-                  params === link.href ? 'text-main' : ''
+                className={`flex items-center gap-2  hover:text-main font-poppins rounded-lg px-3 py-2 hover:bg-orange-100 
+                dark:bg-hoverBlack ${
+                  params === link.href
+                    ? 'text-main'
+                    : 'text-mainTitle dark:text-white'
                 } transition-colors duration-300 cursor-pointer`}
               >
                 <Link href={link.href}>{link.text}</Link>
@@ -151,7 +156,7 @@ export const Header = () => {
       <div className="flex  md:hidden hover:text-main">
         <button
           type="button"
-          className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-mainTextBlack"
           onClick={() => setMobileMenuOpen(true)}
         >
           <span className="sr-only">Open main menu</span>
@@ -159,7 +164,7 @@ export const Header = () => {
         </button>
       </div>
 
-      <div className=" hidden md:flex md:gap-4 text-main relative">
+      <div className="hidden md:flex md:gap-4 text-main relative">
         <Search search={search} />
         <a
           href="https://www.instagram.com/gym.adrenalin/?hl=uk"
@@ -185,7 +190,10 @@ export const Header = () => {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel
+          className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-backgroundBlack
+        px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        >
           <div className="flex items-center justify-between">
             <a
               href="/"
@@ -206,7 +214,7 @@ export const Header = () => {
             </a>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-mainText"
+              className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-mainTextBlack"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
@@ -222,9 +230,12 @@ export const Header = () => {
                     <>
                       <Disclosure.Button
                         className={` ${
-                          open ? 'bg-orange-100 !text-main' : ''
+                          open
+                            ? 'bg-orange-100 dark:bg-hoverBlack !text-main'
+                            : ''
                         } flex w-full items-center justify-between rounded-lg py-2 
-                      pl-3 pr-3.5 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main`}
+                      pl-3 pr-3.5 text-base font-semibold leading-7 text-mainTitle dark:text-white
+                       hover:bg-orange-100 dark:bg-hoverBlack hover:text-main`}
                       >
                         Калькулятори
                         <div
@@ -241,7 +252,7 @@ export const Header = () => {
                             as="a"
                             href={item.href}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7
-                             text-mainText hover:bg-orange-100 hover:text-main"
+                             text-mainText dark:text-mainTextBlack hover:bg-orange-100 dark:bg-hoverBlack hover:text-main"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -253,21 +264,24 @@ export const Header = () => {
                 <Link
                   href="/blog"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7
+                   text-mainTitle dark:text-white hover:bg-orange-100 dark:bg-hoverBlack hover:text-main"
                 >
                   Блог
                 </Link>
                 <Link
                   href="/services"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
+                  text-mainTitle dark:text-white hover:bg-orange-100 dark:bg-hoverBlack hover:text-main"
                 >
                   Послуги
                 </Link>
                 <Link
                   href="/contacts"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-mainText hover:bg-orange-100 hover:text-main"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
+                   text-mainTitle dark:text-white hover:bg-orange-100 dark:bg-hoverBlack hover:text-main"
                 >
                   Контакти
                 </Link>

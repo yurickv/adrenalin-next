@@ -24,6 +24,7 @@ export const BlogSectionCard = async () => {
           <div className="relative -mt-8  overflow-hidden rounded-lg !shadow-[0_2px_15px_-3px_#00000029,0_10px_20px_-2px_#0000001a] align-top w-full h-3/4">
             <Image
               placeholder="blur"
+              blurDataURL="/placeholder.png"
               src={image}
               alt={topic}
               sizes="(max-width: 320px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw"

@@ -10,8 +10,13 @@ module.exports = {
       colors: {
         main: '#F67831',
         hover: '#EB3C5A',
-        mainText: '#85777B',
+        hoverBlack: '#C2C2C2',
+        mainText: '#737373', //neutral-500
+        mainTextBlack: '#a3a3a3', //neutral-400
+        mainTitle: '#171717', //neutral-900
+        mainTitleBlack: '#fafafa', //neutral-50
         background: '#ECECEC;',
+        backgroundBlack: '#5F5C5D',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

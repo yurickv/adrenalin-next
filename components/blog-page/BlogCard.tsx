@@ -30,6 +30,8 @@ export const BlogCard = async ({
       <div className="relative mx-auto md:col-span-2 lg:col-span-3">
         <div className="relative h-[400px]  w-[340px] md:h-[490px] md:w-[720px] lg:w-[1070px] lg:h-[720px] ">
           <Image
+            placeholder="blur"
+            blurDataURL="/placeholder.png"
             src="/man-fitness-404.jpg"
             alt="Man with dumbells"
             fill
@@ -58,6 +60,7 @@ export const BlogCard = async ({
           <div className="relative -mt-4 !mr-4 !ml-4 overflow-hidden rounded-lg !shadow-[0_2px_15px_-3px_#00000029,0_10px_20px_-2px_#0000001a] w-[calc((100%-32px))] h-[270px] align-middle object-cover">
             <Image
               placeholder="blur"
+              blurDataURL="/placeholder.png"
               src={image}
               alt={topic}
               sizes="(max-width: 320px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw"

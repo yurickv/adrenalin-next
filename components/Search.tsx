@@ -18,8 +18,14 @@ export function Search({ search, handleCloseMobileMenu }: Props) {
           <>
             <Popover.Button
               className={`
-                ${open ? 'bg-orange-100 !text-main' : 'text-opacity-90'}
-                group inline-flex items-center rounded-md hover:bg-orange-100 text-mainText p-2 text-base font-medium hover:text-main hover:text-opacity-100 outline-none `}
+                ${
+                  open
+                    ? 'bg-orange-100 dark:bg-hoverBlack !text-main'
+                    : 'text-opacity-90'
+                }
+                group inline-flex items-center rounded-md hover:bg-orange-100 dark:bg-hoverBlack
+                 text-mainTitle dark:text-white p-2 text-base font-medium hover:text-main
+                 hover:text-opacity-100 outline-none `}
             >
               <span>
                 <SearchIcon />
