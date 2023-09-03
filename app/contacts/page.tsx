@@ -4,7 +4,6 @@ import { Insta } from '@/components/icons/Instagram';
 import { Location } from '@/components/icons/Location';
 import { Phone } from '@/components/icons/Phone';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
-import SceletonCard from '@/components/sceleton/SceletonCard';
 
 export const metadata: Metadata = {
   title: 'Контакти',

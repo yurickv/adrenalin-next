@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { DescriptionText } from './DescriptionText';
-import { ButtonForPrice } from './ButtonForPrice';
+import { DetailsAndPriceButtons } from './DetailsAndPriceButtons';
 import { PriceTrainingPlan } from './PriceProgram';
+import { plans, plansPrices } from '@/const/priceConst';
 
 type ProgramCardProps = {
   onClickMore: (button: 'standart' | 'personal' | 'planTrain') => void;
@@ -15,18 +16,20 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
   onClickMore,
   isOpen,
 }) => {
-  const [quantity, setQuantity] = useState<number>(2);
-  const [duration, setDuration] = useState<number>(1);
+  const [chosenProduct, setChosenProduct] = useState({
+    ...plans[0],
+    ...plansPrices[0],
+  });
+  const [servicePlans, setServicePlans] = useState(plans[0]);
+  const [planDuration, setPlanDuration] = useState(plansPrices[0]);
 
-  function handleChange(number: number) {
-    if (number === 1) {
-      setQuantity(number);
-      setDuration(1);
-      return;
+  useEffect(() => {
+    if (servicePlans.serviceName === 'План тренування') {
+      setPlanDuration(plansPrices[0]);
     }
-    setQuantity(number);
-  }
-  const sum = duration * quantity;
+
+    setChosenProduct({ ...servicePlans, ...planDuration });
+  }, [servicePlans, planDuration]);
 
   return (
     <div
@@ -35,22 +38,35 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
       } px-4 py-12 md:py-4 lg:py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
      hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] rounded-lg flex flex-col gap-6 basis-1/3 overflow-hidden`}
     >
-      <DescriptionText title="План харчування/ тренування" />
-      <PriceTrainingPlan value={sum} />
+      <DescriptionText
+          title="План харчування/ тренування"
+      />
+      <PriceTrainingPlan
+          duration={planDuration.availability}
+          price={planDuration.price}
+      />
       <div className="flex flex-col gap-6">
         <div className="flex flex-col">
           <label htmlFor="quantity" className="">
             *Програма:
           </label>
           <select
-            name="quantity"
+            name="service name"
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2"
-            value={quantity}
-            onChange={e => handleChange(Number(e.target.value))}
+            value={servicePlans.serviceName}
+            onChange={e => {
+              const plan = plans.find(
+                ({ serviceName }) => serviceName === e.target.value
+              );
+              if (plan) {
+                setServicePlans(plan);
+              }
+            }}
           >
-            <option value="1">План тренування</option>
-            <option value="2">План харчування</option>
+            {plans.map(plan => (
+              <option value={plan.serviceName}>{plan.serviceName}</option>
+            ))}
           </select>
         </div>
 
@@ -60,22 +76,32 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
           </label>
           <select
             name="duration"
-            disabled={quantity === 1 ? true : false}
+            disabled={servicePlans.serviceName === 'План тренування'}
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2"
-            value={duration}
-            onChange={e => setDuration(Number(e.target.value))}
+            value={
+              servicePlans.serviceName === 'План тренування'
+                ? plansPrices[0].quantity
+                : planDuration.quantity
+            }
+            onChange={e => {
+              const plan = plansPrices.find(
+                plan => plan.quantity === e.target.value
+              );
+              if (plan) {
+                setPlanDuration(plan);
+              }
+            }}
           >
-            <option value="1" className="">
-              1 тиждень
-            </option>
-            <option value="4">1 місяць</option>
+            {plansPrices.map(({ quantity, availability }) => (
+              <option value={quantity}>{availability}</option>
+            ))}
           </select>
         </div>
       </div>
 
-      <ButtonForPrice
-        value={sum}
+      <DetailsAndPriceButtons
+        chosenProduct={chosenProduct}
         onClickMore={onClickMore}
         name="planTrain"
         isOpen={isOpen}

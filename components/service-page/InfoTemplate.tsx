@@ -1,7 +1,5 @@
-interface TrainingItem {
-  descript: string;
-  price: string;
-}
+import { CoachService, Service } from '@/app/_types/services.types';
+
 interface StylesItem {
   css?: string;
   cssUl?: string;
@@ -10,8 +8,7 @@ interface StylesItem {
 interface InfoTemplateProps {
   title: string;
   styles: StylesItem;
-
-  data: TrainingItem[];
+  data: Service[] | CoachService[];
 }
 
 export const InfoTemplate: React.FC<InfoTemplateProps> = ({
@@ -30,13 +27,13 @@ export const InfoTemplate: React.FC<InfoTemplateProps> = ({
         {title}
       </h2>
       <ul className={`grid ${styles.cssUl ? styles.cssUl : ''}`}>
-        {data.map(({ descript, price }) => (
+        {data.map(({ quantity, price, serviceName }) => (
           <li
             className={`flex justify-between 
             lg:flex-row lg:justify-between
           border-b-2 border-main p-2 ${styles.cssText ? styles.cssText : ''}`}
           >
-            <p>{descript}</p>
+            <p>{quantity + ' ' + serviceName}</p>
             <span className="font-semibold">{price} &#8372;</span>
           </li>
         ))}
