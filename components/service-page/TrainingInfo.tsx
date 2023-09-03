@@ -1,4 +1,4 @@
-import { mounth, unlimit, year } from '@/const/priceConst';
+import { monthPass, yearPass } from '@/const/priceConst';
 import { InfoTemplate } from './InfoTemplate';
 
 export const TrainingInfo = () => {
@@ -15,13 +15,12 @@ export const TrainingInfo = () => {
     >
       <InfoTemplate
         title="Щомісячні тренування"
-        data={mounth}
+        data={monthPass}
         styles={styles}
       />
-      <InfoTemplate title="Безлім на місяць" data={unlimit} styles={styles} />
       <InfoTemplate
         title="Довгострокові тренування"
-        data={year}
+        data={yearPass}
         styles={styles}
       />
     </div>

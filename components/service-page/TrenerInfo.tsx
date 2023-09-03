@@ -1,4 +1,4 @@
-import { trener } from '@/const/priceConst';
+import { coachServices } from '@/const/priceConst';
 import { InfoTemplate } from './InfoTemplate';
 
 export const TrenerInfo = () => {
@@ -11,7 +11,7 @@ export const TrenerInfo = () => {
     >
       <InfoTemplate
         title="Тренерський супровід"
-        data={trener}
+        data={coachServices}
         styles={styles}
       />
     </div>

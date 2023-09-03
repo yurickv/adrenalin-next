@@ -1,10 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { DescriptionText } from './DescriptionText';
-import { Price } from './PriceTraining';
-import { ButtonForPrice } from './ButtonForPrice';
+import { PriceTraining } from './PriceTraining';
+import { DetailsAndPriceButtons } from './DetailsAndPriceButtons';
+import { monthPass, passDuration } from '@/const/priceConst';
+import { changePriceForTrainings } from '@/app/_helpers/changePriceForTrainings';
 
 type TrainingCardProps = {
   onClickMore: (button: 'standart' | 'personal' | 'planTrain') => void;
@@ -15,17 +17,26 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
   onClickMore,
   isOpen,
 }) => {
-  const [quantity, setQuantity] = useState<number>(12);
-  const [duration, setDuration] = useState<number>(1);
+  const [chosenProduct, setChosenProduct] = useState(monthPass[2]);
+  const [productDuration, setProductDuration] = useState(passDuration[0]);
+  const [price, setPrice] = useState(
+    changePriceForTrainings(chosenProduct.price, productDuration.quantity)
+  );
 
-  function handleChange(number: number) {
-    if (number === 1 || number === 8) {
-      setQuantity(number);
-      setDuration(1);
-      return;
+  const isNotUnlimitedPass =
+    chosenProduct.price === '80' ||
+    chosenProduct.price === '440' ||
+    chosenProduct.price === '500';
+  useEffect(() => {
+    if (isNotUnlimitedPass) {
+      setProductDuration(passDuration[0]);
+      return setPrice(changePriceForTrainings(chosenProduct.price, '1'));
     }
-    setQuantity(number);
-  }
+
+    setPrice(
+      changePriceForTrainings(chosenProduct.price, productDuration.quantity)
+    );
+  }, [chosenProduct, productDuration]);
 
   return (
     <div
@@ -47,44 +58,59 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
             name="quantity"
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2"
-            value={quantity}
-            onChange={e => handleChange(Number(e.target.value))}
+            value={chosenProduct.quantity}
+            onChange={e => {
+              const pass = monthPass.find(
+                ({ quantity }) => quantity === e.target.value
+              );
+              if (pass) setChosenProduct(pass);
+            }}
           >
-            <option value="1" className="">
-              1 тренування
-            </option>
-            <option value="8">8 тренувань</option>
-            <option value="12">12 тренувань</option>
-            <option value="20">Безліміт</option>
+            {monthPass.map(({ quantity, serviceName }) => (
+              <option value={quantity}>{quantity + ' ' + serviceName}</option>
+            ))}
           </select>
         </div>
 
         <div className="flex flex-col ">
-          <label htmlFor="duration" className="">
-            *Тривалість:
-          </label>
+          <label htmlFor="duration">*Тривалість:</label>
           <select
             name="duration"
-            disabled={quantity === 1 || quantity === 8 ? true : false}
+            disabled={isNotUnlimitedPass}
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2"
-            value={duration}
-            onChange={e => setDuration(Number(e.target.value))}
+            value={productDuration.quantity + ' ' + productDuration.serviceName}
+            onChange={e => {
+              const duration = passDuration.find(
+                ({ quantity, serviceName }) =>
+                  quantity + ' ' + serviceName === e.target.value
+              );
+              if (duration) {
+                setProductDuration(duration);
+              }
+            }}
           >
-            <option value="1" className="">
-              1 місяць
-            </option>
-            <option value="3">3 місяці</option>
-            <option value="6">6 місяців</option>
-            <option value="12">1 рік</option>
+            {passDuration.map(({ quantity, serviceName }) => (
+              <option value={quantity + ' ' + serviceName}>
+                {quantity + ' ' + serviceName}
+              </option>
+            ))}
           </select>
         </div>
       </div>
-      <Price duration={duration} quantity={quantity} />
-      <ButtonForPrice
+      <PriceTraining
+        duration={productDuration.quantity + ' ' + productDuration.serviceName}
+        price={price}
+      />
+      <DetailsAndPriceButtons
         onClickMore={onClickMore}
         name="standart"
         isOpen={isOpen}
+        chosenProduct={{
+          ...chosenProduct,
+          price: price.toString(),
+          duration: productDuration.quantity,
+        }}
       />
     </div>
   );

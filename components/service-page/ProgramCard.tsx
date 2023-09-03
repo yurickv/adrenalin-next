@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { DescriptionText } from './DescriptionText';
-import { ButtonForPrice } from './ButtonForPrice';
+import { DetailsAndPriceButtons } from './DetailsAndPriceButtons';
 import { PriceTrainingPlan } from './PriceProgram';
+import { plans, plansPrices } from '@/const/priceConst';
 
 type ProgramCardProps = {
   onClickMore: (button: 'standart' | 'personal' | 'planTrain') => void;
@@ -15,18 +16,20 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
   onClickMore,
   isOpen,
 }) => {
-  const [quantity, setQuantity] = useState<number>(2);
-  const [duration, setDuration] = useState<number>(1);
+  const [chosenProduct, setChosenProduct] = useState({
+    ...plans[0],
+    ...plansPrices[0],
+  });
+  const [servicePlans, setServicePlans] = useState(plans[0]);
+  const [planDuration, setPlanDuration] = useState(plansPrices[0]);
 
-  function handleChange(number: number) {
-    if (number === 1) {
-      setQuantity(number);
-      setDuration(1);
-      return;
+  useEffect(() => {
+    if (servicePlans.serviceName === 'План тренування') {
+      setPlanDuration(plansPrices[0]);
     }
-    setQuantity(number);
-  }
-  const sum = duration * quantity;
+
+    setChosenProduct({ ...servicePlans, ...planDuration });
+  }, [servicePlans, planDuration]);
 
   return (
     <div
@@ -45,14 +48,22 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
             *Програма:
           </label>
           <select
-            name="quantity"
+            name="service name"
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2"
-            value={quantity}
-            onChange={e => handleChange(Number(e.target.value))}
+            value={servicePlans.serviceName}
+            onChange={e => {
+              const plan = plans.find(
+                ({ serviceName }) => serviceName === e.target.value
+              );
+              if (plan) {
+                setServicePlans(plan);
+              }
+            }}
           >
-            <option value="1">План тренування</option>
-            <option value="2">План харчування</option>
+            {plans.map(plan => (
+              <option value={plan.serviceName}>{plan.serviceName}</option>
+            ))}
           </select>
         </div>
 
@@ -62,22 +73,35 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
           </label>
           <select
             name="duration"
-            disabled={quantity === 1 ? true : false}
+            disabled={servicePlans.serviceName === 'План тренування'}
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2"
-            value={duration}
-            onChange={e => setDuration(Number(e.target.value))}
+            value={
+              servicePlans.serviceName === 'План тренування'
+                ? plansPrices[0].quantity
+                : planDuration.quantity
+            }
+            onChange={e => {
+              const plan = plansPrices.find(
+                plan => plan.quantity === e.target.value
+              );
+              if (plan) {
+                setPlanDuration(plan);
+              }
+            }}
           >
-            <option value="1" className="">
-              1 тиждень
-            </option>
-            <option value="4">1 місяць</option>
+            {plansPrices.map(({ quantity, availability }) => (
+              <option value={quantity}>{availability}</option>
+            ))}
           </select>
         </div>
       </div>
-      <PriceTrainingPlan value={sum} />
-      <ButtonForPrice
-        value={sum}
+      <PriceTrainingPlan
+        duration={planDuration.availability}
+        price={planDuration.price}
+      />
+      <DetailsAndPriceButtons
+        chosenProduct={chosenProduct}
         onClickMore={onClickMore}
         name="planTrain"
         isOpen={isOpen}
