@@ -34,11 +34,9 @@ body {
 }
 /* ____________________Section Motivation_____________________ */
 details[open] summary {
-  @apply bg-orange-100 dark:bg-hoverBlack  transition-all duration-300;
+  @apply bg-orange-100 dark:bg-mainText  transition-all duration-300;
 }
-details[open] summary h5 {
-  @apply !text-mainTitle  transition-all duration-300;
-}
+
 details[open] summary div {
   @apply -rotate-45 transition-all duration-300;
 }

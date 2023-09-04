@@ -19,11 +19,10 @@ export const MotivationCard = () => {
               <summary
                 className="group flex gap-4 items-end justify-between 
                text-lg lg:text-2xl leading-normal font-medium 
-               border-b-2 border-main px-3 py-2 hover:bg-orange-100 
-               dark:hover:bg-hoverBlack dark:focus:bg-hoverBlack 
+               border-b-2 border-main px-3 py-2  cursor-pointer              
                transition-all duration-300 outline-0"
               >
-                <h5 className="text-mainTitle dark:text-mainTitleBlack dark:group-hover:text-mainTitle">
+                <h5 className="text-mainTitle dark:text-mainTitleBlack ">
                   {title}
                 </h5>
                 <div className="  text-main rotate-45 group-hover:rotate-0 transition-all duration-300 ">
@@ -31,7 +30,7 @@ export const MotivationCard = () => {
                 </div>
               </summary>
               <p
-                className=" bg-white dark:bg-darkBody z-10 font-medium text-lg lg:text-xl lg:leading-8 indent-4
+                className="mt-2 bg-white dark:bg-darkBody z-10 font-medium text-lg lg:text-xl lg:leading-8 indent-4
               text-mainText dark:text-mainTextBlack"
               >
                 {text}

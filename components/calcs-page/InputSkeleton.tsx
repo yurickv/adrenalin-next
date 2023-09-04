@@ -38,7 +38,7 @@ export const InputSkeleton = ({
             type="number"
             onBlur={onBlur}
             className="font-bold md:text-lg rounded-lg border-mainText dark:border-mainTextBlack 
-            dark:bg-[#676465] dark:text-mainTitleBlack border-2 p-2 text-center max-w-[120px]
+            dark:bg-[#676465] dark:text-mainTitleBlack border-2 py-2 pr-2 pl-6 text-center max-w-[120px]
              hover:border-main focus:ring-2 focus:ring-main outline-none"
           />
           {error && (
