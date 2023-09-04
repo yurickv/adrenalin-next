@@ -52,7 +52,7 @@ export const Footer = () => {
                     className={`
                 ${
                   open
-                    ? 'bg-orange-100 !text-maindark:bg-hoverBlack dark:!text-mainTitle'
+                    ? 'bg-orange-100 !text-main dark:bg-hoverBlack dark:!text-mainTitle'
                     : ''
                 } group flex items-center gap-x-1 
                   font-poppins hover:text-main hover:bg-orange-100
@@ -83,19 +83,19 @@ export const Footer = () => {
                   >
                     <Popover.Panel
                       className="absolute left-1/4 top-full z-10 mt-2 w-screen max-w-[250px] 
-                    overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-300"
+                    overflow-hidden rounded-3xl bg-white dark:bg-[#676465] shadow-lg transition-all duration-300"
                     >
                       <div className=" p-2">
                         {products.map(item => (
                           <div
                             key={item.name}
                             className="group relative flex items-center gap-x-4 rounded-lg p-2 text-sm 
-                            leading-6 hover:bg-orange-100"
+                            leading-6 hover:bg-orange-100 dark:bg-[#676465] dark:hover:bg-mainText"
                           >
                             <div className="flex-auto">
                               <a
                                 href={item.href}
-                                className="block font-semibold text-mainText"
+                                className="block font-semibold text-mainTitle dark:text-white  hover:text-main"
                               >
                                 {item.name}
                                 <span className="absolute inset-0" />

@@ -14,24 +14,24 @@ const Contacts = () => {
     <main>
       <section className="bg-hero-bg bg-center bg-cover ">
         <div className="div-container py-[20px] md:py-[44px] mx-auto text-center flex flex-col gap-5">
-          <h3 className="text-left text-white flex gap-2">
+          <h3 className="text-left text-mainTitleBlack flex gap-2">
             <Link href="/" className="flex gap-2 items-center">
               <HomeIcon />
               <span className="sr-only md:not-sr-only">Adrenalin_gym</span>
             </Link>
             <span className="font-semibold"> &gt; Контакти</span>
           </h3>
-          <h1 className="title mb-14 text-white">Контакти</h1>
+          <h1 className="title mb-14 text-mainTitleBlack">Контакти</h1>
         </div>
       </section>
-      <section className="py-[40px] md:py-[44px] lg:py-[88px]">
+      <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
         <div
           className="div-container flex flex-col 
         md:flex-row justify-between gap-6"
         >
           <div className="max-[449px]:text-center min-[450px]:flex gap-4 justify-between md:block">
             <div className="flex flex-col gap-5  max-[449px]:mx-auto max-w-[205px] md:max-w-full">
-              <p className="text-xl md:text-2xl font-semibold mb-4">
+              <p className="text-xl md:text-2xl font-semibold mb-4 text-mainTitle dark:text-mainTitleBlack">
                 Де нас знайти?
               </p>
               <Link
@@ -41,7 +41,10 @@ const Contacts = () => {
                 className="group   transition-colors duration-300 text-main flex gap-4 items-center"
               >
                 <Location />
-                <span className="text-mainText  text-lg  group-hover:text-main transition-colors duration-300">
+                <span
+                  className="text-mainText dark:text-mainTextBlack  text-lg 
+                 group-hover:text-main transition-colors duration-300"
+                >
                   м.Тернопіль, вул.Сахарова 10
                 </span>
               </Link>
@@ -53,7 +56,10 @@ const Contacts = () => {
                 className="group   transition-colors duration-300 text-main flex gap-4 items-center"
               >
                 <Phone />
-                <span className="text-mainText text-lg  group-hover:text-main transition-colors duration-300 ">
+                <span
+                  className="text-mainText dark:text-mainTextBlack text-lg 
+                 group-hover:text-main transition-colors duration-300 "
+                >
                   +38 097 960 1371 <br /> +38 097 883 6689
                 </span>
               </Link>
@@ -69,7 +75,7 @@ const Contacts = () => {
                   <Insta />
                 </div>
                 <span
-                  className=" text-lg  text-mainText 
+                  className=" text-lg  text-mainText dark:text-mainTextBlack
                  transition-all duration-200 group-hover:text-main"
                 >
                   Gym.adrenalin
@@ -77,8 +83,10 @@ const Contacts = () => {
               </Link>
             </div>
             <div className="max-[449px]:mt-6 md:mt-6">
-              <p className="font-semibold">Графік роботи:</p>
-              <ul className="mt-4">
+              <p className="font-semibold text-mainTitle dark:text-mainTitleBlack">
+                Графік роботи:
+              </p>
+              <ul className="mt-4 text-mainText dark:text-mainTextBlack">
                 <li>
                   <span className="font-semibold">пн, ср, пт</span> —
                   11:00-20:00
