@@ -17,7 +17,10 @@ export const ServiceCardMain = () => {
         </div>
 
         <div className="p-6 grow md:flex md:flex-col justify-between">
-          <h5 className="mb-2 text-xl font-medium leading-tight text-mainText min-h-[50px] group-hover:text-main">
+          <h5
+            className="mb-2 text-xl font-medium leading-tight text-mainTitle 
+           min-h-[50px] group-hover:text-main"
+          >
             Тренування
           </h5>
           <p className=" text-base text-mainText">
@@ -37,7 +40,10 @@ export const ServiceCardMain = () => {
         </div>
 
         <div className="p-6 grow">
-          <h5 className="mb-2 text-xl font-medium leading-tight text-mainText min-h-[50px] group-hover:text-main">
+          <h5
+            className="mb-2 text-xl font-medium leading-tight text-mainTitle 
+           min-h-[50px] group-hover:text-main"
+          >
             Тренування з тренером
           </h5>
           <p className=" text-base text-mainText">
@@ -56,7 +62,7 @@ export const ServiceCardMain = () => {
           <PlanIcon />
         </div>
         <div className="p-6 grow">
-          <h5 className="mb-2 text-xl font-medium leading-tight text-mainText min-h-[50px] group-hover:text-main">
+          <h5 className="mb-2 text-xl font-medium leading-tight text-mainTitle  min-h-[50px] group-hover:text-main">
             План харчування / тренування
           </h5>
           <p className=" text-base text-mainText">

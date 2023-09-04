@@ -27,20 +27,21 @@ export const BlogCard = async ({
   }
   if (!pages) {
     return (
-      <div className="relative mx-auto md:col-span-2 lg:col-span-3">
+      <div className="relative mx-auto md:col-span-2 lg:col-span-3 bg-white dark:bg-darkBody">
         <div className="relative h-[400px]  w-[340px] md:h-[490px] md:w-[720px] lg:w-[1070px] lg:h-[720px] ">
           <Image
             placeholder="blur"
             blurDataURL="/placeholder.png"
             src="/man-fitness-404.jpg"
             alt="Man with dumbells"
+            sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw,  33vw"
             fill
             style={{
               objectFit: 'cover',
             }}
           />
         </div>
-        <p className="absolute left-5 top-5 md:top-1/3 text-white md:text-xl lg:text-2xl font-bold">
+        <p className="absolute left-5 top-5 md:top-1/3 text-mainTextBlack md:text-xl lg:text-2xl font-bold">
           Упс.
           <br className="md:hidden" /> По Вашому запиту <br /> нічого не
           знайдено!
@@ -85,10 +86,12 @@ export const BlogCard = async ({
             >
               #{topic}
             </Link>
-            <h5 className="text-lg md:text-2xl font-semibold leading-tight text-mainText h-[67px] line-clamp-3">
+            <h5 className="text-lg md:text-2xl font-semibold leading-tight text-mainTitle h-[67px] line-clamp-3">
               {title}
             </h5>
-            <p className="mt-6 line-clamp-3">{description}</p>
+            <p className="mt-6 line-clamp-3 text-mainText h-[72px]">
+              {description}
+            </p>
           </div>
         </div>
       ))}

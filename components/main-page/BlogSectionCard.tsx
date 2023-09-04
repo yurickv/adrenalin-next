@@ -27,7 +27,7 @@ export const BlogSectionCard = async () => {
               blurDataURL="/placeholder.png"
               src={image}
               alt={topic}
-              sizes="(max-width: 320px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw"
+              sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw,  33vw"
               layout="fill"
               style={{
                 objectFit: 'cover',
@@ -45,7 +45,7 @@ export const BlogSectionCard = async () => {
             >
               #{topic}
             </Link>
-            <h5 className="text-lg md:text-2xl font-semibold leading-tight text-mainText ">
+            <h5 className="text-lg md:text-2xl font-semibold leading-tight text-mainTitle ">
               {title}
             </h5>
           </div>

@@ -49,7 +49,7 @@ const Services = () => {
           <h1 className="title mb-14 text-white">Послуги</h1>
         </div>
       </section>
-      <section className="py-[40px] md:py-[44px] lg:py-[88px]">
+      <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
         <div
           className="div-container flex flex-col md:grid  md:grid-cols-3 
           gap-6 md:gap-x-4 lg:gap-x-6 md:gap-y-8 lg:gap-y-11"

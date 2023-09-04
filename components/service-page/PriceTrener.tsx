@@ -5,8 +5,10 @@ export const PriceTrener = ({ service }: { service: CoachService }) => {
     <div className="text-center ">
       <p className="text-2xl font-bold text-main">
         &#8372; {service.price}{' '}
-        <span className="text-2xl font-semibold text-mainText">/</span>{' '}
-        <span className=" text-base font-semibold text-mainText">
+        <span className="text-2xl font-semibold text-mainText dark:text-mainTextBlack">
+          /
+        </span>{' '}
+        <span className=" text-base font-semibold text-mainText dark:text-mainTextBlack">
           {service.availability}
         </span>
       </p>

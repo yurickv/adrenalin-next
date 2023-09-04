@@ -130,7 +130,8 @@ export const Header = () => {
                             <div className="flex-auto">
                               <a
                                 href={item.href}
-                                className="block font-semibold text-mainTitle dark:text-white  hover:text-main"
+                                className="block font-semibold text-mainTitle dark:text-white
+                                  hover:text-main dark:hover:text-orange-400 tracking-wider"
                               >
                                 {item.name}
                                 <span className="absolute inset-0" />
@@ -227,7 +228,7 @@ export const Header = () => {
               </a>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-mainTextBlack"
+                className="-m-2.5 rounded-md p-2.5 text-mainText dark:text-mainTextBlack"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
@@ -244,28 +245,30 @@ export const Header = () => {
                         <Disclosure.Button
                           className={` ${
                             open
-                              ? 'bg-orange-100 dark:bg-hoverBlack !text-main'
+                              ? 'bg-orange-100 dark:bg-hoverBlack !text-main dark:!text-mainTitle'
                               : ''
-                          } flex w-full items-center justify-between rounded-lg py-2 
-                      pl-3 pr-3.5 text-base font-semibold leading-7 text-mainTitle dark:text-mainTitleBlack
-                       hover:bg-orange-100 dark:bg-hoverBlack hover:text-main`}
+                          } flex w-full items-center rounded-lg py-2 
+                      pl-3 pr-3.5 text-base font-semibold leading-7
+                       text-mainTitle dark:text-mainTitleBlack dark:hover:text-mainTitle
+                       hover:bg-orange-100 dark:hover:bg-hoverBlack hover:text-main`}
                         >
-                          Калькулятори
+                          Калькулятори &nbsp;
                           <div
                             className={` ${open ? 'rotate-180' : ''}
-                            h-5 w-5 flex-none`}
+                            h-5 w-5 flex-none text-main dark:text-orange-600`}
                           >
                             <ShevronDown aria-hidden="true" />
                           </div>
                         </Disclosure.Button>
-                        <Disclosure.Panel className="mt-2 space-y-2">
+                        <Disclosure.Panel className="mt-2 space-y-2 tracking-wider">
                           {[...calcHeader].map(item => (
                             <Disclosure.Button
                               key={item.name}
                               as="a"
                               href={item.href}
                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7
-                             text-mainText dark:text-mainTextBlack hover:bg-orange-100 dark:bg-hoverBlack hover:text-main"
+                             text-mainText dark:text-mainTextBlack hover:bg-orange-100 tracking-wider
+                             dark:hover:bg-mainText hover:text-main dark:hover:text-orange-400"
                             >
                               {item.name}
                             </Disclosure.Button>
@@ -277,8 +280,9 @@ export const Header = () => {
                   <Link
                     href="/blog"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7
-                   text-mainTitle dark:text-mainTitleBlack hover:bg-orange-100 dark:bg-hoverBlack hover:text-main"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
+                   text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
+                    hover:bg-orange-100   dark:hover:bg-hoverBlack "
                   >
                     Блог
                   </Link>
@@ -286,7 +290,8 @@ export const Header = () => {
                     href="/services"
                     onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
-                  text-mainTitle dark:text-mainTitleBlack hover:bg-orange-100 dark:bg-hoverBlack hover:text-main"
+                   text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
+                    hover:bg-orange-100   dark:hover:bg-hoverBlack "
                   >
                     Послуги
                   </Link>
@@ -294,7 +299,8 @@ export const Header = () => {
                     href="/contacts"
                     onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
-                   text-mainTitle dark:text-mainTitleBlack hover:bg-orange-100 dark:bg-hoverBlack hover:text-main"
+                   text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
+                    hover:bg-orange-100   dark:hover:bg-hoverBlack "
                   >
                     Контакти
                   </Link>
@@ -302,7 +308,7 @@ export const Header = () => {
                 <div className="py-10 flex gap-8 text-main items-center justify-center">
                   <a
                     href="https://www.instagram.com/gym.adrenalin/?hl=uk"
-                    className=" hover:text-hover transition-colors duration-300 cursor-pointer"
+                    className="  transition-colors duration-300 cursor-pointer"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -310,7 +316,7 @@ export const Header = () => {
                   </a>
                   <a
                     href="tel:+38(097)8836689"
-                    className=" hover:text-hover transition-colors duration-300 cursor-pointer"
+                    className="  transition-colors duration-300 cursor-pointer"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
