@@ -65,12 +65,17 @@ export const CaloriesCalcList = () => {
   return (
     <form className="flex flex-col gap-7 ">
       <label htmlFor="sex" className="font-bold flex items-center gap-3">
-        <span className="p-2 text-lg">Стать: </span>
+        <span className="p-2 text-lg text-mainTitle dark:text-mainTitleBlack">
+          Стать:{' '}
+        </span>
         <label
           htmlFor="woman"
-          className={`cursor-pointer flex items-center justify-center 
-          truncate font-semibold text-lg rounded-lg p-2 hover:bg-[#d9d9d9] ${
-            !sex ? 'bg-mainText text-main' : ''
+          className={`cursor-pointer flex items-center justify-center tracking-widest
+          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText dark:text-mainTextBlack
+          truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
+            !sex
+              ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main dark:text-main'
+              : ''
           } `}
         >
           Жінка{' '}
@@ -86,9 +91,10 @@ export const CaloriesCalcList = () => {
         />
         <label
           htmlFor="man"
-          className={`cursor-pointer flex items-center justify-center 
-          truncate font-semibold text-lg rounded-lg p-2 hover:bg-[#d9d9d9] ${
-            sex ? 'bg-mainText text-main' : ''
+          className={`cursor-pointer flex items-center justify-center tracking-widest
+          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText dark:text-mainTextBlack
+          truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
+            sex ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main dark:text-main' : ''
           } `}
         >
           Чоловік{' '}
@@ -134,17 +140,21 @@ export const CaloriesCalcList = () => {
         onBlur={validate}
         error={errors.weight}
       />
-      <label htmlFor="activity" className="font-bold -mb-4">
+      <label
+        htmlFor="activity"
+        className="font-bold -mb-4 text-lg text-mainTitle dark:text-mainTitleBlack"
+      >
         Рівень активності
       </label>
       <select
         name="activity"
         className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
-        font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main"
+        font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main 
+        text-mainText dark:text-mainTextBlack bg-[#e5e5e5] dark:bg-[#262626]"
         value={activity}
         onChange={e => setActivity(Number(e.target.value))}
       >
-        <option value="1.2" className="flex flex-col">
+        <option value="1.2">
           Сидячий спосіб життя (мало або зовсім без фізичних вправ)
         </option>
         <option value="1.375">

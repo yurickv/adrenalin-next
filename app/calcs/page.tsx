@@ -27,7 +27,7 @@ const Calc = () => {
           <h1 className="title mb-14 text-white">Калькулятори</h1>
         </div>
       </section>
-      <section>
+      <section className="bg-white dark:bg-darkBody">
         <div className="div-container">
           <CalcTitle />
           <Image

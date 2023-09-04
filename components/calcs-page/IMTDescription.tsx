@@ -1,6 +1,9 @@
 export const DescriptionIMT = () => {
   return (
-    <ul className=" flex flex-col gap-6 text-base lg:text-lg  text-justify">
+    <ul
+      className=" flex flex-col gap-6 text-base lg:text-lg  text-justify basis-1/2
+    text-mainText dark:text-mainTextBlack"
+    >
       <li>
         Якщо індекс мати тіла (ІМТ) менше <strong>18,5</strong> – вага
         недостатня. Підвищується ризик виникнення таких розладів здоров’я, як

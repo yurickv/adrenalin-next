@@ -6,7 +6,7 @@ export const HeroSection = () => {
     <section className=" bg-hero-bg bg-center bg-cover ">
       <div className="div-container-hero">
         <h1 className="sr-only">Тренажерний зал Адреналін</h1>
-        <div className="relative sm:w-[217px] sm:h-[22px] md:w-[330px] md:h-[33px] lg:w-[585px] lg:h-[59px]">
+        {/* <div className="relative sm:w-[217px] sm:h-[22px] md:w-[330px] md:h-[33px] lg:w-[585px] lg:h-[59px]">
           <Image
             src="/ADRENALIN_GYM.png"
             alt="Adrenalin Gym"
@@ -15,7 +15,7 @@ export const HeroSection = () => {
               objectFit: 'contain',
             }}
           />
-        </div>
+        </div> */}
         <p className="text-lg lg:text-2xl font-poppins lg:w-[845px] text-white flex flex-col">
           Обрахуй свою ідеальну масу тіла за допомогою нашого унікального
           калькулятора!

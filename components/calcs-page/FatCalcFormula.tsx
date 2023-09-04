@@ -30,12 +30,16 @@ export const FatCalcFormula = ({ age, sex, sum }: FormulaProps) => {
   return (
     <>
       <div className="flex gap-4 items-center">
-        <p className="font-bold text-lg">Відсоток жиру в тілі:</p>
-        <p className="rounded-full p-4 text-main font-bold text-lg bg-mainText inline-block w-20 ">
+        <p className="font-bold text-xl text-mainTitle dark:text-mainTitleBlack">
+          % жиру в тілі:
+        </p>
+        <p className="rounded-full p-4 text-main font-bold text-xl bg-[#D9D9D9] inline-block w-20 ">
           {BodyFatPercentage}
         </p>
       </div>
-      <div className="h-20 text-xl font-medium">{message}</div>
+      <div className="h-20 text-lg md:text-xl font-medium text-mainTitle dark:text-mainTitleBlack">
+        {message}
+      </div>
     </>
   );
 };

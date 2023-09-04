@@ -1,7 +1,7 @@
 export const DescriptionFat = () => {
   return (
     <div className="basis-1/2">
-      <ul className=" flex flex-col gap-6 text-base lg:text-lg  text-justify">
+      <ul className=" flex flex-col gap-6 text-base lg:text-lg  text-justify text-mainText dark:text-mainTextBlack">
         <li>
           Оптимальною кількістю жиру в тілі є <strong>12-20%</strong> для
           чоловіків і <strong>16-24%</strong> для жінок. У цьому випадку фігура
@@ -29,8 +29,10 @@ export const DescriptionFat = () => {
         </li>
       </ul>
 
-      <p className="text-lg font-bold mt-6">Як виміряти шкірні складки:</p>
-      <ul className="flex flex-col gap-1 text-justify mt-3 list-disc list-inside">
+      <p className="text-lg font-semibold mt-6 text-mainTitle dark:text-mainTitleBlack">
+        Як виміряти шкірні складки:
+      </p>
+      <ul className="flex flex-col gap-1 text-justify mt-3 list-disc list-inside text-mainText dark:text-mainTextBlack">
         <li>
           Груди – складка виміряється по зовнішньому краю великого грудного.
         </li>
