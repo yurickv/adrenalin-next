@@ -24,9 +24,7 @@ export const TrenerCard: React.FC<TrenerCardProps> = ({
       } px-4 py-12 md:py-4 lg:py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
      hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] rounded-lg flex flex-col gap-6 basis-1/3 overflow-hidden`}
     >
-      <DescriptionText
-        title="Тренування з тренером"
-      />
+      <DescriptionText title="Тренування з тренером" />
       <PriceTrener service={chosenService} />
       <div className="flex flex-col">
         <label htmlFor="quantity" className="">
@@ -46,8 +44,10 @@ export const TrenerCard: React.FC<TrenerCardProps> = ({
             }
           }}
         >
-          {coachServices.map(({ quantity, serviceName }) => (
-            <option value={quantity}>{quantity + ' ' + serviceName} </option>
+          {coachServices.map(({ quantity, serviceName }, index) => (
+            <option value={quantity} key={index}>
+              {quantity + ' ' + serviceName}{' '}
+            </option>
           ))}
         </select>
       </div>

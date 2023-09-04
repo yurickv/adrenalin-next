@@ -27,11 +27,12 @@ export const InfoTemplate: React.FC<InfoTemplateProps> = ({
         {title}
       </h2>
       <ul className={`grid ${styles.cssUl ? styles.cssUl : ''}`}>
-        {data.map(({ quantity, price, serviceName }) => (
+        {data.map(({ quantity, price, serviceName }, index) => (
           <li
             className={`flex justify-between 
             lg:flex-row lg:justify-between
           border-b-2 border-main p-2 ${styles.cssText ? styles.cssText : ''}`}
+            key={index}
           >
             <p>{quantity + ' ' + serviceName}</p>
             <span className="font-semibold">{price} &#8372;</span>
