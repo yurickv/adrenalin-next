@@ -45,12 +45,10 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
       } px-4 py-12 md:py-4 lg:py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] 
       hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] rounded-lg flex flex-col gap-6 hover:shrink basis-1/3 overflow-hidden`}
     >
-      <DescriptionText
-        title="Тренування"
-      />
+      <DescriptionText title="Тренування" />
       <PriceTraining
-          duration={productDuration.quantity + ' ' + productDuration.serviceName}
-          price={price}
+        duration={productDuration.quantity + ' ' + productDuration.serviceName}
+        price={price}
       />
       <div className="flex flex-col gap-6">
         <div className="flex flex-col">
@@ -69,8 +67,10 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
               if (pass) setChosenProduct(pass);
             }}
           >
-            {monthPass.map(({ quantity, serviceName }) => (
-              <option value={quantity}>{quantity + ' ' + serviceName}</option>
+            {monthPass.map(({ quantity, serviceName }, index) => (
+              <option value={quantity} key={index}>
+                {quantity + ' ' + serviceName}
+              </option>
             ))}
           </select>
         </div>
@@ -93,8 +93,8 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
               }
             }}
           >
-            {passDuration.map(({ quantity, serviceName }) => (
-              <option value={quantity + ' ' + serviceName}>
+            {passDuration.map(({ quantity, serviceName }, index) => (
+              <option value={quantity + ' ' + serviceName} key={index}>
                 {quantity + ' ' + serviceName}
               </option>
             ))}

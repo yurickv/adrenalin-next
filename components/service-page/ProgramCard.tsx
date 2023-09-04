@@ -38,12 +38,10 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
       } px-4 py-12 md:py-4 lg:py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
      hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] rounded-lg flex flex-col gap-6 basis-1/3 overflow-hidden`}
     >
-      <DescriptionText
-          title="План харчування/ тренування"
-      />
+      <DescriptionText title="План харчування/ тренування" />
       <PriceTrainingPlan
-          duration={planDuration.availability}
-          price={planDuration.price}
+        duration={planDuration.availability}
+        price={planDuration.price}
       />
       <div className="flex flex-col gap-6">
         <div className="flex flex-col">
@@ -64,8 +62,10 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
               }
             }}
           >
-            {plans.map(plan => (
-              <option value={plan.serviceName}>{plan.serviceName}</option>
+            {plans.map((plan, index) => (
+              <option value={plan.serviceName} key={index}>
+                {plan.serviceName}
+              </option>
             ))}
           </select>
         </div>
@@ -93,8 +93,10 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
               }
             }}
           >
-            {plansPrices.map(({ quantity, availability }) => (
-              <option value={quantity}>{availability}</option>
+            {plansPrices.map(({ quantity, availability }, index) => (
+              <option value={quantity} key={index}>
+                {availability}
+              </option>
             ))}
           </select>
         </div>
