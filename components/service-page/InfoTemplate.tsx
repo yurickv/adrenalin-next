@@ -30,10 +30,8 @@ export const InfoTemplate: React.FC<InfoTemplateProps> = ({
         {data.map(({ quantity, price, serviceName }, index) => (
           <li
             className={`flex justify-between 
-            lg:flex-row lg:justify-between
-          border-b-2 border-main p-2 text-mainText dark:text-mainTextBlack ${
-            styles.cssText ? styles.cssText : ''
-          }`}
+            lg:flex-row lg:justify-betweentext-mainText dark:text-mainTextBlack
+          border-b-2 border-main p-2 ${styles.cssText ? styles.cssText : ''}`}
             key={index}
           >
             <p>{quantity + ' ' + serviceName}</p>
