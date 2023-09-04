@@ -8,15 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        main: '#F67831',
+        main: '#f97316', //#F67831
         hover: '#EB3C5A',
         hoverBlack: '#C2C2C2',
         mainText: '#737373', //neutral-500
-        mainTextBlack: '#a3a3a3', //neutral-400
+        mainTextBlack: '#d4d4d4', //neutral-300
         mainTitle: '#171717', //neutral-900
         mainTitleBlack: '#fafafa', //neutral-50
         background: '#ECECEC;',
         backgroundBlack: '#5F5C5D',
+        darkBody: '#5F5C5D',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

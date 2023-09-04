@@ -20,11 +20,11 @@ export function Search({ search, handleCloseMobileMenu }: Props) {
               className={`
                 ${
                   open
-                    ? 'bg-orange-100 dark:bg-hoverBlack !text-main'
+                    ? 'bg-orange-100 !text-main  dark:bg-hoverBlack dark:!text-mainTitle'
                     : 'text-opacity-90'
                 }
-                group inline-flex items-center rounded-md hover:bg-orange-100 dark:bg-hoverBlack
-                 text-mainTitle dark:text-white p-2 text-base font-medium hover:text-main
+                group inline-flex items-center rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
+                 text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
                  hover:text-opacity-100 outline-none `}
             >
               <span>

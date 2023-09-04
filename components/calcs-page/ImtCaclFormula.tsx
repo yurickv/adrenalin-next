@@ -25,12 +25,16 @@ export const ImtCalcFormula = ({ weight, height }: FormulaProps) => {
   return (
     <>
       <div className="flex gap-4 items-center">
-        <p className="font-bold text-lg">Індекс маси тіла:</p>
-        <p className="rounded-full p-4 text-main font-bold text-lg bg-mainText inline-block w-20 ">
+        <p className="font-bold text-lg text-mainTitle dark:text-mainTitleBlack">
+          Індекс маси тіла:
+        </p>
+        <p className="rounded-full p-4 text-main font-bold text-lg bg-[#D9D9D9] inline-block w-20 ">
           {resultImt}
         </p>
       </div>
-      <div className="h-14 text-lg lg:text-xl font-medium">{message}</div>
+      <div className="h-16 text-lg lg:text-xl font-medium text-mainTitle dark:text-mainTitleBlack">
+        {message}
+      </div>
     </>
   );
 };

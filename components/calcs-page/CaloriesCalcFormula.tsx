@@ -32,8 +32,10 @@ export const CaloriesCalcFormula = ({
 
   return (
     <div className="flex gap-4 items-center">
-      <p className="font-bold text-lg">Денна потреба калорій:</p>
-      <p className="rounded-full p-4 text-main font-bold text-lg bg-mainText inline-block w-20 ">
+      <p className="font-bold text-lg text-mainTitle dark:text-mainTitleBlack">
+        Денна потреба калорій:
+      </p>
+      <p className="rounded-full p-4 text-main font-bold text-lg bg-[#D9D9D9] inline-block w-20 ">
         {basis}
       </p>
     </div>

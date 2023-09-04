@@ -9,14 +9,16 @@ type titleProps = {
 export const CalcTitle = ({ page }: titleProps) => {
   return (
     <div className="md:mt-8">
-      <ul className="flex  flex-col md:flex-row md:gap-6 mb-12">
+      <ul className="flex  flex-col md:flex-row md:gap-6 justify-center mb-12">
         {CalcLinks.map((link, i) => (
           <li
             key={link.key}
             className={`p-4 text-base md:text-lg font-medium  lg:font-semibold font-poppins group
-             transition-all duration-300 md:w-[373px]  border-main text-mainText
-              hover:text-main  hover:bg-orange-100  ${
-                i === page ? ' text-bolt border-2 bg-orange-100' : ' border-b-2'
+             transition-all duration-300 md:w-[373px]  border-main text-mainText dark:text-mainTextBlack
+              hover:text-main  hover:bg-orange-100 dark:hover:bg-mainText rounded-lg ${
+                i === page
+                  ? ' text-bolt bg-orange-200 dark:hover:text-mainTextBlack dark:text-mainText'
+                  : ' border-b-2'
               }`}
           >
             <Link href={link.href} className="flex justify-between">
