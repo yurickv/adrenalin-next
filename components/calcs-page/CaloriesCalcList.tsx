@@ -71,11 +71,11 @@ export const CaloriesCalcList = () => {
         <label
           htmlFor="woman"
           className={`cursor-pointer flex items-center justify-center tracking-widest
-          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText dark:text-mainTextBlack
+          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText 
           truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
             !sex
-              ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main dark:text-main'
-              : ''
+              ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main'
+              : 'dark:text-mainTextBlack'
           } `}
         >
           Жінка{' '}
@@ -92,9 +92,11 @@ export const CaloriesCalcList = () => {
         <label
           htmlFor="man"
           className={`cursor-pointer flex items-center justify-center tracking-widest
-          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText dark:text-mainTextBlack
+          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText 
           truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
-            sex ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main dark:text-main' : ''
+            sex
+              ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main '
+              : 'dark:text-mainTextBlack'
           } `}
         >
           Чоловік{' '}
@@ -150,7 +152,7 @@ export const CaloriesCalcList = () => {
         name="activity"
         className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main 
-        text-mainText dark:text-mainTextBlack bg-[#e5e5e5] dark:bg-[#262626]"
+        text-mainText dark:text-mainTextBlack bg-[#e5e5e5] dark:bg-[#676465]"
         value={activity}
         onChange={e => setActivity(Number(e.target.value))}
       >

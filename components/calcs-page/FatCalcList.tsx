@@ -87,11 +87,11 @@ export const FatCalcList = () => {
         <label
           htmlFor="woman"
           className={`cursor-pointer flex items-center justify-center tracking-widest
-          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText dark:text-mainTextBlack
+          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText 
           truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
             !sex
-              ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main dark:text-main'
-              : ''
+              ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main'
+              : 'dark:text-mainTextBlack'
           } `}
         >
           Жінка{' '}
@@ -108,9 +108,11 @@ export const FatCalcList = () => {
         <label
           htmlFor="man"
           className={`cursor-pointer flex items-center justify-center tracking-widest
-          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText dark:text-mainTextBlack
+          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText 
           truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
-            sex ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main dark:text-main' : ''
+            sex
+              ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main'
+              : 'dark:text-mainTextBlack'
           } `}
         >
           Чоловік{' '}
