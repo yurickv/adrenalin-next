@@ -27,7 +27,7 @@ export const HeroSection = () => {
         <Button
           route="/calcs"
           text="Дізнатися більше"
-          width="sm:w-full md:w-[332px] lg:w-[222px]"
+          width="w-full md:w-[332px] lg:w-[222px]"
         />
       </div>
     </section>

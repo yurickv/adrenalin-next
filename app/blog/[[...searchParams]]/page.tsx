@@ -31,7 +31,7 @@ function Blog({
           <h1 className="title mb-14 text-white">Блог</h1>
         </div>
       </section>
-      <section className="py-[40px] md:py-[44px] lg:py-[88px]">
+      <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
         <div className="div-container flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-4 justify-center">
           <div className="flex justify-between items-center w-full">
             <div className="min-w-[10px] hidden md:block">
@@ -50,7 +50,9 @@ function Blog({
               )}
             </div>
             <div className="flex gap-2 ">
-              <p className="p-2">Вибрати тему:</p>
+              <p className="p-2 text-mainText dark:text-mainTextBlack">
+                Вибрати тему:
+              </p>
               <Filter searchParams={searchParams} />
             </div>
           </div>

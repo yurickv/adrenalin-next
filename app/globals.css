@@ -48,7 +48,7 @@ details[open] summary div {
   @apply pt-[46px] pb-[90px] flex flex-col items-center;
 }
 .h1-title-blog {
-  @apply font-poppins text-[32px] font-semibold text-mainText;
+  @apply font-poppins text-[32px] font-semibold text-mainTitle dark:text-mainTitleBlack;
 }
 .description {
   @apply font-poppins font-normal text-lg leading-normal text-mainText text-justify indent-5;
@@ -63,7 +63,7 @@ details[open] summary div {
   @apply flex flex-col gap-2 text-left list-inside list-none;
 }
 .h2-list-title {
-  @apply font-poppins font-semibold text-mainText text-lg leading-normal indent-5;
+  @apply font-poppins font-semibold text-mainTitle dark:text-mainTitleBlack text-lg leading-normal indent-5;
 }
 .p-item {
   @apply font-poppins font-normal text-lg text-mainText leading-normal;
@@ -95,10 +95,13 @@ details[open] summary div {
 }
 
 .pagination-button {
-  @apply py-4 px-6 font-poppins text-[16px] leading-normal border border-main rounded-[10px] cursor-pointer;
+  @apply py-4 px-6 font-poppins font-bold leading-normal border border-main rounded-[10px] 
+  hover:bg-orange-100 dark:hover:bg-mainText
+  cursor-pointer dark:bg-[#676465] text-mainText dark:text-mainTextBlack;
 }
 .isActive {
-  @apply text-white bg-gradient-to-r from-red-500 to-orange-500  hover:from-red-600
-  hover:to-orange-600 focus:from-red-600 focus:to-orange-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
+  @apply text-white font-bold bg-gradient-to-r from-red-500 to-orange-500  hover:from-red-600
+  hover:to-orange-600 focus:from-red-600 focus:to-orange-600 
+  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
   shadow-[0_4px_9px_-4px_#3b71ca];
 }

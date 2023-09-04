@@ -27,7 +27,7 @@ export const Footer = () => {
         md:flex md:items-center md:justify-between   mx-auto border-t-2 border-main
       max-w-[640px] md:max-w-[1279px] lg:max-w-[1439px] xl:max-w-[1919px] 
       py-[40px] md:pt-[44px] md:pb-[88px] lg:py-[88px] 
-      px-4 md:px-[40px] lg:px-[66px] xl:px-[132px]"
+      px-4 md:px-[40px] lg:px-[66px] xl:px-[132px] antialiased"
       >
         <Link
           className="transition-colors duration-300 col-span-2 flex md:flex-col gap-3 
@@ -55,7 +55,7 @@ export const Footer = () => {
                     ? 'bg-orange-100 !text-main dark:bg-hoverBlack dark:!text-mainTitle'
                     : ''
                 } group flex items-center gap-x-1 
-                  font-poppins hover:text-main hover:bg-orange-100
+                  font-poppins hover:text-main hover:bg-orange-100 
                 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
                 text-mainTitle dark:text-mainTitleBlack rounded-lg p-2 outline-none`}
                   >
@@ -95,7 +95,8 @@ export const Footer = () => {
                             <div className="flex-auto">
                               <a
                                 href={item.href}
-                                className="block font-semibold text-mainTitle dark:text-white  hover:text-main"
+                                className="block font-semibold text-mainTitle dark:text-white  hover:text-main 
+                                dark:hover:text-orange-400 tracking-wider"
                               >
                                 {item.name}
                                 <span className="absolute inset-0" />
