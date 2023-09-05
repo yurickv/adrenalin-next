@@ -2,12 +2,13 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { BuyButton } from './BuyButton';
 import { XMarkIcon } from '../icons/XMarkIcon';
+import { PassService, Service } from '@/app/_types/services.types';
 
 type ModalForBuy = {
   onToggleModal: () => void;
   isModalOpen: boolean;
   name: 'standart' | 'personal' | 'planTrain';
-  chosenProduct?: CoachService | PassService;
+  chosenProduct: PassService | Service;
 };
 
 export const ModalForBuy: React.FC<ModalForBuy> = ({
@@ -63,11 +64,11 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
                 </Dialog.Title>
                 <div className="my-4">
                   <p className="text-mainText dark:text-mainTextBlack text-center">
-                    і наш продукт {chosenProduct.quantity}{' '}
-                    {chosenProduct.serviceName}/{chosenProduct.availability}{' '}
-                    <br />
-                    <span className="">
-                      вартість {chosenProduct.price} грн.
+                    і наш продукт: {chosenProduct.quantity}{' '}
+                    {chosenProduct.serviceName}
+                    <br />~ {chosenProduct.availability} <br />
+                    <span className="text-main">
+                      {chosenProduct.price} грн.
                     </span>
                   </p>
                 </div>

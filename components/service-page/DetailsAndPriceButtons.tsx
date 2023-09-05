@@ -1,11 +1,15 @@
-import { CoachService, PassService } from '@/app/_types/services.types';
+import {
+  CoachService,
+  PassService,
+  Service,
+} from '@/app/_types/services.types';
 import { ModalForBuy } from './ModalForBuy';
 
 type DetailsAndPriceButtons = {
   onClickMore: (name: 'standart' | 'personal' | 'planTrain') => void;
   name: 'standart' | 'personal' | 'planTrain';
   isOpen: boolean;
-  chosenProduct?: CoachService | PassService;
+  chosenProduct: PassService | Service;
   onToggleModal: () => void;
   isModalOpen: boolean;
 };

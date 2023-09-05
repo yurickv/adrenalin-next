@@ -128,6 +128,7 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
           ...chosenProduct,
           price: price.toString(),
           duration: productDuration.quantity,
+          availability: productDuration.availability,
         }}
         onToggleModal={onToggleModal}
         isModalOpen={isModalOpen}

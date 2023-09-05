@@ -3,43 +3,55 @@ export const monthPass = [
   {
     quantity: '1',
     price: '80',
+    availability: '1 тренування',
     serviceName: 'тренування',
   },
   {
     quantity: '8',
     price: '440',
+    availability: '1 місяць',
     serviceName: 'тренувань',
   },
   {
     quantity: '12',
     price: '500',
+    availability: '1 місяць',
     serviceName: 'тренувань',
   },
-  { quantity: 'Безліміт', price: '540', serviceName: '' },
+  {
+    quantity: 'Безліміт',
+    price: '540',
+    availability: '1 місяць',
+    serviceName: '',
+  },
 ];
 
 export const passDuration = [
   {
     quantity: '1',
+    availability: '1 місяць',
     serviceName: 'місяць',
   },
   {
     quantity: '3',
+    availability: '3 місяці',
     serviceName: 'місяці',
   },
   {
     quantity: '6',
+    availability: '6 місяців',
     serviceName: 'місяців',
   },
   {
     quantity: '12',
+    availability: '12 місяців',
     serviceName: 'місяців',
   },
 ];
 
 export const passVariations: { [key: number]: number } = {
   1620: 1500,
-  3000: 2760,
+  3240: 2760,
   6480: 5040,
 };
 
@@ -47,16 +59,19 @@ export const yearPass = [
   {
     quantity: '3',
     price: '1500',
+    availability: '3 місяці',
     serviceName: 'місяці',
   },
   {
     quantity: '6',
     price: '2760',
+    availability: '6 місяців',
     serviceName: 'місяців',
   },
   {
     quantity: '12',
     price: '5040',
+    availability: '12 місяців',
     serviceName: 'місяців',
   },
 ];
@@ -67,25 +82,25 @@ export const coachServices = [
     quantity: '1',
     price: '330',
     availability: '1 тренування',
-    serviceName: 'тренування',
+    serviceName: 'тренування з тренером',
   },
   {
     quantity: '4',
     price: '1050',
     availability: '15 днів',
-    serviceName: 'тренування',
+    serviceName: 'тренування з тренером',
   },
   {
     quantity: '8',
     price: '2000',
     availability: '1 місяць',
-    serviceName: 'тренувань',
+    serviceName: 'тренувань з тренером',
   },
   {
     quantity: '12',
     price: '2700',
     availability: '1 місяць',
-    serviceName: 'тренувань',
+    serviceName: 'тренувань з тренером',
   },
 ];
 
