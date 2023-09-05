@@ -37,13 +37,17 @@ function Blog({
             <div className="min-w-[10px] hidden md:block">
               {(searchParams?.topic || searchParams?.search) && (
                 <div
-                  className="group p-2 rounded-lg hover:bg-orange-100 transition-all duration-300 
-                cursor-pointer flex gap-2 text-left"
+                  className="group p-2 rounded-lg hover:bg-orange-100 dark:hover:bg-mainText
+                   transition-all duration-200 cursor-pointer flex gap-2 text-left"
                 >
-                  <div className="-rotate-180 text-main  ">
+                  <div className="-rotate-180 text-main  dark:text-orange-400">
                     <Arrow />
                   </div>
-                  <Link href="/blog" className="group-hover:text-main">
+                  <Link
+                    href="/blog"
+                    className="group-hover:text-main dark:group-hover:text-orange-400
+                     text-mainText dark:text-mainTextBlack"
+                  >
                     До всіх постів
                   </Link>
                 </div>

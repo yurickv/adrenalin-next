@@ -22,6 +22,11 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
   });
   const [servicePlans, setServicePlans] = useState(plans[0]);
   const [planDuration, setPlanDuration] = useState(plansPrices[0]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function onToggleModal() {
+    setIsModalOpen(!isModalOpen);
+  }
 
   useEffect(() => {
     if (servicePlans.serviceName === 'План тренування') {
@@ -119,6 +124,8 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
         onClickMore={onClickMore}
         name="planTrain"
         isOpen={isOpen}
+        onToggleModal={onToggleModal}
+        isModalOpen={isModalOpen}
       />
     </div>
   );

@@ -49,10 +49,10 @@ details[open] summary div {
   @apply font-poppins text-[32px] font-semibold text-mainTitle dark:text-mainTitleBlack;
 }
 .description {
-  @apply font-poppins font-normal text-lg leading-normal text-mainText text-justify indent-5;
+  @apply font-poppins font-normal text-lg leading-normal text-mainText dark:text-mainTextBlack text-justify indent-5;
 }
 .div-for-img {
-  @apply w-full h-96 bg-[#D9D9D9] mb-12 overflow-hidden;
+  @apply w-full h-96 bg-[#D9D9D9] dark:bg-backgroundBlack mb-12 overflow-hidden;
 }
 .ul-list {
   @apply flex flex-col gap-2 text-left list-inside  list-image-checkmark indent-10;
@@ -64,14 +64,14 @@ details[open] summary div {
   @apply font-poppins font-semibold text-mainTitle dark:text-mainTitleBlack text-lg leading-normal indent-5;
 }
 .p-item {
-  @apply font-poppins font-normal text-lg text-mainText leading-normal;
+  @apply font-poppins font-normal text-lg text-mainText dark:text-mainTextBlack leading-normal;
 }
 .p-text {
-  @apply font-poppins font-normal text-lg text-mainText leading-normal mt-2 text-justify indent-5;
+  @apply font-poppins font-normal text-lg text-mainText dark:text-mainTextBlack leading-normal mt-2 text-justify indent-5;
 }
 
 .form-input {
-  @apply w-full p-3 border-gray-500 rounded-lg border-2;
+  @apply w-full p-3 border-gray-500 dark:border-mainTextBlack rounded-lg border-2;
 }
 
 /* __________________input range________________ */

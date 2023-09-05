@@ -40,7 +40,7 @@ export const BuyButton = ({
       hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
       shadow-[0_4px_9px_-4px_#3b71ca]"
       >
-        Купити
+        Купити зараз
       </button>
     </form>
   );

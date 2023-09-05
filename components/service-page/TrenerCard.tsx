@@ -16,7 +16,11 @@ export const TrenerCard: React.FC<TrenerCardProps> = ({
   isOpen,
 }) => {
   const [chosenService, setChosenService] = useState(coachServices[2]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  function onToggleModal() {
+    setIsModalOpen(!isModalOpen);
+  }
   return (
     <div
       className={` ${
@@ -75,6 +79,8 @@ export const TrenerCard: React.FC<TrenerCardProps> = ({
         name="personal"
         isOpen={isOpen}
         chosenProduct={chosenService}
+        onToggleModal={onToggleModal}
+        isModalOpen={isModalOpen}
       />
     </div>
   );
