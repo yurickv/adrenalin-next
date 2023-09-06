@@ -25,6 +25,7 @@ export const BuyButton = ({
       method="POST"
       action="https://www.liqpay.ua/api/3/checkout"
       acceptCharset="utf-8"
+      className="w-full md:w-[170px] block"
     >
       <input type="hidden" name="data" value={paymentService.getBasedData()} />
       <input
@@ -34,11 +35,11 @@ export const BuyButton = ({
       />
       <button
         type="submit"
-        className="bg-gradient-to-r w-full from-red-500 to-orange-500 cursor-pointer hover:from-red-600
+        className="w-full md:w-[170px] bg-gradient-to-r from-red-500 to-orange-500 cursor-pointer hover:from-red-600
       hover:to-orange-600 focus:from-red-600 focus:to-orange-600
-      rounded-full p-4 text-white text-center block active:bg-primary-700
+      rounded-full p-4 text-white text-center active:bg-primary-700
       hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
-      shadow-[0_4px_9px_-4px_#3b71ca]"
+      shadow-[0_4px_9px_-4px_#3b71ca] block"
       >
         Купити зараз
       </button>
