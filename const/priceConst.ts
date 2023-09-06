@@ -129,9 +129,24 @@ export const plansPrices = [
 ];
 
 export const foodPlanFullProgram = [
-  { quantity: '1', price: '150', serviceName: 'тиждень' },
-  { quantity: '30', price: '500', serviceName: 'днів' },
+  {
+    quantity: '1',
+    price: '150',
+    serviceName: 'тиждень',
+    availability: '1 тиждень',
+  },
+  {
+    quantity: '30',
+    price: '500',
+    serviceName: 'днів',
+    availability: '1 місяць',
+  },
 ];
 export const trainingPlanFullProgram = [
-  { quantity: '1', price: '150', serviceName: 'тиждень' },
+  {
+    quantity: '1',
+    price: '150',
+    serviceName: 'тиждень',
+    availability: '1 тиждень',
+  },
 ];
