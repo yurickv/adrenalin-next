@@ -1,4 +1,8 @@
-import { CoachService, Service } from '@/app/_types/services.types';
+import {
+  CoachService,
+  Service,
+  PassService,
+} from '@/app/_types/services.types';
 
 interface StylesItem {
   css?: string;
@@ -8,7 +12,7 @@ interface StylesItem {
 interface InfoTemplateProps {
   title: string;
   styles: StylesItem;
-  data: Service[] | CoachService[];
+  data: Service[] | CoachService[] | PassService[];
 }
 
 export const InfoTemplate: React.FC<InfoTemplateProps> = ({
