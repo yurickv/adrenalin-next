@@ -232,7 +232,6 @@ export const Header = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
-                <div></div>
                 <XMarkIcon aria-hidden="true" />
               </button>
             </div>

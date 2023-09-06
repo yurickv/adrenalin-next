@@ -9,7 +9,7 @@ export const ServicesSection = () => {
         <h3 className="title text-mainTitle dark:text-mainTitleBlack">
           Що ми пропонуємо?
         </h3>
-        <div className=" md:flex md:flex-row md:gap-6 mt-6 md:mt-10 lg:mt-14 items-center">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 mt-6 md:mt-10 lg:mt-14 items-center">
           <ServiceCardMain />
         </div>
         <ButtonSecond

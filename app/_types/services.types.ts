@@ -2,6 +2,7 @@ export interface Service {
   quantity: string;
   price: string;
   serviceName: string;
+  availability: string;
 }
 
 export interface CoachService extends Service {

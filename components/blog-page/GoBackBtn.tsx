@@ -17,8 +17,8 @@ export const GoBackBtn: React.FC<ButtonProps> = ({ text, width }) => {
 
   return (
     <div
-      className="flex gap-2 text-main text-center rounded-full p-4 hover:text-hover
-     hover:bg-orange-100 transition-all duration-300 cursor-pointer"
+      className="flex gap-2 text-main dark:text-orange-400 text-center rounded-full p-4 
+     hover:bg-orange-100 dark:hover:bg-mainText transition-all duration-300 cursor-pointer"
     >
       <div className="-rotate-180   ">
         <Arrow />

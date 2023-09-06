@@ -22,7 +22,11 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
   const [price, setPrice] = useState(
     changePriceForTrainings(chosenProduct.price, productDuration.quantity)
   );
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  function onToggleModal() {
+    setIsModalOpen(!isModalOpen);
+  }
   const isNotUnlimitedPass =
     chosenProduct.price === '80' ||
     chosenProduct.price === '440' ||
@@ -124,7 +128,10 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
           ...chosenProduct,
           price: price.toString(),
           duration: productDuration.quantity,
+          availability: productDuration.availability,
         }}
+        onToggleModal={onToggleModal}
+        isModalOpen={isModalOpen}
       />
     </div>
   );
