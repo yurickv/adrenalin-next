@@ -93,7 +93,7 @@ details[open] summary div {
 }
 
 .pagination-button {
-  @apply py-4 px-6 font-poppins font-bold leading-normal border border-main rounded-[10px] 
+  @apply py-4 px-6 font-poppins font-bold leading-normal border border-main rounded-pre-xl
   hover:bg-orange-100 dark:hover:bg-mainText
   cursor-pointer dark:bg-[#676465] text-mainText dark:text-mainTextBlack;
 }
@@ -102,4 +102,92 @@ details[open] summary div {
   hover:to-orange-600 focus:from-red-600 focus:to-orange-600 
   hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
   shadow-[0_4px_9px_-4px_#3b71ca];
+}
+
+.cart {
+  @apply pt-5 pb-10 text-center
+}
+
+.back-button {
+  @apply font-poppins text-[14px] font-semibold flex gap-1 items-center mb-5 text-left
+}
+
+.cart__title {
+  @apply font-poppins text-[40px] font-bold text-txt-accent leading-normal mb-5
+}
+
+.credentials {
+  @apply flex flex-col items-start justify-center gap-12 p-6 bg-grey-bg rounded-pre-xl shadow-[0_4px_20px_0px_rgba(133,119,123,0.30)];
+}
+
+.credentials__title {
+  @apply font-poppins text-[20px] font-bold leading-[normal] text-txt-accent
+}
+.credentials__user-info {
+  @apply flex flex-col items-start justify-center gap-8
+}
+
+.credentials__input {
+  @apply block font-poppins text-[16px] leading-[normal] text-txt-accent
+}
+
+.privacy {
+  @apply flex flex-col items-start justify-center gap-6
+}
+.privacy__label {
+  @apply text-left
+}
+.privacy__text {
+  @apply font-poppins text-[16px] font-normal leading-[normal] text-txt-accent
+}
+
+.privacy__icon {
+  @apply rounded-md border-2 border-txt-accent fill-transparent inline-block mr-2 peer-checked:fill-txt-accent transition-all
+}
+
+.product-list {
+  @apply w-full after:block after:w-full after:h-[1.5px] after:bg-orange-gradient after:mt-12
+}
+.product {
+  @apply flex flex-col gap-8 justify-center items-center
+}
+.product__item {
+  @apply flex flex-col gap-4
+}
+.product__title {
+  @apply font-poppins text-[16px] font-normal text-txt-accent leading-[normal]
+}
+.product__description {
+  @apply font-poppins text-[16px] font-bold text-txt-accent leading-[normal]
+}
+.full-price {
+  @apply w-full flex items-center justify-between
+}
+.full-price__title{
+  @apply font-poppins font-medium text-[18px] text-txt-accent uppercase leading-[normal]
+}
+.full-price__description {
+  @apply font-poppins font-semibold text-[24px] leading-[normal] text-transparent bg-clip-text bg-orange-gradient
+}
+.actions {
+  @apply w-full flex flex-col gap-4
+}
+.actions__button {
+  @apply w-full font-poppins font-normal text-[16px] p-4 rounded-pre-xl disabled:cursor-not-allowed
+}
+
+
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  margin: -1px;
 }

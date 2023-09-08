@@ -1,22 +1,62 @@
 import { v4 as uuidv4 } from 'uuid';
 import { PaymentService } from '@/app/_services/payment.service';
+import { newService } from '@/app/_types/services.types';
 
+type Props = {
+  data: {
+    agreement: boolean;
+    phone: string;
+    publicOffer: boolean;
+    sender_first_name: string;
+    sender_last_name: string;
+  };
+  products: newService[];
+  fullPrice: number;
+};
 export const BuyButton = ({
   quantity,
   appointment,
+  disabled = false,
+  text = 'Купити зараз',
+  props,
 }: {
-  quantity: string;
-  appointment: string;
+  quantity?: string;
+  disabled?: boolean;
+  appointment?: string;
+  text?: string;
+  props?: Props;
 }) => {
-  const data = {
-    public_key: process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY!,
-    version: '3',
-    action: 'pay',
-    amount: Number(quantity),
-    currency: 'UAH',
-    description: 'Payment for services',
-    order_id: uuidv4(),
-  };
+  let data;
+  if (props) {
+    data = {
+      public_key: process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY!,
+      version: '3',
+      action: 'pay',
+      sender_first_name: props.data.sender_first_name,
+      sender_last_name: props.data.sender_last_name,
+      amount: props.fullPrice,
+      currency: 'UAH',
+      result_url: 'http://localhost:3000',
+      description: `Оплата за ${props.products.reduce((acc, currentValue) => {
+        return (acc +=
+          `${acc ? ', ' : ' '}` +
+          currentValue.serviceName +
+          `, кількість: ${currentValue.amount}`);
+      }, '')}. Тел:${props.data.phone}`,
+      order_id: uuidv4(),
+    };
+  } else {
+    data = {
+      public_key: process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY!,
+      version: '3',
+      action: 'pay',
+      amount: Number(quantity),
+      currency: 'UAH',
+      description: 'Payment for services',
+      order_id: uuidv4(),
+    };
+  }
+
   const paymentService = new PaymentService(data);
   paymentService.createSignature();
 
@@ -35,13 +75,11 @@ export const BuyButton = ({
       />
       <button
         type="submit"
-        className="w-full md:w-[170px] bg-gradient-to-r from-red-500 to-orange-500 cursor-pointer hover:from-red-600
-      hover:to-orange-600 focus:from-red-600 focus:to-orange-600
-      rounded-full p-4 text-white text-center active:bg-primary-700
-      hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
-      shadow-[0_4px_9px_-4px_#3b71ca] block"
+        disabled={disabled}
+        className="md:!w-[170px] actions__button disabled:opacity-50 bg-orange-gradient text-white hover:from-red-600
+      hover:to-orange-600 focus:from-red-600 focus:to-orange-600 block"
       >
-        Купити зараз
+        {text}
       </button>
     </form>
   );

@@ -20,9 +20,7 @@ export class CartLocalStorageService {
   set(value: newService) {
     this.get();
     if (!CartLocalStorageService.items) {
-      const item = this.setNewItem(value);
-
-      return item;
+      return this.setNewItem(value);
     }
 
     const isItemAlreadyExists = this.isItemWithSameIdExists(value.plan.id);
@@ -61,6 +59,10 @@ export class CartLocalStorageService {
 
     localStorage.setItem(this.key, JSON.stringify(updatedProducts));
     return updatedProducts;
+  }
+
+  clear() {
+    localStorage.clear();
   }
 
   private setNewItem(value: newService) {

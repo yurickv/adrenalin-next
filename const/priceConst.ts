@@ -80,12 +80,6 @@ export const monthPass = [
   },
 ];
 
-export const passVariations: { [key: number]: number } = {
-  1620: 1500,
-  3240: 2760,
-  6480: 5040,
-};
-
 export const yearPass = [
   {
     quantity: '3',
