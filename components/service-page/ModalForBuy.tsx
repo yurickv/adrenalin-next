@@ -2,14 +2,16 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { BuyButton } from './BuyButton';
 import { XMarkIcon } from '../icons/XMarkIcon';
-import { PassService, Service } from '@/app/_types/services.types';
+import { newService } from '@/app/_types/services.types';
 import { Barbell } from '../icons/Barbell';
+import { CartLocalStorageService } from '@/app/_services/cartLocalStorageService';
+import { SHOPPING_CART } from '@/const/localstorageKeys';
 
 type ModalForBuy = {
   onToggleModal: () => void;
   isModalOpen: boolean;
   name: 'standart' | 'personal' | 'planTrain';
-  chosenProduct: PassService | Service;
+  chosenProduct: newService;
 };
 
 export const ModalForBuy: React.FC<ModalForBuy> = ({
@@ -18,6 +20,13 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
   chosenProduct,
   name,
 }) => {
+  const localstorageService = new CartLocalStorageService(SHOPPING_CART);
+  const handleAddToCart = (data: newService) => {
+    localstorageService.set(data);
+    onToggleModal();
+    console.log('Success');
+  };
+
   return (
     <Transition appear show={isModalOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onToggleModal}>
@@ -78,25 +87,26 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
                     <li className="flex flex-col gap-3 md:gap-4">
                       <span>Продукт:</span>{' '}
                       <span className="text-mainTitle dark:text-mainTitleBlack">
-                        {chosenProduct.quantity} {chosenProduct.serviceName}
+                        {chosenProduct.serviceName}
                       </span>
                     </li>
                     <li className="flex flex-col gap-3 md:gap-4">
                       <span>Тривалість:</span>{' '}
                       <span className="text-mainTitle dark:text-mainTitleBlack">
-                        {chosenProduct.availability}
+                        {chosenProduct.plan.availability}
                       </span>
                     </li>
                     <li className="flex flex-col gap-3 md:gap-4">
                       <span>Вартість:</span>
                       <span className="text-mainTitle dark:text-mainTitleBlack">
-                        {chosenProduct.price} &#8372;
+                        {chosenProduct.plan.price} &#8372;
                       </span>
                     </li>
                   </ul>
                 </div>
                 <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-44">
                   <button
+                    onClick={() => handleAddToCart(chosenProduct)}
                     className="bg-orange-100 hover:bg-orange-200 dark:bg-[#a3a3a3] dark:hover:bg-[#d4d4d4]
                 text-mainText dark:text-mainTitle rounded-full p-4 text-center block transition-all duration-150"
                   >
@@ -104,10 +114,10 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
                   </button>
                   <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
                     <span className="text-main dark:text-[#F15C44] text-2xl font-semibold">
-                      {chosenProduct.price} &#8372;
+                      {chosenProduct.plan.price} &#8372;
                     </span>
                     <BuyButton
-                      quantity={chosenProduct?.price || '200'}
+                      quantity={chosenProduct.plan.price}
                       appointment={name}
                     />
                   </div>

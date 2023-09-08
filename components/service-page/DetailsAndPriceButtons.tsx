@@ -1,15 +1,11 @@
-import {
-  CoachService,
-  PassService,
-  Service,
-} from '@/app/_types/services.types';
+import { newService } from '@/app/_types/services.types';
 import { ModalForBuy } from './ModalForBuy';
 
 type DetailsAndPriceButtons = {
   onClickMore: (name: 'standart' | 'personal' | 'planTrain') => void;
   name: 'standart' | 'personal' | 'planTrain';
   isOpen: boolean;
-  chosenProduct: PassService | Service;
+  chosenProduct: newService;
   onToggleModal: () => void;
   isModalOpen: boolean;
 };
@@ -20,6 +16,7 @@ export const DetailsAndPriceButtons: React.FC<DetailsAndPriceButtons> = ({
   isOpen,
   chosenProduct,
   isModalOpen,
+
   onToggleModal,
 }) => {
   return (

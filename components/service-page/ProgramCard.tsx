@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { DescriptionText } from './DescriptionText';
 import { DetailsAndPriceButtons } from './DetailsAndPriceButtons';
 import { PriceTrainingPlan } from './PriceProgram';
-import { plans, plansPrices } from '@/const/priceConst';
+import { plans, plansPasses, plansPrices } from '@/const/priceConst';
 
 type ProgramCardProps = {
   onClickMore: (button: 'standart' | 'personal' | 'planTrain') => void;
@@ -16,6 +16,12 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
   onClickMore,
   isOpen,
 }) => {
+  const [pass, setPass] = useState(plansPasses[0]);
+  const [chosenService, setChosenService] = useState({
+    serviceName: plansPasses[0].serviceName,
+    plan: plansPasses[0].plans[1],
+  });
+  const [duration, setDuration] = useState(plansPasses[0].plans[1]);
   const [chosenProduct, setChosenProduct] = useState({
     ...plans[0],
     ...plansPrices[0],
@@ -29,12 +35,8 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
   }
 
   useEffect(() => {
-    if (servicePlans.serviceName === 'План тренування') {
-      setPlanDuration(plansPrices[0]);
-    }
-
-    setChosenProduct({ ...servicePlans, ...planDuration });
-  }, [servicePlans, planDuration]);
+    setChosenService({ serviceName: pass.serviceName, plan: { ...duration } });
+  }, [pass, duration]);
 
   return (
     <div
@@ -48,10 +50,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
         rounded-lg flex flex-col gap-6 basis-1/3 overflow-hidden`}
     >
       <DescriptionText title="План харчування/ тренування" />
-      <PriceTrainingPlan
-        duration={planDuration.availability}
-        price={planDuration.price}
-      />
+      <PriceTrainingPlan service={chosenService} />
       <div className="flex flex-col gap-6">
         <div className="flex flex-col">
           <label
@@ -65,18 +64,19 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-mainText dark:border-mainTextBlack bg-white dark:bg-[#676465]
         rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2 text-mainText dark:text-mainTextBlack"
-            value={servicePlans.serviceName}
+            value={pass.serviceName}
             onChange={e => {
-              const plan = plans.find(
+              const foundedPass = plansPasses.find(
                 ({ serviceName }) => serviceName === e.target.value
               );
-              if (plan) {
-                setServicePlans(plan);
+              if (foundedPass) {
+                setPass(foundedPass);
+                setDuration(foundedPass.plans[0]);
               }
             }}
           >
-            {plans.map((plan, index) => (
-              <option value={plan.serviceName} key={index}>
+            {plansPasses.map(plan => (
+              <option value={plan.serviceName} key={plan.serviceName}>
                 {plan.serviceName}
               </option>
             ))}
@@ -92,26 +92,22 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
           </label>
           <select
             name="duration"
-            disabled={servicePlans.serviceName === 'План тренування'}
+            disabled={pass.plans.length < 2}
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-mainText dark:border-mainTextBlack bg-white dark:bg-[#676465]
         rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2 text-mainText dark:text-mainTextBlack"
-            value={
-              servicePlans.serviceName === 'План тренування'
-                ? plansPrices[0].quantity
-                : planDuration.quantity
-            }
+            value={duration.id}
             onChange={e => {
-              const plan = plansPrices.find(
-                plan => plan.quantity === e.target.value
+              const foundPass = pass.plans.find(
+                plan => plan.id === e.target.value
               );
-              if (plan) {
-                setPlanDuration(plan);
+              if (foundPass) {
+                setDuration(foundPass);
               }
             }}
           >
-            {plansPrices.map(({ quantity, availability }, index) => (
-              <option value={quantity} key={index}>
+            {pass.plans.map(({ id, availability }) => (
+              <option value={id} key={id}>
                 {availability}
               </option>
             ))}
@@ -120,7 +116,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
       </div>
 
       <DetailsAndPriceButtons
-        chosenProduct={chosenProduct}
+        chosenProduct={chosenService}
         onClickMore={onClickMore}
         name="planTrain"
         isOpen={isOpen}
