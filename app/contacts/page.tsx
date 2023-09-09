@@ -86,7 +86,7 @@ const Contacts = () => {
               <p className="font-semibold text-mainTitle dark:text-mainTitleBlack">
                 Графік роботи:
               </p>
-              <ul className="mt-4 text-mainText dark:text-mainTextBlack">
+              <ul className="my-4 text-mainText dark:text-mainTextBlack">
                 <li>
                   <span className="font-semibold">пн, ср, пт</span> —
                   11:00-20:00
@@ -101,6 +101,12 @@ const Contacts = () => {
                   <span className="font-semibold">нд</span> — вихідний
                 </li>
               </ul>
+              <Link
+                className="mt-4 text-mainText dark:text-mainTextBlack underline"
+                href="/oferta"
+              >
+                Договір Публічної Оферти
+              </Link>
             </div>
           </div>
 
