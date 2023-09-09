@@ -5,8 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { DescriptionText } from './DescriptionText';
 import { PriceTraining } from './PriceTraining';
 import { DetailsAndPriceButtons } from './DetailsAndPriceButtons';
-import { monthPass, passDuration } from '@/const/priceConst';
-import { changePriceForTrainings } from '@/app/_helpers/changePriceForTrainings';
+import { subscriptionPasses } from '@/const/priceConst';
 
 type TrainingCardProps = {
   onClickMore: (button: 'standart' | 'personal' | 'planTrain') => void;
@@ -17,30 +16,21 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
   onClickMore,
   isOpen,
 }) => {
-  const [chosenProduct, setChosenProduct] = useState(monthPass[2]);
-  const [productDuration, setProductDuration] = useState(passDuration[0]);
-  const [price, setPrice] = useState(
-    changePriceForTrainings(chosenProduct.price, productDuration.quantity)
-  );
+  const [pass, setPass] = useState(subscriptionPasses[2]);
+  const [chosenService, setChosenService] = useState({
+    serviceName: subscriptionPasses[2].serviceName,
+    plan: subscriptionPasses[2].plans[0],
+  });
+  const [duration, setDuration] = useState(subscriptionPasses[2].plans[0]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function onToggleModal() {
     setIsModalOpen(!isModalOpen);
   }
-  const isNotUnlimitedPass =
-    chosenProduct.price === '80' ||
-    chosenProduct.price === '440' ||
-    chosenProduct.price === '500';
-  useEffect(() => {
-    if (isNotUnlimitedPass) {
-      setProductDuration(passDuration[0]);
-      return setPrice(changePriceForTrainings(chosenProduct.price, '1'));
-    }
 
-    setPrice(
-      changePriceForTrainings(chosenProduct.price, productDuration.quantity)
-    );
-  }, [chosenProduct, productDuration]);
+  useEffect(() => {
+    setChosenService({ serviceName: pass.serviceName, plan: { ...duration } });
+  }, [pass, duration]);
 
   return (
     <div
@@ -54,10 +44,7 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
       rounded-lg flex flex-col gap-6 hover:shrink basis-1/3 overflow-hidden`}
     >
       <DescriptionText title="Тренування" />
-      <PriceTraining
-        duration={productDuration.quantity + ' ' + productDuration.serviceName}
-        price={price}
-      />
+      <PriceTraining service={chosenService} />
       <div className="flex flex-col gap-6">
         <div className="flex flex-col">
           <label
@@ -71,17 +58,20 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-mainText dark:border-mainTextBlack bg-white dark:bg-[#676465]
          rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2 text-mainText dark:text-mainTextBlack"
-            value={chosenProduct.quantity}
+            value={pass.serviceName}
             onChange={e => {
-              const pass = monthPass.find(
-                ({ quantity }) => quantity === e.target.value
+              const foundService = subscriptionPasses.find(
+                pass => pass.serviceName === e.target.value
               );
-              if (pass) setChosenProduct(pass);
+              if (foundService) {
+                setPass(foundService);
+                setDuration(foundService.plans[0]);
+              }
             }}
           >
-            {monthPass.map(({ quantity, serviceName }, index) => (
-              <option value={quantity} key={index}>
-                {quantity + ' ' + serviceName}
+            {subscriptionPasses.map(({ serviceName }) => (
+              <option value={serviceName} key={serviceName}>
+                {serviceName}
               </option>
             ))}
           </select>
@@ -96,24 +86,23 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
           </label>
           <select
             name="duration"
-            disabled={isNotUnlimitedPass}
+            disabled={pass.plans.length < 2}
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-mainText dark:border-mainTextBlack bg-white dark:bg-[#676465]
         rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2 text-mainText dark:text-mainTextBlack"
-            value={productDuration.quantity + ' ' + productDuration.serviceName}
+            value={duration.id}
             onChange={e => {
-              const duration = passDuration.find(
-                ({ quantity, serviceName }) =>
-                  quantity + ' ' + serviceName === e.target.value
+              const foundPlan = pass.plans.find(
+                ({ id }) => id === e.target.value
               );
-              if (duration) {
-                setProductDuration(duration);
+              if (foundPlan) {
+                setDuration(foundPlan);
               }
             }}
           >
-            {passDuration.map(({ quantity, serviceName }, index) => (
-              <option value={quantity + ' ' + serviceName} key={index}>
-                {quantity + ' ' + serviceName}
+            {pass.plans.map(({ id, availability }) => (
+              <option value={id} key={id}>
+                {availability}
               </option>
             ))}
           </select>
@@ -124,12 +113,7 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
         onClickMore={onClickMore}
         name="standart"
         isOpen={isOpen}
-        chosenProduct={{
-          ...chosenProduct,
-          price: price.toString(),
-          duration: productDuration.quantity,
-          availability: productDuration.availability,
-        }}
+        chosenProduct={chosenService}
         onToggleModal={onToggleModal}
         isModalOpen={isModalOpen}
       />

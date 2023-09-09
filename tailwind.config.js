@@ -18,6 +18,9 @@ module.exports = {
         background: '#ECECEC;',
         backgroundBlack: '#5F5C5D',
         darkBody: '#5F5C5D',
+        'txt-accent': '#0A0A0A',
+        'grey-bg': '#F5F5F5',
+        error: '#E53935',
       },
       spacing: {
         px: '1px',
@@ -56,6 +59,18 @@ module.exports = {
         80: '320px',
         96: '384px',
       },
+      borderRadius: {
+        none: '0px',
+        sm: '2px',
+        rounded: '4px',
+        md: '6px',
+        lg: '8px',
+        'pre-xl': '10px',
+        xl: '12px',
+        '2xl': '16px',
+        '3xl': '24px',
+        full: '9999px',
+      },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
@@ -71,7 +86,10 @@ module.exports = {
         'calc-bg':
           'linear-gradient(to right, rgba(219, 219, 219, 0.5), rgba(219, 219, 219, 0.5)) ',
         'calc-bg-woman': "url('/woman.webp')",
+        'orange-gradient':
+          'linear-gradient(277deg, #F97316 -5.07%, #EF4444 84.13%)',
       },
+
       listStyleImage: {
         checkmark: 'url("/chack.png")',
       },

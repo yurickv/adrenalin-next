@@ -8,6 +8,9 @@ interface Data {
   currency: string;
   description: string;
   order_id: string;
+  sender_first_name?: string;
+  sender_last_name?: string;
+  result_url?: string;
 }
 
 export class PaymentService {
@@ -20,7 +23,9 @@ export class PaymentService {
 
   private createBasedData() {
     const stringifyData = JSON.stringify(this.data);
-    this.basedData = btoa(stringifyData);
+    const latin1CompatibleString = unescape(encodeURIComponent(stringifyData));
+
+    this.basedData = btoa(latin1CompatibleString);
   }
 
   private createSignString() {

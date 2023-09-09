@@ -11,6 +11,7 @@
   "dependencies": {
     "@google-cloud/storage": "^7.0.1",
     "@headlessui/react": "^1.7.17",
+    "@hookform/resolvers": "^3.3.1",
     "@types/bcryptjs": "^2.4.2",
     "@types/node": "20.4.5",
     "@types/react": "18.2.17",
@@ -26,7 +27,7 @@
     "postcss": "8.4.27",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.45.4",
+    "react-hook-form": "^7.46.1",
     "react-paginate": "^8.2.0",
     "request": "^2.88.2",
     "sha.js": "^2.4.11",

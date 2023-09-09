@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DescriptionText } from './DescriptionText';
 import { PriceTrener } from './PriceTrener';
 import { DetailsAndPriceButtons } from './DetailsAndPriceButtons';
-import { coachServices } from '@/const/priceConst';
+import { coachPasses } from '@/const/priceConst';
 
 type TrenerCardProps = {
   onClickMore: (button: 'standart' | 'personal' | 'planTrain') => void;
@@ -15,8 +15,17 @@ export const TrenerCard: React.FC<TrenerCardProps> = ({
   onClickMore,
   isOpen,
 }) => {
-  const [chosenService, setChosenService] = useState(coachServices[2]);
+  const [pass, setPass] = useState(coachPasses[0]);
+  const [chosenService, setChosenService] = useState({
+    serviceName: coachPasses[0].serviceName,
+    plan: coachPasses[0].plans[2],
+  });
+  const [duration, setDuration] = useState(coachPasses[0].plans[2]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    setChosenService({ serviceName: pass.serviceName, plan: { ...duration } });
+  }, [pass, chosenService]);
 
   function onToggleModal() {
     setIsModalOpen(!isModalOpen);
@@ -46,19 +55,19 @@ export const TrenerCard: React.FC<TrenerCardProps> = ({
           className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
         font-bold border border-mainText dark:border-mainTextBlack bg-white dark:bg-[#676465]
         rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2 text-mainText dark:text-mainTextBlack"
-          value={chosenService.quantity}
+          value={duration.id}
           onChange={e => {
-            const findService = coachServices.find(
-              service => service.quantity === e.target.value
+            const findService = pass.plans.find(
+              ({ id }) => id === e.target.value
             );
             if (findService) {
-              setChosenService(findService);
+              setDuration(findService);
             }
           }}
         >
-          {coachServices.map(({ quantity, serviceName }, index) => (
-            <option value={quantity} key={index}>
-              {quantity + ' ' + serviceName}{' '}
+          {pass.plans.map(({ id, availability }) => (
+            <option value={id} key={id}>
+              {availability}{' '}
             </option>
           ))}
         </select>
