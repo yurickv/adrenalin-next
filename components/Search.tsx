@@ -25,7 +25,7 @@ export function Search({ search, handleCloseMobileMenu }: Props) {
                 }
                 group inline-flex items-center rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
                  text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
-                 hover:text-opacity-100 outline-none `}
+                 hover:text-opacity-100 outline-none transition-all duration-300`}
             >
               <span>
                 <SearchIcon />

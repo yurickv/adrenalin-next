@@ -4,12 +4,10 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main>
-      <section className="py-[40px] md:py-[44px] lg:py-[88px]">
+      <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
         <div className="div-container relative mx-auto  md:pl-[80px]">
-          <div className="bg-white absolute inset-y-0 left-0 z-10 -skew-x-12 md:w-[350px] lg:w-[450px]">
-            {/* <Image src="/404.png" alt="404 image" width={200} height={85} /> */}
-          </div>
-          <div className="md:absolute left-20 top-5 md:top-1/4 text-mainText  z-20">
+          <div className="bg-white dark:bg-darkBody absolute inset-y-0 left-0 z-10 -skew-x-12 md:w-[350px] lg:w-[450px]"></div>
+          <div className="md:absolute left-20 top-5 md:top-1/4 text-mainText dark:text-mainTextBlack  z-20">
             <div className="flex flex-col gap-8 text-center">
               <p className="  md:text-xl lg:text-2xl font-bold">
                 Упс.
@@ -17,7 +15,7 @@ export default function Home() {
                 ви шукали
               </p>
               <p>Тим часом...</p>
-              <ul className="flex flex-col gap-2 underline decoration-1 text-lg">
+              <ul className="flex flex-col gap-2 underline decoration-1 text-lg text-mainTitle dark:text-mainTitleBlack">
                 <li>
                   <Link href="/">Повернутись на головну</Link>
                 </li>
