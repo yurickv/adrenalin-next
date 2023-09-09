@@ -36,7 +36,7 @@ export const BuyButton = ({
       sender_last_name: props.data.sender_last_name,
       amount: props.fullPrice,
       currency: 'UAH',
-      result_url: process.env.NEXT_PUBLIC_HOST || process.env.HOST,
+      result_url: `http://${process.env.NEXT_PUBLIC_HOST || process.env.HOST}`,
       description: `Оплата за ${props.products.reduce((acc, currentValue) => {
         return (acc +=
           `${acc ? ', ' : ' '}` +
