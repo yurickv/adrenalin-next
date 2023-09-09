@@ -65,6 +65,17 @@ export class CartLocalStorageService {
     localStorage.clear();
   }
 
+  deleteItem(id: string) {
+    this.get();
+
+    const filteredItems = CartLocalStorageService.items.filter(
+      item => item.plan.id !== id
+    );
+
+    localStorage.setItem(this.key, JSON.stringify(filteredItems));
+    return filteredItems;
+  }
+
   private setNewItem(value: newService) {
     const itemsToSet = [{ ...value, amount: 1 }];
 

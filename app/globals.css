@@ -104,6 +104,9 @@ details[open] summary div {
   shadow-[0_4px_9px_-4px_#3b71ca];
 }
 
+
+/*Корзина*/
+
 .cart {
   @apply pt-5 pb-10 text-center
 }

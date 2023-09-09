@@ -116,7 +116,9 @@ const ShoppingCart = () => {
                       }`}
                     />
                     {errors[name as keyof typeof errors] ? (
-                      <p>{errors[name as keyof typeof errors]?.message}</p>
+                      <p className="">
+                        {errors[name as keyof typeof errors]?.message}
+                      </p>
                     ) : null}
                   </label>
                 ))}
@@ -135,9 +137,9 @@ const ShoppingCart = () => {
                   />
                   <CheckedIcon className="privacy__icon" />
                   <span className="privacy__text">Я надаю згоду на &#xa0;</span>
-                  <a href="#" className="privacy__text underline">
+                  <p className="privacy__text underline">
                     обробку моїх персональних даних
-                  </a>
+                  </p>
                 </label>
                 <label className="privacy__label">
                   <input
@@ -155,9 +157,9 @@ const ShoppingCart = () => {
                   />
                   <CheckedIcon className="privacy__icon" />
                   <span className="privacy__text">Я погоджуюсь з &#xa0;</span>
-                  <a href="#" className="privacy__text underline">
+                  <Link href="/oferta" className="privacy__text underline">
                     умовами та публічною офертою
-                  </a>
+                  </Link>
                 </label>
               </div>
             </div>
@@ -213,23 +215,17 @@ const ShoppingCart = () => {
               </div>
 
               <div className="actions">
-                <button
-                  type="button"
+                <Link
+                  href="/services"
                   className="actions__button bg-transparent text-txt-accent hover:text-red-600 focus:text-red-600 transition-colors"
                 >
                   Відмінити
-                </button>
+                </Link>
                 <BuyButton
                   props={{ data, products, fullPrice }}
                   disabled={isButtonDisabled}
                   text={'Оплатити'}
                 />
-                {/*<button*/}
-                {/*  type="submit"*/}
-                {/*  className="actions__button bg-orange-gradient text-white"*/}
-                {/*>*/}
-                {/*  Оплатити*/}
-                {/*</button>*/}
               </div>
             </div>
           </form>
