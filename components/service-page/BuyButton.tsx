@@ -36,7 +36,7 @@ export const BuyButton = ({
       sender_last_name: props.data.sender_last_name,
       amount: props.fullPrice,
       currency: 'UAH',
-      result_url: 'http://localhost:3000',
+      result_url: process.env.NEXT_PUBLIC_HOST || process.env.HOST,
       description: `Оплата за ${props.products.reduce((acc, currentValue) => {
         return (acc +=
           `${acc ? ', ' : ' '}` +
@@ -56,7 +56,10 @@ export const BuyButton = ({
       order_id: uuidv4(),
     };
   }
-
+  console.log({
+    NEXT_PUBLIC_HOST: process.env.NEXT_PUBLIC_HOST,
+    HOST: process.env.HOST,
+  });
   const paymentService = new PaymentService(data);
   paymentService.createSignature();
 
