@@ -212,72 +212,70 @@ const ShoppingCart = () => {
                 </label>
               </div>
             </div>
-            <div className="credentials !items-center">
-              <h2 className="credentials__title !self-start">
-                Ваше замовлення:
-              </h2>
-              <div className="product-list">
-                {products.map(product => (
-                  <div className="product" key={product.serviceName}>
-                    <div className="product__item">
-                      <p className="product__title">Послуга:</p>
-                      <p className="product__description">
-                        {product.serviceName}
-                      </p>
-                    </div>
-                    <div className="product__item">
-                      <p className="product__title">Тривалість:</p>
-                      <p className="product__description">
-                        {product.plan.availability}
-                      </p>
-                    </div>
-                    <div className="product__item">
-                      <p className="product__title">Кількість:</p>
-                      <p className="product__description flex justify-center items-center gap-4">
-                        <button
-                          type="button"
-                          onClick={() => handleDecrementAmount(product)}
-                        >
-                          -
-                        </button>
-                        {product.amount}
-                        <button
-                          type="button"
-                          onClick={() => handleIncrementAmount(product)}
-                        >
-                          +
-                        </button>
-                      </p>
-                    </div>
-                    <div className="product__item">
-                      <p className="product__title">Сума</p>
-                      <p className="product__description">
-                        {Number(product.plan.price) * product.amount!} &#8372;
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="full-price">
-                <p className="full-price__title">Разом:</p>
-                <p className="full-price__description">{fullPrice} &#8372;</p>
-              </div>
-
-              <div className="actions">
-                <Link
-                  href="/services"
-                  className="actions__button bg-transparent text-txt-accent hover:text-red-600 focus:text-red-600 transition-colors"
-                >
-                  Відмінити
-                </Link>
-                <BuyButton
-                  props={{ data, products, fullPrice }}
-                  disabled={isButtonDisabled}
-                  text={'Оплатити'}
-                />
-              </div>
-            </div>
           </form>
+          <div className="credentials !items-center">
+            <h2 className="credentials__title !self-start">Ваше замовлення:</h2>
+            <div className="product-list">
+              {products.map(product => (
+                <div className="product" key={product.serviceName}>
+                  <div className="product__item">
+                    <p className="product__title">Послуга:</p>
+                    <p className="product__description">
+                      {product.serviceName}
+                    </p>
+                  </div>
+                  <div className="product__item">
+                    <p className="product__title">Тривалість:</p>
+                    <p className="product__description">
+                      {product.plan.availability}
+                    </p>
+                  </div>
+                  <div className="product__item">
+                    <p className="product__title">Кількість:</p>
+                    <p className="product__description flex justify-center items-center gap-4">
+                      <button
+                        type="button"
+                        onClick={() => handleDecrementAmount(product)}
+                      >
+                        -
+                      </button>
+                      {product.amount}
+                      <button
+                        type="button"
+                        onClick={() => handleIncrementAmount(product)}
+                      >
+                        +
+                      </button>
+                    </p>
+                  </div>
+                  <div className="product__item">
+                    <p className="product__title">Сума</p>
+                    <p className="product__description">
+                      {Number(product.plan.price) * product.amount!} &#8372;
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="full-price">
+              <p className="full-price__title">Разом:</p>
+              <p className="full-price__description">{fullPrice} &#8372;</p>
+            </div>
+
+            <div className="actions">
+              <Link
+                href="/services"
+                className="actions__button bg-transparent text-txt-accent hover:text-red-600 focus:text-red-600 transition-colors"
+              >
+                Відмінити
+              </Link>
+              <BuyButton
+                props={{ data, products, fullPrice }}
+                disabled={isButtonDisabled}
+                text={'Оплатити'}
+              />
+            </div>
+          </div>
         </div>
       )}
     </section>
