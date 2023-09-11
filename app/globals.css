@@ -104,82 +104,75 @@ details[open] summary div {
   shadow-[0_4px_9px_-4px_#3b71ca];
 }
 
-
 /*Корзина*/
 
 .cart {
-  @apply pt-5 pb-10 text-center
+  @apply py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody;
 }
 
 .back-button {
-  @apply font-poppins text-[14px] font-semibold flex gap-1 items-center mb-5 text-left
-}
-
-.cart__title {
-  @apply font-poppins text-[40px] font-bold text-txt-accent leading-normal mb-5
+  @apply font-poppins text-[14px] font-semibold flex gap-1 items-center mb-5 text-left;
 }
 
 .credentials {
-  @apply flex flex-col items-start justify-center gap-12 p-6 bg-grey-bg rounded-pre-xl shadow-[0_4px_20px_0px_rgba(133,119,123,0.30)];
+  @apply flex flex-col items-start justify-center gap-12 p-6 bg-grey-bg dark:bg-[#676465] rounded-pre-xl 
+  shadow-[0px_4px_20px_0px_rgba(133,119,123,0.30)] dark:shadow-[0px_4px_15px_0px_rgba(116,116,116,0.30)];
 }
 
 .credentials__title {
-  @apply font-poppins text-[20px] font-bold leading-[normal] text-txt-accent
+  @apply font-poppins text-[20px] font-bold leading-[normal] text-mainTitle dark:text-mainTitleBlack;
 }
 .credentials__user-info {
-  @apply flex flex-col items-start justify-center gap-8
+  @apply flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 items-start justify-center gap-8 text-mainText dark:text-mainTextBlack;
 }
 
 .credentials__input {
-  @apply block font-poppins text-[16px] leading-[normal] text-txt-accent
+  @apply block font-poppins text-[16px] leading-[normal] text-mainText dark:text-mainTextBlack;
 }
 
 .privacy {
-  @apply flex flex-col items-start justify-center gap-6
+  @apply flex flex-col items-start justify-center gap-6;
 }
 .privacy__label {
-  @apply text-left
+  @apply text-left;
 }
 .privacy__text {
-  @apply font-poppins text-[16px] font-normal leading-[normal] text-txt-accent
+  @apply font-poppins text-[16px] font-normal leading-[normal] text-mainText dark:text-mainTextBlack;
 }
 
 .privacy__icon {
-  @apply rounded-md border-2 border-txt-accent fill-transparent inline-block mr-2 peer-checked:fill-txt-accent transition-all
+  @apply rounded-md border-2 border-mainText dark:border-mainTextBlack fill-transparent inline-block mr-2
+   peer-checked:fill-mainText peer-checked:dark:fill-mainTextBlack transition-all;
 }
 
 .product-list {
-  @apply w-full after:block after:w-full after:h-[1.5px] after:bg-orange-gradient after:mt-12
+  @apply w-full after:block after:w-full after:h-[1.5px] after:bg-orange-gradient after:mt-12;
 }
 .product {
-  @apply flex flex-col gap-8 justify-center items-center
+  @apply flex flex-col gap-8 justify-center items-center;
 }
-.product__item {
-  @apply flex flex-col gap-4
-}
+
 .product__title {
-  @apply font-poppins text-[16px] font-normal text-txt-accent leading-[normal]
+  @apply font-poppins text-left font-normal text-mainText dark:text-mainTextBlack uppercase p-1;
 }
 .product__description {
-  @apply font-poppins text-[16px] font-bold text-txt-accent leading-[normal]
+  @apply font-poppins  font-bold text-mainTitle dark:text-mainTitleBlack;
 }
 .full-price {
-  @apply w-full flex items-center justify-between
+  @apply w-full flex items-center justify-between;
 }
-.full-price__title{
-  @apply font-poppins font-medium text-[18px] text-txt-accent uppercase leading-[normal]
+.full-price__title {
+  @apply font-poppins font-medium text-[18px] text-mainTitle dark:text-mainTitleBlack uppercase leading-[normal];
 }
 .full-price__description {
-  @apply font-poppins font-semibold text-[24px] leading-[normal] text-transparent bg-clip-text bg-orange-gradient
+  @apply font-poppins font-semibold text-[24px] leading-[normal] text-transparent bg-clip-text bg-orange-gradient;
 }
 .actions {
-  @apply w-full flex flex-col gap-4
+  @apply w-full flex gap-4 justify-end;
 }
 .actions__button {
-  @apply w-full font-poppins font-normal text-[16px] p-4 rounded-pre-xl disabled:cursor-not-allowed
+  @apply w-full font-poppins font-normal text-[16px] p-4 rounded-pre-xl disabled:cursor-not-allowed;
 }
-
-
 
 .visually-hidden {
   position: absolute;
