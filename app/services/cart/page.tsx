@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { ChevronLeftIcon } from '@/components/icons/ChevronLeftIcon';
 import { USER_CREDENTIALS_INPUTS } from '@/const/user-crenedtials';
 import { CheckedIcon } from '@/components/CheckedIcon';
 import { CartLocalStorageService } from '@/app/_services/cartLocalStorageService';
@@ -43,11 +42,10 @@ const ShoppingCart = () => {
     const setShoppingCartProducts = () => {
       const storedProducts = cartLocalStorageService.get() as newService[];
 
-      if (storedProducts?.length) {
-        setEmpty(false);
-      } else {
-        setEmpty(true);
+      if (!storedProducts?.length) {
+        return setEmpty(true);
       }
+
       setProducts(storedProducts);
       setIsLoading(false);
       setFullPrice(countFullPrice(storedProducts));
@@ -147,7 +145,7 @@ const ShoppingCart = () => {
       </section>
       <section className="cart">
         {isLoading ? (
-          <b>Loading...</b>
+          <b>Зачекайте хвилинку...</b>
         ) : (
           <div className="div-container flex flex-col gap-5">
             <form onSubmit={handleSubmit(onSubmit)}>
