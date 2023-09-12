@@ -25,7 +25,7 @@ export const TrenerCard: React.FC<TrenerCardProps> = ({
 
   useEffect(() => {
     setChosenService({ serviceName: pass.serviceName, plan: { ...duration } });
-  }, [pass, chosenService]);
+  }, [pass, duration]);
 
   function onToggleModal() {
     setIsModalOpen(!isModalOpen);

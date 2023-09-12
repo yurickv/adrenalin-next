@@ -20,6 +20,7 @@ import { HomeIcon } from './icons/forPopMenu/HomeIcon';
 import { Search } from '@/components/Search';
 import { AdrenalinIcon } from './icons/logo/AdrenalinIcon';
 import { GymIcon } from './icons/logo/GymIcon';
+import { Basket } from './icons/Basket';
 
 export const Header = () => {
   const params = usePathname();
@@ -180,22 +181,14 @@ export const Header = () => {
 
         <div className="hidden md:flex md:gap-4 text-main relative">
           <Search search={search} />
-          <a
-            href="https://www.instagram.com/gym.adrenalin/?hl=uk"
-            className=" hover:text-hover transition-colors duration-300 cursor-pointer peer-focus:hidden"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/services/cart"
+            className="rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
+                 text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
+                 hover:text-opacity-100 outline-none transition-all duration-300"
           >
-            <Insta />
-          </a>
-          <a
-            href="tel:+38(097)8836689"
-            className=" hover:text-hover transition-colors duration-300 cursor-pointer peer-focus:hidden"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Phone />
-          </a>
+            <Basket />
+          </Link>
         </div>
         <Dialog
           as="div"
@@ -305,26 +298,18 @@ export const Header = () => {
                   </Link>
                 </div>
                 <div className="py-10 flex gap-8 text-main items-center justify-center">
-                  <a
-                    href="https://www.instagram.com/gym.adrenalin/?hl=uk"
-                    className="  transition-colors duration-300 cursor-pointer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Insta />
-                  </a>
-                  <a
-                    href="tel:+38(097)8836689"
-                    className="  transition-colors duration-300 cursor-pointer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Phone />
-                  </a>
                   <Search
                     search={search}
                     handleCloseMobileMenu={setMobileMenuOpen}
                   />
+                  <Link
+                    href="/services/cart"
+                    className="rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
+                 text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
+                 hover:text-opacity-100 outline-none transition-all duration-300"
+                  >
+                    <Basket />
+                  </Link>
                 </div>
               </div>
             </div>
