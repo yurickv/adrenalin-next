@@ -333,6 +333,7 @@ export const Header = () => {
                       <div className="p-1 top-1/4 right-1 bg-main group-hover:bg-hover transition-colors absolute rounded-full"></div>
                     ) : null}
                   </Link>
+                  <DarkModeToggle />
                 </div>
               </div>
             </div>

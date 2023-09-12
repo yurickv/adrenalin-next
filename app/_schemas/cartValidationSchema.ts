@@ -3,7 +3,9 @@ import * as yup from 'yup';
 export const cartValidationSchema = yup.object().shape({
   sender_first_name: yup
     .string()
-    .test('is-cyrillic', "Ім'я повинно бути написано кирилицею", value => {
+    .min(4, 'Не менше 4 символів')
+    .max(20, 'Не більше 20 символів')
+    .test('is-cyrillic', 'Введіть кирилицею', value => {
       if (!value) return true;
       return /^[А-ЯІЇЄа-яіїєҐґ]+$/.test(value);
     })
@@ -11,7 +13,9 @@ export const cartValidationSchema = yup.object().shape({
 
   sender_last_name: yup
     .string()
-    .test('is-cyrillic', 'Прізвище повинно бути написано кирилицею', value => {
+    .min(4, 'Не менше 4 символів')
+    .max(20, 'Не більше 20 символів')
+    .test('is-cyrillic', 'Введіть кирилицею', value => {
       if (!value) return true;
       return /^[А-ЯІЇЄа-яіїєҐґ]+$/.test(value);
     })
@@ -19,14 +23,11 @@ export const cartValidationSchema = yup.object().shape({
 
   phone: yup
     .string()
-    .test(
-      'is-phoneNumber',
-      'Телефон повинен починатися на +380 і мати 9 цифр після цього',
-      value => {
-        if (!value) return true;
-        return /^\+380\d{9}$/.test(value);
-      }
-    )
+    .test('is-phoneNumber', 'Номер: +380 і 9 цифр опісля', value => {
+      if (!value) return true;
+      return /^\+380\d{9}$/.test(value);
+    })
+    .max(13, 'Не більше 13 символів')
     .required('Введіть свій номер телефону'),
 
   publicOffer: yup

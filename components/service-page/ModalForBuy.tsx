@@ -118,7 +118,7 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
                     <button
                       onClick={() => {
                         handleAddToCart(chosenProduct);
-                        router.push('/cart');
+                        router.push('/services/cart');
                       }}
                       className="md:!w-[170px] actions__button disabled:opacity-50 bg-orange-gradient text-white hover:from-red-600
       hover:to-orange-600 focus:from-red-600 focus:to-orange-600 block"

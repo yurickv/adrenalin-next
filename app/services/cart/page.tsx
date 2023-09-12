@@ -21,7 +21,7 @@ const ShoppingCart = () => {
   const [empty, setEmpty] = useState<boolean>(false);
   const [data, setData] = useState({
     agreement: false,
-    phone: '',
+    phone: '+380',
     publicOffer: false,
     sender_first_name: '',
     sender_last_name: '',
@@ -127,7 +127,7 @@ const ShoppingCart = () => {
     );
   }
   return (
-    <main>
+    <>
       <section className="bg-hero-bg bg-center bg-cover ">
         <div className="div-container py-[20px] md:py-[44px] mx-auto text-center flex flex-col gap-5">
           <h3 className="text-left text-white flex gap-2">
@@ -154,7 +154,10 @@ const ShoppingCart = () => {
                 <div className="credentials__user-info">
                   {USER_CREDENTIALS_INPUTS.map(
                     ({ label, placeholder, name }) => (
-                      <label key={label}>
+                      <label
+                        key={label}
+                        className="w-full place-self-auto min-h-[90px]"
+                      >
                         <span
                           className="credentials__input font-medium text-left mb-2 rounded-lg
                            before:content-['*'] before:text-mainText  before:dark:text-mainTextBlack"
@@ -186,7 +189,7 @@ const ShoppingCart = () => {
                           }`}
                         />
                         {errors[name as keyof typeof errors] ? (
-                          <p className="">
+                          <p className="text-red-500">
                             {errors[name as keyof typeof errors]?.message}
                           </p>
                         ) : null}
@@ -329,7 +332,7 @@ const ShoppingCart = () => {
           </div>
         )}
       </section>
-    </main>
+    </>
   );
 };
 export default ShoppingCart;
