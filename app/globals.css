@@ -127,7 +127,7 @@ details[open] summary div {
 }
 
 .credentials__input {
-  @apply block font-poppins text-[16px] leading-[normal] text-mainText dark:text-mainTextBlack;
+  @apply block font-poppins text-[16px] leading-[normal] text-mainTitle dark:text-mainTitleBlack;
 }
 
 .privacy {

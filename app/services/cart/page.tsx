@@ -38,9 +38,11 @@ const ShoppingCart = () => {
     mode: 'onBlur',
   });
   const cartLocalStorageService = new CartLocalStorageService(SHOPPING_CART);
+
   useEffect(() => {
     const setShoppingCartProducts = () => {
       const storedProducts = cartLocalStorageService.get() as newService[];
+
       if (storedProducts?.length) {
         setEmpty(false);
       } else {
@@ -157,8 +159,7 @@ const ShoppingCart = () => {
                       <label key={label}>
                         <span
                           className="credentials__input font-medium text-left mb-2 rounded-lg
-                           before:content-['*'] before:text-mainText  before:dark:text-mainTextBlack 
-                        text-mainTitle dark:text-mainTitleBlack"
+                           before:content-['*'] before:text-mainText  before:dark:text-mainTextBlack"
                         >
                           {label}:
                         </span>
@@ -248,7 +249,7 @@ const ShoppingCart = () => {
               <div className="product-list">
                 <div className="table border-collapse table-auto w-full p-2 rounded-lg ">
                   <div className="hidden md:table-header-group ">
-                    <div className="table-row bg-mainText p-2 ">
+                    <div className="table-row bg-neutral-200 dark:bg-mainText p-2 ">
                       <div className="product__title table-cell rounded-l-lg">
                         Послуга:
                       </div>
