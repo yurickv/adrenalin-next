@@ -1,31 +1,17 @@
-export const PriceTrainingPlan = ({
-  duration,
-  quantity,
-}: {
-  duration: number;
-  quantity: number;
-}) => {
-  let message = '';
-  let mounth = '';
-  const value = duration * quantity;
+import { newService } from '@/app/_types/services.types';
 
-  if (value === 2) {
-    message = '150';
-    mounth = '1 тиждень';
-  } else if (value === 8) {
-    message = '500';
-    mounth = '1 місяць';
-  } else {
-    message = '200';
-    mounth = '1 місяць';
-  }
-
+export const PriceTrainingPlan = ({ service }: { service: newService }) => {
   return (
-    <div className="text-left ">
-      <p className="text-2xl font-semibold">
+    <div className="text-center ">
+      <p className="text-2xl font-bold text-main dark:text-[#F15C44]">
         {' '}
-        &#8372; {message} <span className="text-2xl ont-semibold">/</span>{' '}
-        <span className=" text-base font-semibold">{mounth}</span>
+        &#8372; {service.plan.price}{' '}
+        <span className="text-2xl font-semibold text-mainText dark:text-mainTextBlack">
+          /
+        </span>{' '}
+        <span className=" text-base font-semibold text-mainText dark:text-mainTextBlack">
+          {service.plan.availability}
+        </span>
       </p>
       <p className="text-base">{}</p>
     </div>

@@ -81,12 +81,17 @@ export const FatCalcList = () => {
   return (
     <form className="flex flex-col gap-7">
       <label htmlFor="sex" className="font-bold flex items-center gap-3">
-        <span className="p-2 text-lg">Стать: </span>
+        <span className="p-2 text-lg text-mainTitle dark:text-mainTitleBlack">
+          Стать:{' '}
+        </span>
         <label
           htmlFor="woman"
-          className={`cursor-pointer flex items-center justify-center 
-          truncate font-semibold text-lg rounded-lg p-2 hover:bg-[#d9d9d9] ${
-            !sex ? 'bg-mainText text-main' : ''
+          className={`cursor-pointer flex items-center justify-center tracking-widest
+          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText 
+          truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
+            !sex
+              ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main'
+              : 'dark:text-mainTextBlack'
           } `}
         >
           Жінка{' '}
@@ -102,9 +107,12 @@ export const FatCalcList = () => {
         />
         <label
           htmlFor="man"
-          className={`cursor-pointer flex items-center justify-center 
-          truncate font-semibold text-lg rounded-lg p-2 hover:bg-[#d9d9d9] ${
-            sex ? 'bg-mainText text-main' : ''
+          className={`cursor-pointer flex items-center justify-center tracking-widest
+          dark:hover:bg-[#d4d4d4] dark:hover:text-mainText 
+          truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
+            sex
+              ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main'
+              : 'dark:text-mainTextBlack'
           } `}
         >
           Чоловік{' '}
@@ -129,7 +137,7 @@ export const FatCalcList = () => {
         onBlur={validate}
         error={errors.age}
       />
-      <p className="font-bold md:text-lg">
+      <p className="font-bold md:text-lg text-mainText dark:text-mainTextBlack">
         Виміряйте шкірні складки на таких частинах тіла:
       </p>
       <InputSkeleton
@@ -144,7 +152,7 @@ export const FatCalcList = () => {
       />
 
       <InputSkeleton
-        text={sex ? 'На животі (мм):' : 'Бокова шкірна складка (мм):'}
+        text={sex ? 'На животі (мм):' : 'Живіт збоку (мм):'}
         name="skinFoldW"
         max={100}
         min={1}

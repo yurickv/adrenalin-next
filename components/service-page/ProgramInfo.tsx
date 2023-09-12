@@ -1,4 +1,7 @@
-import { planFood, planTrain } from '@/const/priceConst';
+import {
+  foodPlanFullProgram,
+  trainingPlanFullProgram,
+} from '@/const/priceConst';
 import { InfoTemplate } from './InfoTemplate';
 
 export const ProgramInfo = () => {
@@ -13,8 +16,16 @@ export const ProgramInfo = () => {
         justify-end border-t-2 border-main pt-5 md:pt-8 lg:pt-11
         mx-4 md:mx-0  md:order-last items-start "
     >
-      <InfoTemplate title="План тренування" data={planTrain} styles={styles} />
-      <InfoTemplate title="План харчування" data={planFood} styles={styles} />
+      <InfoTemplate
+        title="План тренування"
+        data={trainingPlanFullProgram}
+        styles={styles}
+      />
+      <InfoTemplate
+        title="План харчування"
+        data={foodPlanFullProgram}
+        styles={styles}
+      />
     </div>
   );
 };

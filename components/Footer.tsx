@@ -21,16 +21,17 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="">
+    <footer className="bg-white dark:bg-darkBody">
       <div
         className="grid grid-cols-2 gap-10 justify-start justify-items-center md:grid-cols-none
         md:flex md:items-center md:justify-between   mx-auto border-t-2 border-main
       max-w-[640px] md:max-w-[1279px] lg:max-w-[1439px] xl:max-w-[1919px] 
       py-[40px] md:pt-[44px] md:pb-[88px] lg:py-[88px] 
-      px-4 md:px-[40px] lg:px-[66px] xl:px-[132px]"
+      px-4 md:px-[40px] lg:px-[66px] xl:px-[132px] antialiased"
       >
         <Link
-          className="transition-colors duration-300 col-span-2 flex md:flex-col gap-3 md:gap-2  md:items-center"
+          className="transition-colors duration-300 col-span-2 flex md:flex-col gap-3 
+          md:gap-2  md:items-center"
           href="/"
         >
           <span className="sr-only md:not-sr-only">
@@ -40,7 +41,9 @@ export const Footer = () => {
           <GymIcon />
         </Link>
         <nav className="md:!w-[220px] flex flex-col gap-6">
-          <h3 className="ml-2 font-bold">Клієнтам</h3>
+          <h3 className="ml-2 font-bold text-mainTitle dark:text-mainTitleBlack">
+            Клієнтам
+          </h3>
           <ul className="md:flex md:flex-wrap md:justify-between gap-4 text-small  text-base ">
             <Popover className="relative">
               {({ open }) => (
@@ -48,15 +51,20 @@ export const Footer = () => {
                   <Popover.Button
                     className={`
                 ${
-                  open ? 'bg-orange-100 !text-main' : ''
+                  open
+                    ? 'bg-orange-100 !text-main dark:bg-hoverBlack dark:!text-mainTitle'
+                    : ''
                 } group flex items-center gap-x-1 
-                font-poppins hover:text-main hover:bg-orange-100
-                    text-mainText rounded-lg p-2 outline-none`}
+                  font-poppins hover:text-main hover:bg-orange-100 
+                dark:hover:bg-hoverBlack dark:hover:text-mainTitle
+                text-mainTitle dark:text-mainTitleBlack rounded-lg p-2 outline-none`}
                   >
                     Калькулятори
                     <div
                       className={`${
-                        open ? 'bg-orange-100 !text-main rotate-180' : ''
+                        open
+                          ? 'bg-orange-100 !text-main rotate-180 dark:bg-hoverBlack'
+                          : ''
                       } 
                     h-5 w-5 flex-none text-gray-400 group-hover:text-main`}
                     >
@@ -73,17 +81,22 @@ export const Footer = () => {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute left-1/4 top-full z-10 mt-2 w-screen max-w-[250px] overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-300">
+                    <Popover.Panel
+                      className="absolute left-1/4 top-full z-10 mt-2 w-screen max-w-[250px] 
+                    overflow-hidden rounded-3xl bg-white dark:bg-[#676465] shadow-lg transition-all duration-300"
+                    >
                       <div className=" p-2">
                         {products.map(item => (
                           <div
                             key={item.name}
-                            className="group relative flex items-center gap-x-4 rounded-lg p-2 text-sm leading-6 hover:bg-orange-100"
+                            className="group relative flex items-center gap-x-4 rounded-lg p-2 text-sm 
+                            leading-6 hover:bg-orange-100 dark:bg-[#676465] dark:hover:bg-mainText"
                           >
                             <div className="flex-auto">
                               <a
                                 href={item.href}
-                                className="block font-semibold text-mainText"
+                                className="block font-semibold text-mainTitle dark:text-white  hover:text-main 
+                                dark:hover:text-orange-400 tracking-wider"
                               >
                                 {item.name}
                                 <span className="absolute inset-0" />
@@ -100,7 +113,10 @@ export const Footer = () => {
             {NavLinks.map(link => (
               <li
                 key={link.key}
-                className={`flex items-center  hover:text-main font-poppins rounded-lg p-2 hover:bg-orange-100 transition-colors duration-300`}
+                className={`flex items-center  hover:text-main font-poppins rounded-lg p-2
+                 hover:bg-orange-100 transition-colors duration-300
+                  dark:hover:bg-hoverBlack dark:hover:text-mainTitle
+                text-mainTitle dark:text-mainTitleBlack`}
               >
                 <Link href={link.href}>{link.text}</Link>
               </li>
@@ -108,31 +124,43 @@ export const Footer = () => {
           </ul>
         </nav>
         <div className="flex flex-col gap-6 lg:justify-center">
-          <h3 className="font-bold ml-2">Будь з нами на звязку</h3>
+          <h3 className="font-bold ml-2 text-mainTitle dark:text-mainTitleBlack">
+            Будь з нами на звязку
+          </h3>
           <div className="flex flex-col gap-4">
             <a
               href="tel:+38(097)8836689"
-              className="flex gap-2 items-center group hover:text-main font-poppins rounded-lg p-2 hover:bg-orange-100 transition-colors duration-300"
+              className="flex gap-2 items-center group hover:text-main font-poppins rounded-lg p-2
+               hover:bg-orange-100 transition-all duration-300
+                dark:hover:bg-hoverBlack "
               target="_blank"
               rel="noopener noreferrer"
             >
               <span className="text-main group-hover:text-main">
                 <Phone />
               </span>
-              <span className="text-mainText group-hover:text-main">
+              <span
+                className="text-mainText dark:text-mainTextBlack group-hover:text-main 
+              dark:group-hover:text-mainTitle font-poppins"
+              >
                 +38 097 960 1371
               </span>
             </a>
             <a
               href="https://www.instagram.com/gym.adrenalin/?hl=uk"
-              className="flex gap-2 items-center group hover:text-main font-poppins rounded-lg p-2 hover:bg-orange-100 transition-colors duration-300"
+              className="flex gap-2 items-center group hover:text-main font-poppins rounded-lg p-2
+               hover:bg-orange-100 transition-all duration-300
+                dark:hover:bg-hoverBlack "
               target="_blank"
               rel="noopener noreferrer"
             >
               <span className="text-main group-hover:text-main">
                 <Insta />
               </span>
-              <span className="text-mainText group-hover:text-main font-poppins">
+              <span
+                className="text-mainText dark:text-mainTextBlack group-hover:text-main 
+              dark:group-hover:text-mainTitle font-poppins"
+              >
                 adrenalin.gym
               </span>
             </a>

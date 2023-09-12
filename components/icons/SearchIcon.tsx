@@ -2,7 +2,8 @@ export const SearchIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="1em"
+      width="24"
+      height="24"
       viewBox="0 0 512 512"
       fill="currentColor"
     >

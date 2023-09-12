@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { DescriptionText } from './DescriptionText';
-import { Price } from './PriceTraining';
-import { ButtonForPrice } from './ButtonForPrice';
+import { PriceTraining } from './PriceTraining';
+import { DetailsAndPriceButtons } from './DetailsAndPriceButtons';
+import { subscriptionPasses } from '@/const/priceConst';
 
 type TrainingCardProps = {
   onClickMore: (button: 'standart' | 'personal' | 'planTrain') => void;
@@ -15,75 +16,106 @@ export const TrainingCard: React.FC<TrainingCardProps> = ({
   onClickMore,
   isOpen,
 }) => {
-  const [quantity, setQuantity] = useState<number>(12);
-  const [duration, setDuration] = useState<number>(1);
+  const [pass, setPass] = useState(subscriptionPasses[2]);
+  const [chosenService, setChosenService] = useState({
+    serviceName: subscriptionPasses[2].serviceName,
+    plan: subscriptionPasses[2].plans[0],
+  });
+  const [duration, setDuration] = useState(subscriptionPasses[2].plans[0]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  function handleChange(number: number) {
-    if (number === 1 || number === 8) {
-      setQuantity(number);
-      setDuration(1);
-      return;
-    }
-    setQuantity(number);
+  function onToggleModal() {
+    setIsModalOpen(!isModalOpen);
   }
+
+  useEffect(() => {
+    setChosenService({ serviceName: pass.serviceName, plan: { ...duration } });
+  }, [pass, duration]);
+
   return (
     <div
       className={` ${
-        isOpen ? '!shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px]' : ''
+        isOpen
+          ? '!shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] dark:!shadow-[0px_4px_15px_0px_rgba(116,116,116,0.90)]'
+          : ''
       } px-4 py-12 md:py-4 lg:py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] 
-      hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] rounded-lg flex flex-col gap-6 hover:shrink basis-1/3`}
+      dark:bg-[#676465] dark:shadow-[0px_4px_15px_0px_rgba(116,116,116,0.30)]
+      hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] dark:hover:shadow-[0px_4px_15px_0px_rgba(116,116,116,0.90)]
+      rounded-lg flex flex-col gap-6 hover:shrink basis-1/3 overflow-hidden`}
     >
-      <DescriptionText
-        title="Тренування"
-        descr="Тренування на професійному обладнанні в просторому тренажерному залі Адреналін"
-      />
+      <DescriptionText title="Тренування" />
+      <PriceTraining service={chosenService} />
       <div className="flex flex-col gap-6">
         <div className="flex flex-col">
-          <label htmlFor="quantity" className="">
+          <label
+            htmlFor="quantity"
+            className="text-mainTitle dark:text-mainTitleBlack"
+          >
             *Кількість занять:
           </label>
           <select
             name="quantity"
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
-        font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2"
-            value={quantity}
-            onChange={e => handleChange(Number(e.target.value))}
+        font-bold border border-mainText dark:border-mainTextBlack bg-white dark:bg-[#676465]
+         rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2 text-mainText dark:text-mainTextBlack"
+            value={pass.serviceName}
+            onChange={e => {
+              const foundService = subscriptionPasses.find(
+                pass => pass.serviceName === e.target.value
+              );
+              if (foundService) {
+                setPass(foundService);
+                setDuration(foundService.plans[0]);
+              }
+            }}
           >
-            <option value="1" className="">
-              1 тренування
-            </option>
-            <option value="8">8 тренувань</option>
-            <option value="12">12 тренувань</option>
-            <option value="20">Безліміт</option>
+            {subscriptionPasses.map(({ serviceName }) => (
+              <option value={serviceName} key={serviceName}>
+                {serviceName}
+              </option>
+            ))}
           </select>
         </div>
 
         <div className="flex flex-col ">
-          <label htmlFor="duration" className="">
+          <label
+            htmlFor="duration"
+            className="text-mainTitle dark:text-mainTitleBlack"
+          >
             *Тривалість:
           </label>
           <select
             name="duration"
-            disabled={quantity === 1 || quantity === 8 ? true : false}
+            disabled={pass.plans.length < 2}
             className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
-        font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2"
-            value={duration}
-            onChange={e => setDuration(Number(e.target.value))}
+        font-bold border border-mainText dark:border-mainTextBlack bg-white dark:bg-[#676465]
+        rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main mt-2 text-mainText dark:text-mainTextBlack"
+            value={duration.id}
+            onChange={e => {
+              const foundPlan = pass.plans.find(
+                ({ id }) => id === e.target.value
+              );
+              if (foundPlan) {
+                setDuration(foundPlan);
+              }
+            }}
           >
-            <option value="1" className="">
-              1 місяць
-            </option>
-            <option value="3">3 місяці</option>
-            <option value="6">6 місяців</option>
-            <option value="12">1 рік</option>
+            {pass.plans.map(({ id, availability }) => (
+              <option value={id} key={id}>
+                {availability}
+              </option>
+            ))}
           </select>
         </div>
       </div>
-      <Price duration={duration} quantity={quantity} />
-      <ButtonForPrice
+
+      <DetailsAndPriceButtons
         onClickMore={onClickMore}
         name="standart"
         isOpen={isOpen}
+        chosenProduct={chosenService}
+        onToggleModal={onToggleModal}
+        isModalOpen={isModalOpen}
       />
     </div>
   );

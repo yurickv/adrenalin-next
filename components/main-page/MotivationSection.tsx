@@ -3,13 +3,17 @@ import Image from 'next/image';
 
 export const Motivation = () => {
   return (
-    <section className="py-[40px] md:py-[44px] lg:py-[88px]">
+    <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
       <div className="div-container">
-        <h2 className="title">Про нас</h2>
+        <h2 className="title text-mainTitle dark:text-mainTitleBlack">
+          Про нас
+        </h2>
         <div className="mx-auto">
           <div className="float-left relative hidden md:block h-[490px] w-[320px] lg:w-[470px] lg:h-[720px]">
             <Image
-              src="/bodybuilder.jpg"
+              placeholder="blur"
+              blurDataURL="/placeholder.png"
+              src="/bodybuilder.png"
               alt="Man with dumbells"
               fill
               style={{

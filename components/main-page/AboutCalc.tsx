@@ -15,6 +15,7 @@ export const AboutCalc = () => {
         </h3>
 
         <Image
+          placeholder="blur"
           src={me}
           alt="pretty woman"
           sizes="100vw"
@@ -31,7 +32,11 @@ export const AboutCalc = () => {
           і ми готові допомогти тобі досягти найкращих результатів!
         </p>
 
-        <Button route="/calcs" text="Дізнатися більше" width="w-[302px]" />
+        <Button
+          route="/calcs"
+          text="Дізнатися більше"
+          width="w-[273px] md:w-[302px]"
+        />
       </div>
     </section>
   );

@@ -1,30 +1,18 @@
-export const PriceTrener = ({ quantity }: { quantity: number }) => {
-  let message = '';
-  let mounth = '';
+import { newService } from '@/app/_types/services.types';
 
-  if (quantity === 1) {
-    message = '330';
-    mounth = '1 тренування';
-  } else if (quantity === 4) {
-    message = '1050';
-    mounth = '15 днів ';
-  } else if (quantity === 8) {
-    message = '2000';
-    mounth = '1 місяць';
-  } else if (quantity === 12) {
-    message = '2700';
-    mounth = '1 місяць';
-  } else {
-    message = '';
-    mounth = '';
-  }
-
+export const PriceTrener = ({ service }: { service: newService }) => {
   return (
-    <div className="text-left ">
-      <p className="text-2xl font-semibold">
-        {' '}
-        &#8372; {message} <span className="text-2xl ont-semibold">/</span>{' '}
-        <span className=" text-base font-semibold">{mounth}</span>
+    <div className="text-center ">
+      <p className="text-mainText dark:text-mainTextBlack line-clamp-1">
+        <span className="text-2xl font-bold text-main dark:text-[#F15C44]">
+          &#8372; {service.plan.price}{' '}
+        </span>
+        <span className="text-2xl font-semibold text-mainText dark:text-mainTextBlack">
+          /
+        </span>{' '}
+        <span className=" text-base font-semibold text-mainText dark:text-mainTextBlack">
+          {service.plan.availability}
+        </span>
       </p>
       <p className="text-base">{}</p>
     </div>

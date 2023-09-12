@@ -31,26 +31,32 @@ function Blog({
           <h1 className="title mb-14 text-white">Блог</h1>
         </div>
       </section>
-      <section className="py-[40px] md:py-[44px] lg:py-[88px]">
+      <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
         <div className="div-container flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-4 justify-center">
           <div className="flex justify-between items-center w-full">
             <div className="min-w-[10px] hidden md:block">
               {(searchParams?.topic || searchParams?.search) && (
                 <div
-                  className="group p-2 rounded-lg hover:bg-orange-100 transition-all duration-300 
-                cursor-pointer flex gap-2 text-left"
+                  className="group p-2 rounded-lg hover:bg-orange-100 dark:hover:bg-mainText
+                   transition-all duration-200 cursor-pointer flex gap-2 text-left"
                 >
-                  <div className="-rotate-180 text-main  ">
+                  <div className="-rotate-180 text-main  dark:text-orange-400">
                     <Arrow />
                   </div>
-                  <Link href="/blog" className="group-hover:text-main">
+                  <Link
+                    href="/blog"
+                    className="group-hover:text-main dark:group-hover:text-orange-400
+                     text-mainText dark:text-mainTextBlack"
+                  >
                     До всіх постів
                   </Link>
                 </div>
               )}
             </div>
             <div className="flex gap-2 ">
-              <p className="p-2">Вибрати тему:</p>
+              <p className="p-2 text-mainText dark:text-mainTextBlack">
+                Вибрати тему:
+              </p>
               <Filter searchParams={searchParams} />
             </div>
           </div>

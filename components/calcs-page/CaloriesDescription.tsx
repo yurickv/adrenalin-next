@@ -1,6 +1,6 @@
 export const CaloriesDescription = () => {
   return (
-    <div className="basis-1/2">
+    <div className="basis-1/2 text-mainText dark:text-mainTextBlack">
       <p className="mt-6 text-base lg:text-lg  text-justify">
         Скільки калорій треба, щоб схуднути, наростити м’язову масу або утримати
         свою теперішню вагу? Цей показник для кожного індивідуальний. Введіть
@@ -22,7 +22,7 @@ export const CaloriesDescription = () => {
         рівня метаболізму (обміну речовин) і допоможе зберегти м'язову масу. В
         такому випадку результат буде довготривалим.
       </p>
-      <p className="text-lg font-bold mt-6">
+      <p className="text-lg font-bold mt-6 text-mainTitle dark:text-mainTitleBlack">
         Пам'ятайте, що надміру ваги сприяє ряд факторів:
       </p>
       <ul className="flex flex-col gap-1 text-justify mt-3 list-disc list-inside">
