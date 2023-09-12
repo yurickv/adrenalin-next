@@ -123,7 +123,7 @@ details[open] summary div {
   @apply font-poppins text-[20px] font-bold leading-[normal] text-mainTitle dark:text-mainTitleBlack;
 }
 .credentials__user-info {
-  @apply flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 place-items-stretch auto-cols-max items-start justify-center gap-8 text-mainText dark:text-mainTextBlack;
+  @apply flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 place-items-stretch auto-cols-max items-start justify-center gap-8 lg:gap-16 text-mainText dark:text-mainTextBlack;
 }
 
 .credentials__input {

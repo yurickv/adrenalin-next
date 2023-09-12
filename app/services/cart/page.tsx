@@ -189,7 +189,7 @@ const ShoppingCart = () => {
                           }`}
                         />
                         {errors[name as keyof typeof errors] ? (
-                          <p className="text-red text-sm">
+                          <p className="text-red-500">
                             {errors[name as keyof typeof errors]?.message}
                           </p>
                         ) : null}
