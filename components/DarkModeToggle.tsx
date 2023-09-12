@@ -4,13 +4,14 @@ export const DarkModeToggle = () => {
   const [colorTheme, setTheme] = useDarkMode();
 
   return (
-    <div
-      className="group inline-flex items-center rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
+    <div>
+      {colorTheme === 'light' ? (
+        <button
+          onClick={() => setTheme('light')}
+          className="group inline-flex items-center rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
                  text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
                  hover:text-opacity-100 outline-none transition-all duration-300"
-    >
-      {colorTheme === 'light' ? (
-        <button onClick={() => setTheme('light')}>
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -29,7 +30,12 @@ export const DarkModeToggle = () => {
           </svg>
         </button>
       ) : (
-        <button onClick={() => setTheme('dark')}>
+        <button
+          onClick={() => setTheme('dark')}
+          className="group inline-flex items-center rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
+                 text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
+                 hover:text-opacity-100 outline-none transition-all duration-300"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
