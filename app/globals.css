@@ -123,11 +123,11 @@ details[open] summary div {
   @apply font-poppins text-[20px] font-bold leading-[normal] text-mainTitle dark:text-mainTitleBlack;
 }
 .credentials__user-info {
-  @apply flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 items-start justify-center gap-8 text-mainText dark:text-mainTextBlack;
+  @apply flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 place-items-stretch auto-cols-max items-start justify-center gap-8 text-mainText dark:text-mainTextBlack;
 }
 
 .credentials__input {
-  @apply block font-poppins text-[16px] leading-[normal] text-mainTitle dark:text-mainTitleBlack;
+  @apply block font-poppins text-[16px] leading-[normal] text-mainTitle dark:text-mainTitleBlack min-w-[280px];
 }
 
 .privacy {
