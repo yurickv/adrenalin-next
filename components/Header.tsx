@@ -7,8 +7,6 @@ import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 
 import { NavLinks } from '@/const';
 import { Barbell } from './icons/Barbell';
-import { Phone } from './icons/Phone';
-import { Insta } from './icons/Instagram';
 import Image from 'next/image';
 import { BurgerMenu } from './icons/BurgerMenu';
 import { ShevronDown } from './icons/forPopMenu/Shevron';
@@ -21,6 +19,7 @@ import { Search } from '@/components/Search';
 import { AdrenalinIcon } from './icons/logo/AdrenalinIcon';
 import { GymIcon } from './icons/logo/GymIcon';
 import { Basket } from './icons/Basket';
+import { DarkModeToggle } from './DarkModeToggle';
 
 export const Header = () => {
   const params = usePathname();
@@ -189,6 +188,7 @@ export const Header = () => {
           >
             <Basket />
           </Link>
+          <DarkModeToggle />
         </div>
         <Dialog
           as="div"
