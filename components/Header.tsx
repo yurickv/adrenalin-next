@@ -123,7 +123,7 @@ export const Header = () => {
                     leaveTo="opacity-0 translate-y-1"
                   >
                     <Popover.Panel
-                      className="absolute -left-1/2 top-full z-10 mt-3 w-screen max-w-md 
+                      className="absolute -left-1/2 top-full z-40 mt-3 w-screen max-w-md 
                   overflow-hidden rounded-3xl bg-white dark:bg-[#676465] shadow-lg ring-1 ring-gray-900/5 transition-all duration-300"
                     >
                       <div className="p-4">
