@@ -116,10 +116,16 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
                     <span className="text-main dark:text-[#F15C44] text-2xl font-semibold">
                       {chosenProduct.plan.price} &#8372;
                     </span>
-                    <BuyButton
-                      quantity={chosenProduct.plan.price}
-                      appointment={name}
-                    />
+                    <button
+                      onClick={() => {
+                        handleAddToCart(chosenProduct);
+                        router.push('/services/cart');
+                      }}
+                      className="md:!w-[170px] actions__button disabled:opacity-50 bg-orange-gradient text-white hover:from-red-600
+      hover:to-orange-600 focus:from-red-600 focus:to-orange-600 block"
+                    >
+                      Купити зараз
+                    </button>
                   </div>
                 </div>
               </Dialog.Panel>
