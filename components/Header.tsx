@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 
 import { NavLinks } from '@/const';
@@ -20,12 +20,29 @@ import { AdrenalinIcon } from './icons/logo/AdrenalinIcon';
 import { GymIcon } from './icons/logo/GymIcon';
 import { Basket } from './icons/Basket';
 import { DarkModeToggle } from './DarkModeToggle';
+import { CartLocalStorageService } from '@/app/_services/cartLocalStorageService';
+import { SHOPPING_CART } from '@/const/localstorageKeys';
 
 export const Header = () => {
   const params = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [productsQuantity, setProductsQuantity] = useState(0);
   const searchParams = useSearchParams();
   const search = searchParams.get('search');
+
+  const cartLocalStorageService = new CartLocalStorageService(SHOPPING_CART);
+  useEffect(() => {
+    const isProductsExists = () => {
+      const productsQuantity = cartLocalStorageService.get();
+
+      if (!productsQuantity?.length) {
+        return setProductsQuantity(0);
+      }
+      setProductsQuantity(productsQuantity.length);
+    };
+
+    isProductsExists();
+  }, []);
 
   const calcHeader = [
     {
@@ -184,9 +201,12 @@ export const Header = () => {
             href="/services/cart"
             className="rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
                  text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
-                 hover:text-opacity-100 outline-none transition-all duration-300"
+                 hover:text-opacity-100 outline-none transition-all duration-300 relative group"
           >
             <Basket />
+            {productsQuantity > 0 ? (
+              <div className="p-1 top-1/4 right-1 bg-main group-hover:bg-hover transition-colors absolute rounded-full"></div>
+            ) : null}
           </Link>
           <DarkModeToggle />
         </div>
@@ -309,6 +329,9 @@ export const Header = () => {
                  hover:text-opacity-100 outline-none transition-all duration-300"
                   >
                     <Basket />
+                    {productsQuantity > 0 ? (
+                      <div className="p-1 top-1/4 right-1 bg-main group-hover:bg-hover transition-colors absolute rounded-full"></div>
+                    ) : null}
                   </Link>
                 </div>
               </div>

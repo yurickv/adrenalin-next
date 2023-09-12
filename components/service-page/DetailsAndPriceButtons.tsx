@@ -46,7 +46,6 @@ export const DetailsAndPriceButtons: React.FC<DetailsAndPriceButtons> = ({
         onToggleModal={onToggleModal}
         isModalOpen={isModalOpen}
         chosenProduct={chosenProduct}
-        name={name}
       />
     </>
   );
