@@ -14,52 +14,32 @@ type Props = {
   fullPrice: number;
 };
 export const BuyButton = ({
-  quantity,
-  appointment,
   disabled = false,
   text = 'Купити зараз',
   props,
 }: {
-  quantity?: string;
   disabled?: boolean;
-  appointment?: string;
   text?: string;
-  props?: Props;
+  props: Props;
 }) => {
-  let data;
-  if (props) {
-    data = {
-      public_key: process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY!,
-      version: '3',
-      action: 'pay',
-      sender_first_name: props.data.sender_first_name,
-      sender_last_name: props.data.sender_last_name,
-      amount: props.fullPrice,
-      currency: 'UAH',
-      result_url: `http://${process.env.NEXT_PUBLIC_HOST || process.env.HOST}`,
-      description: `Оплата за ${props.products.reduce((acc, currentValue) => {
-        return (acc +=
-          `${acc ? ', ' : ' '}` +
-          currentValue.serviceName +
-          `, кількість: ${currentValue.amount}`);
-      }, '')}. Тел:${props.data.phone}`,
-      order_id: uuidv4(),
-    };
-  } else {
-    data = {
-      public_key: process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY!,
-      version: '3',
-      action: 'pay',
-      amount: Number(quantity),
-      currency: 'UAH',
-      description: 'Payment for services',
-      order_id: uuidv4(),
-    };
-  }
-  console.log({
-    NEXT_PUBLIC_HOST: process.env.NEXT_PUBLIC_HOST,
-    HOST: process.env.HOST,
-  });
+  const data = {
+    public_key: process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY!,
+    version: '3',
+    action: 'pay',
+    sender_first_name: props.data.sender_first_name,
+    sender_last_name: props.data.sender_last_name,
+    amount: props.fullPrice,
+    currency: 'UAH',
+    result_url: `http://${process.env.NEXT_PUBLIC_HOST || process.env.HOST}`,
+    description: `Оплата за ${props.products.reduce((acc, currentValue) => {
+      return (acc +=
+        `${acc ? ', ' : ' '}` +
+        currentValue.serviceName +
+        `, кількість: ${currentValue.amount}`);
+    }, '')}. Тел:${props.data.phone}`,
+    order_id: uuidv4(),
+  };
+
   const paymentService = new PaymentService(data);
   paymentService.createSignature();
 
