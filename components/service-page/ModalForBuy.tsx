@@ -1,16 +1,15 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
-import { BuyButton } from './BuyButton';
 import { XMarkIcon } from '../icons/XMarkIcon';
 import { newService } from '@/app/_types/services.types';
 import { Barbell } from '../icons/Barbell';
 import { CartLocalStorageService } from '@/app/_services/cartLocalStorageService';
 import { SHOPPING_CART } from '@/const/localstorageKeys';
+import { useRouter } from 'next/navigation';
 
 type ModalForBuy = {
   onToggleModal: () => void;
   isModalOpen: boolean;
-  name: 'standart' | 'personal' | 'planTrain';
   chosenProduct: newService;
 };
 
@@ -18,9 +17,9 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
   onToggleModal,
   isModalOpen,
   chosenProduct,
-  name,
 }) => {
   const localstorageService = new CartLocalStorageService(SHOPPING_CART);
+  const router = useRouter();
   const handleAddToCart = (data: newService) => {
     localstorageService.set(data);
     onToggleModal();
