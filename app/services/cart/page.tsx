@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
-import Image from 'next/image';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { USER_CREDENTIALS_INPUTS } from '@/const/user-crenedtials';
 import { CheckedIcon } from '@/components/CheckedIcon';
@@ -12,6 +11,7 @@ import { SHOPPING_CART } from '@/const/localstorageKeys';
 import { newService } from '@/app/_types/services.types';
 import { cartValidationSchema } from '@/app/_schemas/cartValidationSchema';
 import { BuyButton } from '@/components/service-page/BuyButton';
+import Image from 'next/image';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 
 const ShoppingCart = () => {

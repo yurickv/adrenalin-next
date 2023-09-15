@@ -22,8 +22,6 @@ export const BuyButton = ({
   text?: string;
   props: Props;
 }) => {
-  const id = uuidv4();
-
   const data = {
     public_key: process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY!,
     version: '3',
@@ -32,20 +30,16 @@ export const BuyButton = ({
     sender_last_name: props.data.sender_last_name,
     amount: props.fullPrice,
     currency: 'UAH',
-    result_url: `http://${
-      process.env.NEXT_PUBLIC_HOST || process.env.HOST
-    }/api/order/${id}`,
-    server_url: `http://${
-      process.env.NEXT_PUBLIC_HOST || process.env.HOST
-    }/api/order`,
+    result_url: `http://${process.env.NEXT_PUBLIC_HOST || process.env.HOST}`,
     description: `Оплата за ${props.products.reduce((acc, currentValue) => {
       return (acc +=
         `${acc ? ', ' : ' '}` +
         currentValue.serviceName +
         `, кількість: ${currentValue.amount}`);
     }, '')}. Тел:${props.data.phone}`,
-    order_id: id,
+    order_id: uuidv4(),
   };
+
   const paymentService = new PaymentService(data);
   paymentService.createSignature();
 
