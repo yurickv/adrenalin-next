@@ -40,7 +40,7 @@ export const Header = () => {
       }
       setProductsQuantity(productsQuantity.length);
     };
-
+    window.addEventListener('storage', isProductsExists);
     isProductsExists();
   }, []);
 
