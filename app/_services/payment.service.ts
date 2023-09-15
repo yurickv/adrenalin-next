@@ -8,9 +8,10 @@ interface Data {
   currency: string;
   description: string;
   order_id: string;
-  sender_first_name?: string;
-  sender_last_name?: string;
-  result_url?: string;
+  sender_first_name: string;
+  sender_last_name: string;
+  result_url: string;
+  server_url: string;
 }
 
 export class PaymentService {
