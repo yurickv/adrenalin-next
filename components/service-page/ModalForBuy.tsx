@@ -6,6 +6,7 @@ import { Barbell } from '../icons/Barbell';
 import { CartLocalStorageService } from '@/app/_services/cartLocalStorageService';
 import { SHOPPING_CART } from '@/const/localstorageKeys';
 import { useRouter } from 'next/navigation';
+import { toastSuccess } from '@/app/_helpers/notifications';
 
 type ModalForBuy = {
   onToggleModal: () => void;
@@ -23,7 +24,7 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
   const handleAddToCart = (data: newService) => {
     localstorageService.set(data);
     onToggleModal();
-    console.log('Success');
+    window.dispatchEvent(new Event('storage'));
   };
 
   return (
@@ -105,7 +106,10 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
                 </div>
                 <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-44">
                   <button
-                    onClick={() => handleAddToCart(chosenProduct)}
+                    onClick={() => {
+                      handleAddToCart(chosenProduct);
+                      toastSuccess('Послугу успішно додано до корзини!💪');
+                    }}
                     className="bg-orange-100 hover:bg-orange-200 dark:bg-[#a3a3a3] dark:hover:bg-[#d4d4d4]
                 text-mainText dark:text-mainTitle rounded-full p-4 text-center block transition-all duration-150"
                   >
@@ -118,6 +122,9 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
                     <button
                       onClick={() => {
                         handleAddToCart(chosenProduct);
+                        toastSuccess(
+                          'Послугу успішно додано до корзини! Перенаправляємо на сторінку оплати...'
+                        );
                         router.push('/services/cart');
                       }}
                       className="md:!w-[170px] actions__button disabled:opacity-50 bg-orange-gradient text-white hover:from-red-600

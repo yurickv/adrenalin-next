@@ -5,9 +5,10 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 
+import Image from 'next/image';
+import { ToastContainer } from 'react-toastify';
 import { NavLinks } from '@/const';
 import { Barbell } from './icons/Barbell';
-import Image from 'next/image';
 import { BurgerMenu } from './icons/BurgerMenu';
 import { ShevronDown } from './icons/forPopMenu/Shevron';
 import { IMTCalcIcon } from './icons/forPopMenu/IMTCalcIcon';
@@ -40,7 +41,7 @@ export const Header = () => {
       }
       setProductsQuantity(productsQuantity.length);
     };
-
+    window.addEventListener('storage', isProductsExists);
     isProductsExists();
   }, []);
 
@@ -340,6 +341,7 @@ export const Header = () => {
           </Dialog.Panel>
         </Dialog>
       </div>
+      <ToastContainer />
     </header>
   );
 };
