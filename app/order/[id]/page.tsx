@@ -16,13 +16,21 @@ const OrderConfirmation = ({ params }: { params: { id: string } }) => {
   return (
     <div>
       {isPaymentSuccessful ? (
-        <>
-          <h1>Оплата успішна, чекаємо вас у залі, {order.sender_first_name}</h1>
-          <BackLinks
-            isPaymentSuccessful={isPaymentSuccessful}
-            orderId={order.order_id}
-          />
-        </>
+        <section className="bg-[#BEDFFF])]">
+          <div
+            className="div-container  mx-auto bg-payment bg-contain bg-no-repeat bg-center 
+        py-[40px] md:py-[44px] lg:py-[88px]
+      "
+          >
+            <h1 className="">
+              Оплата успішна, чекаємо вас у залі, {order.sender_first_name}
+            </h1>
+            <BackLinks
+              isPaymentSuccessful={isPaymentSuccessful}
+              orderId={order.order_id}
+            />
+          </div>
+        </section>
       ) : (
         <>
           <h1>Упс, щось пішло не так, спробуйте ще раз</h1>

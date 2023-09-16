@@ -13,8 +13,8 @@ export const MotivationCard = () => {
         3 основні правила, які ми завжди дотримуємось:
       </h4>
       <ul>
-        {cardInfo.map(({ title, text }) => (
-          <li>
+        {cardInfo.map(({ title, text }, index) => (
+          <li key={index}>
             <details className="p-4 lg:p-5  ">
               <summary
                 className="group flex gap-4 items-end justify-between 
