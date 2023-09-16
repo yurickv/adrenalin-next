@@ -8,6 +8,9 @@ import { SHOPPING_CART } from '@/const/localstorageKeys';
 import { useRouter } from 'next/navigation';
 import { toastSuccess } from '@/app/_helpers/notifications';
 
+import 'react-toastify/dist/ReactToastify.css';
+
+
 type ModalForBuy = {
   onToggleModal: () => void;
   isModalOpen: boolean;
