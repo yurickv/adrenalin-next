@@ -7,7 +7,9 @@ import { CartLocalStorageService } from '@/app/_services/cartLocalStorageService
 import { SHOPPING_CART } from '@/const/localstorageKeys';
 import { useRouter } from 'next/navigation';
 import { toastSuccess } from '@/app/_helpers/notifications';
+
 import 'react-toastify/dist/ReactToastify.css';
+
 
 type ModalForBuy = {
   onToggleModal: () => void;
@@ -26,8 +28,6 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
     localstorageService.set(data);
     onToggleModal();
     window.dispatchEvent(new Event('storage'));
-
-    console.log('Success');
   };
 
   return (
@@ -125,6 +125,9 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
                     <button
                       onClick={() => {
                         handleAddToCart(chosenProduct);
+                        toastSuccess(
+                          'Послугу успішно додано до корзини! Перенаправляємо на сторінку оплати...'
+                        );
                         router.push('/services/cart');
                       }}
                       className="md:!w-[170px] actions__button disabled:opacity-50 bg-orange-gradient text-white hover:from-red-600
