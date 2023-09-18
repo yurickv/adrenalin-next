@@ -18,7 +18,7 @@ export const POST = async (
     notFound();
   }
   const data = decodeBasedData(basedData.toString());
-  const orderUrl = new URL(`/order/${params.id}`, `http://${process.env.HOST}`);
+  const orderUrl = new URL(`/order/${params.id}`, `${process.env.HOST}`);
 
   const cookieService = new OrderCookieService();
   cookieService.setOrder(data);
