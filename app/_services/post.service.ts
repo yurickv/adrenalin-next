@@ -12,7 +12,7 @@ class PostService {
     const { page = 1, limit = 12, search = '', topic = '' } = post;
     try {
       const posts = await fetch(
-        `http://${
+        `${
           process.env.HOST || process.env.NEXT_PUBLIC_HOST
         }/api/post?page=${page}&limit=${limit}&search=${search}&topic=${topic}`
       );
@@ -26,9 +26,7 @@ class PostService {
   async getPostById(id: string) {
     try {
       const res = await fetch(
-        `http://${
-          process.env.HOST || process.env.NEXT_PUBLIC_HOST
-        }/api/post/${id}`
+        `${process.env.HOST || process.env.NEXT_PUBLIC_HOST}/api/post/${id}`
       );
       if (!res.ok) return undefined;
       const { post } = await res.json();
