@@ -44,6 +44,7 @@ export const BuyButton = ({
     }, '')}. Тел:${props.data.phone}`,
     order_id: id,
   };
+
   const paymentService = new PaymentService(data);
   paymentService.createSignature();
 
