@@ -15,14 +15,14 @@ export default function ServicesLayout({
     <section>
       <Script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=G-RCNV150GJ8"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTM_ID}`}
       ></Script>
       <Script id="google-analytics">
         {`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-RCNV150GJ8')`}
+  gtag('config', '${process.env.GTM_ID}')`}
       </Script>
       {children}
     </section>
