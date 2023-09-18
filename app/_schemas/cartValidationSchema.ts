@@ -3,7 +3,7 @@ import * as yup from 'yup';
 export const cartValidationSchema = yup.object().shape({
   sender_first_name: yup
     .string()
-    .min(4, 'Не менше 4 символів')
+    .min(3, 'Не менше 3 символів')
     .max(20, 'Не більше 20 символів')
     .test('is-cyrillic', 'Введіть кирилицею', value => {
       if (!value) return true;
@@ -13,7 +13,7 @@ export const cartValidationSchema = yup.object().shape({
 
   sender_last_name: yup
     .string()
-    .min(4, 'Не менше 4 символів')
+    .min(3, 'Не менше 3 символів')
     .max(20, 'Не більше 20 символів')
     .test('is-cyrillic', 'Введіть кирилицею', value => {
       if (!value) return true;

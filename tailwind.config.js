@@ -87,6 +87,7 @@ module.exports = {
         'calc-bg':
           'linear-gradient(to right, rgba(219, 219, 219, 0.5), rgba(219, 219, 219, 0.5)) ',
         'calc-bg-woman': "url('/woman.webp')",
+        'pay-bg': "url('/bg-payment.jpg')",
         'orange-gradient':
           'linear-gradient(277deg, #F97316 -5.07%, #EF4444 84.13%)',
       },

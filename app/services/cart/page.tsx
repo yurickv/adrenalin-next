@@ -127,7 +127,7 @@ const ShoppingCart = () => {
     );
   }
   return (
-    <>
+    <main>
       <section className="bg-hero-bg bg-center bg-cover ">
         <div className="div-container py-[20px] md:py-[44px] mx-auto text-center flex flex-col gap-5">
           <h3 className="text-left text-white flex gap-2">
@@ -332,7 +332,7 @@ const ShoppingCart = () => {
           </div>
         )}
       </section>
-    </>
+    </main>
   );
 };
 export default ShoppingCart;
