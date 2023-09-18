@@ -7,7 +7,8 @@ import { Arrow } from '@/components/icons/Arrow-down';
 
 export const metadata: Metadata = {
   title: 'Блог',
-  description: 'Блог тренажерного залу Adrenalin',
+  description:
+    'Блог тренажерного залу Adrenalin: все про харчування, тренування та мотивація',
 };
 function Blog({
   searchParams,
