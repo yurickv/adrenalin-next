@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { OrderCookieService } from '@/app/_services/orderCookiesService';
 
 import { BackLinks } from '@/components/order/BackLinks';
+import Image from 'next/image';
 
 const OrderConfirmation = ({ params }: { params: { id: string } }) => {
   const orderService = new OrderCookieService();
@@ -16,29 +17,62 @@ const OrderConfirmation = ({ params }: { params: { id: string } }) => {
   return (
     <div>
       {isPaymentSuccessful ? (
-        <section className="bg-[#BEDFFF])]">
-          <div
-            className="div-container  mx-auto bg-payment bg-contain bg-no-repeat bg-center 
-        py-[40px] md:py-[44px] lg:py-[88px]
-      "
-          >
-            <h1 className="">
-              Оплата успішна, чекаємо вас у залі, {order.sender_first_name}
-            </h1>
-            <BackLinks
-              isPaymentSuccessful={isPaymentSuccessful}
-              orderId={order.order_id}
-            />
-          </div>
-        </section>
+        <main>
+          <section className="bg-[#BEDFFF]">
+            <div
+              className="div-container  mx-auto bg-pay-bg bg-cover min-[500px]:bg-contain bg-no-repeat bg-center 
+        py-[40px] md:py-[44px] lg:py-[88px] min-h-[400px] min-[550px]:min-h-[500px] md:min-h-[600px] text-center 
+        text-mainTitle"
+            >
+              <Image
+                src="/pay_ok.png"
+                width={24}
+                height={24}
+                alt="Success payment"
+                className="block mx-auto"
+              />
+              <h1 className="text-2xl font-semibold">Оплата успішна</h1>
+              <p>
+                чекаємо вас у залі,{' '}
+                <span className="uppercase">{order.sender_first_name}</span>
+              </p>
+              <BackLinks
+                isPaymentSuccessful={isPaymentSuccessful}
+                orderId={order.order_id}
+              />
+            </div>
+          </section>
+        </main>
       ) : (
-        <>
-          <h1>Упс, щось пішло не так, спробуйте ще раз</h1>
-          <BackLinks
-            isPaymentSuccessful={isPaymentSuccessful}
-            orderId={order.order_id}
-          />
-        </>
+        <main>
+          <section className="bg-[#BEDFFF]">
+            <div
+              className="div-container  mx-auto bg-pay-bg bg-cover min-[500px]:bg-contain bg-no-repeat bg-center 
+        py-[40px] md:py-[44px] lg:py-[88px] min-h-[400px] min-[550px]:min-h-[500px] md:min-h-[600px] text-center 
+        text-mainTitle "
+            >
+              <Image
+                src="/payment_bad.png"
+                width={24}
+                height={24}
+                alt="Failure payment"
+                className="block mx-auto"
+              />
+              <h1 className="text-2xl font-semibold">
+                Упс, щось пішло не так,
+              </h1>
+              <p>
+                {' '}
+                спробуйте ще раз,{' '}
+                <span className="uppercase">{order.sender_first_name}</span>
+              </p>
+              <BackLinks
+                isPaymentSuccessful={isPaymentSuccessful}
+                orderId={order.order_id}
+              />
+            </div>
+          </section>
+        </main>
       )}
     </div>
   );
