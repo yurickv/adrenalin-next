@@ -76,6 +76,11 @@ export class CartLocalStorageService {
     return filteredItems;
   }
 
+  clearCart() {
+    this.get();
+
+    localStorage.removeItem(this.key);
+  }
   private setNewItem(value: newService) {
     const itemsToSet = [{ ...value, amount: 1 }];
 
