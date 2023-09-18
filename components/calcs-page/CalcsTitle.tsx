@@ -8,7 +8,7 @@ type titleProps = {
 
 export const CalcTitle = ({ page }: titleProps) => {
   return (
-    <div className="md:mt-8">
+    <div className="">
       <ul className="flex  flex-col md:flex-row md:gap-6 justify-center mb-12">
         {CalcLinks.map((link, i) => (
           <li
