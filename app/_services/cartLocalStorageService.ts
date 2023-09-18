@@ -61,6 +61,10 @@ export class CartLocalStorageService {
     return updatedProducts;
   }
 
+  clear() {
+    localStorage.clear();
+  }
+
   deleteItem(id: string) {
     this.get();
 
