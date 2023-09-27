@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { Button } from '../Button';
 import me from '../../public/woman.webp';
+import FadeIn from '@/components/FadeIn';
 
 export const AboutCalc = () => {
   return (
     <section className="  bg-calc-bg ">
-      <div
+      <FadeIn
         className="div-container  mx-auto md:bg-calc-bg-woman bg-contain bg-no-repeat bg-right 
         py-[40px] md:py-[44px] lg:py-[88px]
       "
@@ -37,7 +38,7 @@ export const AboutCalc = () => {
           text="Дізнатися більше"
           width="w-[273px] md:w-[302px]"
         />
-      </div>
+      </FadeIn>
     </section>
   );
 };

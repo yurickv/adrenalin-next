@@ -4,6 +4,7 @@ import { BlogCard } from '@/components/blog-page/BlogCard';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import { Filter } from '@/components/Filter';
 import { Arrow } from '@/components/icons/Arrow-down';
+import FadeIn from '@/components/FadeIn';
 
 export const metadata: Metadata = {
   title: 'Блог',
@@ -33,7 +34,7 @@ function Blog({
         </div>
       </section>
       <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
-        <div className="div-container flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-4 justify-center">
+        <FadeIn className="div-container flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-4 justify-center">
           <div className="flex justify-between items-center w-full">
             <div className="min-w-[10px] hidden md:block">
               {(searchParams?.topic || searchParams?.search) && (
@@ -54,6 +55,7 @@ function Blog({
                 </div>
               )}
             </div>
+
             <div className="flex gap-2 ">
               <p className="p-2 text-mainText dark:text-mainTextBlack">
                 Вибрати тему:
@@ -68,7 +70,7 @@ function Blog({
           >
             <BlogCard searchParams={searchParams} />
           </div>
-        </div>
+        </FadeIn>
       </section>
     </main>
   );

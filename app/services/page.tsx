@@ -9,6 +9,7 @@ import { TrenerCard } from '@/components/service-page/TrenerCard';
 import { TrainingInfo } from '@/components/service-page/TrainingInfo';
 import { TrenerInfo } from '@/components/service-page/TrenerInfo';
 import { ProgramInfo } from '@/components/service-page/ProgramInfo';
+import FadeIn, { FadeInStagger } from '@/components/FadeIn';
 
 type OnClickMoreFunction = (
   button: 'standart' | 'personal' | 'planTrain'
@@ -50,17 +51,23 @@ const Services = () => {
         </div>
       </section>
       <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
-        <div
+        <FadeInStagger
           className="div-container flex flex-col md:grid  md:grid-cols-3 
           gap-6 md:gap-x-4 lg:gap-x-6 md:gap-y-8 lg:gap-y-11"
         >
-          <TrainingCard onClickMore={onClickMore} isOpen={standart} />
+          <FadeIn>
+            <TrainingCard onClickMore={onClickMore} isOpen={standart} />
+          </FadeIn>
           {standart ? <TrainingInfo /> : ''}
-          <TrenerCard onClickMore={onClickMore} isOpen={personal} />
+          <FadeIn>
+            <TrenerCard onClickMore={onClickMore} isOpen={personal} />
+          </FadeIn>
           {personal ? <TrenerInfo /> : ''}
-          <ProgramCard onClickMore={onClickMore} isOpen={planTrain} />
+          <FadeIn>
+            <ProgramCard onClickMore={onClickMore} isOpen={planTrain} />
+          </FadeIn>
           {planTrain ? <ProgramInfo /> : ''}
-        </div>
+        </FadeInStagger>
       </section>
     </main>
   );
