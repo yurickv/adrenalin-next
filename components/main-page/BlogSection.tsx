@@ -1,5 +1,6 @@
 import { ButtonSecond } from '../ButtonSecond';
 import { BlogSectionCard } from './BlogSectionCard';
+import { FadeInStagger } from '@/components/FadeIn';
 
 export const BlogSection = () => {
   return (
@@ -8,9 +9,10 @@ export const BlogSection = () => {
         <h3 className="title text-mainTitle dark:text-mainTitleBlack">
           Останні статті
         </h3>
-        <div className="flex flex-col md:grid-cols-2  md:grid lg:grid-cols-3 justify-items-center gap-10 md:gap-x-6 md:gap-y-12 mt-10 md:mt-10 lg:mt-14 items-center  justify-center">
+
+        <FadeInStagger className="flex flex-col md:grid-cols-2  md:grid lg:grid-cols-3 justify-items-center gap-10 md:gap-x-6 md:gap-y-12 mt-10 md:mt-10 lg:mt-14 items-center  justify-center">
           <BlogSectionCard />
-        </div>
+        </FadeInStagger>
         <ButtonSecond
           route="/blog"
           text="Більше статтей..."

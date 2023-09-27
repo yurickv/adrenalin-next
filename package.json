@@ -19,6 +19,7 @@
     "autoprefixer": "10.4.14",
     "bcryptjs": "^2.4.3",
     "encoding": "^0.1.13",
+    "framer-motion": "^10.16.4",
     "html-react-parser": "^4.2.1",
     "mongoose": "^7.4.2",
     "nanoid": "^4.0.2",

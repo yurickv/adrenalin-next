@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { GoBackBtn } from '@/components/blog-page/GoBackBtn';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import postHttpService from '@/app/_services/post.service';
+import FadeIn from '@/components/FadeIn';
 
 type Props = {
   params: { id: string };
@@ -35,10 +36,7 @@ async function BlogPage({ params }: Props) {
   return (
     <main>
       <section className="bg-hero-bg bg-center bg-cover ">
-        <div
-          className="div-container  
-        py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5"
-        >
+        <div className="div-container py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5">
           <h3 className="text-left text-white flex gap-2">
             <Link href="/" className="flex gap-2 items-center">
               <HomeIcon />
@@ -53,29 +51,37 @@ async function BlogPage({ params }: Props) {
       </section>
       <section className="py-[40px] md:py-[44px] lg:py-[88px] flex flex-col items-center bg-white dark:bg-darkBody">
         <div className="div-container text-center flex flex-col gap-6 relative">
-          <Link
-            href={`/blog?topic=${post.topic}`}
-            className="absolute top-0 right-5 text-right font-poppins text-sm font-semibold text-main 
+          <FadeIn>
+            <Link
+              href={`/blog?topic=${post.topic}`}
+              className="absolute top-0 right-5 text-right font-poppins text-sm font-semibold text-main
               rounded-full p-4  hover:bg-orange-100 focus:bg-orange-100 dark:hover:bg-mainText dark:focus:bg-mainText cursor-pointer"
-          >
-            #{post.topic}
-          </Link>
-          <h1
-            className="font-poppins mt-[52px] md:mt-0 text-xl md:text-[32px] font-semibold text-mainTitle dark:text-mainTitleBlack
+            >
+              #{post.topic}
+            </Link>
+          </FadeIn>
+          <FadeIn>
+            <h1
+              className="font-poppins mt-[52px] md:mt-0 text-xl md:text-[32px] font-semibold text-mainTitle dark:text-mainTitleBlack
            md:pr-28 line-clamp-4"
-          >
-            {post.title}
-          </h1>
-          <p className="description">{post.description}</p>
-          <Image
-            placeholder="blur"
-            blurDataURL="/placeholder.png"
-            src={post.image}
-            alt={post.topic}
-            width={800}
-            height={600}
-            className="!w-full align-middle"
-          />
+            >
+              {post.title}
+            </h1>
+          </FadeIn>
+          <FadeIn>
+            <p className="description">{post.description}</p>
+          </FadeIn>
+          <FadeIn>
+            <Image
+              placeholder="blur"
+              blurDataURL="/placeholder.png"
+              src={post.image}
+              alt={post.topic}
+              width={800}
+              height={600}
+              className="!w-full align-middle"
+            />
+          </FadeIn>
           {parse(post.markup)}
         </div>
         <GoBackBtn text="Назад" />
