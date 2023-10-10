@@ -36,9 +36,12 @@ body {
 details[open] summary {
   @apply bg-orange-100 dark:bg-mainText  transition-all duration-300;
 }
+/* details[open] p {
+  @apply h-full transition-all duration-300;
+} */
 
 details[open] summary div {
-  @apply -rotate-45 transition-all duration-300;
+  @apply -rotate-45 transition-all duration-300 group-hover:!-rotate-45;
 }
 
 /* __________________Blog card styles __________________________*/
