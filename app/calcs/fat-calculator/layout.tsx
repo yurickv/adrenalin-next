@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Корзина товарів спортклубу Адреналін',
+  title: 'Калькулятор процент жиру в тілі',
   description:
-    'У вашій корзині: 1.Абонемент 2.Персональне тренування з тренером 3.План харчування / тренування',
+    'Фітнес калькулятор для визначення проценту жиру в тілі, просте визначення своєї фізичної форми',
 };
 export default function ServicesLayout({
   children,

@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Корзина товарів спортклубу Адреналін',
+  title: 'Фітнес калькулятор ІМТ',
   description:
-    'У вашій корзині: 1.Абонемент 2.Персональне тренування з тренером 3.План харчування / тренування',
+    'Фітнес калькулятор для визначення індексу маси тіла, просте визначення своєї фізичної форми',
 };
 export default function ServicesLayout({
   children,

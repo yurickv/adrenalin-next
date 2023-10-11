@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Корзина товарів спортклубу Адреналін',
+  title: 'Калькулятор денна потреба калорій',
   description:
-    'У вашій корзині: 1.Абонемент 2.Персональне тренування з тренером 3.План харчування / тренування',
+    'Фітнес калькулятор для визначення денної потреби в калоріях, просте планування для прихильників здорового харчування',
 };
 export default function ServicesLayout({
   children,

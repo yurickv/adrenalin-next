@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Корзина товарів спортклубу Адреналін',
+  title: 'Здорове харчування',
   description:
-    'У вашій корзині: 1.Абонемент 2.Персональне тренування з тренером 3.План харчування / тренування',
+    'Здорове харчування при наборі мязової маси чи схудненні. Схуднення без дієт. Набір мязової маси швидко.',
 };
 export default function ServicesLayout({
   children,

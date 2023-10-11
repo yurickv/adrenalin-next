@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Послуги',
+  title: 'Ціни на послуги спортклубу Адреналін',
   description:
-    'Послуги тренажерного залу Adrenalin: 1.Тренування 2.Тренування з тренером 3.План харчування / тренування',
+    'Послуги тренажерного залу Adrenalin: 1.Абонемент в спортлкуб 2.Персональне тренування з тренером 3.План харчування / тренування',
 };
 export default function ServicesLayout({
   children,
