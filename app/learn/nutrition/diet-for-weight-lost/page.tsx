@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Sidebar } from '../../Sidebar';
 
-const LoadProgression = () => {
+const DietForWeightLost = () => {
   return (
     <main>
       <section className="bg-hero-bg bg-center bg-cover ">
@@ -15,8 +15,7 @@ const LoadProgression = () => {
             </Link>
             <span className="font-semibold">
               {' '}
-              &gt; <Link href="/learn">Навчання</Link> &gt;{' '}
-              <Link href="/learn/training">Тренування</Link> &gt; Прогрес
+              &gt; Навчання &gt; Харчування &gt; Раціон при схудненні
             </span>
           </h3>
           <h1 className="title mb-14 text-mainTitleBlack">
@@ -30,9 +29,9 @@ const LoadProgression = () => {
             <Sidebar />
           </div>
           <div>
-            <h1 className="h1-title-blog p-6 border-b-2 border-main mb-8">
-              Прогресія навантаження
-            </h1>
+            <h2 className="h1-title-blog p-6 border-b-2 border-main mb-8">
+              Раціон при схудненні
+            </h2>
 
             <h2 className="h2-list-title mt-2 text-center">
               Ми ще працюємо над цією сторінкою
@@ -51,4 +50,4 @@ const LoadProgression = () => {
     </main>
   );
 };
-export default LoadProgression;
+export default DietForWeightLost;

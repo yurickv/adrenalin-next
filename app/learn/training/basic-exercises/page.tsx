@@ -15,7 +15,8 @@ const BasicExersices = () => {
             </Link>
             <span className="font-semibold">
               {' '}
-              &gt; Навчання &gt; Тренування &gt; Базові вправи
+              &gt; <Link href="/learn">Навчання</Link> &gt;{' '}
+              <Link href="/learn/training">Тренування</Link> &gt; Базові вправи
             </span>
           </h3>
           <h1 className="title mb-14 text-mainTitleBlack">
@@ -25,11 +26,13 @@ const BasicExersices = () => {
       </section>
       <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
         <div className="div-container lg:flex gap-6">
-          <Sidebar />
+          <div className="hidden lg:block">
+            <Sidebar />
+          </div>
           <div>
-            <h1 className="h1-title-blog p-6 border-b-2 border-main mb-8">
+            <h2 className="h1-title-blog p-6 border-b-2 border-main mb-8">
               Топ 10 вправ для початку тренувань
-            </h1>
+            </h2>
             <p className="p-text">
               Перш за все – новачки повинні тренуватись по іншому ніж бувалі
               ліфтери (відвідувачі тренажерного залу), а тим більше по іншому
