@@ -15,7 +15,9 @@ const DietForGainingWeight = () => {
             </Link>
             <span className="font-semibold">
               {' '}
-              &gt; Навчання &gt; Харчування &gt; Раціон при наборі ваги
+              &gt; <Link href="/learn">Навчання</Link> &gt;{' '}
+              <Link href="/learn/nutrition">Харчування</Link> &gt; Раціон при
+              наборі ваги
             </span>
           </h3>
           <h1 className="title mb-14 text-mainTitleBlack">

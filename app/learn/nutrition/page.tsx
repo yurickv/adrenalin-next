@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Sidebar } from '../Sidebar';
 
-const Training = () => {
+const Nutrition = () => {
   const sidebar = 'training';
   return (
     <main>
@@ -16,8 +16,7 @@ const Training = () => {
             </Link>
             <span className="font-semibold">
               {' '}
-              &gt; <span className="font-semibold"> &gt; Навчання</span> &gt;
-              Тренування
+              &gt; <Link href="/learn">Навчання</Link> &gt; Харчування
             </span>
           </h3>
           <h1 className="title mb-14 text-mainTitleBlack">
@@ -28,8 +27,12 @@ const Training = () => {
       <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
         <div className="div-container">
           <p className="md:font-semibold text-mainTitle dark:text-mainTitleBlack md:text-lg text-center">
-            Давайте пройдемо разом цей шлях до Вашого Ідеального тіла. Виберіть
-            тему і застосовуйте отримані знання на практиці.
+            В розділі Харчування ми розглянемо основні принципи здорового
+            харчування і міфи з цим повязані. Детальніше зупинимось на
+            харчуванні при схудненні та раціоні при наборі м'язової маси. Також
+            зазначимо особливості прийомів їжі перед і після тренування. Давайте
+            пройдемо разом цей шлях до Вашого Ідеального тіла. Виберіть тему і
+            застосовуйте отримані знання на практиці.
           </p>
           <div className="flex flex-col lg:flex-row gap-6 mt-8 md:mt-12">
             <div className="w-[280px] mx-auto mt-6">
@@ -37,7 +40,7 @@ const Training = () => {
             </div>
             <div className="relative h-[400px] md:h-[500px] lg:h-[550px] w-full lg:w-[calc((100%-324px))] max-w-[900px] overflow-hidden rounded-lg mx-auto">
               <Image
-                src="/woman-helping-man-at-gym.webp"
+                src="/food-healthy.webp"
                 alt="pair-at-the-gym"
                 sizes="100vw"
                 priority={false}
@@ -52,4 +55,4 @@ const Training = () => {
     </main>
   );
 };
-export default Training;
+export default Nutrition;

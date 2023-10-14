@@ -15,7 +15,8 @@ const BasicsNutrition = () => {
             </Link>
             <span className="font-semibold">
               {' '}
-              &gt; Навчання &gt; Харчування &gt; Основи
+              &gt; <Link href="/learn">Навчання</Link> &gt;{' '}
+              <Link href="/learn/nutrition">Харчування</Link> &gt; Основи
             </span>
           </h3>
           <h1 className="title mb-14 text-mainTitleBlack">
@@ -34,8 +35,10 @@ const BasicsNutrition = () => {
             </h2>
 
             <h2 className="h2-list-title mt-2 text-center">
-              Ми ще працюємо над цією сторінкою
+              Збалансоване харчування - основа здоровя, гарного вигляду і
+              самопочуття
             </h2>
+
             <Image
               src="/happy-female.jpg"
               alt="happy-female"
