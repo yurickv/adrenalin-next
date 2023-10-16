@@ -1,4 +1,5 @@
 export const NavLinks = [
+  { href: '/learn/intro', key: 'learn', text: 'Навчання' },
   { href: '/blog', key: 'blog', text: 'Блог' },
   { href: '/services', key: 'services', text: 'Послуги' },
   { href: '/contacts', key: 'contacts', text: 'Контакти' },

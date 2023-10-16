@@ -7,18 +7,17 @@ export const HeroSection = () => {
       <div className="div-container-hero">
         <FadeIn>
           <h1 className="sr-only">Тренажерний зал Адреналін</h1>
-          <p className="text-lg lg:text-2xl font-poppins lg:w-[845px] text-white flex flex-col">
-            Обрахуй свою ідеальну масу тіла за допомогою нашого унікального
-            калькулятора!
-            <span className="mt-4 md:mt-0 ">
-              Наші послуги допоможуть вам досягти мети та підтримувати здоровий
-              спосіб життя.
-            </span>
+          <h2 className="text-2xl lg:text-3xl font-poppins font-bold lg:w-[845px] text-white text-center md:text-left">
+            Безкоштовний посібник для початківців
+          </h2>
+          <p className="text-lg lg:text-2xl font-normal text-white mt-6 max-w-[700px]">
+            Не знаєш з чого почати в спортзалі? <br /> Як тренуватись та їсти,
+            щоб схуднути чи набрати вагу? Тут ти знайдеш відповіді.
           </p>
           <Button
-            route="/calcs"
+            route="/learn/intro"
             text="Дізнатися більше"
-            width="w-full md:w-[332px] lg:w-[222px]"
+            width="w-full md:w-[332px] lg:w-[222px] mt-6"
           />
         </FadeIn>
       </div>

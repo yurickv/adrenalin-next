@@ -32,7 +32,7 @@ const Learn = () => {
             </div>
             <div className="relative h-[400px] md:h-[500px] lg:h-[550px] w-full lg:w-[calc((100%-324px))] max-w-[900px] overflow-hidden rounded-lg mx-auto">
               <Image
-                src="/woman-helping-man-at-gym.webp"
+                src="/fotoLearning/woman-helping-man-at-gym.webp"
                 alt="pair-at-the-gym"
                 sizes="100vw"
                 priority={false}

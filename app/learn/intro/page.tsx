@@ -70,7 +70,7 @@ const Intro = () => {
               поговоримо.
             </p>
             <Image
-              src="/happy-female.jpg"
+              src="/fotoLearning/happy-female.webp"
               alt="happy-female"
               sizes="100vw"
               className="w-auto h-auto mt-6 rounded-lg "

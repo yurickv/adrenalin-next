@@ -25,7 +25,7 @@ body {
   @apply mb-5 md:mb-8 lg:mb-16 text-4xl md:text-5xl font-bold text-center;
 }
 .div-container-hero {
-  @apply flex flex-col gap-11 mx-auto max-w-[640px] md:max-w-[768px] lg:max-w-[845px] 
+  @apply flex flex-col gap-11 mx-auto max-w-[540px] md:max-w-[600px] lg:max-w-[845px] 
   px-4 md:px-[40px] lg:px-[66px] xl:px-[132px]  py-[80px] md:py-[100px] xl:py-[200px]  lg:py-[200px];
 }
 

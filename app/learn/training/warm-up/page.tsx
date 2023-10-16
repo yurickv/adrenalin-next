@@ -112,8 +112,8 @@ const WarmUp = () => {
               </li>
             </ul>
             <Image
-              src="/happy-female.jpg"
-              alt="happy-female"
+              src="/fotoLearning/warm-up.webp"
+              alt="man warm up in the gym"
               sizes="100vw"
               className="w-auto h-auto mt-6 rounded-lg "
               width={500}

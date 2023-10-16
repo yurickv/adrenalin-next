@@ -96,7 +96,7 @@ const Timidity = () => {
               </li>
             </ul>
             <Image
-              src="/food.webp"
+              src="/fotoLearning/food.webp"
               alt="sandwich for gym"
               sizes="100vw"
               loading="lazy"

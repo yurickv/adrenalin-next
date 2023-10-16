@@ -38,7 +38,7 @@ const LoadProgression = () => {
               Ми ще працюємо над цією сторінкою
             </h2>
             <Image
-              src="/happy-female.jpg"
+              src="/fotoLearning/happy-female.webp"
               alt="happy-female"
               sizes="100vw"
               className="w-auto h-auto mt-6 rounded-lg "
