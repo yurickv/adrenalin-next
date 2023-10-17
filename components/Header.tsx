@@ -86,7 +86,7 @@ export const Header = () => {
             {params === '/' && <Barbell />}
           </Link>
 
-          <Popover.Group className="hidden md:flex md:gap-x-2 lg:gap-x-7">
+          <Popover.Group className="hidden lg:flex md:gap-x-2 lg:gap-x-7">
             <Popover className="relative">
               {({ open }) => (
                 <>
@@ -185,7 +185,7 @@ export const Header = () => {
             </ul>
           </Popover.Group>
         </nav>
-        <div className="flex  md:hidden hover:text-main">
+        <div className="flex  lg:hidden hover:text-main">
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-mainTextBlack"
@@ -195,8 +195,7 @@ export const Header = () => {
             <BurgerMenu aria-hidden="true" />
           </button>
         </div>
-
-        <div className="hidden md:flex md:gap-4 text-main relative">
+        <div className="hidden lg:flex md:gap-4 text-main relative">
           <Search search={search} />
           <Link
             href="/services/cart"
@@ -213,7 +212,7 @@ export const Header = () => {
         </div>
         <Dialog
           as="div"
-          className="z-50 md:hidden"
+          className="z-50 lg:hidden"
           open={mobileMenuOpen}
           onClose={setMobileMenuOpen}
         >
@@ -232,7 +231,7 @@ export const Header = () => {
                 <div className="relative w-[150px] h-[17px] ">
                   <Image
                     src="/ADRENALIN_GYM.png"
-                    alt="Adrenalin Gym"
+                    alt="Adrenalin Gym logo"
                     fill
                     style={{
                       objectFit: 'contain',
@@ -290,6 +289,15 @@ export const Header = () => {
                       </>
                     )}
                   </Disclosure>
+                  <Link
+                    href="/learn/intro"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
+                   text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
+                    hover:bg-orange-100   dark:hover:bg-hoverBlack "
+                  >
+                    Навчання
+                  </Link>
                   <Link
                     href="/blog"
                     onClick={() => setMobileMenuOpen(false)}
