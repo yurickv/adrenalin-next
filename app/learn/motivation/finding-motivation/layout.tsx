@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Мотивація для тренувань в тренажерному залі',
+  title: 'Пошук мотивації для занять в тренажерному залі',
   description:
-    'Мотивація і дисципліна при тренуваннях в спортклубі, як почати тренуватись і перестати відкладати на завтра',
+    'Мотивація для тренувань в тренажерному залі, покрокова стратегія для підтримки свого настою для перемог і досягнень.',
 };
 export default function ServicesLayout({
   children,

@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Мотивація для тренувань в тренажерному залі',
+  title: 'Подолання тривожності в тренажерному залі',
   description:
-    'Мотивація і дисципліна при тренуваннях в спортклубі, як почати тренуватись і перестати відкладати на завтра',
+    'Розвиток впевненості: Стратегії подолання тривожності та соромязливості, повязаних із заняттями спортом в спортзалі.',
 };
 export default function ServicesLayout({
   children,

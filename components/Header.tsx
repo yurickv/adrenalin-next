@@ -195,7 +195,6 @@ export const Header = () => {
             <BurgerMenu aria-hidden="true" />
           </button>
         </div>
-
         <div className="hidden lg:flex md:gap-4 text-main relative">
           <Search search={search} />
           <Link
@@ -213,7 +212,7 @@ export const Header = () => {
         </div>
         <Dialog
           as="div"
-          className="z-50 md:hidden"
+          className="z-50 lg:hidden"
           open={mobileMenuOpen}
           onClose={setMobileMenuOpen}
         >
@@ -232,7 +231,7 @@ export const Header = () => {
                 <div className="relative w-[150px] h-[17px] ">
                   <Image
                     src="/ADRENALIN_GYM.png"
-                    alt="Adrenalin Gym"
+                    alt="Adrenalin Gym logo"
                     fill
                     style={{
                       objectFit: 'contain',
