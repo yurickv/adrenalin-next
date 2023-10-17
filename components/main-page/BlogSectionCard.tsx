@@ -13,6 +13,7 @@ type BlogProps = {
 
 export const BlogSectionCard = async () => {
   const { posts } = await postHttpService.getPosts({ page: 1, limit: 6 });
+  console.log(posts);
   return (
     <>
       {posts.map(({ id, topic, title, image }: BlogProps) => (

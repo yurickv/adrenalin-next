@@ -17,7 +17,7 @@ export const Motivation = () => {
               <Image
                 placeholder="blur"
                 blurDataURL="/placeholder.png"
-                src="/bodybuilder.png"
+                src="/bodybuilder.webp"
                 alt="Man with dumbells"
                 fill
                 style={{

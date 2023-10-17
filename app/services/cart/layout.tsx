@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Корзина товарів',
+  title: 'Корзина товарів спортклубу Адреналін',
   description:
-    'У вашій корзині: 1.Тренування 2.Тренування з тренером 3.План харчування / тренування',
+    'У вашій корзині: 1.Абонемент 2.Персональне тренування з тренером 3.План харчування / тренування',
 };
 export default function ServicesLayout({
   children,

@@ -24,6 +24,7 @@ export const AboutCalc = () => {
             width: '100%',
             height: 'auto',
           }}
+          loading="lazy"
           className="float-right md:hidden"
         />
         <p className="text-2xl font-poppins md:w-6/12  text-mainText mt-14 mb-11 text-left">
