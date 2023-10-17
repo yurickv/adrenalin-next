@@ -2,6 +2,8 @@ import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sidebar } from '../../Sidebar';
+import { ButtonSecond } from '@/components/ButtonSecond';
+import { Button } from '@/components/Button';
 
 const BasicsNutrition = () => {
   return (
@@ -51,7 +53,10 @@ const BasicsNutrition = () => {
               </span>
               , що вимірюється в калоріях. Індивідуальну денну потребу калорій
               можна визначити за допомогою{' '}
-              <Link href="/calc/calories-calculator" className="underline">
+              <Link
+                href="/calcs/calories-calculator"
+                className="underline underline-offset-4 font-semibold text-mainTitle dark:text-mainTitleBlack"
+              >
                 нашого калькулятора.
               </Link>{' '}
             </p>
@@ -193,6 +198,16 @@ const BasicsNutrition = () => {
               height={300}
               loading="lazy"
             />
+            <div className="flex gap-6 mt-8 justify-end pt-8 border-t-2 border-main ">
+              <ButtonSecond
+                route="/learn/training/load-progression"
+                text="&#10094; ПОПЕРЕДНЯ"
+              />
+              <Button
+                route="/learn/nutrition/before-after-training"
+                text="НАСТУПНА &#10095;"
+              />
+            </div>
           </div>
         </div>
       </section>

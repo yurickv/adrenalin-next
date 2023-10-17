@@ -2,6 +2,8 @@ import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sidebar } from '../../Sidebar';
+import { ButtonSecond } from '@/components/ButtonSecond';
+import { Button } from '@/components/Button';
 
 const BasicExersices = () => {
   return (
@@ -178,10 +180,10 @@ const BasicExersices = () => {
               тренувань, зосереджуючись на правильній формі та техніці. Якщо ви
               не впевнені, як правильно виконувати будь-яку з цих вправ,
               зверніться за порадою до{' '}
-              <Link href="/services" className="underline">
-                персонального тренера
-              </Link>
-              . Не забувайте прислухатися до свого тіла, робити перерви, коли це
+              <Link href="/services" className="underline underline-offset-4">
+                персонального тренера.
+              </Link>{' '}
+              Не забувайте прислухатися до свого тіла, робити перерви, коли це
               необхідно, і запасіться терпінням на початку своєї
               фітнес-подорожі. Завдяки цілеспрямованості та послідовності ви
               закладете міцний фундамент для більш здорового та активного
@@ -195,6 +197,16 @@ const BasicExersices = () => {
               width={300}
               height={500}
             />
+            <div className="flex gap-6 mt-8 justify-end pt-8 border-t-2 border-main ">
+              <ButtonSecond
+                route="/learn/training/warm-up"
+                text="&#10094; ПОПЕРЕДНЯ"
+              />
+              <Button
+                route="/learn/training/load-progression"
+                text="НАСТУПНА &#10095;"
+              />
+            </div>
           </div>
         </div>
       </section>

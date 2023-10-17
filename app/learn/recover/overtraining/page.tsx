@@ -2,6 +2,8 @@ import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sidebar } from '../../Sidebar';
+import { ButtonSecond } from '@/components/ButtonSecond';
+import { Button } from '@/components/Button';
 
 const Overtraining = () => {
   return (
@@ -44,6 +46,13 @@ const Overtraining = () => {
               width={500}
               height={300}
             />
+            <div className="flex gap-6 mt-8 justify-end pt-8 border-t-2 border-main ">
+              <ButtonSecond
+                route="/learn/recover/enough-rest"
+                text="&#10094; ПОПЕРЕДНЯ"
+              />
+              <Button route="/learn/recover/reboot" text="НАСТУПНА &#10095;" />
+            </div>
           </div>
         </div>
       </section>

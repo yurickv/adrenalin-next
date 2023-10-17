@@ -2,6 +2,8 @@ import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sidebar } from '../../Sidebar';
+import { Button } from '@/components/Button';
+import { ButtonSecond } from '@/components/ButtonSecond';
 
 const WarmUp = () => {
   return (
@@ -119,6 +121,13 @@ const WarmUp = () => {
               width={500}
               height={300}
             />
+            <div className="flex gap-6 mt-8 justify-end pt-8 border-t-2 border-main ">
+              <ButtonSecond route="/learn/intro" text="&#10094; ПОПЕРЕДНЯ" />
+              <Button
+                route="/learn/training/basic-exercises"
+                text="НАСТУПНА &#10095;"
+              />
+            </div>
           </div>
         </div>
       </section>

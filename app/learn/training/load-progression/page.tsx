@@ -2,6 +2,8 @@ import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sidebar } from '../../Sidebar';
+import { ButtonSecond } from '@/components/ButtonSecond';
+import { Button } from '@/components/Button';
 
 const LoadProgression = () => {
   return (
@@ -45,6 +47,16 @@ const LoadProgression = () => {
               width={500}
               height={300}
             />
+            <div className="flex gap-6 mt-8 justify-end pt-8 border-t-2 border-main ">
+              <ButtonSecond
+                route="/learn/training/basic-exercises"
+                text="&#10094; ПОПЕРЕДНЯ"
+              />
+              <Button
+                route="/learn/nutrition/basics"
+                text="НАСТУПНА &#10095;"
+              />
+            </div>
           </div>
         </div>
       </section>

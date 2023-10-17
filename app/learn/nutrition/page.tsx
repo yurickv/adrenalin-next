@@ -40,7 +40,7 @@ const Nutrition = () => {
             </div>
             <div className="relative h-[400px] md:h-[500px] lg:h-[550px] w-full lg:w-[calc((100%-324px))] max-w-[900px] overflow-hidden rounded-lg mx-auto">
               <Image
-                src="/food-healthy.webp"
+                src="/fotoLearning/food-healthy.webp"
                 alt="pair-at-the-gym"
                 sizes="100vw"
                 priority={false}

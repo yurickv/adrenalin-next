@@ -2,6 +2,8 @@ import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sidebar } from '../../Sidebar';
+import { ButtonSecond } from '@/components/ButtonSecond';
+import { Button } from '@/components/Button';
 
 const Timidity = () => {
   return (
@@ -148,6 +150,16 @@ const Timidity = () => {
                 відновлення.
               </li>
             </ul>
+            <div className="flex gap-6 mt-8 justify-end pt-8 border-t-2 border-main ">
+              <ButtonSecond
+                route="/learn/nutrition/basics"
+                text="&#10094; ПОПЕРЕДНЯ"
+              />
+              <Button
+                route="/learn/nutrition/diet-for-weight-lost"
+                text="НАСТУПНА &#10095;"
+              />
+            </div>
           </div>
         </div>
       </section>

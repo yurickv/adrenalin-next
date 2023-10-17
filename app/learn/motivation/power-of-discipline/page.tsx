@@ -2,6 +2,8 @@ import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sidebar } from '../../Sidebar';
+import { ButtonSecond } from '@/components/ButtonSecond';
+import { Button } from '@/components/Button';
 
 const PowerOfDiscipline = () => {
   return (
@@ -44,6 +46,12 @@ const PowerOfDiscipline = () => {
               width={500}
               height={300}
             />
+            <div className="flex gap-6 mt-8 justify-end pt-8 border-t-2 border-main ">
+              <ButtonSecond
+                route="/learn/motivation/finding-motivation"
+                text="&#10094; ПОПЕРЕДНЯ"
+              />
+            </div>
           </div>
         </div>
       </section>

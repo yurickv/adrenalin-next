@@ -2,6 +2,8 @@ import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sidebar } from '../../Sidebar';
+import { ButtonSecond } from '@/components/ButtonSecond';
+import { Button } from '@/components/Button';
 
 const Reboot = () => {
   return (
@@ -44,6 +46,16 @@ const Reboot = () => {
               width={500}
               height={300}
             />
+            <div className="flex gap-6 mt-8 justify-end pt-8 border-t-2 border-main ">
+              <ButtonSecond
+                route="/learn/training/overtraining"
+                text="&#10094; ПОПЕРЕДНЯ"
+              />
+              <Button
+                route="/learn/motivation/timidity"
+                text="НАСТУПНА &#10095;"
+              />
+            </div>
           </div>
         </div>
       </section>
