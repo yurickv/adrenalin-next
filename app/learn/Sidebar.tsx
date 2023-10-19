@@ -66,9 +66,6 @@ export const Sidebar = () => {
               Як визначити перетренованість?
             </Link>
           </AccordionContent>
-          <AccordionContent>
-            <Link href="/learn/recover/reboot">Перезавантаження</Link>
-          </AccordionContent>
         </AccordionItem>
 
         <AccordionItem value="item-5">
