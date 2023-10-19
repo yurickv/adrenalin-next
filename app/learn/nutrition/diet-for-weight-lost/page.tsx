@@ -122,7 +122,7 @@ const DietForWeightLost = () => {
             </p>
             <Image
               src="/fotoLearning/thin woman shows abs.webp"
-              alt="happy-female"
+              alt="thin woman shows abs"
               sizes="100vw"
               className="w-auto h-auto mt-6 rounded-lg "
               width={500}
