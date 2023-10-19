@@ -85,7 +85,7 @@ const DietForGainingWeight = () => {
             </p>
             <Image
               src="/fotoLearning/collection-protein-food.webp"
-              alt="happy-female"
+              alt="collection protein food"
               sizes="100vw"
               className="w-auto h-auto mt-6 rounded-lg "
               width={500}
@@ -204,7 +204,7 @@ const DietForGainingWeight = () => {
             </p>
             <Image
               src="/fotoLearning/man-holds-dumbbell.webp"
-              alt="happy-female"
+              alt="man holds dumbbell"
               sizes="100vw"
               className="w-auto h-auto mt-6 rounded-lg "
               width={500}
