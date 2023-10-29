@@ -1,14 +1,9 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Insta } from '@/components/icons/Instagram';
 import { Location } from '@/components/icons/Location';
 import { Phone } from '@/components/icons/Phone';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 
-export const metadata: Metadata = {
-  title: 'Контакти',
-  description: 'Контакти тренажерного залу Adrenalin',
-};
 const Contacts = () => {
   return (
     <main>
@@ -30,17 +25,20 @@ const Contacts = () => {
         md:flex-row justify-between gap-6"
         >
           <div className="max-[449px]:text-center min-[450px]:flex gap-4 justify-between md:block">
-            <div className="flex flex-col gap-5  max-[449px]:mx-auto max-w-[205px] md:max-w-full">
-              <p className="text-xl md:text-2xl font-semibold mb-4 text-mainTitle dark:text-mainTitleBlack">
+            <div className="flex flex-col gap-5  max-[449px]:mx-auto pb-4 min-[450px]:pb-0 max-w-[205px] md:max-w-full">
+              <p className="text-xl md:text-2xl font-semibold min-[450px]:mb-4 text-mainTitle dark:text-mainTitleBlack">
                 Де нас знайти?
               </p>
               <Link
                 href="https://goo.gl/maps/LJuXJQ9Kkhcb7FVT7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group   transition-colors duration-300 text-main flex gap-4 items-center"
+                className="group   transition-colors duration-300 text-main flex gap-4 items-center text-start"
               >
-                <Location />
+                <div className="min-w-[24px]">
+                  <Location />
+                </div>
+
                 <span
                   className="text-mainText dark:text-mainTextBlack  text-lg 
                  group-hover:text-main transition-colors duration-300"
@@ -48,21 +46,28 @@ const Contacts = () => {
                   м.Тернопіль, вул.Сахарова 10
                 </span>
               </Link>
-
-              <Link
-                href="tel:+380978836689"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group   transition-colors duration-300 text-main flex gap-4 items-center"
-              >
+              <div className="transition-colors duration-300 text-main flex gap-4 items-center">
                 <Phone />
-                <span
-                  className="text-mainText dark:text-mainTextBlack text-lg 
-                 group-hover:text-main transition-colors duration-300 "
-                >
-                  +38 097 960 1371 <br /> +38 097 883 6689
+                <span className="text-mainText dark:text-mainTextBlack text-lg text-start">
+                  <Link
+                    href="tel:+380979601371"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-main transition-colors duration-300"
+                  >
+                    +38 097 960 1371
+                  </Link>{' '}
+                  <br />{' '}
+                  <Link
+                    href="tel:+380978836689"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-main transition-colors duration-300"
+                  >
+                    +38 097 883 6689
+                  </Link>
                 </span>
-              </Link>
+              </div>
 
               <Link
                 href="https://www.instagram.com/gym.adrenalin/?hl=uk"
@@ -78,29 +83,32 @@ const Contacts = () => {
                   className=" text-lg  text-mainText dark:text-mainTextBlack
                  transition-all duration-200 group-hover:text-main"
                 >
-                  Gym.adrenalin
+                  @gym.adrenalin
                 </span>
               </Link>
             </div>
-            <div className="max-[449px]:mt-6 md:mt-6">
-              <p className="font-semibold text-mainTitle dark:text-mainTitleBlack">
-                Графік роботи:
-              </p>
-              <ul className="my-4 text-mainText dark:text-mainTextBlack">
-                <li>
-                  <span className="font-semibold">пн, ср, пт</span> —
-                  11:00-20:00
-                </li>
-                <li>
-                  <span className="font-semibold">вт, чт </span> — 11:00-21:00
-                </li>
-                <li>
-                  <span className="font-semibold">сб</span> — 12:00-19:00
-                </li>
-                <li>
-                  <span className="font-semibold">нд</span> — вихідний
-                </li>
-              </ul>
+            <div className="max-[449px]:mt-6 md:mt-6 flex flex-col justify-between">
+              <div>
+                <p className="font-semibold text-mainTitle dark:text-mainTitleBlack">
+                  Графік роботи:
+                </p>
+                <ul className="my-4 text-mainText dark:text-mainTextBlack">
+                  <li>
+                    <span className="font-semibold">пн, ср, пт</span> —
+                    11:00-20:00
+                  </li>
+                  <li>
+                    <span className="font-semibold">вт, чт </span> — 11:00-21:00
+                  </li>
+                  <li>
+                    <span className="font-semibold">сб</span> — 12:00-19:00
+                  </li>
+                  <li>
+                    <span className="font-semibold">нд</span> — вихідний
+                  </li>
+                </ul>
+              </div>
+
               <Link
                 className="mt-4 text-mainText dark:text-mainTextBlack underline"
                 href="/oferta"

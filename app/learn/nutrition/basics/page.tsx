@@ -33,7 +33,7 @@ const BasicsNutrition = () => {
           </div>
           <div>
             <h2 className="h1-title-blog p-6 border-b-2 border-main mb-8">
-              Основи
+              Основи збалансованого харчування
             </h2>
             <h2 className="h2-list-title mt-2 text-center">
               Збалансоване харчування - основа здоров’я, гарного вигляду і
@@ -128,8 +128,9 @@ const BasicsNutrition = () => {
               <li className="p-text">
                 Останній, п’ятий сегмент -{' '}
                 <span className="font-semibold text-mainTitle dark:text-mainTitleBlack mt-2">
-                  риба, м’ясо та яйця.
+                  риба, м’ясо та яйця,
                 </span>{' '}
+                вони є чудовими джерелами білків.
               </li>
             </ul>
             <Image

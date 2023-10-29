@@ -62,7 +62,7 @@ async function BlogPage({ params }: Props) {
           </FadeIn>
           <FadeIn>
             <h1
-              className="font-poppins mt-[52px] md:mt-0 text-xl md:text-[32px] font-semibold text-mainTitle dark:text-mainTitleBlack
+              className="font-poppins pb-2 mt-[52px] md:mt-0 text-xl md:text-[32px] font-semibold text-mainTitle dark:text-mainTitleBlack
            md:pr-28 line-clamp-4"
             >
               {post.title}

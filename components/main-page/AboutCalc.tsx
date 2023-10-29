@@ -27,17 +27,16 @@ export const AboutCalc = () => {
           loading="lazy"
           className="float-right md:hidden"
         />
-        <p className="text-2xl font-poppins md:w-6/12  text-mainText mt-14 mb-11 text-left">
-          Прості калькулятори допоможуть визначити ІМТ (індекс маси тіла), денну
-          потребу калорій та інші важливі параметри, які допоможуть збалансувати
-          твоє харчування та тренування. Здорове харчування - це основа успіху,
-          і ми готові допомогти тобі досягти найкращих результатів!
+        <p className="text-lg lg:text-2xl font-poppins md:w-6/12  text-mainText mt-14 mb-11 text-left md:mx-0">
+          Прості калькулятори допоможуть визначити ІМТ (індекс маси тіла),
+          відсоток жиру в тілі та денну потребу калорій. Це допоможе стежити за
+          прогресом і збалансувати твоє харчування та тренування.
         </p>
 
         <Button
           route="/calcs"
           text="Дізнатися більше"
-          width="w-[273px] md:w-[302px]"
+          width="w-[273px] md:w-[302px] mx-auto md:mx-0 lg:mx-auto"
         />
       </FadeIn>
     </section>

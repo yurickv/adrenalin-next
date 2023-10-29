@@ -173,6 +173,10 @@ const Overtraining = () => {
                 route="/learn/recover/enough-rest"
                 text="&#10094; ПОПЕРЕДНЯ"
               />
+              <Button
+                route="/learn/motivation/timidity"
+                text="НАСТУПНА &#10095;"
+              />
             </div>
           </div>
         </div>
