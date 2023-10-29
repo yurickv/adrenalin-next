@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ButtonGroup } from '@/components/calcs-page/ButttonGroup';
 import { CalcTitle } from '@/components/calcs-page/CalcsTitle';
@@ -6,10 +5,6 @@ import { DescriptionIMT } from '@/components/calcs-page/IMTDescription';
 import { ImtCalcList } from '@/components/calcs-page/ImtCalcList';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 
-export const metadata: Metadata = {
-  title: 'Калькулятор ІМТ',
-  description: 'Обрахуй свій індекс маси тіла!',
-};
 const ImtCalc = () => {
   return (
     <main>

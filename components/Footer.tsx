@@ -24,14 +24,14 @@ export const Footer = () => {
     <footer className="bg-white dark:bg-darkBody">
       <div
         className="grid grid-cols-2 gap-10 justify-start justify-items-center md:grid-cols-none
-        md:flex md:items-center md:justify-between   mx-auto border-t-2 border-main
+        md:flex  md:justify-between   mx-auto border-t-2 border-main
       max-w-[640px] md:max-w-[1279px] lg:max-w-[1439px] xl:max-w-[1919px] 
       py-[40px] md:pt-[44px] md:pb-[88px] lg:py-[88px] 
       px-4 md:px-[40px] lg:px-[66px] xl:px-[132px] antialiased"
       >
         <Link
           className="transition-colors duration-300 col-span-2 flex md:flex-col gap-3 
-          md:gap-2  md:items-center"
+          md:gap-2  md:items-center mt-12"
           href="/"
         >
           <span className="sr-only md:not-sr-only">
@@ -139,12 +139,13 @@ export const Footer = () => {
               <span className="text-main group-hover:text-main">
                 <Phone />
               </span>
-              <span
+              <div
                 className="text-mainText dark:text-mainTextBlack group-hover:text-main 
               dark:group-hover:text-mainTitle font-poppins"
               >
-                +38 097 960 1371
-              </span>
+                <span className="hidden min-[450px]:inline-block">+38</span> 097
+                883 6689
+              </div>
             </a>
             <a
               href="https://www.instagram.com/gym.adrenalin/?hl=uk"
