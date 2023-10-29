@@ -1,14 +1,8 @@
-import type { Metadata } from 'next';
 import { CalcTitle } from '@/components/calcs-page/CalcsTitle';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Калькулятори',
-  description:
-    'Обери калькулятор для себе. Обраховуй свій ІМТ, рахуй необхідні калорії та процент жиру у своєму організмі!',
-};
 const Calc = () => {
   return (
     <main>
@@ -30,6 +24,9 @@ const Calc = () => {
       <section className="bg-white dark:bg-darkBody md:pt-8">
         <div className="div-container">
           <CalcTitle />
+          <h2 className="text-xl md:text-2xl font-semibold text-center mb-4 text-mainTitle dark:text-mainTitleBlack">
+            Перевір свою форму просто зараз
+          </h2>
           <Image
             src="/fit-blond.jpg"
             alt="fit-blond"

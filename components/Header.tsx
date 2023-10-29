@@ -73,6 +73,16 @@ export const Header = () => {
     sm:px-4 md:px-[40px] lg:px-[66px] xl:px-[132px]
     flex justify-between items-center py-5 border-b  gap-4 mr-auto ml-auto"
       >
+        <div className="flex  lg:hidden hover:text-main">
+          <button
+            type="button"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-mainTextBlack"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <span className="sr-only">Open main menu</span>
+            <BurgerMenu aria-hidden="true" />
+          </button>
+        </div>
         <nav className="flex  md:gap-5 lg:gap-10">
           <Link
             className="flex items-center gap-2 text-main hover:text-hover transition-colors duration-300"
@@ -185,15 +195,19 @@ export const Header = () => {
             </ul>
           </Popover.Group>
         </nav>
-        <div className="flex  lg:hidden hover:text-main">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-mainTextBlack"
-            onClick={() => setMobileMenuOpen(true)}
+        <div className="flex gap-2 lg:hidden">
+          <Link
+            href="/services/cart"
+            className="rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
+                 text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
+                 hover:text-opacity-100 outline-none transition-all duration-300"
           >
-            <span className="sr-only">Open main menu</span>
-            <BurgerMenu aria-hidden="true" />
-          </button>
+            <Basket />
+            {productsQuantity > 0 ? (
+              <div className="p-1 top-1/4 right-1 bg-main group-hover:bg-hover transition-colors absolute rounded-full"></div>
+            ) : null}
+          </Link>
+          <DarkModeToggle />
         </div>
         <div className="hidden lg:flex md:gap-4 text-main relative">
           <Search search={search} />
@@ -219,7 +233,7 @@ export const Header = () => {
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel
             className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-backgroundBlack
-        px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+                       px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
           >
             <div className="flex items-center justify-between">
               <a
@@ -249,7 +263,7 @@ export const Header = () => {
               </button>
             </div>
             <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="-my-6 divide-y divide-main">
                 <div className="space-y-2 py-6">
                   <Disclosure as="div" className="-mx-3">
                     {({ open }) => (
@@ -331,18 +345,6 @@ export const Header = () => {
                     search={search}
                     handleCloseMobileMenu={setMobileMenuOpen}
                   />
-                  <Link
-                    href="/services/cart"
-                    className="rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
-                 text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
-                 hover:text-opacity-100 outline-none transition-all duration-300"
-                  >
-                    <Basket />
-                    {productsQuantity > 0 ? (
-                      <div className="p-1 top-1/4 right-1 bg-main group-hover:bg-hover transition-colors absolute rounded-full"></div>
-                    ) : null}
-                  </Link>
-                  <DarkModeToggle />
                 </div>
               </div>
             </div>

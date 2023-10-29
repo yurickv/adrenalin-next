@@ -12,11 +12,11 @@ type BlogProps = {
 };
 
 export const BlogSectionCard = async () => {
-  const { posts } = await postHttpService.getPosts({ page: 1, limit: 6 });
-  console.log(posts);
+  // const { posts } = await postHttpService.getPosts({ page: 1, limit: 6 });
+
   return (
     <>
-      {posts.map(({ id, topic, title, image }: BlogProps) => (
+      {/* {posts.map(({ id, topic, title, image }: BlogProps) => (
         <FadeIn
           id={id}
           className="relative rounded-lg bg-white dark:bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
@@ -52,7 +52,7 @@ export const BlogSectionCard = async () => {
             </h5>
           </div>
         </FadeIn>
-      ))}
+      ))} */}
     </>
   );
 };

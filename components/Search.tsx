@@ -40,16 +40,19 @@ export function Search({ search, handleCloseMobileMenu }: Props) {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute -left-1/2 md:-left-[500%] z-10 mt-3 w-screen max-w-[290px] md:max-w-[380px] lg:-max-w-[440px] -translate-x-1/2 transform px-0 md:px-4 ">
+              <Popover.Panel
+                className="absolute left-1/2 lg:-left-[500%] z-10 mt-3 w-screen 
+              max-w-[290px] md:max-w-[380px] lg:-max-w-[440px] -translate-x-1/2 transform px-0 md:px-4 "
+              >
                 <div
-                  className="overflow-hidden rounded-lg md:rounded-bl-lg md:rounded-br-lg md:rounded-tl-lg md:rounded-tr-none
+                  className="overflow-hidden rounded-lg lg:rounded-bl-lg lg:rounded-br-lg lg:rounded-tl-lg lg:rounded-tr-none
                 shadow-lg "
                 >
-                  <div className="relative grid gap-8 bg-white p-4 ">
+                  <div className="relative grid gap-8 bg-white dark:bg-mainText p-4 ">
                     <div className="flex flex-col items-center justify-center">
                       <input
                         placeholder="Знайти пост"
-                        className="p-2 border rounded border-main md:w-[316px] resize-x outline-none"
+                        className="p-2 border rounded border-main  md:w-[316px] resize-x outline-none"
                         value={searchText}
                         onChange={e => setSearchText(e.target.value)}
                       />
