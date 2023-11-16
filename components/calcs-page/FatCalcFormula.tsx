@@ -33,7 +33,7 @@ export const FatCalcFormula = ({ age, sex, sum }: FormulaProps) => {
         <p className="font-bold text-xl text-mainTitle dark:text-mainTitleBlack">
           % жиру в тілі:
         </p>
-        <p className="rounded-full p-4 text-main font-bold text-xl bg-[#D9D9D9] inline-block w-20 ">
+        <p className="rounded-xl p-2 text-main font-bold text-xl bg-[#D9D9D9] inline-block w-20 ">
           {BodyFatPercentage}
         </p>
       </div>

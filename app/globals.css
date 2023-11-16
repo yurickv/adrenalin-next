@@ -174,7 +174,9 @@ details[open] summary div {
   @apply w-full flex gap-4 justify-end;
 }
 .actions__button {
-  @apply w-full font-poppins font-normal text-[16px] p-4 rounded-pre-xl disabled:cursor-not-allowed;
+  @apply w-full font-normal text-[16px] p-4 rounded-xl disabled:cursor-not-allowed
+  hover:from-red-600 hover:to-orange-600 focus:from-red-600 focus:to-orange-600 block
+  bg-gradient-to-r  from-red-500 to-orange-500 transition-all duration-150;
 }
 
 .visually-hidden {

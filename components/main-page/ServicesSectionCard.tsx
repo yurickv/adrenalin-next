@@ -7,8 +7,8 @@ export const ServiceCardMain = () => {
   return (
     <>
       <Link
-        href="/services"
-        className="block rounded-lg bg-white dark:bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
+        href="/services#training"
+        className="block rounded-xl bg-white dark:bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
            hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] hover:bg-orange-100 dark:hover:bg-orange-100 group
           pt-6 px-3 md:w-[calc((100%-48px)/3)] xl:max-w-[563px] md:min-h-[344px] lg:min-h-[280px] text-center grow"
       >
@@ -20,12 +20,12 @@ export const ServiceCardMain = () => {
         </div>
 
         <div className="p-6 grow md:flex md:flex-col justify-between">
-          <h5
+          <h3
             className="mb-2 text-xl font-medium leading-tight text-mainTitle 
            min-h-[50px] group-hover:text-main"
           >
             Тренування
-          </h5>
+          </h3>
           <p className=" text-base text-mainText">
             Тренування на професійному обладнанні в просторому тренажерному залі
             Адреналін
@@ -33,8 +33,8 @@ export const ServiceCardMain = () => {
         </div>
       </Link>
       <Link
-        href="/services"
-        className="block rounded-lg bg-white dark:bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
+        href="/services#coach-training"
+        className="block rounded-xl bg-white dark:bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
            hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] hover:bg-orange-100 dark:hover:bg-orange-100 group
           pt-6 px-3 md:w-[calc((100%-48px)/3)] xl:max-w-[563px] md:min-h-[344px] lg:min-h-[280px] text-center grow"
       >
@@ -46,12 +46,12 @@ export const ServiceCardMain = () => {
         </div>
 
         <div className="p-6 grow">
-          <h5
+          <h3
             className="mb-2 text-xl font-medium leading-tight text-mainTitle 
            min-h-[50px] group-hover:text-main"
           >
             Тренування з тренером
-          </h5>
+          </h3>
           <p className=" text-base text-mainText">
             Передаємо Вам кращий досвід і практики для максимально швидкого
             результату
@@ -59,8 +59,8 @@ export const ServiceCardMain = () => {
         </div>
       </Link>
       <Link
-        href="/services"
-        className="block rounded-lg bg-white dark:bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
+        href="/services#program"
+        className="block rounded-xl bg-white dark:bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
            hover:shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] hover:bg-orange-100 dark:hover:bg-orange-100 group
           pt-6 px-3 md:w-[calc((100%-48px)/3)] xl:max-w-[563px] md:min-h-[344px] lg:min-h-[280px] text-center grow"
       >
@@ -71,9 +71,9 @@ export const ServiceCardMain = () => {
           <PlanIcon />
         </div>
         <div className="p-6 grow">
-          <h5 className="mb-2 text-xl font-medium leading-tight text-mainTitle  min-h-[50px] group-hover:text-main">
+          <h3 className="mb-2 text-xl font-medium leading-tight text-mainTitle  min-h-[50px] group-hover:text-main">
             План харчування / тренування
-          </h5>
+          </h3>
           <p className=" text-base text-mainText">
             План харчування / тренування, із врахуванням Вашого віку, ваги і
             мети
