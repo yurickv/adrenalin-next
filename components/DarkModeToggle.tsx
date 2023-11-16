@@ -8,6 +8,7 @@ export const DarkModeToggle = () => {
       {colorTheme === 'light' ? (
         <button
           onClick={() => setTheme('light')}
+          aria-label="light theme"
           className="group inline-flex items-center rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
                  text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
                  hover:text-opacity-100 outline-none transition-all duration-300"
@@ -32,6 +33,7 @@ export const DarkModeToggle = () => {
       ) : (
         <button
           onClick={() => setTheme('dark')}
+          aria-label="dark theme"
           className="group inline-flex items-center rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
                  text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
                  hover:text-opacity-100 outline-none transition-all duration-300"

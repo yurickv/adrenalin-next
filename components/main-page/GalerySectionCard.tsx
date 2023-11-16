@@ -9,6 +9,13 @@ import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/counter.css';
 import FadeIn, { FadeInStagger } from '@/components/FadeIn';
 
+// import Image from 'next/image';
+// import {
+//   isImageFitCover,
+//   isImageSlide,
+//   useLightboxProps,
+// } from 'yet-another-react-lightbox';
+
 const GalerySectionCard = () => {
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState('');
@@ -28,7 +35,7 @@ const GalerySectionCard = () => {
 
   return (
     <div className="w-full mt-14 text-center h-[311px] overflow-hidden">
-      <FadeInStagger className="flex flex-col items-center  md:grid md:grid-cols-2 lg:grid-cols-3 h-full flex-wrap mx-2 md:mx-0 gap-6  ">
+      <FadeInStagger className="flex flex-col items-center  md:grid md:grid-cols-2 lg:grid-cols-3 h-full flex-wrap mx-2 md:mx-0 gap-6">
         {galeryCardInfo.map((x, index) => {
           return (
             <FadeIn
@@ -36,7 +43,7 @@ const GalerySectionCard = () => {
               className="group w-full h-[287px] relative rounded-xl overflow-hidden bg-white shadow-md hover:shadow-lg cursor-zoom-in"
             >
               <div
-                className="bg-cover bg-center h-full w-full bg-no-repeat "
+                className="bg-cover bg-center h-full w-full bg-no-repeat"
                 style={{ backgroundImage: `url("${x.imageUrl}")` }}
               ></div>
               <div
@@ -50,13 +57,12 @@ const GalerySectionCard = () => {
           );
         })}
       </FadeInStagger>
-
       <Lightbox
         open={open}
         close={() => setOpen(false)}
+        slides={slides}
         plugins={[Zoom, Counter]}
         counter={{ container: { style: { top: 'unset', bottom: 0 } } }}
-        slides={slides}
       />
     </div>
   );

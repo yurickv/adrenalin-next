@@ -21,13 +21,13 @@ export const cardInfo = [
 ];
 
 export const galeryCardInfo = [
-  { imageUrl: '/fotoZal/foto_zal_7.jpg', alt: 'foto_zal', data: '0' },
+  { imageUrl: '/fotoZal/foto_zal_7.webp', alt: 'foto_zal', data: '0' },
   // { imageUrl: "/fotoZal/foto_zal_1.jpg", alt: "foto_zal", data: "1" },
-  { imageUrl: '/fotoZal/foto_zal_2.jpg', alt: 'foto_zal', data: '2' },
-  { imageUrl: '/fotoZal/foto_zal_3.jpg', alt: 'foto_zal', data: '3' },
-  { imageUrl: '/fotoZal/foto_zal_4.jpg', alt: 'foto_zal', data: '4' },
-  { imageUrl: '/fotoZal/foto_zal_5.jpg', alt: 'foto_zal', data: '5' },
-  { imageUrl: '/fotoZal/foto_zal_6.jpg', alt: 'foto_zal', data: '6' },
+  { imageUrl: '/fotoZal/foto_zal_2.webp', alt: 'foto_zal', data: '2' },
+  { imageUrl: '/fotoZal/foto_zal_3.webp', alt: 'foto_zal', data: '3' },
+  { imageUrl: '/fotoZal/foto_zal_4.webp', alt: 'foto_zal', data: '4' },
+  { imageUrl: '/fotoZal/foto_zal_5.webp', alt: 'foto_zal', data: '5' },
+  { imageUrl: '/fotoZal/foto_zal_6.webp', alt: 'foto_zal', data: '6' },
 ];
 
 export const CalcLinks = [
