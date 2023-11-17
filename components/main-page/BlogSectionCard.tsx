@@ -47,9 +47,9 @@ export const BlogSectionCard = async () => {
             >
               #{topic}
             </Link>
-            <h5 className="text-lg md:text-2xl font-semibold leading-tight text-mainTitle ">
+            <h4 className="text-lg md:text-2xl font-semibold leading-tight text-mainTitle ">
               {title}
-            </h5>
+            </h4>
           </div>
         </FadeIn>
       ))}

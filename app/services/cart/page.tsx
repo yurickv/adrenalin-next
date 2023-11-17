@@ -113,7 +113,7 @@ const ShoppingCart = () => {
             </div>
             <div className="relative h-[400px]  w-full md:h-[720px] ">
               <Image
-                src="/man-fitness-404.jpg"
+                src="/man-fitness-404.webp"
                 alt="Man with dumbells"
                 fill
                 style={{
