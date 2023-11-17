@@ -72,7 +72,7 @@ export const CaloriesCalcList = () => {
           htmlFor="woman"
           className={`cursor-pointer flex items-center justify-center tracking-widest
           dark:hover:bg-[#d4d4d4] dark:hover:text-mainText 
-          truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
+          truncate font-semibold text-lg rounded-xl p-2  hover:bg-[#ECECEC] ${
             !sex
               ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main'
               : 'dark:text-mainTextBlack'
@@ -93,7 +93,7 @@ export const CaloriesCalcList = () => {
           htmlFor="man"
           className={`cursor-pointer flex items-center justify-center tracking-widest
           dark:hover:bg-[#d4d4d4] dark:hover:text-mainText 
-          truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
+          truncate font-semibold text-lg rounded-xl p-2  hover:bg-[#ECECEC] ${
             sex
               ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main '
               : 'dark:text-mainTextBlack'
@@ -151,7 +151,7 @@ export const CaloriesCalcList = () => {
       <select
         name="activity"
         className="max-[440px]:max-w-[280px] min-[768px]:max-w-[340px] min-[880px]:max-w-[380px] min-[980px]:max-w-[404px]
-        font-bold border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-main 
+        font-bold border border-gray-300 rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-main 
         text-mainText dark:text-mainTextBlack bg-[#e5e5e5] dark:bg-[#676465]"
         value={activity}
         onChange={e => setActivity(Number(e.target.value))}

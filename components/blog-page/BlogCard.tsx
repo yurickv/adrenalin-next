@@ -32,8 +32,8 @@ export const BlogCard = async ({
           <Image
             placeholder="blur"
             blurDataURL="/placeholder.png"
-            src="/man-fitness-404.jpg"
-            alt="Man with dumbells"
+            src="/man-fitness-404.webp"
+            alt="404 Man with dumbells"
             sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw,  33vw"
             fill
             style={{
@@ -74,7 +74,7 @@ export const BlogCard = async ({
               height={350}
               className="block "
             />
-            <Link href={`/blog/${id}`}>
+            <Link href={`/blog/${id}`} aria-label={title}>
               <div className="absolute top-0 bottom-0 right-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
             </Link>
           </div>
@@ -82,6 +82,7 @@ export const BlogCard = async ({
           <div className="p-3">
             <Link
               href={`/blog?topic=${topic}`}
+              aria-label={title}
               className="block text-main text-right"
             >
               #{topic}

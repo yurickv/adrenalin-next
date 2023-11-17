@@ -54,6 +54,7 @@ async function BlogPage({ params }: Props) {
           <FadeIn>
             <Link
               href={`/blog?topic=${post.topic}`}
+              aria-label={post.title}
               className="absolute top-0 right-5 text-right font-poppins text-sm font-semibold text-main
               rounded-full p-4  hover:bg-orange-100 focus:bg-orange-100 dark:hover:bg-mainText dark:focus:bg-mainText cursor-pointer"
             >

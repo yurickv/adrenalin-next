@@ -88,7 +88,7 @@ export const FatCalcList = () => {
           htmlFor="woman"
           className={`cursor-pointer flex items-center justify-center tracking-widest
           dark:hover:bg-[#d4d4d4] dark:hover:text-mainText 
-          truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
+          truncate font-semibold text-lg rounded-xl p-2  hover:bg-[#ECECEC] ${
             !sex
               ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main'
               : 'dark:text-mainTextBlack'
@@ -109,7 +109,7 @@ export const FatCalcList = () => {
           htmlFor="man"
           className={`cursor-pointer flex items-center justify-center tracking-widest
           dark:hover:bg-[#d4d4d4] dark:hover:text-mainText 
-          truncate font-semibold text-lg rounded-lg p-2  hover:bg-[#ECECEC] ${
+          truncate font-semibold text-lg rounded-xl p-2  hover:bg-[#ECECEC] ${
             sex
               ? 'bg-[#D9D9D9] dark:bg-[#d4d4d4] text-main'
               : 'dark:text-mainTextBlack'

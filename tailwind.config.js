@@ -83,11 +83,11 @@ module.exports = {
       },
       backgroundImage: {
         'hero-bg':
-          "linear-gradient(to right, rgba(46, 47, 66, 0.5), rgba(46, 47, 66, 0.5)), url('/bg-hero.jpg')",
+          "linear-gradient(to right, rgba(46, 47, 66, 0.5), rgba(46, 47, 66, 0.5)), url('/bg-hero.webp')",
         'calc-bg':
           'linear-gradient(to right, rgba(219, 219, 219, 0.5), rgba(219, 219, 219, 0.5)) ',
         'calc-bg-woman': "url('/woman.webp')",
-        'pay-bg': "url('/bg-payment.jpg')",
+        'pay-bg': "url('/bg-payment.webp')",
         'orange-gradient':
           'linear-gradient(277deg, #F97316 -5.07%, #EF4444 84.13%)',
       },

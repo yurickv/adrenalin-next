@@ -24,7 +24,7 @@ export const Footer = () => {
     <footer className="bg-white dark:bg-darkBody">
       <div
         className="grid grid-cols-2 gap-10 justify-start justify-items-center md:grid-cols-none
-        md:flex  md:justify-between   mx-auto border-t-2 border-main
+        md:flex  md:justify-between  lg:items-start mx-auto border-t-2 border-main
       max-w-[640px] md:max-w-[1279px] lg:max-w-[1439px] xl:max-w-[1919px] 
       py-[40px] md:pt-[44px] md:pb-[88px] lg:py-[88px] 
       px-4 md:px-[40px] lg:px-[66px] xl:px-[132px] antialiased"
