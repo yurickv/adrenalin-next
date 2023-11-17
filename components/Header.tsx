@@ -195,24 +195,13 @@ export const Header = () => {
             </ul>
           </Popover.Group>
         </nav>
-        <div className="flex gap-2 lg:hidden">
+        <div className="flex md:gap-4 text-main relative">
+          <div className="hidden lg:block">
+            <Search search={search} />
+          </div>
           <Link
             href="/services/cart"
-            className="rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
-                 text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
-                 hover:text-opacity-100 outline-none transition-all duration-300"
-          >
-            <Basket />
-            {productsQuantity > 0 ? (
-              <div className="p-1 top-1/4 right-1 bg-main group-hover:bg-hover transition-colors absolute rounded-full"></div>
-            ) : null}
-          </Link>
-          <DarkModeToggle />
-        </div>
-        <div className="hidden lg:flex md:gap-4 text-main relative">
-          <Search search={search} />
-          <Link
-            href="/services/cart"
+            aria-label="cart with selected services"
             className="rounded-md hover:bg-orange-100 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
                  text-mainTitle dark:text-mainTitleBlack p-2 text-base font-medium hover:text-main
                  hover:text-opacity-100 outline-none transition-all duration-300 relative group"
@@ -238,19 +227,14 @@ export const Header = () => {
             <div className="flex items-center justify-between">
               <a
                 href="/"
+                aria-label="back to main page"
                 className="-m-1.5 p-1.5 flex gap-2 items-center text-main"
               >
                 <HomeIcon />
                 <span className="sr-only">Adrenalin Gym</span>
-                <div className="relative w-[150px] h-[17px] ">
-                  <Image
-                    src="/ADRENALIN_GYM.png"
-                    alt="Adrenalin Gym logo"
-                    fill
-                    style={{
-                      objectFit: 'contain',
-                    }}
-                  />
+                <div className="flex gap-3">
+                  <AdrenalinIcon />
+                  <GymIcon />
                 </div>
               </a>
               <button

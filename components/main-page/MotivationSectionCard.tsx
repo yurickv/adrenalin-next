@@ -11,9 +11,9 @@ export const MotivationCard = () => {
           вашого розвитку та зростання. Давайте разом здійснимо ваші мрії про
           здорове, активне та щасливе життя.
         </p>
-        <h4 className="mt-11 text-lg lg:text-2xl font-semibold xl:font-bold text-mainTitle dark:text-mainTitleBlack">
+        <h3 className="mt-11 text-lg lg:text-2xl font-semibold xl:font-bold text-mainTitle dark:text-mainTitleBlack">
           3 основні правила, які ми завжди дотримуємось:
-        </h4>
+        </h3>
       </FadeIn>
       <FadeInStagger>
         <ul role="list">
@@ -27,9 +27,9 @@ export const MotivationCard = () => {
                border-b-2 border-main px-3 py-2  cursor-pointer              
                transition-all duration-300 outline-0"
                   >
-                    <h5 className="text-mainTitle dark:text-mainTitleBlack ">
+                    <h4 className="text-mainTitle dark:text-mainTitleBlack ">
                       {title}
-                    </h5>
+                    </h4>
                     <div className="  text-main rotate-45 group-hover:rotate-0 transition-all duration-300 ">
                       <Arrow />
                     </div>

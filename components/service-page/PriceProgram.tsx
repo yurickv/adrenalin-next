@@ -2,7 +2,7 @@ import { newService } from '@/app/_types/services.types';
 
 export const PriceTrainingPlan = ({ service }: { service: newService }) => {
   return (
-    <div className="text-center ">
+    <div className="text-center">
       <p className="text-2xl font-bold text-main dark:text-[#F15C44]">
         {' '}
         &#8372; {service.plan.price}{' '}

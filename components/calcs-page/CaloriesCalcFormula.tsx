@@ -35,7 +35,7 @@ export const CaloriesCalcFormula = ({
       <p className="font-bold text-lg text-mainTitle dark:text-mainTitleBlack">
         Денна потреба калорій:
       </p>
-      <p className="rounded-full p-4 text-main font-bold text-lg bg-[#D9D9D9] inline-block w-20 ">
+      <p className="rounded-xl p-2 text-main font-bold text-lg bg-[#D9D9D9] inline-block w-20 ">
         {basis}
       </p>
     </div>

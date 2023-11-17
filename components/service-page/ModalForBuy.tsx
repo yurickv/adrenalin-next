@@ -10,7 +10,6 @@ import { toastSuccess } from '@/app/_helpers/notifications';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-
 type ModalForBuy = {
   onToggleModal: () => void;
   isModalOpen: boolean;
@@ -74,7 +73,7 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
                   </span>
                   <button
                     type="button"
-                    className="ml-auto w-[58px] rounded-lg border border-transparent 
+                    className="ml-auto w-[58px] rounded-xl border border-transparent 
                   px-4 py-2 -mr-5 text-main dark:text-mainTitleBlack 
                   focus:outline-none focus-visible:ring-2 focus-visible:ring-main focus-visible:ring-offset-2"
                     onClick={onToggleModal}
@@ -114,7 +113,7 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
                       toastSuccess('Послугу успішно додано до корзини!💪');
                     }}
                     className="bg-orange-100 hover:bg-orange-200 dark:bg-[#a3a3a3] dark:hover:bg-[#d4d4d4]
-                text-mainText dark:text-mainTitle rounded-full p-4 text-center block transition-all duration-150"
+                text-mainText dark:text-mainTitle rounded-xl p-4 text-center block transition-all duration-150"
                   >
                     Додати в корзину
                   </button>
@@ -130,8 +129,7 @@ export const ModalForBuy: React.FC<ModalForBuy> = ({
                         );
                         router.push('/services/cart');
                       }}
-                      className="md:!w-[170px] actions__button disabled:opacity-50 bg-orange-gradient text-white hover:from-red-600
-      hover:to-orange-600 focus:from-red-600 focus:to-orange-600 block"
+                      className="md:!w-[170px] actions__button disabled:opacity-50 text-white"
                     >
                       Купити зараз
                     </button>

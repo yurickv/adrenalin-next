@@ -33,8 +33,8 @@ export default function Home() {
           </div>
           <div className="relative h-[400px]  w-full md:h-[720px] ">
             <Image
-              src="/man-fitness-404.jpg"
-              alt="Man with dumbells"
+              src="/man-fitness-404.webp"
+              alt="404 Man with dumbells"
               fill
               style={{
                 objectFit: 'cover',

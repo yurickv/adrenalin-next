@@ -53,7 +53,7 @@ const Services = () => {
       <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
         <FadeInStagger
           className="div-container flex flex-col md:grid  md:grid-cols-3 
-          gap-6 md:gap-x-4 lg:gap-x-6 md:gap-y-8 lg:gap-y-11"
+          gap-12 md:gap-x-4 lg:gap-x-6 md:gap-y-8 lg:gap-y-11"
         >
           <FadeIn>
             <TrainingCard onClickMore={onClickMore} isOpen={standart} />

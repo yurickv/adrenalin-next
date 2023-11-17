@@ -37,12 +37,12 @@ export const InputSkeleton = ({
             onChange={setAny}
             type="number"
             onBlur={onBlur}
-            className="font-bold md:text-lg rounded-lg border-mainText dark:border-mainTextBlack 
+            className="font-bold md:text-lg rounded-xl border-mainText dark:border-mainTextBlack 
             dark:bg-[#676465] dark:text-mainTitleBlack border-2 py-2 pr-2 pl-6 text-center max-w-[120px]
              hover:border-main focus:ring-2 focus:ring-main outline-none"
           />
           {error && (
-            <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-lg max-w-[100px]">
+            <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-xl max-w-[100px]">
               {error}
             </p>
           )}
@@ -57,7 +57,7 @@ export const InputSkeleton = ({
         onChange={setAny}
         type="range"
         onBlur={onBlur}
-        className="bg-[#D9D9D9] appearance-none rounded-full  outline-none overflow-hidden"
+        className="bg-[#D9D9D9] appearance-none rounded-xl  outline-none overflow-hidden"
       />
     </div>
   );

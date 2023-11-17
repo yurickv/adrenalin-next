@@ -16,7 +16,7 @@ export const subscriptionPasses = [
   {
     serviceName: 'Безліміт',
     plans: [
-      { id: '4', availability: '1 місяць', price: '540' },
+      { id: '4', availability: '1 місяць', price: '600' },
       { id: '5', availability: '3 місяці', price: '1500' },
       { id: '6', availability: '6 місяців', price: '2760' },
       { id: '7', availability: '1 рік', price: '5040' },
@@ -74,7 +74,7 @@ export const monthPass = [
   },
   {
     quantity: 'Безліміт',
-    price: '540',
+    price: '600',
     availability: '1 місяць',
     serviceName: '',
   },
