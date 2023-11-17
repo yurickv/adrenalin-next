@@ -1,14 +1,13 @@
-import { Console } from 'console';
 import { useState, useEffect } from 'react';
 
 type Theme = 'light' | 'dark';
 type SetTheme = (theme: Theme) => void;
 
 function useDarkMode(): [Theme, SetTheme] {
-  const currentTheme = localStorage.getItem('theme');
-  console.log(currentTheme);
   const [theme, setTheme] = useState<Theme>(
-    (currentTheme ? currentTheme : 'light') as Theme
+    (typeof window !== 'undefined'
+      ? localStorage.getItem('theme')
+      : 'light') as Theme
   );
   const colorTheme: Theme = theme === 'dark' ? 'light' : 'dark';
 
