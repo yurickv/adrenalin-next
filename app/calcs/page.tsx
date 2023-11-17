@@ -28,9 +28,10 @@ const Calc = () => {
             Перевір свою форму просто зараз
           </h2>
           <Image
-            src="/fit-blond.jpg"
+            src="/fit-blond.webp"
             alt="fit-blond"
             sizes="100vw"
+            loading="lazy"
             style={{
               width: '100%',
               height: 'auto',

@@ -32,8 +32,8 @@ export const BlogCard = async ({
           <Image
             placeholder="blur"
             blurDataURL="/placeholder.png"
-            src="/man-fitness-404.jpg"
-            alt="Man with dumbells"
+            src="/man-fitness-404.webp"
+            alt="404 Man with dumbells"
             sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw,  33vw"
             fill
             style={{
