@@ -12,7 +12,12 @@ export const createPostSchema = Yup.object().shape({
     .test('fileType', 'Invalid file format', value => {
       if (!value) return true;
 
-      const allowedFormats = ['image/jpeg', 'image/png', 'image/gif'];
+      const allowedFormats = [
+        'image/jpeg',
+        'image/png',
+        'image/gif',
+        'image/webp',
+      ];
       return allowedFormats.includes((value as File).type);
     }),
 });

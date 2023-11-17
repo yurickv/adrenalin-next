@@ -17,7 +17,7 @@ export const HeroSection = () => {
           <Button
             route="/learn/intro"
             text="Дізнатися більше"
-            width="w-full md:w-[332px] lg:w-[222px] mt-6"
+            width="w-full md:w-[332px] lg:w-[222px] mt-6 !shadow-none !hover:shadow-none"
           />
         </FadeIn>
       </div>

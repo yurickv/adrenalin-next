@@ -45,11 +45,12 @@ export const Footer = () => {
             Клієнтам
           </h3>
           <ul className="md:flex md:flex-wrap md:justify-between gap-4 text-small  text-base ">
-            <Popover className="relative">
-              {({ open }) => (
-                <>
-                  <Popover.Button
-                    className={`
+            <li key="calcs">
+              <Popover className="relative">
+                {({ open }) => (
+                  <>
+                    <Popover.Button
+                      className={`
                 ${
                   open
                     ? 'bg-orange-100 !text-main dark:bg-hoverBlack dark:!text-mainTitle'
@@ -58,58 +59,59 @@ export const Footer = () => {
                   font-poppins hover:text-main hover:bg-orange-100 
                 dark:hover:bg-hoverBlack dark:hover:text-mainTitle
                 text-mainTitle dark:text-mainTitleBlack rounded-lg p-2 outline-none`}
-                  >
-                    Калькулятори
-                    <div
-                      className={`${
-                        open
-                          ? 'bg-orange-100 !text-main rotate-180 dark:bg-hoverBlack'
-                          : ''
-                      } 
+                    >
+                      Калькулятори
+                      <div
+                        className={`${
+                          open
+                            ? 'bg-orange-100 !text-main rotate-180 dark:bg-hoverBlack'
+                            : ''
+                        } 
                     h-5 w-5 flex-none text-gray-400 group-hover:text-main`}
-                    >
-                      <ShevronDown aria-hidden="true" />
-                    </div>
-                  </Popover.Button>
-
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-200"
-                    enterFrom="opacity-0 translate-y-1"
-                    enterTo="opacity-100 translate-y-0"
-                    leave="transition ease-in duration-150"
-                    leaveFrom="opacity-100 translate-y-0"
-                    leaveTo="opacity-0 translate-y-1"
-                  >
-                    <Popover.Panel
-                      className="absolute left-1/4 top-full z-10 mt-2 w-screen max-w-[250px] 
-                    overflow-hidden rounded-3xl bg-white dark:bg-[#676465] shadow-lg transition-all duration-300"
-                    >
-                      <div className=" p-2">
-                        {products.map(item => (
-                          <div
-                            key={item.name}
-                            className="group relative flex items-center gap-x-4 rounded-lg p-2 text-sm 
-                            leading-6 hover:bg-orange-100 dark:bg-[#676465] dark:hover:bg-mainText"
-                          >
-                            <div className="flex-auto">
-                              <a
-                                href={item.href}
-                                className="block font-semibold text-mainTitle dark:text-white  hover:text-main 
-                                dark:hover:text-orange-400 tracking-wider"
-                              >
-                                {item.name}
-                                <span className="absolute inset-0" />
-                              </a>
-                            </div>
-                          </div>
-                        ))}
+                      >
+                        <ShevronDown aria-hidden="true" />
                       </div>
-                    </Popover.Panel>
-                  </Transition>
-                </>
-              )}
-            </Popover>
+                    </Popover.Button>
+
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-200"
+                      enterFrom="opacity-0 translate-y-1"
+                      enterTo="opacity-100 translate-y-0"
+                      leave="transition ease-in duration-150"
+                      leaveFrom="opacity-100 translate-y-0"
+                      leaveTo="opacity-0 translate-y-1"
+                    >
+                      <Popover.Panel
+                        className="absolute left-1/4 top-full z-10 mt-2 w-screen max-w-[250px] 
+                    overflow-hidden rounded-3xl bg-white dark:bg-[#676465] shadow-lg transition-all duration-300"
+                      >
+                        <ul className=" p-2">
+                          {products.map(item => (
+                            <li
+                              key={item.name}
+                              className="group relative flex items-center gap-x-4 rounded-lg p-2 text-sm 
+                            leading-6 hover:bg-orange-100 dark:bg-[#676465] dark:hover:bg-mainText"
+                            >
+                              <div className="flex-auto">
+                                <a
+                                  href={item.href}
+                                  className="block font-semibold text-mainTitle dark:text-white  hover:text-main 
+                                dark:hover:text-orange-400 tracking-wider"
+                                >
+                                  {item.name}
+                                  <span className="absolute inset-0" />
+                                </a>
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      </Popover.Panel>
+                    </Transition>
+                  </>
+                )}
+              </Popover>
+            </li>
             {NavLinks.map(link => (
               <li
                 key={link.key}
@@ -127,45 +129,49 @@ export const Footer = () => {
           <h3 className="font-bold ml-2 text-mainTitle dark:text-mainTitleBlack">
             Будь з нами на звязку
           </h3>
-          <div className="flex flex-col gap-4">
-            <a
-              href="tel:+38(097)8836689"
-              className="flex gap-2 items-center group hover:text-main font-poppins rounded-lg p-2
+          <ul className="flex flex-col gap-4">
+            <li>
+              <a
+                href="tel:+38(097)8836689"
+                className="flex gap-2 items-center group hover:text-main font-poppins rounded-lg p-2
                hover:bg-orange-100 transition-all duration-300
                 dark:hover:bg-hoverBlack "
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="text-main group-hover:text-main">
-                <Phone />
-              </span>
-              <div
-                className="text-mainText dark:text-mainTextBlack group-hover:text-main 
-              dark:group-hover:text-mainTitle font-poppins"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <span className="hidden min-[450px]:inline-block">+38</span> 097
-                883 6689
-              </div>
-            </a>
-            <a
-              href="https://www.instagram.com/gym.adrenalin/?hl=uk"
-              className="flex gap-2 items-center group hover:text-main font-poppins rounded-lg p-2
+                <span className="text-main group-hover:text-main">
+                  <Phone />
+                </span>
+                <div
+                  className="text-mainText dark:text-mainTextBlack group-hover:text-main 
+              dark:group-hover:text-mainTitle font-poppins"
+                >
+                  <span className="hidden min-[450px]:inline-block">+38</span>{' '}
+                  097 883 6689
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/gym.adrenalin/?hl=uk"
+                className="flex gap-2 items-center group hover:text-main font-poppins rounded-lg p-2
                hover:bg-orange-100 transition-all duration-300
                 dark:hover:bg-hoverBlack "
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="text-main group-hover:text-main">
-                <Insta />
-              </span>
-              <span
-                className="text-mainText dark:text-mainTextBlack group-hover:text-main 
-              dark:group-hover:text-mainTitle font-poppins"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                adrenalin.gym
-              </span>
-            </a>
-          </div>
+                <span className="text-main group-hover:text-main">
+                  <Insta />
+                </span>
+                <span
+                  className="text-mainText dark:text-mainTextBlack group-hover:text-main 
+              dark:group-hover:text-mainTitle font-poppins"
+                >
+                  adrenalin.gym
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>

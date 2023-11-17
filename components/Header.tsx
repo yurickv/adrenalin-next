@@ -137,9 +137,9 @@ export const Header = () => {
                       className="absolute -left-1/2 top-full z-40 mt-3 w-screen max-w-md 
                   overflow-hidden rounded-3xl bg-white dark:bg-[#676465] shadow-lg ring-1 ring-gray-900/5 transition-all duration-300"
                     >
-                      <div className="p-4">
+                      <ul className="p-4">
                         {calcHeader.map(item => (
-                          <div
+                          <li
                             key={item.name}
                             className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6
                            hover:bg-orange-100 dark:bg-[#676465] dark:hover:bg-mainText"
@@ -168,16 +168,16 @@ export const Header = () => {
                                 {item.description}
                               </p>
                             </div>
-                          </div>
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                     </Popover.Panel>
                   </Transition>
                 </>
               )}
             </Popover>
 
-            <ul className="flex  text-small md:gap-2 lg:gap-7 text-base">
+            <ul className="flex text-small md:gap-2 lg:gap-7 text-base">
               {NavLinks.map(link => (
                 <li
                   key={link.key}
@@ -248,82 +248,96 @@ export const Header = () => {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-main">
-                <div className="space-y-2 py-6">
-                  <Disclosure as="div" className="-mx-3">
-                    {({ open }) => (
-                      <>
-                        <Disclosure.Button
-                          className={` ${
-                            open
-                              ? 'bg-orange-100 dark:bg-hoverBlack !text-main dark:!text-mainTitle'
-                              : ''
-                          } flex w-full items-center rounded-lg py-2 
+                <ul className="space-y-2 py-6">
+                  <li className="-mx-3">
+                    <Disclosure as="div">
+                      {({ open }) => (
+                        <>
+                          <Disclosure.Button
+                            className={` ${
+                              open
+                                ? 'bg-orange-100 dark:bg-hoverBlack !text-main dark:!text-mainTitle'
+                                : ''
+                            } flex w-full items-center rounded-lg py-2 
                       pl-3 pr-3.5 text-base font-semibold leading-7
                        text-mainTitle dark:text-mainTitleBlack dark:hover:text-mainTitle
                        hover:bg-orange-100 dark:hover:bg-hoverBlack hover:text-main`}
-                        >
-                          Калькулятори &nbsp;
-                          <div
-                            className={` ${open ? 'rotate-180' : ''}
-                            h-5 w-5 flex-none text-main dark:text-orange-600`}
                           >
-                            <ShevronDown aria-hidden="true" />
-                          </div>
-                        </Disclosure.Button>
-                        <Disclosure.Panel className="mt-2 space-y-2 tracking-wider">
-                          {[...calcHeader].map(item => (
-                            <Disclosure.Button
-                              key={item.name}
-                              as="a"
-                              href={item.href}
-                              className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7
+                            Калькулятори &nbsp;
+                            <div
+                              className={` ${open ? 'rotate-180' : ''}
+                            h-5 w-5 flex-none text-main dark:text-orange-600`}
+                            >
+                              <ShevronDown aria-hidden="true" />
+                            </div>
+                          </Disclosure.Button>
+                          <Disclosure.Panel className="mt-2 space-y-2 tracking-wider">
+                            <ul>
+                              {[...calcHeader].map(item => (
+                                <li>
+                                  <Disclosure.Button
+                                    key={item.name}
+                                    as="a"
+                                    href={item.href}
+                                    className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7
                              text-mainText dark:text-mainTextBlack hover:bg-orange-100 tracking-wider
                              dark:hover:bg-mainText hover:text-main dark:hover:text-orange-400"
-                            >
-                              {item.name}
-                            </Disclosure.Button>
-                          ))}
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                  <Link
-                    href="/learn/intro"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
+                                  >
+                                    {item.name}
+                                  </Disclosure.Button>
+                                </li>
+                              ))}
+                            </ul>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </li>
+                  <li>
+                    <Link
+                      href="/learn/intro"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
                    text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
                     hover:bg-orange-100   dark:hover:bg-hoverBlack "
-                  >
-                    Навчання
-                  </Link>
-                  <Link
-                    href="/blog"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
+                    >
+                      Навчання
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/blog"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
                    text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
                     hover:bg-orange-100   dark:hover:bg-hoverBlack "
-                  >
-                    Блог
-                  </Link>
-                  <Link
-                    href="/services"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
+                    >
+                      Блог
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/services"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
                    text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
                     hover:bg-orange-100   dark:hover:bg-hoverBlack "
-                  >
-                    Послуги
-                  </Link>
-                  <Link
-                    href="/contacts"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
+                    >
+                      Послуги
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contacts"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
                    text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
                     hover:bg-orange-100   dark:hover:bg-hoverBlack "
-                  >
-                    Контакти
-                  </Link>
-                </div>
+                    >
+                      Контакти
+                    </Link>
+                  </li>
+                </ul>
                 <div className="py-10 flex gap-8 text-main items-center justify-center">
                   <Search
                     search={search}

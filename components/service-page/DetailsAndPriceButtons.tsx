@@ -41,8 +41,7 @@ export const DetailsAndPriceButtons: React.FC<DetailsAndPriceButtons> = ({
         className={`mx-auto mt-4  ${
           isOpen ? 'bg-orange-200 dark:bg-[#d4d4d4] text-main' : ''
         } bg-orange-100 hover:bg-orange-200 dark:bg-[#a3a3a3] dark:hover:bg-[#d4d4d4]
-      text-mainText dark:text-mainTitle
-      rounded-xl	p-4  text-center w-full`}
+     text-mainTitle      rounded-xl	p-4  text-center w-full`}
       >
         {isOpen ? 'Менше' : 'Детальніше'}
       </button>
