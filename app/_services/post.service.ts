@@ -38,13 +38,10 @@ class PostService {
 
   async createPost(post: FormData) {
     try {
-      const res = await fetch(
-        `http://${process.env.NEXT_PUBLIC_HOST}/api/post/new`,
-        {
-          method: 'POST',
-          body: post,
-        }
-      );
+      const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/post/new`, {
+        method: 'POST',
+        body: post,
+      });
       return await res.json();
     } catch (e) {
       console.log(e);
@@ -54,7 +51,7 @@ class PostService {
   async updatePost(id: string, post: FormData) {
     try {
       const res = await fetch(
-        `http://${process.env.NEXT_PUBLIC_HOST}/api/post/${id}`,
+        `${process.env.NEXT_PUBLIC_HOST}/api/post/${id}`,
         {
           method: 'PATCH',
           body: post,
@@ -69,7 +66,7 @@ class PostService {
   async deletePost(id: string) {
     try {
       const res = await fetch(
-        `http://${process.env.NEXT_PUBLIC_HOST}/api/post/${id}`,
+        `${process.env.NEXT_PUBLIC_HOST}/api/post/${id}`,
         {
           method: 'DELETE',
         }
