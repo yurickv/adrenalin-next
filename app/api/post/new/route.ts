@@ -13,7 +13,9 @@ export const POST = async (req: NextRequest) => {
     await authMiddleware();
 
     const data = await req.formData();
-    const transformedData = Object.fromEntries(data.entries());
+    const transformedData = Object.fromEntries(
+      [...data.entries()].filter(([key]) => key !== 'id')
+    );
     await createPostSchema.validate(transformedData);
 
     const file: File | null = data.get('image') as unknown as File;
@@ -23,11 +25,11 @@ export const POST = async (req: NextRequest) => {
 
     await connectToDB();
 
-    const newPost = new Post({
+    const newPost = await Post.create({
       ...transformedData,
       image: uploadedImage,
     });
-    await newPost.save();
+
     return NextResponse.json({ post: newPost }, { status: 201 });
   } catch (e: any) {
     return NextResponse.json(
