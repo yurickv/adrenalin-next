@@ -64,11 +64,9 @@ const Admin = () => {
     const formData = editPostFormData(post, editedPost);
 
     try {
-      const res = await postHttpService.updatePost(post.id, formData);
+      await postHttpService.updatePost(post.id, formData);
 
-      setPosts(prev =>
-        prev.map(post => (post.id === res.post.id ? res.post : post))
-      );
+      router.refresh();
     } catch (e) {
       console.log(e);
     } finally {
@@ -80,7 +78,7 @@ const Admin = () => {
   const addPostOnSubmit = async (post: CreatedPost) => {
     const formData = createPostFormData(post);
     try {
-      const { post } = await postHttpService.createPost(formData);
+      await postHttpService.createPost(formData);
       router.refresh();
     } catch (e) {
       console.log(e);
@@ -94,8 +92,8 @@ const Admin = () => {
     const confirmation = confirm('Are you sure?');
     if (confirmation) {
       try {
-        const deletedPost = await postHttpService.deletePost(id);
-        setPosts(prev => prev.filter(post => post.id !== deletedPost.post.id));
+        await postHttpService.deletePost(id);
+        setPosts(prev => prev.filter(post => post.id !== id));
       } catch (e) {
         console.log(e);
       }
