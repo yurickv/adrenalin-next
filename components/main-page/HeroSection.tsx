@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export const HeroSection = () => {
   return (
-    <section className="-z-20 relative bg-hero-bg">
+    <section className="relative bg-hero-bg">
       <div className="div-container-hero z-10 relative">
         <h1 className="sr-only">Тренажерний зал Адреналін</h1>
         <h2 className="text-2xl lg:text-3xl font-poppins font-bold lg:w-[845px] text-white text-center md:text-left">
