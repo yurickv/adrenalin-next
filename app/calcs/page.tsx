@@ -1,16 +1,14 @@
 import { CalcTitle } from '@/components/calcs-page/CalcsTitle';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
+import profilePic from '../../public/bg-hero.webp';
 import Link from 'next/link';
 
 const Calc = () => {
   return (
     <main>
-      <section className="bg-hero-bg bg-center bg-cover ">
-        <div
-          className="div-container  
-        py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5"
-        >
+      <section className="relative bg-hero-bg">
+        <div className="div-container py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5 z-10 relative">
           <h3 className=" text-left text-white flex gap-2">
             <Link href="/" className="flex gap-2 items-center">
               <HomeIcon />
@@ -20,6 +18,17 @@ const Calc = () => {
           </h3>
           <h1 className="title mb-14 text-white">Калькулятори</h1>
         </div>
+        <Image
+          alt="Adrenalin gym foto"
+          src={profilePic}
+          placeholder="blur"
+          fill
+          priority
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+          }}
+        />
       </section>
       <section className="bg-white dark:bg-darkBody md:pt-8">
         <div className="div-container">

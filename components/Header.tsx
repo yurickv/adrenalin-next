@@ -249,7 +249,7 @@ export const Header = () => {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-main">
                 <ul className="space-y-2 py-6">
-                  <li className="-mx-3">
+                  <li className="-mx-3" key="calcs">
                     <Disclosure as="div">
                       {({ open }) => (
                         <>
@@ -274,7 +274,7 @@ export const Header = () => {
                           <Disclosure.Panel className="mt-2 space-y-2 tracking-wider">
                             <ul>
                               {[...calcHeader].map(item => (
-                                <li>
+                                <li key={item.name}>
                                   <Disclosure.Button
                                     key={item.name}
                                     as="a"
@@ -293,7 +293,7 @@ export const Header = () => {
                       )}
                     </Disclosure>
                   </li>
-                  <li>
+                  <li key="learn">
                     <Link
                       href="/learn/intro"
                       onClick={() => setMobileMenuOpen(false)}
@@ -304,7 +304,7 @@ export const Header = () => {
                       Навчання
                     </Link>
                   </li>
-                  <li>
+                  <li key="blog">
                     <Link
                       href="/blog"
                       onClick={() => setMobileMenuOpen(false)}
@@ -315,7 +315,7 @@ export const Header = () => {
                       Блог
                     </Link>
                   </li>
-                  <li>
+                  <li key="services">
                     <Link
                       href="/services"
                       onClick={() => setMobileMenuOpen(false)}
@@ -326,7 +326,7 @@ export const Header = () => {
                       Послуги
                     </Link>
                   </li>
-                  <li>
+                  <li key="contacts">
                     <Link
                       href="/contacts"
                       onClick={() => setMobileMenuOpen(false)}

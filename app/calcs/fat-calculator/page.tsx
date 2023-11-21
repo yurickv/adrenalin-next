@@ -5,14 +5,16 @@ import { CalcTitle } from '@/components/calcs-page/CalcsTitle';
 import { FatCalcList } from '@/components/calcs-page/FatCalcList';
 import { DescriptionFat } from '@/components/calcs-page/FatDescription';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
+import Image from 'next/image';
+import profilePic from '../../../public/bg-hero.webp';
 
 const FatCalc = () => {
   return (
     <main>
-      <section className="bg-hero-bg bg-center bg-cover">
+      <section className="relative bg-hero-bg">
         <div
           className="div-container  
-        py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5"
+        py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5 md:gap-10 z-10 relative"
         >
           <h2 className="sr-only">
             Калькулятор для визначення Відсотку жиру в тілі
@@ -32,6 +34,17 @@ const FatCalc = () => {
           </h3>
           <h1 className="title mb-14 text-mainTitleBlack">Калькулятори</h1>
         </div>
+        <Image
+          alt="Adrenalin gym foto"
+          src={profilePic}
+          placeholder="blur"
+          fill
+          priority
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+          }}
+        />
       </section>
       <section className="bg-white dark:bg-darkBody">
         <div className="div-container py-[20px] md:py-[44px]  mx-auto text-center">
