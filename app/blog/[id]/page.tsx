@@ -2,12 +2,13 @@ import type { Metadata, ResolvingMetadata } from 'next';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import parse from 'html-react-parser';
-import Image from 'next/image';
 
 import { GoBackBtn } from '@/components/blog-page/GoBackBtn';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import postHttpService from '@/app/_services/post.service';
 import FadeIn from '@/components/FadeIn';
+import Image from 'next/image';
+import profilePic from '../../../public/bg-hero.webp';
 
 type Props = {
   params: { id: string };
@@ -17,9 +18,7 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const id = params.id;
-
-  const post = await postHttpService.getPostById(id);
+  const post = await postHttpService.getPostById(params.id);
 
   return {
     title: post.title,
@@ -35,8 +34,8 @@ async function BlogPage({ params }: Props) {
 
   return (
     <main>
-      <section className="bg-hero-bg bg-center bg-cover ">
-        <div className="div-container py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5">
+      <section className="relative bg-hero-bg">
+        <div className="div-container py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5 md:gap-10 z-10 relative">
           <h3 className="text-left text-white flex gap-2">
             <Link href="/" className="flex gap-2 items-center">
               <HomeIcon />
@@ -48,6 +47,17 @@ async function BlogPage({ params }: Props) {
             <span className="font-semibold truncate ">&gt; {post.title}</span>
           </h3>
         </div>
+        <Image
+          alt="Adrenalin gym foto"
+          src={profilePic}
+          placeholder="blur"
+          fill
+          priority
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+          }}
+        />
       </section>
       <section className="py-[40px] md:py-[44px] lg:py-[88px] flex flex-col items-center bg-white dark:bg-darkBody">
         <div className="div-container text-center flex flex-col gap-6 relative">

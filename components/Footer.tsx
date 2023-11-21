@@ -30,6 +30,7 @@ export const Footer = () => {
       px-4 md:px-[40px] lg:px-[66px] xl:px-[132px] antialiased"
       >
         <Link
+          aria-label="Повернення до головної сторінки"
           className="transition-colors duration-300 col-span-2 flex md:flex-col gap-3 
           md:gap-2  md:items-center mt-12"
           href="/"
