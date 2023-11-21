@@ -1,11 +1,13 @@
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Link from 'next/link';
+import Image from 'next/image';
+import profilePic from '../../public/bg-hero.webp';
 
 const Oferta = () => {
   return (
     <main>
-      <section className="bg-hero-bg bg-center bg-cover ">
-        <div className="div-container py-[20px] md:py-[44px] mx-auto text-center flex flex-col gap-5">
+      <section className="relative bg-hero-bg">
+        <div className="div-container py-[20px] md:py-[44px] mx-auto text-center flex flex-col gap-5 z-10 relative">
           <h3 className="text-left text-mainTitleBlack flex gap-2">
             <Link href="/" className="flex gap-2 items-center">
               <HomeIcon />
@@ -15,6 +17,17 @@ const Oferta = () => {
           </h3>
           <h1 className="title mb-14 text-mainTitleBlack">Договір оферти</h1>
         </div>
+        <Image
+          alt="Adrenalin gym foto"
+          src={profilePic}
+          placeholder="blur"
+          fill
+          priority
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+          }}
+        />
       </section>
       <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
         <div

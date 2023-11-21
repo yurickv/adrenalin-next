@@ -42,13 +42,10 @@ export function Search({ search, handleCloseMobileMenu }: Props) {
             >
               <Popover.Panel
                 className="absolute left-1/2 lg:-left-[500%] z-10 mt-3 w-screen 
-              max-w-[290px] md:max-w-[380px] lg:-max-w-[440px] -translate-x-1/2 transform px-0 md:px-4 "
+              max-w-[290px] md:max-w-[380px] lg:-max-w-[440px] -translate-x-1/2 transform px-0 md:px-4"
               >
-                <div
-                  className="overflow-hidden rounded-lg lg:rounded-bl-lg lg:rounded-br-lg lg:rounded-tl-lg lg:rounded-tr-none
-                shadow-lg "
-                >
-                  <div className="relative grid gap-8 bg-white dark:bg-mainText p-4 ">
+                <div className="overflow-hidden rounded-lg lg:rounded-bl-lg lg:rounded-br-lg lg:rounded-tl-lg lg:rounded-tr-none shadow-lg ">
+                  <div className="relative grid gap-8 bg-white dark:bg-mainText p-4">
                     <div className="flex flex-col items-center justify-center">
                       <input
                         placeholder="Знайти пост"
@@ -57,6 +54,7 @@ export function Search({ search, handleCloseMobileMenu }: Props) {
                         onChange={e => setSearchText(e.target.value)}
                       />
                       <Link
+                        aria-label="Знайти пост"
                         href={`/blog?search=${searchText}`}
                         onClick={e => {
                           if (!searchText.trim()) {

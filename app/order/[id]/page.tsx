@@ -15,7 +15,7 @@ const OrderConfirmation = ({ params }: { params: { id: string } }) => {
   const isPaymentSuccessful = order.status === 'success';
 
   return (
-    <div>
+    <>
       {isPaymentSuccessful ? (
         <main>
           <section className="bg-[#BEDFFF]">
@@ -74,7 +74,7 @@ const OrderConfirmation = ({ params }: { params: { id: string } }) => {
           </section>
         </main>
       )}
-    </div>
+    </>
   );
 };
 export default OrderConfirmation;

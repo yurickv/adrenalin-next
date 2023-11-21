@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BlogCard } from '@/components/blog-page/BlogCard';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
-import { Filter } from '@/components/Filter';
-import { Arrow } from '@/components/icons/Arrow-down';
 import FadeIn from '@/components/FadeIn';
+import Image from 'next/image';
+import profilePic from '../../../public/bg-hero.webp';
 
 export const metadata: Metadata = {
-  title: 'Блог',
+  title: 'Блог, корисні статті',
   description:
-    'Блог тренажерного залу Adrenalin: все про харчування, тренування та мотивація',
+    'Блог тренажерного залу Adrenalin: статті про харчування, тренування та мотивацію',
 };
 function Blog({
   searchParams,
@@ -18,11 +18,8 @@ function Blog({
 }) {
   return (
     <main>
-      <section className="bg-hero-bg bg-center bg-cover ">
-        <div
-          className="div-container
-        py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5"
-        >
+      <section className="relative bg-hero-bg">
+        <div className="div-container py-[20px] md:py-[44px]  mx-auto text-center flex flex-col gap-5 md:gap-10 z-10 relative">
           <h3 className="text-left text-white flex gap-2">
             <Link href="/" className="flex gap-2 items-center">
               <HomeIcon />
@@ -32,6 +29,17 @@ function Blog({
           </h3>
           <h1 className="title mb-14 text-white">Блог</h1>
         </div>
+        <Image
+          alt="Adrenalin gym foto"
+          src={profilePic}
+          placeholder="blur"
+          fill
+          priority
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+          }}
+        />
       </section>
       <section className="py-[40px] md:py-[44px] lg:py-[88px] bg-white dark:bg-darkBody">
         <FadeIn className="div-container flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-4 justify-center">
