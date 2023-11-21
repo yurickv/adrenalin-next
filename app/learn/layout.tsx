@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
+// import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Безкоштовний посібник для початківців в тренажерному залі',
@@ -12,8 +12,8 @@ export default function ServicesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <Script
+    <>
+      {/* <Script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTM_ID}`}
       ></Script>
@@ -23,8 +23,8 @@ export default function ServicesLayout({
   gtag('js', new Date());
 
   gtag('config', '${process.env.GTM_ID}')`}
-      </Script>
+      </Script> */}
       {children}
-    </section>
+    </>
   );
 }
