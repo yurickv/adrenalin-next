@@ -84,18 +84,18 @@ export const PATCH = async (
       throw new NotFound(`Contact with id:'${params.id}' not found`);
     }
 
-    const file: File | null = data.get('image') as unknown as File;
+    // const file: File | null = data.get('image') as unknown as File;
 
     Object.keys(transformedData).forEach(
       key => (post[key] = transformedData[key])
     );
 
-    if (file) {
-      const transformedImage = await transformImage(file);
+    // if (file) {
+    //   const transformedImage = await transformImage(file);
 
-      const uploadedImage = await uploadImage(transformedImage);
-      post.image = uploadedImage as string;
-    }
+    //   const uploadedImage = await uploadImage(transformedImage);
+    //   post.image = uploadedImage as string;
+    // }
 
     post.save();
 

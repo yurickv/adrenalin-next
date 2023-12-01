@@ -69,7 +69,7 @@ export const BlogCard = async ({
   }
 
   return (
-    <>      
+    <>
       <div className="flex flex-col gap-8 md:flex-row justify-between items-center w-full">
         <div
           className="min-w-[10px] group p-2 rounded-lg hover:bg-orange-100 dark:hover:bg-mainText

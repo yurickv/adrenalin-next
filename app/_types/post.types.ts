@@ -4,7 +4,7 @@ export interface Post {
   topic: string;
   title: string;
   description: string;
-  image: string | Blob;
+  image: string;
 }
 
 export type CreatedPost = Omit<Post, 'id'>;
