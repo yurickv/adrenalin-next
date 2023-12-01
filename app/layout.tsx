@@ -13,12 +13,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const googleAnalytics = await loadGoogleAnalytics();
-
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* {googleAnalytics} */}
         <Header />
         {children}
         <Footer />

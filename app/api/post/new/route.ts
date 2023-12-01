@@ -20,19 +20,17 @@ export const POST = async (req: NextRequest) => {
 
     await createPostSchema.validate(transformedData);
 
-    const file: File | null = data.get('image') as unknown as File;
-    const transformedImage = await transformImage(file);
+    // const file: File | null = data.get('image') as unknown as File;
+    // const transformedImage = await transformImage(file);
 
-    const uploadedImage = await uploadImage(transformedImage);
+    // const uploadedImage = await uploadImage(transformedImage);
 
     await connectToDB();
 
     const newPost = await Post.create({
       ...transformedData,
-      image: uploadedImage,
+      // image: uploadedImage,
     });
-
-    //     await newPost.save();
 
     return NextResponse.json({ post: newPost }, { status: 201 });
   } catch (e: any) {

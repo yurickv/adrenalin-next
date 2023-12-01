@@ -23,12 +23,12 @@ const Form = ({
   const handleElementChange = (element: string, value: string | File) => {
     setForm(prev => ({ ...prev, [element]: value }));
   };
-
+  /// /fotoPost/working-at-abdomen.webp
   return (
     <>
       <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50  outline-none focus:outline-none">
-        <div className="relative mb-6 mt-80 mx-auto max-w-3xl">
-          <div className="border-0 px-10 py-6 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+        <div className="relative my-6 mx-auto">
+          <div className="border-0 px-10 py-6 rounded-lg shadow-lg relative flex flex-col min-w-[1000px] bg-white outline-none focus:outline-none">
             <h3 className="text-3xl font-semibold">{title} post</h3>
 
             <div className="relative flex-auto flex flex-col gap-4">
@@ -37,34 +37,36 @@ const Form = ({
                   <Image
                     src={form.image}
                     alt={form.title}
-                    width={300}
-                    height={300}
+                    width={350}
+                    height={230}
                   />
                 )}
-                <div className="text-center">
-                  <div className="flex gap-3 items-center text-gray-600">
-                    <label
-                      htmlFor="image"
-                      className="flex gap-3 form-input !pr-3 items-center cursor-pointer w-full "
-                    >
-                      <span>
-                        {form.image ? 'Change image' : 'Upload image'}
-                      </span>
-                      <input
-                        id="image"
-                        type="file"
-                        // onBlur={() => trigger(field.name)}
-                        className="sr-only"
-                        onChange={e => {
-                          if (e.target.files?.[0]) {
-                            handleElementChange('image', e.target.files[0]);
-                          }
 
-                          e.target.blur();
-                        }}
-                      />
-                    </label>
-                  </div>
+                <div className="flex gap-3 items-center text-gray-600 text-center">
+                  <label
+                    htmlFor="image"
+                    className="flex gap-3 form-input !pr-3 items-center cursor-pointer w-full "
+                  >
+                    {/* {form.image ? 'Change image' : 'Upload image'} */}
+                  </label>{' '}
+                  <input
+                    id="image"
+                    value={form.image}
+                    // type="file"
+                    // // onBlur={() => trigger(field.name)}
+                    className="min-w-[800px]"
+                    onChange={e => {
+                      handleElementChange('image', e.target.value);
+                    }}
+
+                    // onChange={e => {
+                    //   if (e.target.files?.[0]) {
+                    //     handleElementChange('image', e.target.files[0]);
+                    //   }
+
+                    //   e.target.blur();
+                    // }}
+                  />
                 </div>
               </div>
               <label htmlFor="title">Title</label>
@@ -101,7 +103,7 @@ const Form = ({
                 onChange={e => {
                   handleElementChange('markup', e.target.value);
                 }}
-                className="form-input"
+                className="form-input min-h-[200px]"
               />
             </div>
             <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
