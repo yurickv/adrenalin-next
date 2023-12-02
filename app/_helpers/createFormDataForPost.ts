@@ -15,7 +15,7 @@ export const editPostFormData = (post: Post, editedPost: Post) => {
 
   Object.keys(post).forEach((key: string) => {
     if (
-      key !== 'id' &&
+      key !== '_id' &&
       post[key as keyof Post] !== editedPost[key as keyof Post]
     ) {
       formData.append(key, post[key as keyof Post]);
