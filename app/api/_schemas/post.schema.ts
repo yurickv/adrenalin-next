@@ -2,6 +2,12 @@ import { model, models, Schema } from 'mongoose';
 
 const PostSchema = new Schema(
   {
+    id: {
+      type: String,
+      unique: true,
+      required: [true, 'id is required!'],
+    },
+
     title: {
       type: String,
       required: [true, 'Title is required!'],
@@ -29,16 +35,16 @@ const PostSchema = new Schema(
   }
 );
 
-PostSchema.virtual('id').get(function () {
-  return this._id.toHexString();
-});
+// PostSchema.virtual('id').get(function () {
+//   return this._id.toHexString();
+// });
 
-PostSchema.set('toJSON', {
-  virtuals: true,
-  transform: function (doc, ret) {
-    delete ret._id;
-  },
-});
+// PostSchema.set('toJSON', {
+//   virtuals: true,
+//   transform: function (doc, ret) {
+//     delete ret._id;
+//   },
+// });
 
 const Post = models.Post || model('Post', PostSchema);
 

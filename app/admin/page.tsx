@@ -16,6 +16,7 @@ import { Arrow } from '@/components/icons/Arrow-down';
 import ReactPaginate from 'react-paginate';
 
 const post = {
+  _id: '',
   id: '',
   markup: '',
   topic: '',
@@ -64,7 +65,7 @@ const Admin = () => {
     const formData = editPostFormData(post, editedPost);
 
     try {
-      await postHttpService.updatePost(post.id, formData);
+      await postHttpService.updatePost(post._id, formData);
 
       router.refresh();
     } catch (e) {
@@ -172,7 +173,7 @@ const Admin = () => {
                         </button>
                         <button
                           className="font-medium text-red-600 dark:text-blue-500 hover:underline"
-                          onClick={() => deletePostOnSubmit(post.id)}
+                          onClick={() => deletePostOnSubmit(post._id)}
                         >
                           Delete
                         </button>
