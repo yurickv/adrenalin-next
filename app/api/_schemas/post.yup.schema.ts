@@ -4,6 +4,7 @@ type File = {
   type: string;
 };
 export const createPostSchema = Yup.object().shape({
+  id: Yup.string().min(3).max(70),
   title: Yup.string().required().min(3).max(100),
   description: Yup.string().required().min(10).max(1000),
   topic: Yup.string().required().oneOf(['Training', 'Motivation', 'Nutrition']),
@@ -23,6 +24,7 @@ export const createPostSchema = Yup.object().shape({
 });
 
 export const updatePostSchema = Yup.object().shape({
+  id: Yup.string().min(3).max(50),
   title: Yup.string().min(3).max(100),
   description: Yup.string().min(10).max(1000),
   topic: Yup.string().oneOf(['Training', 'Motivation', 'Nutrition']),

@@ -69,6 +69,15 @@ const Form = ({
                   />
                 </div>
               </div>
+              <label htmlFor="id">id of post</label>
+              <textarea
+                id="id"
+                value={form.id}
+                className="form-input"
+                onChange={e => {
+                  handleElementChange('id', e.target.value);
+                }}
+              />
               <label htmlFor="title">Title</label>
               <textarea
                 id="title"

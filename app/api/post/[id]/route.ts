@@ -18,7 +18,7 @@ export const GET = async (req: NextRequest, { params }: { params: Params }) => {
 
     await connectToDB();
 
-    const post = await Post.findById(params.id);
+    const post = await Post.findOne({ id: params.id });
 
     if (!post) {
       throw new NotFound(`Post with ${params.id} not found`);

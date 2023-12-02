@@ -32,8 +32,6 @@ export const POST = async (req: NextRequest) => {
       // image: uploadedImage,
     });
 
-    //     await newPost.save();
-
     return NextResponse.json({ post: newPost }, { status: 201 });
   } catch (e: any) {
     return NextResponse.json(
