@@ -130,14 +130,14 @@ export const BlogCard = async ({
               <div className="p-3">
                 <Link
                   href={`/blog?topic=${topic}`}
-                  aria-label={title}
+                  aria-label={topic}
                   className="block text-main text-right"
                 >
                   #{topic}
                 </Link>
-                <h5 className="text-lg md:text-2xl font-semibold leading-tight text-mainTitle h-[67px] line-clamp-3">
+                <h4 className="text-lg md:text-2xl font-semibold leading-tight text-mainTitle h-[67px] line-clamp-3">
                   {title}
-                </h5>
+                </h4>
                 <p className="mt-6 line-clamp-3 text-mainText h-[72px]">
                   {description}
                 </p>
