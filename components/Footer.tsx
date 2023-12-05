@@ -42,9 +42,9 @@ export const Footer = () => {
           <GymIcon />
         </Link>
         <nav className="md:!w-[220px] flex flex-col gap-6">
-          <h3 className="ml-2 font-bold text-mainTitle dark:text-mainTitleBlack">
+          <h4 className="ml-2 font-bold text-mainTitle dark:text-mainTitleBlack">
             Клієнтам
-          </h3>
+          </h4>
           <ul className="md:flex md:flex-wrap md:justify-between gap-4 text-small  text-base ">
             <li key="calcs">
               <Popover className="relative">
@@ -127,9 +127,9 @@ export const Footer = () => {
           </ul>
         </nav>
         <div className="flex flex-col gap-6 lg:justify-center">
-          <h3 className="font-bold ml-2 text-mainTitle dark:text-mainTitleBlack">
+          <h4 className="font-bold ml-2 text-mainTitle dark:text-mainTitleBlack">
             Будь з нами на звязку
-          </h3>
+          </h4>
           <ul className="flex flex-col gap-4">
             <li>
               <a

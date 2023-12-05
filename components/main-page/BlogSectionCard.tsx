@@ -34,7 +34,7 @@ export const BlogSectionCard = async () => {
                 objectFit: 'cover',
               }}
             />
-            <Link href={`/blog/${id}`}>
+            <Link href={`/blog/${id}`} aria-label={title}>
               <div className="absolute top-0 bottom-0 right-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
             </Link>
           </div>

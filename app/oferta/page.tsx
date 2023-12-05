@@ -34,9 +34,9 @@ const Oferta = () => {
           className="div-container flex flex-col 
          justify-center gap-4"
         >
-          <h1 className="text-center text-xl font-semibold text-mainTitle dark:text-mainTitleBlack">
+          <h2 className="text-center text-xl font-semibold text-mainTitle dark:text-mainTitleBlack">
             ДОГОВІР ПУБЛІЧНОЇ ОФЕРТИ
-          </h1>
+          </h2>
           <p className="text-mainText dark:text-mainTextBlack">
             на надання послуг фітнес-клубу «Adrenalin»
           </p>

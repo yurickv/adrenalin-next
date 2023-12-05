@@ -133,6 +133,7 @@ const Contacts = () => {
 
           <div className="h-[300px] md:h-[450px] lg:h-[600px] w-full">
             <iframe
+              aria-label="Google maps"
               className="w-full h-full object-center object-cover lg:w-full lg:h-full"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4352.582420173576!2d25.640675527511817!3d49.55410347310727!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473033e3dcc7a371%3A0x8253e4a830a8921d!2z0KLRgNC10L3QsNC20LXRgNC90LjQuSDQt9Cw0Lsg0JDQtNGA0LXQvdCw0LvRltC9!5e0!3m2!1suk!2sua!4v1692117465058!5m2!1suk!2sua"
               width="800"
