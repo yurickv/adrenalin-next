@@ -16,7 +16,7 @@ export const CalcTitle = ({ page }: titleProps) => {
              transition-all duration-300 md:w-[373px]  border-main text-mainText 
               hover:text-main dark:hover:text-mainTitleBlack hover:bg-orange-100 dark:hover:bg-mainText rounded-xl ${
                 i === page
-                  ? ' text-bolt bg-orange-200 dark:hover:text-mainTextBlack dark:text-mainText'
+                  ? ' text-bolt bg-orange-200 text-mainTitle dark:hover:text-mainTextBlack'
                   : ' border-b-2 dark:text-mainTextBlack'
               }`}
         >

@@ -40,7 +40,6 @@ const Calc = () => {
             src="/fit-blond.webp"
             alt="fit-blond"
             sizes="100vw"
-            loading="lazy"
             style={{
               width: '100%',
               height: 'auto',
