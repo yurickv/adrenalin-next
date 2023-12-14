@@ -265,7 +265,7 @@ const DietForWeightLost = () => {
               навантажень). Якщо не впевнені в чомусь, то зверніться до наших
               тренерів за порадою, а краще запишіться{' '}
               <Link
-                href="/services"
+                href="/services#coach-training"
                 className="underline underline-offset-4 font-semibold text-mainTitle dark:text-mainTitleBlack"
               >
                 сьогодні на персональне тренування.

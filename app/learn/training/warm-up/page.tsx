@@ -44,9 +44,9 @@ const WarmUp = () => {
             <Sidebar />
           </div>
           <div>
-            <h1 className="h1-title-blog p-6 border-b-2 border-main mb-8">
+            <h2 className="h1-title-blog p-6 border-b-2 border-main mb-8">
               Розминка
-            </h1>
+            </h2>
             <p className="h2-list-title">Для чого розминатись: </p>
             <ul className="ul-list">
               <li className="p-text">
