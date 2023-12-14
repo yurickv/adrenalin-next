@@ -184,7 +184,7 @@ const DietForGainingWeight = () => {
                 </span>{' '}
                 Приєднуйтесь до фітнес-спільноти або знайомтеся з{' '}
                 <Link
-                  href="/services"
+                  href="/services#coach-training"
                   className="underline underline-offset-4 font-semibold text-mainTitle dark:text-mainTitleBlack"
                 >
                   нашими тренерами

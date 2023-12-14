@@ -204,7 +204,10 @@ const BasicExersices = () => {
               тренувань, зосереджуючись на правильній формі та техніці. Якщо ви
               не впевнені, як правильно виконувати будь-яку з цих вправ,
               зверніться за порадою до{' '}
-              <Link href="/services" className="underline underline-offset-4">
+              <Link
+                href="/services#coach-training"
+                className="underline underline-offset-4"
+              >
                 персонального тренера.
               </Link>{' '}
               Не забувайте прислухатися до свого тіла, робити перерви, коли це

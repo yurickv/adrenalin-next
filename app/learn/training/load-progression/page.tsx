@@ -45,9 +45,9 @@ const LoadProgression = () => {
             <Sidebar />
           </div>
           <div>
-            <h1 className="h1-title-blog p-6 border-b-2 border-main mb-8">
+            <h2 className="h1-title-blog p-6 border-b-2 border-main mb-8">
               Прогресія навантаження
-            </h1>
+            </h2>
 
             <p className="p-text">
               В процесі регулярних тренувань{' '}
@@ -187,7 +187,7 @@ const LoadProgression = () => {
                     періоді особливо рекомендуємо звернутись до досвідченого
                     товариша, а краще{' '}
                     <Link
-                      href="/services"
+                      href="/services#coach-training"
                       className="underline underline-offset-4 font-semibold text-mainTitle dark:text-mainTitleBlack"
                     >
                       тренера в спортзалі.

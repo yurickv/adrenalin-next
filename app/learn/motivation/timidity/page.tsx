@@ -80,14 +80,14 @@ const Timidity = () => {
             <ul className="ul-list !list-image-none">
               <li className="p-text">
                 <span className="font-semibold text-mainTitle dark:text-mainTitleBlack mt-2">
-                  1.Виховуйте себе:
+                  1. Виховуйте себе:
                 </span>{' '}
                 Знання - це сила. Знайдіть час, щоб дізнатися про тренажери,
                 вправи та правильну форму їх виконання. Розуміння того, що ви
                 робите, додасть вам впевненості під час тренувань. Не соромтесь
                 запитати допомоги в{' '}
                 <Link
-                  href="/services"
+                  href="/services#coach-training"
                   className="underline underline-offset-4 font-semibold text-mainTitle dark:text-mainTitleBlack"
                 >
                   тренера
@@ -97,7 +97,7 @@ const Timidity = () => {
               </li>
               <li className="p-text">
                 <span className="font-semibold text-mainTitle dark:text-mainTitleBlack mt-2">
-                  2.Починайте повільно і прогресуйте поступово:{' '}
+                  2. Починайте повільно і прогресуйте поступово:{' '}
                 </span>
                 Починайте з вправ, які вам легко даються, і поступово додавайте
                 нові, коли станете більш впевненими у собі. Робіть маленькі
@@ -199,7 +199,7 @@ const Timidity = () => {
             />
             <div className="flex gap-6 mt-8 justify-end pt-8 border-t-2 border-main ">
               <ButtonSecond
-                route="/learn/recover/reboot"
+                route="/learn/recover/overtraining"
                 text="&#10094; ПОПЕРЕДНЯ"
               />
               <Button

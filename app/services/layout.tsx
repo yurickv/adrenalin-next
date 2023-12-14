@@ -14,7 +14,7 @@ export default function ServicesLayout({
   return (
     <>
       {children}
-      <GoogleAnalytics ga_id={process.env.GTM_ID} />;
+      <GoogleAnalytics ga_id={process.env.GTM_ID} />
     </>
   );
 }
