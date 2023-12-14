@@ -110,7 +110,7 @@ const FindingMotivation = () => {
                 позитивним і мотивованим як під час перемог, так і під час
                 невдач. Візьміть кілька{' '}
                 <Link
-                  href="/services"
+                  href="/services#coach-training"
                   className="underline underline-offset-4 font-semibold text-mainTitle dark:text-mainTitleBlack"
                 >
                   персональних тренувань,
