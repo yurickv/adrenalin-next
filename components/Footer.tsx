@@ -10,7 +10,7 @@ import { AdrenalinIcon } from './icons/logo/AdrenalinIcon';
 import { GymIcon } from './icons/logo/GymIcon';
 import { BarbellIcon } from './icons/logo/BarbellIcon';
 
-export const Footer = () => {
+const Footer: React.FC = () => {
   const products = [
     { name: 'Індекс маси тіла', href: '/calcs/imt-calculator' },
     { name: 'Відсоток жиру в тілі', href: '/calcs/fat-calculator' },
@@ -178,3 +178,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

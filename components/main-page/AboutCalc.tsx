@@ -5,13 +5,13 @@ import FadeIn from '@/components/FadeIn';
 
 export const AboutCalc = () => {
   return (
-    <section className="  bg-calc-bg ">
+    <section className="bg-calc-bg">
       <FadeIn
         className="div-container  mx-auto md:bg-calc-bg-woman bg-contain bg-no-repeat bg-right 
         py-[40px] md:py-[44px] lg:py-[88px]
       "
       >
-        <h3 className="title md:text-left  lg:text-center">
+        <h3 className="title md:text-left lg:text-center">
           Перевір свою форму <br /> просто зараз
         </h3>
 
