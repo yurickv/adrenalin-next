@@ -2,7 +2,6 @@ import './globals.css';
 import dynamic from 'next/dynamic';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
-// import Footer from '@/components/Footer';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 

@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
 
-// import GalerySectionCard from './GalerySectionCard';
 const GalerySectionCard = dynamic(() => import('./GalerySectionCard'), {
   ssr: false,
 });
