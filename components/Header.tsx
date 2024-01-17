@@ -24,7 +24,7 @@ import { DarkModeToggle } from './DarkModeToggle';
 import { CartLocalStorageService } from '@/app/_services/cartLocalStorageService';
 import { SHOPPING_CART } from '@/const/localstorageKeys';
 
-export const Header = () => {
+const Header: React.FC = () => {
   const params = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsQuantity, setProductsQuantity] = useState(0);
@@ -353,3 +353,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

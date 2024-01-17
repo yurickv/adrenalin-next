@@ -1,4 +1,8 @@
-import GalerySectionCard from './GalerySectionCard';
+import dynamic from 'next/dynamic';
+
+const GalerySectionCard = dynamic(() => import('./GalerySectionCard'), {
+  ssr: false,
+});
 
 export const GalerySection = () => {
   return (
