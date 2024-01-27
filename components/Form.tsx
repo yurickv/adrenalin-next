@@ -31,8 +31,8 @@ const Form = ({
           <div className="border-0 px-10 py-6 rounded-lg shadow-lg relative flex flex-col min-w-[1000px] bg-white outline-none focus:outline-none">
             <h3 className="text-3xl font-semibold">{title} post</h3>
 
-            <div className="relative flex-auto flex flex-col gap-4">
-              <div className="flex flex-col gap-2 w-full justify-center items-center">
+            <div className="relative flex-auto flex flex-col">
+              <div className="flex flex-col w-full justify-center items-center">
                 {typeof form.image === 'string' && form.image && (
                   <Image
                     src={form.image}
@@ -45,8 +45,10 @@ const Form = ({
                 <div className="flex gap-3 items-center text-gray-600 text-center">
                   <label
                     htmlFor="image"
-                    className="flex gap-3 form-input !pr-3 items-center cursor-pointer w-full "
+                    className="items-center cursor-pointer w-full -mt-1.5"
                   >
+                    {' '}
+                    Local link to image
                     {/* {form.image ? 'Change image' : 'Upload image'} */}
                   </label>{' '}
                   <input
@@ -54,7 +56,7 @@ const Form = ({
                     value={form.image}
                     // type="file"
                     // // onBlur={() => trigger(field.name)}
-                    className="min-w-[800px]"
+                    className="min-w-[800px] form-input"
                     onChange={e => {
                       handleElementChange('image', e.target.value);
                     }}
@@ -69,24 +71,32 @@ const Form = ({
                   />
                 </div>
               </div>
-              <label htmlFor="id">id of post</label>
-              <textarea
-                id="id"
-                value={form.id}
-                className="form-input"
-                onChange={e => {
-                  handleElementChange('id', e.target.value);
-                }}
-              />
-              <label htmlFor="title">Title</label>
-              <textarea
-                id="title"
-                value={form.title}
-                className="form-input"
-                onChange={e => {
-                  handleElementChange('title', e.target.value);
-                }}
-              />
+              <div className="flex gap-3 items-center justify-between">
+                <label htmlFor="id" className="-mt-1.5">
+                  Id post for route
+                </label>
+                <input
+                  id="id"
+                  value={form.id}
+                  className="form-input max-w-[800px]"
+                  onChange={e => {
+                    handleElementChange('id', e.target.value);
+                  }}
+                />
+              </div>
+              <div className="flex gap-3 items-center justify-between">
+                <label htmlFor="title" className="-mt-1.5">
+                  Title
+                </label>
+                <input
+                  id="title"
+                  value={form.title}
+                  className="form-input max-w-[800px]"
+                  onChange={e => {
+                    handleElementChange('title', e.target.value);
+                  }}
+                />
+              </div>
               <label htmlFor="description">Description</label>
               <textarea
                 id="description"
@@ -96,15 +106,19 @@ const Form = ({
                 }}
                 className="form-input"
               />
-              <label htmlFor="topic">Topic (Hashtag)</label>
-              <input
-                id="topic"
-                value={form.topic}
-                className="form-input"
-                onChange={e => {
-                  handleElementChange('topic', e.target.value);
-                }}
-              />
+              <div className="flex gap-3 items-center justify-between">
+                <label htmlFor="topic" className="-mt-1.5">
+                  Topic (Hashtag)
+                </label>
+                <input
+                  id="topic"
+                  value={form.topic}
+                  className="form-input max-w-[800px]"
+                  onChange={e => {
+                    handleElementChange('topic', e.target.value);
+                  }}
+                />{' '}
+              </div>
               <label htmlFor="markup">Markup</label>
               <textarea
                 id="markup"
@@ -115,7 +129,7 @@ const Form = ({
                 className="form-input min-h-[200px]"
               />
             </div>
-            <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+            <div className="flex items-center justify-end p-3">
               <button
                 className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 disabled={isPostSubmitted}

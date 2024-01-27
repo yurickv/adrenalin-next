@@ -82,6 +82,7 @@ const Admin = () => {
       await postHttpService.createPost(formData);
       router.refresh();
     } catch (e) {
+      console.log('somesing wrong with add post');
       console.log(e);
     } finally {
       setShowAddModal(false);
