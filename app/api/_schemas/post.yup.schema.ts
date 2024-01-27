@@ -8,19 +8,20 @@ export const createPostSchema = Yup.object().shape({
   title: Yup.string().required().min(3).max(100),
   description: Yup.string().required().min(10).max(1000),
   topic: Yup.string().required().oneOf(['Training', 'Motivation', 'Nutrition']),
-  image: Yup.mixed()
-    .required()
-    .test('fileType', 'Invalid file format', value => {
-      if (!value) return true;
+  image: Yup.string().required(),
+  // image: Yup.mixed()
+  //   .required()
+  //   .test('fileType', 'Invalid file format', value => {
+  //     if (!value) return true;
 
-      const allowedFormats = [
-        'image/jpeg',
-        'image/png',
-        'image/gif',
-        'image/webp',
-      ];
-      return allowedFormats.includes((value as File).type);
-    }),
+  //     const allowedFormats = [
+  //       'image/jpeg',
+  //       'image/png',
+  //       'image/gif',
+  //       'image/webp',
+  //     ];
+  //     return allowedFormats.includes((value as File).type);
+  //   }),
 });
 
 export const updatePostSchema = Yup.object().shape({
@@ -28,12 +29,13 @@ export const updatePostSchema = Yup.object().shape({
   title: Yup.string().min(3).max(100),
   description: Yup.string().min(10).max(1000),
   topic: Yup.string().oneOf(['Training', 'Motivation', 'Nutrition']),
-  image: Yup.mixed().test('fileType', 'Invalid file format', value => {
-    if (!value) return true;
+  image: Yup.string().required(),
+  // image: Yup.mixed().test('fileType', 'Invalid file format', value => {
+  //   if (!value) return true;
 
-    const allowedFormats = ['image/jpeg', 'image/png', 'image/gif'];
-    return allowedFormats.includes((value as File).type);
-  }),
+  //   const allowedFormats = ['image/jpeg', 'image/png', 'image/gif'];
+  //   return allowedFormats.includes((value as File).type);
+  // }),
   atLeastOneField: Yup.mixed().test(
     'atLeastOneField',
     'At least one field is required',

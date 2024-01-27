@@ -23,12 +23,14 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         await connectToDB();
         if (!credentials?.email || !credentials.password) {
+          console.log('Email or password required');
           return null;
         }
 
         const user = await User.findOne({ email: credentials.email });
 
         if (!user) {
+          console.log('User not found');
           return null;
         }
 
@@ -38,6 +40,7 @@ export const authOptions: NextAuthOptions = {
         );
 
         if (!isPasswordMatch) {
+          console.log('Password wrong');
           return null;
         }
 
