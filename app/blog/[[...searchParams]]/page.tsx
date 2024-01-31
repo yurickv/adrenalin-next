@@ -10,6 +10,13 @@ export const metadata: Metadata = {
   title: 'Блог, корисні статті',
   description:
     'Блог тренажерного залу Adrenalin: статті про харчування, тренування та мотивацію',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      'max-snippet': -1,
+    },
+  },
 };
 function Blog({
   searchParams,

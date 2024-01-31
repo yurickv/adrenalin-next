@@ -15,10 +15,10 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <Motivation />
-      <BlogSection />
-      <AboutCalc />
       <ServicesSection />
+      <AboutCalc />
+      <BlogSection />
+      <Motivation />
       <GalerySection />
     </main>
   );
