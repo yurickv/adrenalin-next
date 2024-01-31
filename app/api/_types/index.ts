@@ -2,7 +2,8 @@ export interface Post {
   title: string;
   description: string;
   topic: 'Training' | 'Motivation' | 'Nutrition';
-  image: File;
+  image: string;
+  // image: File;
 }
 
 export interface Image {

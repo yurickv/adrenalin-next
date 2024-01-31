@@ -23,6 +23,13 @@ export async function generateMetadata(
   return {
     title: post.title,
     description: post.description,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        'max-snippet': -1,
+      },
+    },
   };
 }
 
@@ -83,15 +90,16 @@ async function BlogPage({ params }: Props) {
             <p className="description">{post.description}</p>
           </FadeIn>
           <FadeIn>
-            <Image
-              placeholder="blur"
-              blurDataURL="/placeholder.png"
-              src={post.image}
-              alt={post.topic}
-              width={800}
-              height={600}
-              className="!w-full align-middle"
-            />
+            <div className="overflow-hidden rounded-lg w-full">
+              <Image
+                placeholder="blur"
+                src={post.image}
+                alt={post.topic}
+                width={800}
+                height={600}
+                className="!w-full align-middle"
+              />
+            </div>
           </FadeIn>
           {parse(post.markup)}
         </div>
