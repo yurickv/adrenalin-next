@@ -81,7 +81,7 @@ const BasicExersices = () => {
               ваги досягли орієнтовно 0,8-1 власна вага в жимі лежачи штанги на
               10 раз та 1,2-1,5 власної ваги в присіданні з штангою на 10
               повторів. До цього{' '}
-              <span className="font-semibold text-mainTitle dark:text-mainTitleBlack mt-2">
+              <span className="font-semibold text-mainTitle dark:text-mainTitleBlack">
                 найшвидший прогрес буде при тренуванні всього тіла за раз
               </span>{' '}
               (можливо розділення на два тренувальні дні – вправи тягни /

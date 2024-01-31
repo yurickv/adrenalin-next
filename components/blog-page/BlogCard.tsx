@@ -45,10 +45,9 @@ export const BlogCard = async ({
             До всіх постів
           </Link>
         </div>
-        <div className="relative h-[400px]  w-[340px] md:h-[490px] md:w-[720px] lg:w-[1070px] lg:h-[720px] ">
+        <div className="relative h-[400px]  w-[340px] md:h-[490px] md:w-[720px] lg:w-[1070px] lg:h-[720px]">
           <Image
             placeholder="blur"
-            blurDataURL="/placeholder.png"
             src="/man-fitness-404.webp"
             alt="404 Man with dumbells"
             sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw,  33vw"
