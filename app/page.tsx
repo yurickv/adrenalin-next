@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: 'Спортклуб в Тернополі Адреналін',
   description:
     'Просторий тренажерний зал Адреналін в місті Тернопіль на БАМі з помірними цінами',
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      'max-snippet': -1,
+    },
+  },
 };
 export default function Home() {
   return (
