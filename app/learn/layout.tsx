@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: 'Безкоштовний посібник для початківців в тренажерному залі',
   description:
     'Посібник для початківців від тренажерного залу Adrenalin, інструкція з чого почати тренування: 1.Тренування в тренажерному залі, вправи, програми тренувань, техніка 2.Харчування при наборі ваги чи схудненні  3.Мотивація для тренувань 4.Відновлення після тренувань',
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      'max-snippet': -1,
+    },
+  },
 };
 export default function ServicesLayout({
   children,

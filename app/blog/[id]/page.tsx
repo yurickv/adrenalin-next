@@ -23,6 +23,13 @@ export async function generateMetadata(
   return {
     title: post.title,
     description: post.description,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        'max-snippet': -1,
+      },
+    },
   };
 }
 
