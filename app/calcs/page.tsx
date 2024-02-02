@@ -3,6 +3,21 @@ import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import profilePic from '../../public/bg-hero.webp';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Прості фітнес калькулятори',
+  description:
+    'Прості фітнес калькулятори для визначення: індексу маси тіла, проценту жиру в організмі, денної потреби в калоріях',
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      'max-snippet': -1,
+    },
+  },
+};
 
 const Calc = () => {
   return (

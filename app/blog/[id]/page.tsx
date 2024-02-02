@@ -92,7 +92,6 @@ async function BlogPage({ params }: Props) {
           <FadeIn>
             <div className="overflow-hidden rounded-lg w-full">
               <Image
-                placeholder="blur"
                 src={post.image}
                 alt={post.topic}
                 width={800}
