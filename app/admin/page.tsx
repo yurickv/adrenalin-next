@@ -68,6 +68,7 @@ const Admin = () => {
       await postHttpService.updatePost(post._id, formData);
 
       router.refresh();
+      window.location.reload();
     } catch (e) {
       console.log(e);
     } finally {
@@ -78,11 +79,12 @@ const Admin = () => {
 
   const addPostOnSubmit = async (post: CreatedPost) => {
     const formData = createPostFormData(post);
+
     try {
       await postHttpService.createPost(formData);
       router.refresh();
+      window.location.reload();
     } catch (e) {
-      
       console.log(e);
     } finally {
       setShowAddModal(false);
@@ -96,6 +98,7 @@ const Admin = () => {
       try {
         await postHttpService.deletePost(id);
         setPosts(prev => prev.filter(post => post.id !== id));
+        window.location.reload();
       } catch (e) {
         console.log(e);
       }
@@ -110,7 +113,6 @@ const Admin = () => {
           <button
             className="font-medium text-blue-600 dark:text-blue-500 hover:underline mb-4"
             onClick={() => {
-              setEditedPost(post);
               setShowAddModal(true);
             }}
           >

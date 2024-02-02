@@ -2,11 +2,9 @@ import { CreatedPost, Post } from '@/app/_types/post.types';
 
 export const createPostFormData = (post: CreatedPost) => {
   const formData = new FormData();
-
   Object.keys(post).forEach((key: string) => {
     formData.append(key, post[key as keyof CreatedPost]);
   });
-
   return formData;
 };
 

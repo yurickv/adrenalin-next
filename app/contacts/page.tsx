@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Insta } from '@/components/icons/Instagram';
 import { Location } from '@/components/icons/Location';
@@ -5,6 +6,19 @@ import { Phone } from '@/components/icons/Phone';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import profilePic from '../../public/bg-hero.webp';
+
+export const metadata: Metadata = {
+  title: 'Контакти спортклубу Абреналін',
+  description:
+    'Контактні дані за якими можна з звязатись з тренажерним залом Адреналін: адреса, номери телефонів, посилання на соціальні мережі, розміщення на карті Google',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      'max-snippet': -1,
+    },
+  },
+};
 
 const Contacts = () => {
   return (
@@ -107,11 +121,7 @@ const Contacts = () => {
                 </p>
                 <ul className="my-4 text-mainText dark:text-mainTextBlack">
                   <li>
-                    <span className="font-semibold">пн, ср, пт</span> —
-                    11:00-20:00
-                  </li>
-                  <li>
-                    <span className="font-semibold">вт, чт </span> — 11:00-21:00
+                    <span className="font-semibold">пн - пт</span> — 11:00-20:00
                   </li>
                   <li>
                     <span className="font-semibold">сб</span> — 12:00-19:00
