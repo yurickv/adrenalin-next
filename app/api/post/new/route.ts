@@ -11,11 +11,11 @@ import { uploadImage } from '@/app/api/_helpers/uploadImage';
 export const POST = async (req: NextRequest) => {
   try {
     await authMiddleware();
-    // console.log('Початок додавання');
+
     const data = await req.formData();
 
     const transformedData = Object.fromEntries(
-      [...data.entries()].filter(([key]) => key !== 'id')
+      [...data.entries()].filter(([key]) => key !== '_id')
     );
 
     await createPostSchema.validate(transformedData);

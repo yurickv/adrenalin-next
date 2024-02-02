@@ -40,15 +40,15 @@ export const DELETE = async (
     await authMiddleware();
 
     if (!params.id) {
-      throw new BadRequest('You must add id in your query params!');
+      throw new BadRequest('You must add _id in your query params!');
     }
     await connectToDB();
 
-    await Post.findByIdAndRemove(params.id);
+    await Post.findOneAndDelete({ _id: params.id });
 
     return NextResponse.json(
       { message: 'Post deleted successfully' },
-      { status: 204 }
+      { status: 200 }
     );
   } catch (e: any) {
     return NextResponse.json(
@@ -81,7 +81,7 @@ export const PATCH = async (
     await connectToDB();
     const post = await Post.findById(params.id);
     if (!post) {
-      throw new NotFound(`Contact with id:'${params.id}' not found`);
+      throw new NotFound(`Post with _id:'${params.id}' not found`);
     }
 
     // const file: File | null = data.get('image') as unknown as File;

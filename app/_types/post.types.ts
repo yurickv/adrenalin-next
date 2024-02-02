@@ -8,4 +8,5 @@ export interface Post {
   image: string;
 }
 
-export type CreatedPost = Omit<Post, 'id'>;
+// export type CreatedPost = Omit<Post, 'id'>;
+export type CreatedPost = Omit<Post, '_id'>;

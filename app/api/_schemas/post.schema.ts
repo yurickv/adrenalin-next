@@ -2,6 +2,9 @@ import { model, models, Schema } from 'mongoose';
 
 const PostSchema = new Schema(
   {
+    // _id: {
+    //   type: String,
+    // },
     id: {
       type: String,
       unique: true,
