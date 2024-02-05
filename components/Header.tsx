@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 
@@ -28,8 +28,12 @@ const Header: React.FC = () => {
   const params = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsQuantity, setProductsQuantity] = useState(0);
-  const searchParams = useSearchParams();
-  const search = searchParams.get('search');
+  // const searchParams = useSearchParams();
+  // const search = searchParams.get('search');
+
+  // const searchParams = new URLSearchParams(
+  //   typeof window !== 'undefined' ? window.location.search : ''
+  // );
 
   const cartLocalStorageService = new CartLocalStorageService(SHOPPING_CART);
   useEffect(() => {
@@ -196,9 +200,9 @@ const Header: React.FC = () => {
           </Popover.Group>
         </nav>
         <div className="flex md:gap-4 text-main relative">
-          <div className="hidden lg:block">
-            <Search search={search} />
-          </div>
+          {/* <div className="hidden lg:block">
+            <Search search={searchParams} />
+          </div> */}
           <Link
             href="/services/cart"
             aria-label="cart with selected services"
@@ -338,12 +342,12 @@ const Header: React.FC = () => {
                     </Link>
                   </li>
                 </ul>
-                <div className="py-10 flex gap-8 text-main items-center justify-center">
+                {/* <div className="py-10 flex gap-8 text-main items-center justify-center">
                   <Search
-                    search={search}
+                    search={searchParams}
                     handleCloseMobileMenu={setMobileMenuOpen}
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           </Dialog.Panel>
