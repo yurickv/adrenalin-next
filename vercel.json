@@ -1,5 +1,5 @@
 {
-  "trailingSlash": "never",
+  "trailingSlash": "false",
   "headers": [
     {
       "source": "/(.*)",
