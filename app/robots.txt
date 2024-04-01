@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /private/
+Disallow: /fotoLearning
+Disallow: /fotoPost
 
 Sitemap: https://gym-adrenalin.com.ua/sitemap.xml
