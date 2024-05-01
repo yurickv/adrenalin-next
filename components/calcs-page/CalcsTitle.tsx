@@ -20,7 +20,11 @@ export const CalcTitle = ({ page }: titleProps) => {
                   : ' border-b-2 dark:text-mainTextBlack'
               }`}
         >
-          <Link href={link.href} className="flex justify-between">
+          <Link
+            href={link.href}
+            prefetch={true}
+            className="flex justify-between"
+          >
             {link.text}
             <div
               className={` text-main  ${page ? '' : 'group-hover:rotate-0'} 

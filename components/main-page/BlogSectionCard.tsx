@@ -42,6 +42,7 @@ export const BlogSectionCard = async () => {
           <div className="h-28 mt-6">
             <Link
               href={`/blog?topic=${topic}`}
+              prefetch={true}
               className="block text-main text-right mb-6"
             >
               #{topic}
