@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const CaloriesDescription = () => {
   return (
     <div className="basis-1/2 text-mainText dark:text-mainTextBlack">
@@ -39,6 +41,23 @@ export const CaloriesDescription = () => {
           (стероїди, інсуліну, протизаплідних таблеток) і тощо.
         </li>
       </ul>
+      <div>
+        {' '}
+        Короткі статті про{' '}
+        <Link
+          href="/learn/nutrition/diet-for-weight-lost"
+          className="text-mainTitle dark:text-mainTitleBlack underline"
+        >
+          Раціон при схудненні
+        </Link>{' '}
+        та{' '}
+        <Link
+          href="/learn/nutrition/diet-for-gaining-weight"
+          className="text-mainTitle dark:text-mainTitleBlack underline"
+        >
+          Раціон при наборі ваги
+        </Link>
+      </div>
     </div>
   );
 };

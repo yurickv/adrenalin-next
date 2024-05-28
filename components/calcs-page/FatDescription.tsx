@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const DescriptionFat = () => {
   return (
     <div className="basis-1/2">
@@ -26,6 +28,23 @@ export const DescriptionFat = () => {
           (можна виміряти за допомогою спеціального каліпера або простої
           лінійки). Цей метод розрахунку кількості жиру в організмі є одним із
           найбільш точних.
+        </li>
+        <li>
+          {' '}
+          Короткі статті про{' '}
+          <Link
+            href="/learn/nutrition/diet-for-weight-lost"
+            className="text-mainTitle dark:text-mainTitleBlack underline"
+          >
+            Раціон при схудненні
+          </Link>{' '}
+          та{' '}
+          <Link
+            href="/learn/nutrition/diet-for-gaining-weight"
+            className="text-mainTitle dark:text-mainTitleBlack underline"
+          >
+            Раціон при наборі ваги
+          </Link>
         </li>
       </ul>
 
