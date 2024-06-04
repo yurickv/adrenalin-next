@@ -10,6 +10,7 @@ export const Button = ({ route, text, width }: ButtonProps) => {
   return (
     <Link
       href={route}
+      prefetch={true}
       className={`bg-gradient-to-r from-red-500 to-orange-500  hover:from-red-600
       hover:to-orange-600 focus:from-red-600 focus:to-orange-600    
       rounded-xl p-4 text-mainTitleBlack text-center block active:bg-primary-700 

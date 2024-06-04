@@ -48,7 +48,7 @@ async function BlogPage({ params }: Props) {
               <HomeIcon />
               <span className="sr-only md:not-sr-only">Adrenalin_gym</span>
             </Link>
-            <Link href="/blog" className="font-semibold">
+            <Link href="/blog" prefetch={true} className="font-semibold">
               &gt;&nbsp;Блог
             </Link>
             <span className="font-semibold truncate ">&gt; {post.title}</span>
@@ -71,6 +71,7 @@ async function BlogPage({ params }: Props) {
           <FadeIn>
             <Link
               href={`/blog?topic=${post.topic}`}
+              prefetch={true}
               aria-label={post.title}
               className="absolute top-0 right-5 text-right font-poppins text-sm font-semibold text-main
               rounded-full p-4  hover:bg-orange-100 focus:bg-orange-100 dark:hover:bg-mainText dark:focus:bg-mainText cursor-pointer"

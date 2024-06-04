@@ -20,6 +20,9 @@ const nextConfig = {
     };
     return config;
   },
+  preview: {
+    enabled: false,
+  },
 };
 
 module.exports = nextConfig;
