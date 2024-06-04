@@ -46,7 +46,7 @@ const GalerySectionCard = () => {
                     src={x.imageUrl}
                     alt="Фото тренажерного залу Адреналін"
                     sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw,  33vw"
-                    layout="fill"
+                    fill={true}
                     loading="lazy"
                     style={{
                       objectFit: 'cover',

@@ -7,9 +7,17 @@ import { Motivation } from '@/components/main-page/MotivationSection';
 import { ServicesSection } from '@/components/main-page/ServicesSection';
 
 export const metadata: Metadata = {
-  title: 'Спортклуб в Тернополі Адреналін',
+  title: 'Спортзал в Тернополі Адреналін',
   description:
-    'Просторий тренажерний зал Адреналін в місті Тернопіль на БАМі з помірними цінами',
+    'Просторий тренажерний зал (спортзал) Адреналін в м.Тернопіль в мікрорайоні БАМ з помірними цінами на абонементи. Сучасні тренажери, персональний тренер (тренування, харчування, всебічна підтримка), система знижок на абонементи. Спортзал',
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      'max-snippet': -1,
+    },
+  },
 };
 export default function Home() {
   return (

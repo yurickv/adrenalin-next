@@ -29,7 +29,7 @@ export const BlogSectionCard = async () => {
               src={image}
               alt={topic}
               sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw,  33vw"
-              layout="fill"
+              fill={true}
               style={{
                 objectFit: 'cover',
               }}

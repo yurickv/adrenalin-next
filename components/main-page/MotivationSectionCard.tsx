@@ -6,9 +6,9 @@ export const MotivationCard = () => {
   return (
     <div className=" text-justify md:min-w-[368px] lg:min-w-[671px] md:min-h-[500px]  lg:min-h-[650px]">
       <p className="text-lg lg:text-2xl text-mainText dark:text-mainTextBlack">
-        У нашому тренажерному залі ми прагнемо створити найкращі умови для
-        вашого розвитку та зростання. Давайте разом здійснимо ваші мрії про
-        здорове, активне та щасливе життя.
+        У нашому спортзалі ми прагнемо створити найкращі умови для вашого
+        розвитку та зростання. Давайте разом здійснимо ваші мрії про здорове,
+        активне та щасливе життя.
       </p>
       <h3 className="mt-11 text-lg lg:text-2xl font-semibold xl:font-bold text-mainTitle dark:text-mainTitleBlack">
         3 основні правила, які ми завжди дотримуємось:

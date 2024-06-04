@@ -6,6 +6,7 @@ import { ImtCalcList } from '@/components/calcs-page/ImtCalcList';
 import { HomeIcon } from '@/components/icons/forPopMenu/HomeIcon';
 import Image from 'next/image';
 import profilePic from '../../../public/bg-hero.webp';
+import SceletonForCalc from '@/components/sceleton/sceletonForCalc';
 
 const ImtCalc = () => {
   return (
