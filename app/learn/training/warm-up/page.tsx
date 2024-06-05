@@ -129,7 +129,7 @@ const WarmUp = () => {
               src="/fotoLearning/warm-up.webp"
               alt="man warm up in the gym"
               sizes="100vw"
-              className="w-auto h-auto mt-6 rounded-lg "
+              className="w-full h-auto mt-6 rounded-lg"
               width={500}
               height={300}
             />

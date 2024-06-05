@@ -102,7 +102,7 @@ const BasicExersices = () => {
               src="/fotoLearning/basic-exercises-2.webp"
               alt="man press barbells in the gym"
               sizes="100vw"
-              className="w-full h-auto mt-6 rounded-lg "
+              className="w-full h-auto mt-6 rounded-lg"
               width={500}
               height={300}
             />

@@ -143,7 +143,7 @@ const Intro = () => {
               src="/fotoLearning/happy-female.webp"
               alt="happy-female"
               sizes="100vw"
-              className="w-auto h-auto mt-6 rounded-lg "
+              className="w-full h-auto mt-6 rounded-lg"
               width={500}
               height={300}
               loading="lazy"
