@@ -7,7 +7,7 @@ import { Motivation } from '@/components/main-page/MotivationSection';
 import { ServicesSection } from '@/components/main-page/ServicesSection';
 
 export const metadata: Metadata = {
-  title: 'Спортклуб в Тернополі Адреналін',
+  title: 'Спортзал в Тернополі Адреналін',
   description:
     'Просторий тренажерний зал Адреналін в м.Тернопіль в мікрорайоні БАМ з помірними цінами на абонементи. Сучасні тренажери, персональний тренер (тренування, харчування, всебічна підтримка), система знижок на абонементи. Спортзал',
   robots: {

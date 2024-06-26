@@ -45,8 +45,8 @@ const GalerySectionCard = () => {
                   <Image
                     src={x.imageUrl}
                     alt="Фото тренажерного залу Адреналін"
-                    sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw,  33vw"
-                    layout="fill"
+                    sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw, 33vw"
+                    fill
                     loading="lazy"
                     style={{
                       objectFit: 'cover',

@@ -15,6 +15,7 @@ export const Motivation = () => {
             <Image
               src={picture}
               alt="Man with dumbells"
+              sizes="(min-width: 768px) 50vw, 33vw"
               fill
               style={{
                 objectFit: 'cover',
