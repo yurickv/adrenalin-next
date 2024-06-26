@@ -22,14 +22,14 @@ export const BlogSectionCard = async () => {
           hover:!shadow-[rgba(246,_120,_49,_0.29)_0px_9px_20px] w-full  h-[350px] md:h-[450px]  lg:h-[500px] text-center
           last:md:block even:sm:hidden even:lg:block p-4"
         >
-          <div className="relative -mt-8  overflow-hidden rounded-xl !shadow-[0_2px_15px_-3px_#00000029,0_10px_20px_-2px_#0000001a] align-top w-full h-3/4">
+          <div className="relative -mt-8 overflow-hidden rounded-xl !shadow-[0_2px_15px_-3px_#00000029,0_10px_20px_-2px_#0000001a] align-top w-full h-3/4">
             <Image
               placeholder="blur"
               blurDataURL="/placeholder.png"
               src={image}
               alt={topic}
-              sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw,  33vw"
-              layout="fill"
+              sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw, 33vw"
+              fill
               style={{
                 objectFit: 'cover',
               }}
@@ -47,7 +47,7 @@ export const BlogSectionCard = async () => {
             >
               #{topic}
             </Link>
-            <h4 className="text-lg md:text-2xl font-semibold leading-tight text-mainTitle ">
+            <h4 className="text-lg md:text-2xl font-semibold leading-tight text-mainTitle">
               {title}
             </h4>
           </div>
