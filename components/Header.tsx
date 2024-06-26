@@ -185,14 +185,16 @@ const Header: React.FC = () => {
               {NavLinks.map(link => (
                 <li
                   key={link.key}
-                  className={`flex items-center gap-2  hover:text-main font-poppins rounded-lg px-3 py-2 hover:bg-orange-100 
-                 dark:hover:bg-hoverBlack dark:hover:text-mainTitle ${
+                  className={`flex items-center gap-2 focus:text-main hover:text-main rounded-lg focus:bg-orange-100 hover:bg-orange-100 
+                 dark:focus:bg-hoverBlack dark:hover:bg-hoverBlack dark:focus:text-mainTitle dark:hover:text-mainTitle ${
                    params === link.href
-                     ? 'text-main'
+                     ? 'text-main pr-2'
                      : 'text-mainTitle dark:text-mainTitleBlack'
                  } transition-colors duration-300 cursor-pointer`}
                 >
-                  <Link href={link.href}>{link.text}</Link>
+                  <Link href={link.href} className={`font-poppins px-3 py-2`}>
+                    {link.text}
+                  </Link>
                   {params === link.href && <Barbell />}
                 </li>
               ))}
@@ -297,50 +299,19 @@ const Header: React.FC = () => {
                       )}
                     </Disclosure>
                   </li>
-                  <li key="learn">
-                    <Link
-                      href="/learn/intro"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
-                   text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
-                    hover:bg-orange-100   dark:hover:bg-hoverBlack "
-                    >
-                      Навчання
-                    </Link>
-                  </li>
-                  <li key="blog">
-                    <Link
-                      href="/blog"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
-                   text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
-                    hover:bg-orange-100   dark:hover:bg-hoverBlack "
-                    >
-                      Блог
-                    </Link>
-                  </li>
-                  <li key="services">
-                    <Link
-                      href="/services"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
-                   text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
-                    hover:bg-orange-100   dark:hover:bg-hoverBlack "
-                    >
-                      Послуги
-                    </Link>
-                  </li>
-                  <li key="contacts">
-                    <Link
-                      href="/contacts"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
-                   text-mainTitle hover:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
-                    hover:bg-orange-100   dark:hover:bg-hoverBlack "
-                    >
-                      Контакти
-                    </Link>
-                  </li>
+                  {NavLinks.map(link => (
+                    <li key={link.key}>
+                      <Link
+                        href={link.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 
+                   text-mainTitle hover:text-main focus:text-main dark:text-mainTitleBlack dark:hover:text-mainTitle
+                   dark:focus:text-mainTitle hover:bg-orange-100 dark:hover:bg-hoverBlack dark:focus:bg-hoverBlack"
+                      >
+                        {link.text}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
                 {/* <div className="py-10 flex gap-8 text-main items-center justify-center">
                   <Search
