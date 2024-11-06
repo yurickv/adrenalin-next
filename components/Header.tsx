@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 
-import Image from 'next/image';
 import { ToastContainer } from 'react-toastify';
 import { NavLinks } from '@/const';
 import { Barbell } from './icons/Barbell';

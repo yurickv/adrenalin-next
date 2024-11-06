@@ -3,7 +3,7 @@ import Script from 'next/script';
 const GoogleAnalytics = ({ ga_id }: { ga_id?: string }) => (
   <>
     <Script
-      async
+      defer
       src={`https://www.googletagmanager.com/gtag/js? 
       id=${ga_id}`}
     ></Script>
