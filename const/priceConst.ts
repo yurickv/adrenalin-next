@@ -3,23 +3,23 @@
 export const subscriptionPasses = [
   {
     serviceName: '1 тренування',
-    plans: [{ id: '1', availability: '1 тренування', price: '100' }],
+    plans: [{ id: '1', availability: '1 тренування', price: '120' }],
   },
   {
     serviceName: '8 тренувань',
-    plans: [{ id: '2', availability: '1 місяць', price: '530' }],
+    plans: [{ id: '2', availability: '1 місяць', price: '580' }],
   },
   {
     serviceName: '12 тренувань',
-    plans: [{ id: '3', availability: '1 місяць', price: '600' }],
+    plans: [{ id: '3', availability: '1 місяць', price: '650' }],
   },
   {
     serviceName: 'Безліміт',
     plans: [
-      { id: '4', availability: '1 місяць', price: '700' },
-      { id: '5', availability: '3 місяці', price: '1800' },
-      { id: '6', availability: '6 місяців', price: '3300' },
-      { id: '7', availability: '1 рік', price: '6000' },
+      { id: '4', availability: '1 місяць', price: '750' },
+      { id: '5', availability: '3 місяці', price: '2100' },
+      { id: '6', availability: '6 місяців', price: '3900' },
+      { id: '7', availability: '1 рік', price: '7200' },
     ],
   },
 ];
@@ -28,10 +28,10 @@ export const coachPasses = [
   {
     serviceName: 'Тренування з тренером',
     plans: [
-      { id: '8', availability: '1 тренування з тренером', price: '400' },
-      { id: '9', availability: '4 тренування з тренером', price: '1530' },
-      { id: '10', availability: '8 тренувань з тренером', price: '2530' },
-      { id: '11', availability: '12 тренувань з тренером', price: '3400' },
+      { id: '8', availability: '1 тренування з тренером', price: '420' },
+      { id: '9', availability: '4 тренування з тренером', price: '1580' },
+      { id: '10', availability: '8 тренувань з тренером', price: '2580' },
+      { id: '11', availability: '12 тренувань з тренером', price: '3450' },
     ],
   },
 ];
@@ -54,27 +54,27 @@ export const monthPass = [
   {
     id: '1',
     quantity: '1',
-    price: '100',
+    price: '120',
     availability: '1 тренування',
     serviceName: 'тренування',
   },
   {
     id: '2',
     quantity: '8',
-    price: '530',
+    price: '580',
     availability: '1 місяць',
     serviceName: 'тренувань',
   },
   {
     id: '3',
     quantity: '12',
-    price: '600',
+    price: '650',
     availability: '1 місяць',
     serviceName: 'тренувань',
   },
   {
     quantity: 'Безліміт',
-    price: '700',
+    price: '750',
     availability: '1 місяць',
     serviceName: '',
   },
@@ -83,19 +83,19 @@ export const monthPass = [
 export const yearPass = [
   {
     quantity: '3',
-    price: '1800',
+    price: '2100',
     availability: '3 місяці',
     serviceName: 'місяці',
   },
   {
     quantity: '6',
-    price: '3300',
+    price: '3900',
     availability: '6 місяців',
     serviceName: 'місяців',
   },
   {
     quantity: '12',
-    price: '6000',
+    price: '7200',
     availability: '12 місяців',
     serviceName: 'місяців',
   },
@@ -106,28 +106,28 @@ export const coachServices = [
   {
     id: '8',
     quantity: '1',
-    price: '400',
+    price: '420',
     availability: '1 тренування',
     serviceName: 'тренування з тренером',
   },
   {
     id: '9',
     quantity: '4',
-    price: '1530',
+    price: '1580',
     availability: '15 днів',
     serviceName: 'тренування з тренером',
   },
   {
     id: '10',
     quantity: '8',
-    price: '2530',
+    price: '2580',
     availability: '1 місяць',
     serviceName: 'тренувань з тренером',
   },
   {
     id: '11',
     quantity: '12',
-    price: '3400',
+    price: '3450',
     availability: '1 місяць',
     serviceName: 'тренувань з тренером',
   },
