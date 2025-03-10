@@ -19,10 +19,12 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
-        <ToastContainer />
+        <div className="flex flex-col">
+          <Header />
+          {children}
+          <Footer />
+          <ToastContainer />
+        </div>
       </body>
     </html>
   );
