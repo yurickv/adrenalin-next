@@ -23,10 +23,12 @@ export default async function RootLayout({
         <GoogleAnalytics ga_id={process.env.GTM_ID} />
       </head>
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
-        <ToastContainer />
+        <div className="flex flex-col">
+          <Header />
+          {children}
+          <Footer />
+          <ToastContainer />
+        </div>
       </body>
     </html>
   );
