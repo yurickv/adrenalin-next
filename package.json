@@ -50,5 +50,8 @@
   "devDependencies": {
     "@types/sha.js": "^2.4.1",
     "@types/uuid": "^9.0.3"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
