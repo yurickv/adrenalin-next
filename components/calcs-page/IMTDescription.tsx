@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const DescriptionIMT = () => {
   return (
     <ul
@@ -32,6 +34,23 @@ export const DescriptionIMT = () => {
         ІМТ, щоб здорово жити. Високий індекс маси тіла пов'язаний з підвищеним
         ризиком смертності від будь-яких причин, включаючи діабет, хвороби
         серцево-судинної системи, гіпертонію і артрит.
+      </li>
+      <li>
+        {' '}
+        Короткі статті про{' '}
+        <Link
+          href="/learn/nutrition/diet-for-weight-lost"
+          className="text-mainTitle dark:text-mainTitleBlack underline"
+        >
+          Раціон при схудненні
+        </Link>{' '}
+        та{' '}
+        <Link
+          href="/learn/nutrition/diet-for-gaining-weight"
+          className="text-mainTitle dark:text-mainTitleBlack underline"
+        >
+          Раціон при наборі ваги
+        </Link>
       </li>
     </ul>
   );

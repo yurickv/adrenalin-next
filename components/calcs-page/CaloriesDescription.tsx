@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const CaloriesDescription = () => {
   return (
     <div className="basis-1/2 text-mainText dark:text-mainTextBlack">
@@ -9,11 +11,11 @@ export const CaloriesDescription = () => {
       </p>
       <p className="mt-6 text-base lg:text-lg  text-justify">
         Щоб схуднути, скоротіть кількість споживаних калорій в день на{' '}
-        <strong> 10%</strong>. Якщо ви хочете набрати вагу, збільште на{' '}
-        <strong>10%</strong> кількість калорій в день. Важливо:не рекомендується
-        зменшувати загальну кількість калорій в день менше 1200 калорій , так як
-        це небезпечно для вашого здоров'я. Також не рекомендується втрачати
-        більше 0,8 - 1 кг в тиждень.
+        <strong> 10-15%</strong>. Якщо ви хочете набрати вагу, збільште на{' '}
+        <strong>10-15%</strong> кількість калорій в день. Важливо: не
+        рекомендується зменшувати загальну кількість калорій в день менше 1200
+        калорій , так як це небезпечно для вашого здоров'я. Також не
+        рекомендується втрачати більше 0,8 - 1 кг в тиждень.
       </p>
       <p className="mt-6 text-base lg:text-lg  text-justify">
         Для більш збалансованого схуднення на 0,5 - 0,8 кг на тиждень скоротіть
@@ -39,6 +41,23 @@ export const CaloriesDescription = () => {
           (стероїди, інсуліну, протизаплідних таблеток) і тощо.
         </li>
       </ul>
+      <div>
+        {' '}
+        Короткі статті про{' '}
+        <Link
+          href="/learn/nutrition/diet-for-weight-lost"
+          className="text-mainTitle dark:text-mainTitleBlack underline"
+        >
+          Раціон при схудненні
+        </Link>{' '}
+        та{' '}
+        <Link
+          href="/learn/nutrition/diet-for-gaining-weight"
+          className="text-mainTitle dark:text-mainTitleBlack underline"
+        >
+          Раціон при наборі ваги
+        </Link>
+      </div>
     </div>
   );
 };

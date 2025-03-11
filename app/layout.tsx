@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import Footer from '@/components/Footer';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 // const Footer = dynamic(() => import('../components/Footer'), { ssr: false });
 
@@ -18,6 +19,9 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <GoogleAnalytics ga_id={process.env.GTM_ID} />
+      </head>
       <body className={inter.className}>
         <div className="flex flex-col">
           <Header />

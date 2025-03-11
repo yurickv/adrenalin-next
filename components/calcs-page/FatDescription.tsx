@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 export const DescriptionFat = () => {
   return (
     <div className="basis-1/2">
-      <ul className=" flex flex-col gap-6 text-base lg:text-lg  text-justify text-mainText dark:text-mainTextBlack">
+      <ul className="flex flex-col gap-6 text-base lg:text-lg text-justify text-mainText dark:text-mainTextBlack">
         <li>
           Оптимальною кількістю жиру в тілі є <strong>12-20%</strong> для
           чоловіків і <strong>16-24%</strong> для жінок. У цьому випадку фігура
@@ -12,10 +14,8 @@ export const DescriptionFat = () => {
           кількість росте: накопичується внутрішньом'язовий жир та жирові
           клітини, що огортають внутрішні органи.
         </li>
-
         <li>
-          {' '}
-          Чоловіки з <strong>30%</strong> жиру і жінки з <strong>35%</strong>
+          Чоловіки з <strong>30%</strong> жиру і жінки з <strong>35%</strong>{' '}
           мають явні зовнішні ознаки ожиріння. Окрім естетики, починаються
           проблеми зі здоров'ям: різко збільшується кількість проблем з серцем
           та судинами.
@@ -27,12 +27,34 @@ export const DescriptionFat = () => {
           лінійки). Цей метод розрахунку кількості жиру в організмі є одним із
           найбільш точних.
         </li>
+        <li>
+          {' '}
+          Короткі статті про{' '}
+          <Link
+            href="/learn/nutrition/diet-for-weight-lost"
+            className="text-mainTitle dark:text-mainTitleBlack underline"
+          >
+            Раціон при схудненні
+          </Link>{' '}
+          та{' '}
+          <Link
+            href="/learn/nutrition/diet-for-gaining-weight"
+            className="text-mainTitle dark:text-mainTitleBlack underline"
+          >
+            Раціон при наборі ваги
+          </Link>
+        </li>
       </ul>
 
       <p className="text-lg font-semibold mt-6 text-mainTitle dark:text-mainTitleBlack">
         Як виміряти шкірні складки:
       </p>
       <ul className="flex flex-col gap-1 text-justify mt-3 list-disc list-inside text-mainText dark:text-mainTextBlack">
+        <li>
+          Відтягнути шкіру вказівним і великим пальцем в потрібному місці і
+          заміряти відстань між пальцями (товщину складки). Або скористатись
+          каліпером.
+        </li>
         <li>
           Груди – складка виміряється по зовнішньому краю великого грудного.
         </li>

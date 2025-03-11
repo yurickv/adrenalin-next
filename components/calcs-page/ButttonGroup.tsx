@@ -8,7 +8,7 @@ export const ButtonGroup = () => {
         Дізнайся більше про здорове харчування
       </p>
       <ButtonSecond
-        route="/blog"
+        route="/learn/nutrition"
         text="Все про харчування"
         width="mx-auto mt-4 w-full md:w-[284px]"
       />
