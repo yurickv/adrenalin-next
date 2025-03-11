@@ -5,12 +5,8 @@ import { JWT } from 'google-auth-library';
 const SHEET_ID = '1jFSbwCRhA5XRcUAuka6aoWSOuV_FrnnAACggPB-Zhyc'; // Замініть на ваш Google Sheets ID
 const SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
 
-const SERVICE_ACCOUNT_PRIVATE_KEY = process.env
-  .GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY
-  ? process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY.split(String.raw`\n`).join(
-      '\n'
-    )
-  : undefined;
+const SERVICE_ACCOUNT_PRIVATE_KEY =
+  process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY!.replace(/\\n/g, '\n');
 
 export async function POST(req: NextRequest) {
   try {
