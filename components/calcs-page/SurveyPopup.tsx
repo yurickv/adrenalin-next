@@ -7,6 +7,7 @@ const SurveyPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const submitted = sessionStorage.getItem('submittedQuestions');
 
     if (!submitted || submitted === 'false') {
