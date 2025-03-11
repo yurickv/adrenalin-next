@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const surveyQuestions = {
   fitnessGoal: {
-    label: 'Яка твоя основна фітнес-ціль?',
+    label: 'Яка твоя основна ціль?',
     options: [
       '🏋️‍♂️ Набір м’язової маси',
       '🥗 Схуднення',
@@ -14,7 +15,7 @@ const surveyQuestions = {
     ],
   },
   gymFrequency: {
-    label: 'Як часто ти займаєшся у залі?',
+    label: 'Як часто тренуєшся?',
     options: [
       'Не тренуюсь',
       'Планую почати',
@@ -23,7 +24,7 @@ const surveyQuestions = {
     ],
   },
   dietTracking: {
-    label: 'Чи слідкуєш ти за своїм харчуванням?',
+    label: 'Стежиш за харчуванням?',
     options: [
       'Так, ретельно рахую калорії та макронутрієнти',
       'Так, намагаюся правильно харчуватися, але не рахую все',
@@ -32,7 +33,7 @@ const surveyQuestions = {
     ],
   },
   mealPlanning: {
-    label: 'Як ти зазвичай складаєш свій раціон?',
+    label: 'Як зазвичай складаєш свій раціон?',
     options: [
       'Самостійно, користуючись знаннями з інтернету',
       'Використовую мобільні застосунки',
@@ -60,18 +61,18 @@ const surveyQuestions = {
     ],
   },
   payForService: {
-    label: 'Чи готовий ти платити за доступ?',
+    label: 'Чи готовий платити за доступ?',
     options: [
       'Так, якщо ціна буде розумною',
-      'Ні, я краще плануватиму сам',
       'Не знаю, треба спробувати',
+      'Ні, я краще плануватиму сам',
     ],
   },
   preferredFormat: {
     label: 'Який формат подачі меню найзручніший?',
     options: [
       '📱 Мобільний застосунок',
-      '📄 PDF-таблиця',
+      '📄 PDF-таблиця в Telegram',
       '🛒 Список продуктів + рецепти',
       'Інше',
     ],
@@ -108,7 +109,14 @@ function Survey() {
   } = useForm<FormData>({
     mode: 'onBlur',
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(() => {
+    const storedValue = sessionStorage.getItem('submittedQuestions');
+    return storedValue ? JSON.parse(storedValue) : false;
+  });
+
+  useEffect(() => {
+    sessionStorage.setItem('submittedQuestions', JSON.stringify(submitted));
+  }, [submitted]);
 
   const onSubmit = async (data: FormData) => {
     if (data.mealChallenges.includes('Інше')) {
@@ -133,101 +141,120 @@ function Survey() {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg flex-grow">
-      {submitted ? (
-        <div>
-          <h2 className="text-center text-green-600 text-lg font-semibold">
-            Дякуємо за участь!
-          </h2>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          {Object.entries(surveyQuestions).map(([key, { label, options }]) => (
-            <div key={key}>
-              <h2 className="text-xl font-bold">🔹 {label}</h2>
-              <div className="flex flex-col space-y-2">
-                {options.map(option => (
-                  <label key={option} className="flex items-center">
-                    <input
-                      type={key === 'mealChallenges' ? 'checkbox' : 'radio'}
-                      {...register(key as keyof FormData, {
-                        required: "Це поле є обов'язковим",
-                      })}
-                      value={option}
-                      className="mr-2"
-                    />
-                    {option}
-                  </label>
-                ))}
-                {(() => {
-                  const watchValue = watch(key as keyof FormData);
-                  // Check if the watchValue is an array or a string and handle accordingly
-                  if (
-                    Array.isArray(watchValue) &&
-                    watchValue.includes('Інше')
-                  ) {
-                    return (
-                      <input
-                        type="text"
-                        {...register(`${key}Other` as keyof FormData, {
-                          maxLength: 100,
-                        })}
-                        className="w-full border p-2 rounded"
-                        placeholder="Введіть свій варіант"
-                      />
-                    );
-                  }
-                  if (watchValue === 'Інше') {
-                    return (
-                      <input
-                        type="text"
-                        {...register(`${key}Other` as keyof FormData, {
-                          maxLength: 100,
-                        })}
-                        className="w-full border p-2 rounded"
-                        placeholder="Введіть свій варіант"
-                      />
-                    );
-                  }
-                  return null;
-                })()}
+    <div className="min-h-[500px] p-4">
+      {' '}
+      <div
+        className={`max-w-lg mx-auto p-6 bg-white ${
+          submitted ? '' : 'shadow-lg rounded-lg'
+        } my-8 text-center`}
+      >
+        {submitted ? (
+          <>
+            <h2 className="text-center text-green-600 text-lg font-semibold h-fit my-10">
+              Дякуємо за участь!
+            </h2>
+            <Link
+              href="#"
+              className="p-2 rounded mt-4 shadow-md"
+              onClick={e => {
+                e.preventDefault();
+                history.back();
+              }}
+            >
+              Повернутись назад
+            </Link>
+          </>
+        ) : (
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {Object.entries(surveyQuestions).map(
+              ([key, { label, options }]) => (
+                <div key={key}>
+                  <h2 className="text-xl font-bold">🔹 {label}</h2>
+                  <div className="flex flex-col space-y-2">
+                    {options.map(option => (
+                      <label key={option} className="flex items-center">
+                        <input
+                          type={key === 'mealChallenges' ? 'checkbox' : 'radio'}
+                          {...register(key as keyof FormData, {
+                            required: "Це поле є обов'язковим",
+                          })}
+                          value={option}
+                          className="mr-2"
+                        />
+                        {option}
+                      </label>
+                    ))}
+                    {(() => {
+                      const watchValue = watch(key as keyof FormData);
+                      // Check if the watchValue is an array or a string and handle accordingly
+                      if (
+                        Array.isArray(watchValue) &&
+                        watchValue.includes('Інше')
+                      ) {
+                        return (
+                          <input
+                            type="text"
+                            {...register(`${key}Other` as keyof FormData, {
+                              maxLength: 100,
+                            })}
+                            className="w-full border p-2 rounded"
+                            placeholder="Введіть свій варіант"
+                          />
+                        );
+                      }
+                      if (watchValue === 'Інше') {
+                        return (
+                          <input
+                            type="text"
+                            {...register(`${key}Other` as keyof FormData, {
+                              maxLength: 100,
+                            })}
+                            className="w-full border p-2 rounded"
+                            placeholder="Введіть свій варіант"
+                          />
+                        );
+                      }
+                      return null;
+                    })()}
+                  </div>
+                  {errors[key as keyof FormData] && (
+                    <p className="text-red-600 text-sm">
+                      {errors[key as keyof FormData]?.message}
+                    </p>
+                  )}
+                </div>
+              )
+            )}
+            {watch('testVersion') === 'Так, залишаю контакт' && (
+              <div>
+                <input
+                  type="text"
+                  placeholder="Номер телефону"
+                  {...register('contact', {
+                    pattern: {
+                      value: /^\+?\d{10,15}$/,
+                      message: 'Невірний формат номеру телефону',
+                    },
+                    required: "Це поле є обов'язковим",
+                  })}
+                  className="w-full border p-2 rounded"
+                />
+                {errors.contact && (
+                  <p className="text-red-600 text-sm">
+                    {errors.contact?.message}
+                  </p>
+                )}
               </div>
-              {errors[key as keyof FormData] && (
-                <p className="text-red-600 text-sm">
-                  {errors[key as keyof FormData]?.message}
-                </p>
-              )}
-            </div>
-          ))}
-          {watch('testVersion') === 'Так, залишаю контакт' && (
-            <div>
-              <input
-                type="text"
-                placeholder="Номер телефону"
-                {...register('contact', {
-                  pattern: {
-                    value: /^\+?\d{10,15}$/,
-                    message: 'Невірний формат номеру телефону',
-                  },
-                  required: "Це поле є обов'язковим",
-                })}
-                className="w-full border p-2 rounded"
-              />
-              {errors.contact && (
-                <p className="text-red-600 text-sm">
-                  {errors.contact?.message}
-                </p>
-              )}
-            </div>
-          )}
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white p-2 rounded"
-          >
-            Надіслати
-          </button>
-        </form>
-      )}
+            )}
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white p-2 rounded"
+            >
+              Надіслати
+            </button>
+          </form>
+        )}
+      </div>
     </div>
   );
 }
