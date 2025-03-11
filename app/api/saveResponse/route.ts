@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error('Error saving response:', error);
     return NextResponse.json(
-      { message: 'Error saving response' },
+      { message: 'Error saving response', error },
       { status: 500 }
     );
   }
