@@ -109,13 +109,19 @@ function Survey() {
   } = useForm<FormData>({
     mode: 'onBlur',
   });
-  const [submitted, setSubmitted] = useState(() => {
-    const storedValue = sessionStorage.getItem('submittedQuestions');
-    return storedValue ? JSON.parse(storedValue) : false;
+  const [submitted, setSubmitted] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      return JSON.parse(
+        sessionStorage.getItem('submittedQuestions') || 'false'
+      );
+    }
+    return false;
   });
 
   useEffect(() => {
-    sessionStorage.setItem('submittedQuestions', JSON.stringify(submitted));
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('submittedQuestions', JSON.stringify(submitted));
+    }
   }, [submitted]);
 
   const onSubmit = async (data: FormData) => {
