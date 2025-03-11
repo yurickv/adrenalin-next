@@ -39,6 +39,7 @@ export const BlogCard = async ({
           </div>
           <Link
             href="/blog"
+            prefetch={true}
             className="group-hover:text-main dark:group-hover:text-orange-400
                      text-mainText dark:text-mainTextBlack"
           >
@@ -79,6 +80,7 @@ export const BlogCard = async ({
           </div>
           <Link
             href="/blog"
+            prefetch={true}
             className="group-hover:text-main dark:group-hover:text-orange-400
                      text-mainText dark:text-mainTextBlack"
           >
@@ -121,7 +123,7 @@ export const BlogCard = async ({
                   height={350}
                   className="block"
                 />
-                <Link href={`/blog/${id}`} aria-label={title}>
+                <Link href={`/blog/${id}`} prefetch={true} aria-label={title}>
                   <div className="absolute top-0 bottom-0 right-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
                 </Link>
               </div>
@@ -129,6 +131,7 @@ export const BlogCard = async ({
               <div className="p-3">
                 <Link
                   href={`/blog?topic=${topic}`}
+                  prefetch={true}
                   aria-label={topic}
                   className="block text-main text-right"
                 >

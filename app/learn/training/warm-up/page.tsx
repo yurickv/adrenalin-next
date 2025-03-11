@@ -129,11 +129,11 @@ const WarmUp = () => {
               src="/fotoLearning/warm-up.webp"
               alt="man warm up in the gym"
               sizes="100vw"
-              className="w-auto h-auto mt-6 rounded-lg "
+              className="w-full h-auto mt-6 rounded-lg"
               width={500}
               height={300}
             />
-            <div className="flex gap-6 mt-8 justify-end pt-8 border-t-2 border-main ">
+            <div className="flex gap-6 mt-8 justify-end pt-8 border-t-2 border-main">
               <ButtonSecond route="/learn/intro" text="&#10094; ПОПЕРЕДНЯ" />
               <Button
                 route="/learn/training/basic-exercises"
