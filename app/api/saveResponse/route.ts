@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
 
-const SHEET_ID = '1jFSbwCRhA5XRcUAuka6aoWSOuV_FrnnAACggPB-Zhyc'; // Замініть на ваш Google Sheets ID
+const SHEET_ID = '1jFSbwCRhA5XRcUAuka6aoWSOuV_FrnnAACggPB-Zhyc';
 const SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
 
 const SERVICE_ACCOUNT_PRIVATE_KEY =

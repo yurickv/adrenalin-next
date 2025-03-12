@@ -105,7 +105,7 @@ function Survey() {
     watch,
     setValue,
     getValues,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<FormData>({
     mode: 'onBlur',
   });
@@ -254,8 +254,18 @@ function Survey() {
             )}
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white p-2 rounded"
+              disabled={isSubmitting}
+              className={`w-full text-mainTitle rounded-xl p-4 flex gap-4 justify-center ${
+                isSubmitting
+                  ? 'bg-orange-50'
+                  : 'bg-orange-100 hover:bg-orange-200 dark:bg-[#a3a3a3] dark:hover:bg-[#d4d4d4]'
+              }`}
             >
+              <span
+                className={`${isSubmitting ? 'block animate-spin' : 'hidden'}`}
+              >
+                &#10227;
+              </span>
               Надіслати
             </button>
           </form>
