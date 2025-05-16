@@ -21,6 +21,9 @@ const SurveyPopup = () => {
   }, []);
 
   const handleClose = () => {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('submittedQuestions', 'true');
+    }
     setShowPopup(false);
   };
 
@@ -28,7 +31,7 @@ const SurveyPopup = () => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm text-center">
+      <div className="bg-white p-6 rounded-lg shadow-lg max-w-[270px] md:max-w-[450px] text-center">
         {/* <p className="text-lg font-semibold">
           💡 Ми покращуємо наші інструменти!
         </p>
@@ -41,10 +44,10 @@ const SurveyPopup = () => {
           text="Пройти опитування 📝"
           width="mx-auto mt-4 w-full md:w-[284px]"
         /> */}
-        <p className="text-lg font-semibold">
+        <p className="text-xl font-semibold w-full">
           🤖 Хочете персональне меню на день?
         </p>
-        <p className="mt-2 text-gray-700">
+        <p className="mt-4 text-mainText dark:text-mainTextBlack">
           Наш безкоштовний Telegram-бот <strong>@Nutri_day_bot</strong> допоможе
           вам скласти денний раціон харчування, враховуючи ваші цілі та
           вподобання.
@@ -53,7 +56,7 @@ const SurveyPopup = () => {
           href="https://t.me/Nutri_day_bot"
           target="_blank"
           className={`bg-orange-100 hover:bg-orange-200 dark:bg-[#a3a3a3] dark:hover:bg-[#d4d4d4]
-      text-mainTitle rounded-xl p-4 text-center block mx-auto mt-4 w-full md:w-[284px] transition-all duration-150`}
+      text-mainTitle rounded-xl p-4 text-center block mx-auto mt-6 w-full md:w-[284px] transition-all duration-150`}
         >
           Спробувати бота в Telegram 🚀
         </Link>
