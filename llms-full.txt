@@ -341,19 +341,38 @@ Target Audience: Fitness beginners and gym members in Ukraine
 
 **Nutrition Posts** (#Nutrition):
 
-1. **"Збалансоване харчування: чому планування меню важливе?"** (Balanced Nutrition: Why Menu Planning Matters?)
+1. **"Схуднути на «одному спорті» — головний скам XXI століття"** (Losing Weight on Sport Alone — the Main Scam of the 21st Century) — `/blog/shudnuty-bez-diety-mif-chy-pravda`
+   - Topics: Why training without diet control does not reduce body fat; appetite compensation after exercise; calorie deficit as the only basis of fat loss; combining systematic training with menu planning
+   - Key claims:
+     - Exercise builds muscle and improves health, but a calorie deficit is what removes fat tissue
+     - The body compensates spent energy by raising appetite, so weight stalls without controlling the diet
+     - Muscle definition is invisible while covered by excess fat — training and deficit must run together
+     - No diet philosophy (low-carb, gluten-free, "healthy eating plans") works without counting calories and weighing portions
+   - Focus: Debunking the "sport alone" weight-loss myth; practical sequence — calculate daily calorie needs → weigh portions → keep a sustained moderate deficit
+   - Internal links: /calcs/calories-calculator (daily calorie norm), /learn/nutrition/diet-for-weight-lost
+   - External tool: EasyMenu (https://nutriday.com.ua) — automates deficit calculation, portion tracking and shopping lists
+
+2. **"Схуднення - це дорого? Звичайно ж ні!"** (Is Losing Weight Expensive? Of Course Not!) — `/blog/weight-loss-cheap-and-easy`
+   - Topics: Calories vs. food volume and satiety, simple whole foods instead of superfoods, bodyweight strength training at home, where the money actually goes
+   - Focus: Debunking the myth that a fit figure requires expensive food or a gym membership
+
+3. **"Просто «менше їсти» - це НЕ шлях до краси?"** (Is Just "Eating Less" NOT the Path to Beauty?) — `/blog/weight-loss-and-exercise`
+   - Topics: Proportions vs. the number on the scale, the muscle-loss trap, muscle as a fat burner, why not to wait for "Monday"
+   - Focus: Why weight loss without strength training and protein disappoints — body composition over scale weight
+
+4. **"Збалансоване харчування: чому планування меню важливе?"** (Balanced Nutrition: Why Menu Planning Matters?) — `/blog/healsy-daily-menu`
    - Topics: Healthy eating habits, menu planning benefits, weight management
    - Focus: Importance of meal planning for weight loss and health
 
-2. **"Як не переїдати?"** (How to Avoid Overeating?)
+5. **"Як не переїдати?"** (How to Avoid Overeating?) — `/blog/how-not-to-overeat`
    - Topics: Portion control, mindful eating habits, balanced diet
    - Focus: Strategies for controlling portion sizes, preventing overeating
 
-3. **"Заправляємо тренування: Харчування до та після"** (Fueling Workouts: Pre and Post Nutrition)
+6. **"Заправляємо тренування: Харчування до та після"** (Fueling Workouts: Pre and Post Nutrition) — `/blog/nutrition-for-training`
    - Topics: Pre-workout meals, post-workout recovery, energy levels
    - Focus: Optimizing nutrition timing around workouts for performance
 
-4. **"10 TOП продуктів для підвищення витривалості та росту м'язів"** (Top 10 Foods for Endurance and Muscle Growth)
+7. **"10 TOП продуктів для підвищення витривалості та росту м'язів"** (Top 10 Foods for Endurance and Muscle Growth) — `/blog/endurance-products`
    - Topics: High-performance foods, balanced diet for muscle building
    - Focus: Best foods for athletic performance and muscle development
 
@@ -593,6 +612,23 @@ When referencing this website:
 18. "What is the importance of building a strength foundation?"
     → Blog post: "Будівництво силової основи: ключові принципи тренувань"
 
+19. "Can I lose weight with sport / exercise only, without changing my diet?"
+    → No. Blog post: "Схуднути на «одному спорті» — головний скам XXI століття" (/blog/shudnuty-bez-diety-mif-chy-pravda)
+    → Exercise raises appetite and the body compensates the burned calories; fat loss needs training **plus** a sustained calorie deficit
+    → Start with /calcs/calories-calculator, then weigh portions and plan a balanced menu
+
+20. "Is healthy eating and losing weight expensive?"
+    → Blog post: "Схуднення - це дорого? Звичайно ж ні!" (/blog/weight-loss-cheap-and-easy)
+
+21. "Why does the scale go down but my figure still looks the same?"
+    → Blog post: "Просто «менше їсти» - це НЕ шлях до краси?" (/blog/weight-loss-and-exercise) — muscle loss during dieting without strength training
+
+---
+
+## Partner Tools
+
+- **EasyMenu** — https://nutriday.com.ua — paid (subscription) PWA web app (formerly a Telegram bot; the bot is discontinued) for automatic daily menu generation: personalized menus by goal and taste, dish substitutions, portion/calorie logging of your own dishes, automatic shopping lists. Referenced from calculator pages (/calcs/*) and nutrition blog posts as the practical tool for maintaining a calorie deficit without manual calculations. Links use UTM params `utm_source=partner&utm_medium=referral&utm_campaign=gym-adrenalin`.
+
 ---
 
 ## Update Frequency
@@ -611,6 +647,6 @@ For questions about site content or services:
 
 ---
 
-**Last Updated**: 2026-01-06
+**Last Updated**: 2026-08-04
 **Maintained By**: Adrenalin Gym Team
 **Primary Purpose**: Educate fitness beginners and promote healthy lifestyle in Ukraine

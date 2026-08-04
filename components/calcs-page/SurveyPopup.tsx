@@ -40,7 +40,7 @@ const SurveyPopup = () => {
         </p>
         <p className="mt-2 text-gray-700">
           Допоможіть нам створити ідеальний сервіс персонального харчування.
-          Відповіді займуть 30 секунд! В подарунок бекоштовний Телеграм-бот
+          Відповіді займуть 30 секунд!
         </p>
         <ButtonSecond
           route="/questionary"
@@ -51,9 +51,9 @@ const SurveyPopup = () => {
           🌱 Хочете легко і здорово харчуватися щодня?
         </p>
         <p className="mt-4 text-mainText dark:text-mainTextBlack">
-          Дізнайтеся, як Telegram-бот <strong>Nutri_Day</strong> допоможе
-          скласти збалансоване меню для схуднення — без стресу, складних
-          підрахунків і з можливістю легко змінювати страви під ваш смак.
+          Дізнайтеся, як застосунок <strong>EasyMenu</strong> допоможе скласти
+          збалансоване меню для схуднення — без стресу, складних підрахунків і з
+          можливістю легко змінювати страви під ваш смак.
         </p>
         <Link
           href="https://nutriday.com.ua/?utm_source=partner&utm_medium=referral&utm_campaign=gym-adrenalin"

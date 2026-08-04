@@ -16,7 +16,7 @@ type Props = {
   params: { id: string };
 };
 
-const BASE_URL = 'https://adrenalin-gym.com.ua';
+const BASE_URL = 'https://gym-adrenalin.com.ua';
 
 export async function generateMetadata(
   { params }: Props,
