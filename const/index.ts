@@ -21,13 +21,18 @@ export const cardInfo = [
 ];
 
 export const galeryCardInfo = [
-  { imageUrl: '/fotoZal/foto_zal_7.webp' },
-  // { imageUrl: "/fotoZal/foto_zal_1.jpg"},
-  { imageUrl: '/fotoZal/foto_zal_2.webp' },
-  { imageUrl: '/fotoZal/foto_zal_3.webp' },
-  { imageUrl: '/fotoZal/foto_zal_4.webp' },
-  { imageUrl: '/fotoZal/foto_zal_5.webp' },
-  { imageUrl: '/fotoZal/foto_zal_6.webp' },
+  { imageUrl: '/fotoZal/foto_zal_1.webp', width: 1916, height: 2444 },
+  { imageUrl: '/fotoZal/foto_zal_2.webp', width: 1916, height: 2296 },
+  { imageUrl: '/fotoZal/foto_zal_3.webp', width: 1664, height: 2045 },
+  { imageUrl: '/fotoZal/foto_zal_4.webp', width: 1916, height: 2560 },
+  { imageUrl: '/fotoZal/foto_zal_5.webp', width: 2560, height: 1920 },
+  { imageUrl: '/fotoZal/foto_zal_6.webp', width: 1916, height: 2194 },
+  { imageUrl: '/fotoZal/foto_zal_7.webp', width: 1664, height: 2045 },
+  { imageUrl: '/fotoZal/foto_zal_8.webp', width: 2223, height: 1459 },
+  { imageUrl: '/fotoZal/foto_zal_9.webp', width: 1916, height: 2140 },
+  { imageUrl: '/fotoZal/foto_zal_10.webp', width: 1916, height: 2560 },
+  { imageUrl: '/fotoZal/foto_zal_11.webp', width: 1916, height: 2560 },
+  { imageUrl: '/fotoZal/foto_zal_12.webp', width: 2560, height: 1916 },
 ];
 
 export const CalcLinks = [
