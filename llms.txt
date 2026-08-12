@@ -87,7 +87,7 @@ Dynamic blog section with posts loaded from MongoDB database:
 
 **Notable Blog Posts:**
 - `veteran-sport` (#Motivation) — «Свої для своїх: тренування за програмою «Ветеранський спорт» у нашому залі!» — post about veteran rehabilitation through sport, mental health benefits of training.
-- `shudnuty-bez-diety-mif-chy-pravda` (#Nutrition) — «Схуднути на "одному спорті" — головний скам XXI століття» — explains why training without diet control does not reduce fat: exercise raises appetite and the body compensates the spent energy. Fat loss requires systematic training **plus** a sustained calorie deficit (daily calorie calculation, portion weighing, balanced menu). Links to /calcs/calories-calculator and to the EasyMenu meal-planning app.
+- `shudnuty-bez-diety-mif-chy-pravda` (#Nutrition) — «Схуднути на "одному спорті" — головний скам XXI століття» — explains why training without diet control does not reduce fat: exercise raises appetite and the body compensates the spent energy. Fat loss requires systematic training **plus** a sustained calorie deficit (daily calorie calculation, portion weighing, balanced menu). Links to /calcs/calories-calculator and to the Sytno meal-planning app.
 
 #### 4. Services (/app/services)
 Gym services and offerings:
@@ -124,7 +124,7 @@ Each section has its own layout.tsx file for consistent styling and navigation w
 - Blog posts are dynamically loaded from MongoDB database with three main categories: Training, Nutrition, Motivation
 - Blog content covers practical topics from beginner exercises to advanced training strategies
 - Calculators provide interactive health metrics (BMI, body fat %, daily calories)
-- Partner nutrition service: **EasyMenu** — a paid (subscription) PWA web app at https://nutriday.com.ua (no longer a Telegram bot). Referenced from the calculator pages and nutrition blog posts for automatic menu planning, calorie deficit tracking and shopping lists
+- Partner nutrition service: **Sytno** — a paid (subscription) PWA web app at https://nutriday.com.ua (no longer a Telegram bot). Referenced from the calculator pages and nutrition blog posts for automatic menu planning, calorie deficit tracking and shopping lists
 - Each major section has its own loading states and layouts
 - Authentication is handled via NextAuth
 - All content is in Ukrainian language (lang="uk")

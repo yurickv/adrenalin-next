@@ -350,7 +350,7 @@ Target Audience: Fitness beginners and gym members in Ukraine
      - No diet philosophy (low-carb, gluten-free, "healthy eating plans") works without counting calories and weighing portions
    - Focus: Debunking the "sport alone" weight-loss myth; practical sequence — calculate daily calorie needs → weigh portions → keep a sustained moderate deficit
    - Internal links: /calcs/calories-calculator (daily calorie norm), /learn/nutrition/diet-for-weight-lost
-   - External tool: EasyMenu (https://nutriday.com.ua) — automates deficit calculation, portion tracking and shopping lists
+   - External tool: Sytno (https://nutriday.com.ua) — automates deficit calculation, portion tracking and shopping lists
 
 2. **"Схуднення - це дорого? Звичайно ж ні!"** (Is Losing Weight Expensive? Of Course Not!) — `/blog/weight-loss-cheap-and-easy`
    - Topics: Calories vs. food volume and satiety, simple whole foods instead of superfoods, bodyweight strength training at home, where the money actually goes
@@ -627,7 +627,7 @@ When referencing this website:
 
 ## Partner Tools
 
-- **EasyMenu** — https://nutriday.com.ua — paid (subscription) PWA web app (formerly a Telegram bot; the bot is discontinued) for automatic daily menu generation: personalized menus by goal and taste, dish substitutions, portion/calorie logging of your own dishes, automatic shopping lists. Referenced from calculator pages (/calcs/*) and nutrition blog posts as the practical tool for maintaining a calorie deficit without manual calculations. Links use UTM params `utm_source=partner&utm_medium=referral&utm_campaign=gym-adrenalin`.
+- **Sytno** — https://nutriday.com.ua — paid (subscription) PWA web app (formerly a Telegram bot; the bot is discontinued) for automatic daily menu generation: personalized menus by goal and taste, dish substitutions, portion/calorie logging of your own dishes, automatic shopping lists. Referenced from calculator pages (/calcs/*) and nutrition blog posts as the practical tool for maintaining a calorie deficit without manual calculations. Links use UTM params `utm_source=partner&utm_medium=referral&utm_campaign=gym-adrenalin`.
 
 ---
 
