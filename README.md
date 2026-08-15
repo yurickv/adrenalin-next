@@ -43,7 +43,7 @@
 ### Технічний стек
 
 - **Framework:** Next.js 14 (App Router)
-- **Runtime:** Node.js 20.x
+- **Runtime:** Node.js 24.x
 - **Мова:** TypeScript 5.1.6
 - **UI:** React 18.2.0
 - **Стилізація:** Tailwind CSS 3.3.3
@@ -169,7 +169,7 @@ Gym services information and booking system
 ### Tech Stack
 
 - **Framework:** Next.js 14 (App Router)
-- **Runtime:** Node.js 20.x
+- **Runtime:** Node.js 24.x
 - **Language:** TypeScript 5.1.6
 - **UI:** React 18.2.0
 - **Styling:** Tailwind CSS 3.3.3
