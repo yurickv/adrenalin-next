@@ -67,7 +67,7 @@ details[open] summary div {
   @apply font-poppins font-semibold text-mainTitle dark:text-mainTitleBlack text-lg leading-normal indent-5;
 }
 .p-item {
-  @apply font-poppins font-normal text-lg text-mainText dark:text-mainTextBlack leading-normal;
+  @apply font-poppins font-normal text-lg text-mainText dark:text-mainTextBlack leading-normal text-justify indent-5;
 }
 .p-text {
   @apply font-poppins font-normal text-lg text-mainText dark:text-mainTextBlack leading-normal mt-2 text-justify indent-5;
