@@ -112,7 +112,7 @@ async function BlogPage({ params }: Props) {
         />
       </section>
       <section className="py-[40px] md:py-[44px] lg:py-[88px] flex flex-col items-center bg-white dark:bg-darkBody">
-        <div className="div-container text-center flex flex-col gap-6 relative">
+        <div className="div-container text-center flex flex-col gap-4 md:gap-6 relative">
           <FadeIn>
             <Link
               href={`/blog?topic=${post.topic}`}
